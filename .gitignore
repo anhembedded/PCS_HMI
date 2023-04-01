@@ -78,15 +78,11 @@ build/
 Debug/
 cmake-build-debug/
 cmakeAutoBuild/
-App/
-config/
 simulator/
-target/
 cmake/
 TouchGFX/simulator/
 TouchGFX/generated/
 TouchGFX/generated/simulator/
 TouchGFX/build/
 TouchGFX/target/
-gcc/
 HMI_FPAC_BACKEND/Middlewares/ST/touchgfx_backup/
