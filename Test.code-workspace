@@ -1,0 +1,71 @@
+{
+	"folders": [
+		{
+			"path": "HMI_FPAC_BACKEND"
+		},
+		{
+			"path": "Test"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"u_applicationtask.h": "c",
+			"freertos.h": "c",
+			"u_firmwaredefination.h": "c",
+			"u_gpio.h": "c",
+			"u_adc.h": "c",
+			"u_pwm.h": "c",
+			"u_rcc.h": "c",
+			"stdint.h": "c",
+			"array": "cpp",
+			"*.tcc": "cpp",
+			"cctype": "cpp",
+			"clocale": "cpp",
+			"cmath": "cpp",
+			"compare": "cpp",
+			"concepts": "cpp",
+			"csignal": "cpp",
+			"cstdint": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"cwchar": "cpp",
+			"deque": "cpp",
+			"unordered_map": "cpp",
+			"vector": "cpp",
+			"exception": "cpp",
+			"functional": "cpp",
+			"initializer_list": "cpp",
+			"iosfwd": "cpp",
+			"limits": "cpp",
+			"new": "cpp",
+			"numbers": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"type_traits": "cpp",
+			"tuple": "cpp",
+			"typeinfo": "cpp",
+			"utility": "cpp",
+			"atomic": "cpp",
+			"bit": "cpp",
+			"cstdarg": "cpp",
+			"cstddef": "cpp",
+			"cwctype": "cpp",
+			"algorithm": "cpp",
+			"iterator": "cpp",
+			"memory": "cpp",
+			"memory_resource": "cpp",
+			"numeric": "cpp",
+			"optional": "cpp",
+			"random": "cpp",
+			"system_error": "cpp",
+			"ostream": "cpp",
+			"ranges": "cpp",
+			"stdexcept": "cpp",
+			"streambuf": "cpp",
+			"stm32f4xx.h": "c",
+			"u_apppwm.h": "c",
+			"u_appdigitaloutput.h": "c"
+		},
+		"cSpell.enabled": false
+	}
+}

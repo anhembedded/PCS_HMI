@@ -1,0 +1,6 @@
+#ifndef CORE_U_TASK_INC_U_APPDIGITALOUTPUT
+#define CORE_U_TASK_INC_U_APPDIGITALOUTPUT
+
+void u_appDigitalOutputCreate();
+
+#endif /* CORE_U_TASK_INC_U_APPDIGITALOUTPUT */

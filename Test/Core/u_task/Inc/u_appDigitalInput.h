@@ -1,0 +1,6 @@
+#ifndef CORE_U_TASK_INC_U_APPDIGITALINPUT
+#define CORE_U_TASK_INC_U_APPDIGITALINPUT
+
+void u_appDigitalInputCreate();
+
+#endif /* CORE_U_TASK_INC_U_APPDIGITALINPUT */

@@ -1,0 +1,14 @@
+{
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+  "cmake.configureOnOpen": true,
+  "files.associations": {
+    "u_applicationtask.h": "c",
+    "freertos.h": "c",
+    "u_firmwaredefination.h": "c",
+    "u_gpio.h": "c",
+    "u_adc.h": "c",
+    "u_pwm.h": "c",
+    "u_rcc.h": "c",
+    "stdint.h": "c"
+  }
+}

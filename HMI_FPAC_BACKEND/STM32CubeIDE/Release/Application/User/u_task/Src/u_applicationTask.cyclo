@@ -1,0 +1,7 @@
+u_applicationTask.c:155:13:updatePWM	2
+u_applicationTask.c:102:13:updateDigitalOutput	2
+u_applicationTask.c:125:13:blinkLed_Green	1
+u_applicationTask.c:46:13:mainApplication	1
+stm32f4xx_ll_adc.h:2490:22:LL_ADC_REG_SetSequencerRanks.constprop	1
+u_applicationTask.c:66:13:readAdc	1
+u_applicationTask.c:30:6:u_applicationTaskCreate	6

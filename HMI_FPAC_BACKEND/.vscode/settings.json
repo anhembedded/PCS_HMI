@@ -1,0 +1,10 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "files.associations": {
+        "main.h": "c",
+        "cmsis_os.h": "c",
+        "stm32f4xx_hal.h": "c",
+        "freertos.h": "c"
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/STM32CubeIDE"
+}

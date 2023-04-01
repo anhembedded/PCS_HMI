@@ -1,0 +1,92 @@
+# https://github.com/github/gitignore/blob/master/C.gitignore
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# cscope with Vim
+cscope.*
+
+#ctags with Vim
+tags
+types_c.taghl
+
+#CtrlP
+ctrlp.root
+
+#html
+*.html
+Footer
+© 2023 GitHub, Inc.
+
+*.pdf
+*xlsx
+*.drawio
+
+
+HMI_FPAC_BACKEND/Middlewares/ST/touchgfx/
+HMI_FPAC_BACKEND/Middlewares/ST/touchgfx_backup/
+build/
+Debug/
+cmake-build-debug/
+cmakeAutoBuild/
+App/
+config/
+simulator/
+target/
+cmake/
+TouchGFX/simulator/
+TouchGFX/generated/
+TouchGFX/generated/simulator/
+TouchGFX/build/
+TouchGFX/target/
+gcc/
+HMI_FPAC_BACKEND/Middlewares/ST/touchgfx_backup/

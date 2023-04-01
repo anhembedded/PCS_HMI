@@ -1,0 +1,9 @@
+u_rcc.c:10:6:u_rcc_enableClk_ADC1	1
+u_rcc.c:14:6:u_rcc_enableClk_GPIOA	1
+u_rcc.c:18:6:u_rcc_enableClk_GPIOB	1
+u_rcc.c:22:6:u_rcc_enableClk_GPIOC	1
+u_rcc.c:26:6:u_rcc_enableClk_GPIOD	1
+u_rcc.c:30:6:u_rcc_enableClk_GPIOG	1
+u_rcc.c:35:6:u_rcc_enableClk_GPIOH	1
+u_rcc.c:40:6:u_rcc_enableClk_GPIOK	1
+u_rcc.c:45:6:u_rcc_enableClk_TIM5	1

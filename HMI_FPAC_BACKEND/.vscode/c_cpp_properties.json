@@ -1,0 +1,46 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/TouchGFX/target",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+                "${workspaceFolder}/TouchGFX/App",
+                "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
+                "${workspaceFolder}/TouchGFX/target/generated",
+                "${workspaceFolder}/Drivers/BSP/Components/Common",
+                "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/include",
+                "${workspaceFolder}/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+                "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F",
+                "${workspaceFolder}/Drivers/BSP/STM32469I-Discovery",
+                "${workspaceFolder}/Drivers/STM32F4xx_HAL_Driver/Inc",
+                "${workspaceFolder}/Middlewares/ST/touchgfx/framework/include",
+                "${workspaceFolder}/TouchGFX/generated/fonts/include",
+                "${workspaceFolder}/TouchGFX/generated/gui_generated/include",
+                "${workspaceFolder}/TouchGFX/generated/images/include",
+                "${workspaceFolder}/TouchGFX/generated/texts/include",
+                "${workspaceFolder}/TouchGFX/gui/include",
+                "${workspaceFolder}/TouchGFX/generated/videos/include",
+                "C:/Project/CaoThangFinalProjectaa/CaoThangFinalProjectaa/Test/Core/u_driver/inc/",
+                "C:/Project/CaoThangFinalProjectaa/CaoThangFinalProjectaa/Test/Core/u_driver/",
+                "C:/Project/CaoThangFinalProjectaa/CaoThangFinalProjectaa/Test/Core/u_task/Inc/",
+                "C:/Project/CaoThangFinalProjectaa/CaoThangFinalProjectaa/Test/Core/u_task/"
+            ],
+            "defines": [
+                "USE_HAL_DRIVER",
+                "STM32F469xx",
+                "DEBUG",
+                "USE_FULL_LL_DRIVER"
+            ],
+            "windowsSdkVersion": "10.0.22000.0",
+            "intelliSenseMode": "windows-gcc-x64",
+            "configurationProvider": "ms-vscode.makefile-tools",
+            "compilerPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/bin/arm-none-eabi-g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++11"
+        }
+    ],
+    "version": 4
+}

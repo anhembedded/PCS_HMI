@@ -1,0 +1,13 @@
+u_gpio.c:18:6:u_gpio_setPinMode	1
+u_gpio.c:29:6:u_gpio_setPinOutputType	1
+u_gpio.c:35:6:u_gpio_setPinOutputSpeed	1
+u_gpio.c:40:6:u_gpio_setPinPull	1
+u_gpio.c:46:6:u_gpio_setAlternateFunction	2
+u_gpio.c:66:6:u_gpio_outputSet	1
+u_gpio.c:72:6:u_gpio_outputClear	1
+u_gpio.c:78:6:u_gpio_writePin	2
+u_gpio.c:91:10:u_gpio_readPin	1
+u_gpio.c:97:6:u_gpio_togglePin	1
+u_gpio.c:104:6:u_gpio_OnboardInit_LED	1
+u_gpio.c:133:6:u_gpio_Init_DigitalOutput	1
+u_gpio.c:164:1:u_gpio_Init_DigitalInput	1
