@@ -70,10 +70,9 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 {
 #ifdef SIMULATOR
     touchgfx_printf("sendAdcOuputToBackEnd_0! %d \n", registerVar);
-#endif // SIMULATOR
-#ifndef SIMULATOR
+#else
     xQueueSend(queue_updatePwmCh1Handle, &registerVar, 0);
-#endif // !SIMULATOR
+#endif // SIMULATOR
 }
 
 #ifdef SIMULATOR
