@@ -1,0 +1,31 @@
+
+
+GraphedExpression="input", Color=#e56a6f
+GraphedExpression="output", Color=#35792b
+GraphedExpression="setpoint", Color=#769dda
+OpenDocument="core_cm4.h", FilePath="C:/Project/PCS_HMI/Test/Drivers/CMSIS/Include/core_cm4.h", Line=0
+OpenDocument="u_appAdc.c", FilePath="C:/Project/PCS_HMI/Test/Core/u_task/Src/u_appAdc.c", Line=0
+OpenDocument="u_pidSim.c", FilePath="C:/Project/PCS_HMI/Test/Core/u_task/Src/u_pidSim.c", Line=65
+OpenDocument="main.c", FilePath="C:/Project/PCS_HMI/Test/Core/Src/main.c", Line=96
+OpenDocument="freertos.c", FilePath="C:/Project/PCS_HMI/Test/Core/Src/freertos.c", Line=81
+OpenDocument="tasks.c", FilePath="C:/Project/PCS_HMI/Test/Middlewares/Third_Party/FreeRTOS/org/Source/tasks.c", Line=3430
+OpenDocument="startup_stm32f469nihx.s", FilePath="C:/Project/PCS_HMI/Test/Core/Startup/startup_stm32f469nihx.s", Line=54
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=424, h=138, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=424, h=130, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Global Data", DockArea=RIGHT, x=0, y=1, w=424, h=125, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Call Graph", DockArea=LEFT, x=0, y=0, w=723, h=196, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Code Profile", DockArea=LEFT, x=0, y=1, w=723, h=198, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, GroupByFiles=0, SortRespectsFilters=0, ParentRelativeLoad=0
+OpenWindow="Data Sampling", DockArea=BOTTOM, x=1, y=0, w=451, h=547, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=0, UniformSampleSpacing=0
+OpenWindow="Timeline", DockArea=BOTTOM, x=2, y=0, w=1248, h=547, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=0, CodePaneShown=1, PinCursor="Cursor Movable", TimePerDiv="5 s / Div", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="743;0", DataGraphShowNamesAtCursor=0, PowerGraphDrawAsPoints=0, PowerGraphLegendShown=0, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="1000;0", CodeGraphLegendShown=1, CodeGraphLegendPosition="1087;0"
+OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=219, h=547, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
+TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[100;105;202]
+TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[26;26;26;31]
+TableHeader="Global Data", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[100;100;100;100;100;100]
+TableHeader="Code Profile", SortCol="Inst. Coverage", SortOrder="DESCENDING", VisibleCols=["File / Function";"Source Coverage";"Inst. Coverage";"Run Count";"Fetch Count";"Load"], ColWidths=[354;112;125;100;100;100]
+TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";" input";" output";" setpoint"], ColWidths=[100;100;100;100;1160]
+TableHeader="Data Sampling Setup", SortCol="Expression", SortOrder="DESCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[100;100;100;100;100;100;100;100;100]
+TableHeader="Call Graph", SortCol="Stack Total", SortOrder="ASCENDING", VisibleCols=["Name";"Stack Total";"Stack Local";"Code Total";"Code Local";"Depth";"Called From"], ColWidths=[204;100;100;100;100;100;100]
