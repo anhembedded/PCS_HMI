@@ -1,6 +1,7 @@
 #include "u_pidSim.h"
 #include "pid.h"
 #include <stdint.h>
+#include <math.h>
 #include "FreeRTOS.h"
 #include "task.h"
 /*
@@ -9,20 +10,27 @@
  *  The second one is: closed loop transfer function, which is the PID control theory with feedback
  *	Only use closed loop
  *  3 transfer function (S domain):
- *    1. Control System engineering page 165/ graph C.
+ *    1. Control System engineering page 165/ graph C. system0Sdomain = (a/s) *(9/(1*s^2+9*s+9))
  *    2.
  *    3.
  *    the system function G(s) (NOTE: G(s) is not a transfer function)
  */
 
-PID_TypeDef TPID;
-double pidInput, pidOut, pidSetpoint;
+// Structure to strore PID data and pointer to PID structure
+struct pid_controller ctrldata;
 
-uint32_t u_pidSimOutput;
-uint32_t u_pidSimInput;
-uint32_t u_pidSimSetpoint;
+pid_t pid;
+
+// Control loop input,output and setpoint variables
+float input = 0, output = 0;
+float setpoint = 1000;
+
+// Control loop gains
+float kp = 1, ki = 0.0, kd = 0.0;
 
 void u_pidSim_task_PidSim(void *param);
+void u_pidSimUpdateOutput(void *param);
+float u_pidSim_system0TimeDomain(float timeVar, float inputVar);
 TaskHandle_t u_pidSim_task_PidSimHandle;
 TaskHandle_t u_pidSim_task_PidSimSetupHandle;
 TaskHandle_t u_pidSim_task_PidSimControlHandle;
@@ -31,17 +39,21 @@ TaskHandle_t u_pidSim_task_UpdateOutputHandle;
 void u_pidSImCreate()
 {
     BaseType_t status;
-    status = xTaskCreate(u_pidSim_task_PidSim, "u_pidSim_task_PidSimTask", 200, NULL, 2, &u_pidSim_task_PidSimHandle);
+    status = xTaskCreate(u_pidSim_task_PidSim, "PidSimTask", 200, NULL, 5, &u_pidSim_task_PidSimHandle);
     configASSERT(status == pdPASS);
-    status = xTaskCreate(u_pidSim_task_UpdateOutputHandle, "u_pidSim_task_UpdateOutputTask", 200, NULL, 2, &u_pidSim_task_UpdateOutputHandle);
+    status = xTaskCreate(u_pidSimUpdateOutput, "UpdateOutputTask", 200, NULL, 5, &u_pidSim_task_UpdateOutputHandle);
     configASSERT(status == pdPASS);
 }
 void u_pidSimUpdateOutput(void *param);
 
 void u_pidSim_Init(void)
 {
-    PID(&TPID, &pidInput, &pidOut, &pidSetpoint, 2, 0, 0, _PID_P_ON_E, _PID_CD_DIRECT);
-    PID_SetSampleTime(&TPID, 100);
+    // Prepare PID controller for operation
+    pid = pid_create(&ctrldata, &input, &output, &setpoint, kp, ki, kd);
+    // Set controler output limits from 0 to 200
+    pid_limits(pid, 1, 1023);
+    // Allow PID to compute and change output
+    pid_auto(pid);
 }
 uint32_t systemFuctionTimeDomain(uint32_t u32_inputVar)
 {
@@ -56,19 +68,29 @@ void u_pidSim_task_PidSim(void *param)
 
     while (1)
     {
-        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(100));
-        PID_Compute(&TPID);
+        // vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(10));
+        vTaskDelay(pdMS_TO_TICKS(100));
+
+        pid_compute(pid);
+
         xTaskNotifyGive(u_pidSim_task_UpdateOutputHandle);
     }
 }
 
 void u_pidSimUpdateOutput(void *param)
 {
+    double timeT = 0.1;
     while (1)
     {
+        timeT = timeT + 0.1;
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-        u_pidSimOutput = (uint32_t)pidOut;
-        u_pidSimInput = (uint32_t)pidInput;
-        u_pidSimSetpoint = (uint32_t)u_pidSimSetpoint;
+
+        input = u_pidSim_system0TimeDomain(timeT, output);
     }
+}
+
+float u_pidSim_system0TimeDomain(float timeVar, float inputVar)
+{
+
+    return inputVar * timeVar - (inputVar / 9) + ((inputVar * exp(-9 * timeVar)) / 9);
 }
