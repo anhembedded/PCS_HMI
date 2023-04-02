@@ -33,7 +33,7 @@ void u_pidSImCreate()
     BaseType_t status;
     status = xTaskCreate(u_pidSim_task_PidSim, "u_pidSim_task_PidSimTask", 200, NULL, 2, &u_pidSim_task_PidSimHandle);
     configASSERT(status == pdPASS);
-    status = xTaskCreate(u_pidSim_task_UpdateOutputHandle, "u_pidSim_task_UpdateOutputTask", 200, 2, &u_pidSim_task_UpdateOutputHandle);
+    status = xTaskCreate(u_pidSim_task_UpdateOutputHandle, "u_pidSim_task_UpdateOutputTask", 200, NULL, 2, &u_pidSim_task_UpdateOutputHandle);
     configASSERT(status == pdPASS);
 }
 void u_pidSimUpdateOutput(void *param);
@@ -58,9 +58,10 @@ void u_pidSim_task_PidSim(void *param)
     {
         vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(100));
         PID_Compute(&TPID);
-        vTaskNotifyGive(u_pidSim_task_UpdateOutputHandle);
+        xTaskNotifyGive(u_pidSim_task_UpdateOutputHandle);
     }
 }
+
 void u_pidSimUpdateOutput(void *param)
 {
     while (1)

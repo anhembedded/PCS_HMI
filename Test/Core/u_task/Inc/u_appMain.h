@@ -7,6 +7,7 @@
 #include "u_appPwm.h"
 #include "u_appDigitalInput.h"
 #include "u_appDigitalOutput.h"
+#include "u_pidSim.h"
 
 extern uint32_t u32_applicationAdc[4];
 extern uint32_t u32_applicationAdc_ptr;

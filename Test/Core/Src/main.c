@@ -43,8 +43,8 @@
 #include "u_pwm.h"
 #include "u_rcc.h"
 #include "u_firmwareDefination.h"
-#include "pid.h"
 #include "u_appMain.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,8 +65,6 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-PID_TypeDef TPID;
-double Temp, PIDOut, TempSetpoint;
 
 
 /* USER CODE END PV */
@@ -134,9 +132,9 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 #ifdef USE_SEGGER_SYSVIEW
-  NVIC_SetPriorityGrouping( 0 );
-  SEGGER_SYSVIEW_Conf();
-   SEGGER_SYSVIEW_Start();
+ NVIC_SetPriorityGrouping( 0 );
+ SEGGER_SYSVIEW_Conf();
+ SEGGER_SYSVIEW_Start();
 #endif /* USE_SEGGER_SYSVIEW */
 
   u_gpio_OnboardInit_LED();
@@ -148,7 +146,7 @@ int main(void)
   LL_ADC_Enable(ADC1);
   HAL_Delay(10);
   u_appMainCreate();
-  PID(&TPID, &Temp, &PIDOut, &TempSetpoint, 2, 5, 1, _PID_P_ON_E, _PID_CD_DIRECT);
+
   /* USER CODE END 2 */
 
   /* Init scheduler */
