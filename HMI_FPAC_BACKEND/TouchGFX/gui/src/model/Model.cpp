@@ -1,6 +1,9 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
-#ifndef SIMULATOR
+#include <cstdint>
+#ifdef SIMULATOR
+
+#else
 #include "u_firmwareDefination.h"
 #include "u_appMain.h"
 #include "FreeRTOS.h"
@@ -12,7 +15,7 @@
 Model::Model() : modelListener(0)
 {
 #ifdef SIMULATOR
-    u_pidSim_Init();
+
 #else
 
 #endif // SIMULATOR
@@ -24,7 +27,6 @@ void Model::tick()
     tickVal++;
     if (tickVal % 10)
     {
-        PID_Compute(&TPID);
     }
 
 #else

@@ -7,12 +7,13 @@
 #include <touchgfx/Utils.hpp>
 
 #ifndef SIMULATOR
-#include "u_appMain.h"
-#include "u_pwm.h"
-#include "array"
+    #include "u_appMain.h"
+    #include "u_pwm.h"
+    #include "array"
 #else
-#include "u_pidSim.h"
+ 
 #endif
+
 
 class ModelListener;
 
@@ -52,7 +53,7 @@ public:
     void sendAdcOuputToBackEnd_1(uint32_t registerVar);
     void sendAdcOuputToBackEnd_0(uint32_t registerVar);
 #ifndef SIMULATOR
-    uint32_t modelGetTick();
+   
     std::array<uint32_t, 4> getCurrentADC() const
     {
         return adcValue;
@@ -65,6 +66,7 @@ protected:
      */
     ModelListener *modelListener;
 #ifdef SIMULATOR
+    uint32_t modelGetTick();
     uint32_t tickVal;
 #endif // SIMULATOR
 
@@ -85,7 +87,7 @@ public:
     {
         return myDummyVar;
     }
-    dummyClass_type();
+  
 };
 
 #endif /* INCLUDE_GUI_MODEL_MODEL */
