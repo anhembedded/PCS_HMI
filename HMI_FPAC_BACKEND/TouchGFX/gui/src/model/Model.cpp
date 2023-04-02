@@ -11,17 +11,23 @@
 
 Model::Model() : modelListener(0)
 {
-#ifndef SIMULATOR
+#ifdef SIMULATOR
+    u_pidSim_Init();
+#else
 
-#endif // !SIMULATOR
+#endif // SIMULATOR
 }
 
 void Model::tick()
 {
 #ifdef SIMULATOR
     tickVal++;
-#endif // SIMULATOR
-#ifndef SIMULATOR
+    if (tickVal % 10)
+    {
+        PID_Compute(&TPID);
+    }
+
+#else
     auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, &u32_adcPtr, 0);
     if (isRecieved == pdTRUE)
     {
@@ -44,7 +50,8 @@ void Model::tick()
              modelListener->notifyDigitalInput(u32_digitalInputVar);
          }
      } */
-#endif // !SIMULATOR
+
+#endif // SIMULATOR
 }
 
 void Model::sendAdcOuputToBackEnd_1(uint32_t registerVar)
@@ -66,3 +73,10 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
     xQueueSend(queue_updatePwmCh1Handle, &registerVar, 0);
 #endif // !SIMULATOR
 }
+
+#ifdef SIMULATOR
+uint32_t Model::modelGetTick()
+{
+    return this->tickVal;
+}
+#endif // SIMULATOR

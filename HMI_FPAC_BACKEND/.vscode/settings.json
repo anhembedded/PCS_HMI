@@ -6,5 +6,6 @@
         "stm32f4xx_hal.h": "c",
         "freertos.h": "c"
     },
-    "cmake.sourceDirectory": "${workspaceFolder}/STM32CubeIDE"
+    "cmake.sourceDirectory": "${workspaceFolder}/STM32CubeIDE",
+    "C_Cpp.dimInactiveRegions": false
 }

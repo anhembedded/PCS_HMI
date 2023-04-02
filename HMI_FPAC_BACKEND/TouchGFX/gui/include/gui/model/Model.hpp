@@ -10,7 +10,9 @@
 #include "u_appMain.h"
 #include "u_pwm.h"
 #include "array"
-#endif // !SIMULATOR
+#else
+#include "u_pidSim.h"
+#endif
 
 class ModelListener;
 
@@ -50,6 +52,7 @@ public:
     void sendAdcOuputToBackEnd_1(uint32_t registerVar);
     void sendAdcOuputToBackEnd_0(uint32_t registerVar);
 #ifndef SIMULATOR
+    uint32_t modelGetTick();
     std::array<uint32_t, 4> getCurrentADC() const
     {
         return adcValue;

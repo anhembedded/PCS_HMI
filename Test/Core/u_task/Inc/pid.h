@@ -141,7 +141,7 @@
 
 	/* ------------------------------------------------------------------ */
 	#elif defined(SIMULATOR)
-	#define GetTime() xTaskGetTickCount()
+	#define GetTime() modelGetTick()
 	#elif defined(USE_FREERTOS)
 #include "FreeRTOS.h"
 #include "task.h"

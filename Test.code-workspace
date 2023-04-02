@@ -64,7 +64,8 @@
 			"streambuf": "cpp",
 			"stm32f4xx.h": "c",
 			"u_apppwm.h": "c",
-			"u_appdigitaloutput.h": "c"
+			"u_appdigitaloutput.h": "c",
+			"pid.h": "c"
 		},
 		"cSpell.enabled": false
 	}
