@@ -1,155 +1,311 @@
-/*	Floating point PID control loop for Microcontrollers
-	Copyright (C) 2015 Jesus Ruben Santa Anna Zamudio.
+﻿ /*
+------------------------------------------------------------------------------
+~ File   : pid.c
+~ Author : Majid Derhambakhsh
+~ Version: V1.0.0
+~ Created: 02/11/2021 03:43:00 AM
+~ Brief  :
+~ Support:
+		   E-Mail : Majid.do16@gmail.com (subject : Embedded Library Support)
 
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+		   Github : https://github.com/Majid-Derhambakhsh
+------------------------------------------------------------------------------
+~ Description:
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
+~ Attention  :
 
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+~ Changes    :
+------------------------------------------------------------------------------
+*/
 
-	Author website: http://www.geekfactory.mx
-	Author e-mail: ruben at geekfactory dot mx
- */
-#include "PID.h"
+#include "pid.h"
 
-pid_t pid_create(pid_t pid, float* in, float* out, float* set, float kp, float ki, float kd)
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ Initialize ~~~~~~~~~~~~~~~~ */
+void PID_Init(PID_TypeDef *uPID)
 {
-	pid->input = in;
-	pid->output = out;
-	pid->setpoint = set;
-	pid->automode = false;
-
-	pid_limits(pid, 0, 255);
-
-	// Set default sample time to 100 ms
-	pid->sampletime = 100 * (TICK_SECOND / 1000);
-
-	pid_direction(pid, E_PID_DIRECT);
-	pid_tune(pid, kp, ki, kd);
-
-	pid->lasttime = tick_get() - pid->sampletime;
-
-	return pid;
-}
-
-bool pid_need_compute(pid_t pid)
-{
-	// Check if the PID period has elapsed
-	return(tick_get() - pid->lasttime >= pid->sampletime) ? true : false;
-}
-
-void pid_compute(pid_t pid)
-{
-	// Check if control is enabled
-	if (!pid->automode)
-		return false;
+	/* ~~~~~~~~~~ Set parameter ~~~~~~~~~~ */
+	uPID->OutputSum = *uPID->MyOutput;
+	uPID->LastInput = *uPID->MyInput;
 	
-	float in = *(pid->input);
-	// Compute error
-	float error = (*(pid->setpoint)) - in;
-	// Compute integral
-	pid->iterm += (pid->Ki * error);
-	if (pid->iterm > pid->omax)
-		pid->iterm = pid->omax;
-	else if (pid->iterm < pid->omin)
-		pid->iterm = pid->omin;
-	// Compute differential on input
-	float dinput = in - pid->lastin;
-	// Compute PID output
-	float out = pid->Kp * error + pid->iterm - pid->Kd * dinput;
-	// Apply limit to output value
-	if (out > pid->omax)
-		out = pid->omax;
-	else if (out < pid->omin)
-		out = pid->omin;
-	// Output to pointed variable
-	(*pid->output) = out;
-	// Keep track of some variables for next execution
-	pid->lastin = in;
-	pid->lasttime = tick_get();;
+	if (uPID->OutputSum > uPID->OutMax)
+	{
+		uPID->OutputSum = uPID->OutMax;
+	}
+	else if (uPID->OutputSum < uPID->OutMin)
+	{
+		uPID->OutputSum = uPID->OutMin;
+	}
+	else { }
+	
 }
 
-void pid_tune(pid_t pid, float kp, float ki, float kd)
+void PID(PID_TypeDef *uPID, double *Input, double *Output, double *Setpoint, double Kp, double Ki, double Kd, PIDPON_TypeDef POn, PIDCD_TypeDef ControllerDirection)
 {
-	// Check for validity
-	if (kp < 0 || ki < 0 || kd < 0)
+	/* ~~~~~~~~~~ Set parameter ~~~~~~~~~~ */
+	uPID->MyOutput   = Output;
+	uPID->MyInput    = Input;
+	uPID->MySetpoint = Setpoint;
+	uPID->InAuto     = (PIDMode_TypeDef)_FALSE;
+	
+	PID_SetOutputLimits(uPID, 0, _PID_8BIT_PWM_MAX);
+	
+	uPID->SampleTime = _PID_SAMPLE_TIME_MS_DEF; /* default Controller Sample Time is 0.1 seconds */
+	
+	PID_SetControllerDirection(uPID, ControllerDirection);
+	PID_SetTunings2(uPID, Kp, Ki, Kd, POn);
+	
+	uPID->LastTime = GetTime() - uPID->SampleTime;
+	
+}
+
+void PID2(PID_TypeDef *uPID, double *Input, double *Output, double *Setpoint, double Kp, double Ki, double Kd, PIDCD_TypeDef ControllerDirection)
+{
+	PID(uPID, Input, Output, Setpoint, Kp, Ki, Kd, _PID_P_ON_E, ControllerDirection);
+}
+
+/* ~~~~~~~~~~~~~~~~~ Computing ~~~~~~~~~~~~~~~~~ */
+uint8_t PID_Compute(PID_TypeDef *uPID)
+{
+	
+	uint32_t now;
+	uint32_t timeChange;
+	
+	double input;
+	double error;
+	double dInput;
+	double output;
+	
+	/* ~~~~~~~~~~ Check PID mode ~~~~~~~~~~ */
+	if (!uPID->InAuto)
+	{
+		return _FALSE;
+	}
+	
+	/* ~~~~~~~~~~ Calculate time ~~~~~~~~~~ */
+	now        = GetTime();
+	timeChange = (now - uPID->LastTime);
+	
+	if (timeChange >= uPID->SampleTime)
+	{
+		/* ..... Compute all the working error variables ..... */
+		input   = *uPID->MyInput;
+		error   = *uPID->MySetpoint - input;
+		dInput  = (input - uPID->LastInput);
+		
+		uPID->OutputSum     += (uPID->Ki * error);
+		
+		/* ..... Add Proportional on Measurement, if P_ON_M is specified ..... */
+		if (!uPID->POnE)
+		{
+			uPID->OutputSum -= uPID->Kp * dInput;
+		}
+		
+		if (uPID->OutputSum > uPID->OutMax)
+		{
+			uPID->OutputSum = uPID->OutMax;
+		}
+		else if (uPID->OutputSum < uPID->OutMin)
+		{
+			uPID->OutputSum = uPID->OutMin;
+		}
+		else { }
+		
+		/* ..... Add Proportional on Error, if P_ON_E is specified ..... */
+		if (uPID->POnE)
+		{
+			output = uPID->Kp * error;
+		}
+		else
+		{
+			output = 0;
+		}
+		
+		/* ..... Compute Rest of PID Output ..... */
+		output += uPID->OutputSum - uPID->Kd * dInput;
+		
+		if (output > uPID->OutMax)
+		{
+			output = uPID->OutMax;
+		}
+		else if (output < uPID->OutMin)
+		{
+			output = uPID->OutMin;
+		}
+		else { }
+		
+		*uPID->MyOutput = output;
+		
+		/* ..... Remember some variables for next time ..... */
+		uPID->LastInput = input;
+		uPID->LastTime = now;
+		
+		return _TRUE;
+		
+	}
+	else
+	{
+		return _FALSE;
+	}
+	
+}
+
+/* ~~~~~~~~~~~~~~~~~ PID Mode ~~~~~~~~~~~~~~~~~~ */
+void            PID_SetMode(PID_TypeDef *uPID, PIDMode_TypeDef Mode)
+{
+	
+	uint8_t newAuto = (Mode == _PID_MODE_AUTOMATIC);
+	
+	/* ~~~~~~~~~~ Initialize the PID ~~~~~~~~~~ */
+	if (newAuto && !uPID->InAuto)
+	{
+		PID_Init(uPID);
+	}
+	
+	uPID->InAuto = (PIDMode_TypeDef)newAuto;
+	
+}
+PIDMode_TypeDef PID_GetMode(PID_TypeDef *uPID)
+{
+	return uPID->InAuto ? _PID_MODE_AUTOMATIC : _PID_MODE_MANUAL;
+}
+
+/* ~~~~~~~~~~~~~~~~ PID Limits ~~~~~~~~~~~~~~~~~ */
+void PID_SetOutputLimits(PID_TypeDef *uPID, double Min, double Max)
+{
+	/* ~~~~~~~~~~ Check value ~~~~~~~~~~ */
+	if (Min >= Max)
+	{
 		return;
+	}
 	
-	//Compute sample time in seconds
-	float ssec = ((float) pid->sampletime) / ((float) TICK_SECOND);
-
-	pid->Kp = kp;
-	pid->Ki = ki * ssec;
-	pid->Kd = kd / ssec;
-
-	if (pid->direction == E_PID_REVERSE) {
-		pid->Kp = 0 - pid->Kp;
-		pid->Ki = 0 - pid->Ki;
-		pid->Kd = 0 - pid->Kd;
+	uPID->OutMin = Min;
+	uPID->OutMax = Max;
+	
+	/* ~~~~~~~~~~ Check PID Mode ~~~~~~~~~~ */
+	if (uPID->InAuto)
+	{
+		
+		/* ..... Check out value ..... */
+		if (*uPID->MyOutput > uPID->OutMax)
+		{
+			*uPID->MyOutput = uPID->OutMax;
+		}
+		else if (*uPID->MyOutput < uPID->OutMin)
+		{
+			*uPID->MyOutput = uPID->OutMin;
+		}
+		else { }
+		
+		/* ..... Check out value ..... */
+		if (uPID->OutputSum > uPID->OutMax)
+		{
+			uPID->OutputSum = uPID->OutMax;
+		}
+		else if (uPID->OutputSum < uPID->OutMin)
+		{
+			uPID->OutputSum = uPID->OutMin;
+		}
+		else { }
+		
 	}
+	
 }
 
-void pid_sample(pid_t pid, uint32_t time)
+/* ~~~~~~~~~~~~~~~~ PID Tunings ~~~~~~~~~~~~~~~~ */
+void PID_SetTunings(PID_TypeDef *uPID, double Kp, double Ki, double Kd)
 {
-	if (time > 0) {
-		float ratio = (float) (time * (TICK_SECOND / 1000)) / (float) pid->sampletime;
-		pid->Ki *= ratio;
-		pid->Kd /= ratio;
-		pid->sampletime = time * (TICK_SECOND / 1000);
+	PID_SetTunings2(uPID, Kp, Ki, Kd, uPID->POn);
+}
+void PID_SetTunings2(PID_TypeDef *uPID, double Kp, double Ki, double Kd, PIDPON_TypeDef POn)
+{
+	
+	double SampleTimeInSec;
+	
+	/* ~~~~~~~~~~ Check value ~~~~~~~~~~ */
+	if (Kp < 0 || Ki < 0 || Kd < 0)
+	{
+		return;
 	}
+	
+	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	uPID->POn    = POn;
+	uPID->POnE   = (PIDPON_TypeDef)(POn == _PID_P_ON_E);
+
+	uPID->DispKp = Kp;
+	uPID->DispKi = Ki;
+	uPID->DispKd = Kd;
+	
+	/* ~~~~~~~~~ Calculate time ~~~~~~~~ */
+	SampleTimeInSec = ((double)uPID->SampleTime) / 1000;
+	
+	uPID->Kp = Kp;
+	uPID->Ki = Ki * SampleTimeInSec;
+	uPID->Kd = Kd / SampleTimeInSec;
+	
+	/* ~~~~~~~~ Check direction ~~~~~~~~ */
+	if (uPID->ControllerDirection == _PID_CD_REVERSE)
+	{
+		
+		uPID->Kp = (0 - uPID->Kp);
+		uPID->Ki = (0 - uPID->Ki);
+		uPID->Kd = (0 - uPID->Kd);
+		
+	}
+	
 }
 
-void pid_limits(pid_t pid, float min, float max)
+/* ~~~~~~~~~~~~~~~ PID Direction ~~~~~~~~~~~~~~~ */
+void          PID_SetControllerDirection(PID_TypeDef *uPID, PIDCD_TypeDef Direction)
 {
-	if (min >= max) return;
-	pid->omin = min;
-	pid->omax = max;
-	//Adjust output to new limits
-	if (pid->automode) {
-		if (*(pid->output) > pid->omax)
-			*(pid->output) = pid->omax;
-		else if (*(pid->output) < pid->omin)
-			*(pid->output) = pid->omin;
-
-		if (pid->iterm > pid->omax)
-			pid->iterm = pid->omax;
-		else if (pid->iterm < pid->omin)
-			pid->iterm = pid->omin;
+	/* ~~~~~~~~~~ Check parameters ~~~~~~~~~~ */
+	if ((uPID->InAuto) && (Direction !=uPID->ControllerDirection))
+	{
+		
+		uPID->Kp = (0 - uPID->Kp);
+		uPID->Ki = (0 - uPID->Ki);
+		uPID->Kd = (0 - uPID->Kd);
+		
 	}
+	
+	uPID->ControllerDirection = Direction;
+	
+}
+PIDCD_TypeDef PID_GetDirection(PID_TypeDef *uPID)
+{
+	return uPID->ControllerDirection;
 }
 
-void pid_auto(pid_t pid)
+/* ~~~~~~~~~~~~~~~ PID Sampling ~~~~~~~~~~~~~~~~ */
+void PID_SetSampleTime(PID_TypeDef *uPID, int32_t NewSampleTime)
 {
-	// If going from manual to auto
-	if (!pid->automode) {
-		pid->iterm = *(pid->output);
-		pid->lastin = *(pid->input);
-		if (pid->iterm > pid->omax)
-			pid->iterm = pid->omax;
-		else if (pid->iterm < pid->omin)
-			pid->iterm = pid->omin;
-		pid->automode = true;
+	
+	double ratio;
+	
+	/* ~~~~~~~~~~ Check value ~~~~~~~~~~ */
+	if (NewSampleTime > 0)
+	{
+		
+		ratio = (double)NewSampleTime / (double)uPID->SampleTime;
+		
+		uPID->Ki *= ratio;
+		uPID->Kd /= ratio;
+		uPID->SampleTime = (uint32_t)NewSampleTime;
+		
 	}
+	
 }
 
-void pid_manual(pid_t pid)
+/* ~~~~~~~~~~~~~ Get Tunings Param ~~~~~~~~~~~~~ */
+double PID_GetKp(PID_TypeDef *uPID)
 {
-	pid->automode = false;
+	return uPID->DispKp;
 }
-
-void pid_direction(pid_t pid, enum pid_control_directions dir)
+double PID_GetKi(PID_TypeDef *uPID)
 {
-	if (pid->automode && pid->direction != dir) {
-		pid->Kp = (0 - pid->Kp);
-		pid->Ki = (0 - pid->Ki);
-		pid->Kd = (0 - pid->Kd);
-	}
-	pid->direction = dir;
+	return uPID->DispKi;
+}
+double PID_GetKd(PID_TypeDef *uPID)
+{
+	return uPID->DispKd;
 }

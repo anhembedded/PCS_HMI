@@ -1,195 +1,258 @@
-/*	Floating point PID control loop for Microcontrollers
-	Copyright (C) 2014 Jesus Ruben Santa Anna Zamudio.
+ /*
+------------------------------------------------------------------------------
+~ File   : pid.h
+~ Author : Majid Derhambakhsh
+~ Version: V1.0.0
+~ Created: 02/11/2021 03:43:00 AM
+~ Brief  :
+~ Support:
+		   E-Mail : Majid.do16@gmail.com (subject : Embedded Library Support)
 
-	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
-	the Free Software Foundation, either version 3 of the License, or
-	(at your option) any later version.
+		   Github : https://github.com/Majid-Derhambakhsh
+------------------------------------------------------------------------------
+~ Description:
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
+~ Attention  :
 
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+~ Changes    :
+------------------------------------------------------------------------------
+*/
 
-	Author website: http://www.geekfactory.mx
-	Author e-mail: ruben at geekfactory dot mx
- */
-#ifndef PID_H
-#define PID_H
-/*-------------------------------------------------------------*/
-/*		Includes and dependencies			*/
-/*-------------------------------------------------------------*/
+#ifndef __PID_H_
+#define __PID_H_
 
-#include <stdbool.h>
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Include ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #include <stdint.h>
-#include "FreeRTOS.h"
-#include "task.h"
+#include <string.h>
 
-/*-------------------------------------------------------------*/
-/*		Macros and definitions				*/
-/*-------------------------------------------------------------*/
+/* ------------------------------------------------------------------ */
 
-/*-------------------------------------------------------------*/
-/*		Typedefs enums & structs			*/
-/*-------------------------------------------------------------*/
+#ifdef __CODEVISIONAVR__  /* Check compiler */
 
-/**
- * Defines if the controler is direct or reverse
- */
+#pragma warn_unref_func- /* Disable 'unused function' warning */
 
-#define tick_get() xTaskGetTickCount()
-#define TICK_SECOND 1000U
-enum pid_control_directions {
-	E_PID_DIRECT,
-	E_PID_REVERSE,
-};
+/* ------------------------------------------------------------------ */
 
-/**
- * Structure that holds PID all the PID controller data, multiple instances are
- * posible using different structures for each controller
- */
-struct pid_controller {
-	// Input, output and setpoint
-	float * input; //!< Current Process Value
-	float * output; //!< Corrective Output from PID Controller
-	float * setpoint; //!< Controller Setpoint
-	// Tuning parameters
-	float Kp; //!< Stores the gain for the Proportional term
-	float Ki; //!< Stores the gain for the Integral term
-	float Kd; //!< Stores the gain for the Derivative term
-	// Output minimum and maximum values
-	float omin; //!< Maximum value allowed at the output
-	float omax; //!< Minimum value allowed at the output
-	// Variables for PID algorithm
-	float iterm; //!< Accumulator for integral term
-	float lastin; //!< Last input value for differential term
-	// Time related
-	uint32_t lasttime; //!< Stores the time when the control loop ran last time
-	uint32_t sampletime; //!< Defines the PID sample time
-	// Operation mode
-	uint8_t automode; //!< Defines if the PID controller is enabled or disabled
-	enum pid_control_directions direction;
-};
+#elif defined(__GNUC__) && !defined(USE_HAL_DRIVER)  /* Check compiler */
 
-typedef struct pid_controller * pid_t;
+#pragma GCC diagnostic ignored "-Wunused-function" /* Disable 'unused function' warning */
 
-/*-------------------------------------------------------------*/
-/*		Function prototypes				*/
-/*-------------------------------------------------------------*/
-#ifdef	__cplusplus
-extern "C" {
-#endif
-	/**
-	 * @brief Creates a new PID controller
-	 *
-	 * Creates a new pid controller and initializes it�s input, output and internal
-	 * variables. Also we set the tuning parameters
-	 *
-	 * @param pid A pointer to a pid_controller structure
-	 * @param in Pointer to float value for the process input
-	 * @param out Poiter to put the controller output value
-	 * @param set Pointer float with the process setpoint value
-	 * @param kp Proportional gain
-	 * @param ki Integral gain
-	 * @param kd Diferential gain
-	 *
-	 * @return returns a pid_t controller handle
-	 */
-	pid_t pid_create(pid_t pid, float* in, float* out, float* set, float kp, float ki, float kd);
+/* ------------------------------------------------------------------ */
 
-	/**
-	 * @brief Check if PID loop needs to run
-	 *
-	 * Determines if the PID control algorithm should compute a new output value,
-	 * if this returs true, the user should read process feedback (sensors) and
-	 * place the reading in the input variable, then call the pid_compute() function.
-	 *
-	 * @return return Return true if PID control algorithm is required to run
-	 */
-	bool pid_need_compute(pid_t pid);
+#elif defined(USE_HAL_DRIVER)  /* Check driver */
 
-	/**
-	 * @brief Computes the output of the PID control
-	 *
-	 * This function computes the PID output based on the parameters, setpoint and
-	 * current system input.
-	 *
-	 * @param pid The PID controller instance which will be used for computation
-	 */
-	void pid_compute(pid_t pid);
+	#include "main.h"
 
-	/**
-	 * @brief Sets new PID tuning parameters
-	 *
-	 * Sets the gain for the Proportional (Kp), Integral (Ki) and Derivative (Kd)
-	 * terms.
-	 *
-	 * @param pid The PID controller instance to modify
-	 * @param kp Proportional gain
-	 * @param ki Integral gain
-	 * @param kd Derivative gain
-	 */
-	void pid_tune(pid_t pid, float kp, float ki, float kd);
+	/* --------------- Check Mainstream series --------------- */
 
-	/**
-	 * @brief Sets the pid algorithm period
-	 *
-	 * Changes the between PID control loop computations.
-	 *
-	 * @param pid The PID controller instance to modify
-	 * @param time The time in milliseconds between computations
-	 */
-	void pid_sample(pid_t pid, uint32_t time);
+	#ifdef STM32F0
+		#include "stm32f0xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32F1)
+		#include "stm32f1xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32F2)
+		#include "stm32f2xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32F3)
+		#include "stm32f3xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32F4)
+		#include "stm32f4xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32F7)
+		#include "stm32f7xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32G0)
+		#include "stm32g0xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32G4)
+		#include "stm32g4xx_hal.h"       /* Import HAL library */
 
-	/**
-	 * @brief Sets the limits for the PID controller output
-	 *
-	 * @param pid The PID controller instance to modify
-	 * @param min The minimum output value for the PID controller
-	 * @param max The maximum output value for the PID controller
-	 */
-	void pid_limits(pid_t pid, float min, float max);
+	/* ------------ Check High Performance series ------------ */
 
-	/**
-	 * @brief Enables automatic control using PID
-	 *
-	 * Enables the PID control loop. If manual output adjustment is needed you can
-	 * disable the PID control loop using pid_manual(). This function enables PID
-	 * automatic control at program start or after calling pid_manual()
-	 *
-	 * @param pid The PID controller instance to enable
-	 */
-	void pid_auto(pid_t pid);
+	#elif defined(STM32H7)
+		#include "stm32h7xx_hal.h"       /* Import HAL library */
 
-	/**
-	 * @brief Disables automatic process control
-	 *
-	 * Disables the PID control loop. User can modify the value of the output
-	 * variable and the controller will not overwrite it.
-	 *
-	 * @param pid The PID controller instance to disable
-	 */
-	void pid_manual(pid_t pid);
+	/* ------------ Check Ultra low power series ------------- */
 
-	/**
-	 * @brief Configures the PID controller direction
-	 *
-	 * Sets the direction of the PID controller. The direction is "DIRECT" when a
-	 * increase of the output will cause a increase on the measured value and
-	 * "REVERSE" when a increase on the controller output will cause a decrease on
-	 * the measured value.
-	 *
-	 * @param pid The PID controller instance to modify
-	 * @param direction The new direction of the PID controller
-	 */
-	void pid_direction(pid_t pid, enum pid_control_directions dir);
+	#elif defined(STM32L0)
+		#include "stm32l0xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32L1)
+		#include "stm32l1xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32L5)
+		#include "stm32l5xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32L4)
+		#include "stm32l4xx_hal.h"       /* Import HAL library */
+	#elif defined(STM32H7)
+		#include "stm32h7xx_hal.h"       /* Import HAL library */
+	#else
+	#endif /* STM32F1 */
 
-#ifdef	__cplusplus
-}
-#endif
+	/* ------------------------------------------------------- */
+
+	#if defined ( __ICCARM__ ) /* ICCARM Compiler */
+
+	#pragma diag_suppress=Pe177   /* Disable 'unused function' warning */
+
+	#elif defined   (  __GNUC__  ) /* GNU Compiler */
+
+	#pragma diag_suppress 177     /* Disable 'unused function' warning */
+
+	#endif /* __ICCARM__ */
+
+/* ------------------------------------------------------------------ */
+
+#else                     /* Compiler not found */
+
+#error Chip or Library not supported  /* Send error */
+
+#endif /* __CODEVISIONAVR__ */
+
+/* ------------------------------------------------------------------ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defines ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ------------------------ Library ------------------------ */
+#define _PID_LIBRARY_VERSION    1.0.0
+
+/* ------------------------ Public ------------------------- */
+#define _PID_8BIT_PWM_MAX       UINT8_MAX
+#define _PID_SAMPLE_TIME_MS_DEF 100
+
+#ifndef _FALSE
+
+	#define _FALSE 0
 
 #endif
-// End of Header file
+
+#ifndef _TRUE
+
+	#define _TRUE 1
+
+#endif
+
+/* ---------------------- By compiler ---------------------- */
+#ifndef GetTime
+
+	/* ---------------------- By compiler ---------------------- */
+
+	#ifdef __CODEVISIONAVR__  /* Check compiler */
+
+		#define GetTime()   0
+
+	/* ------------------------------------------------------------------ */
+
+	#elif defined(__GNUC__) && !defined(USE_HAL_DRIVER)  /* Check compiler */
+
+		#define GetTime()   0
+
+	/* ------------------------------------------------------------------ */
+
+	#elif defined(USE_HAL_DRIVER)  /* Check driver */
+
+		#define GetTime()   HAL_GetTick()
+
+	/* ------------------------------------------------------------------ */
+
+	#else
+	#endif /* __CODEVISIONAVR__ */
+	/* ------------------------------------------------------------------ */
+
+#endif
+
+/* --------------------------------------------------------- */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Types ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* PID Mode */
+typedef enum
+{
+	
+	_PID_MODE_MANUAL    = 0,
+	_PID_MODE_AUTOMATIC = 1
+	
+}PIDMode_TypeDef;
+
+/* PID P On x */
+typedef enum
+{
+	
+	_PID_P_ON_M = 0, /* Proportional on Measurement */
+	_PID_P_ON_E = 1
+	
+}PIDPON_TypeDef;
+
+/* PID Control direction */
+typedef enum
+{
+	
+	_PID_CD_DIRECT  = 0,
+	_PID_CD_REVERSE = 1
+	
+}PIDCD_TypeDef;
+
+/* PID Structure */
+typedef struct
+{
+	
+	PIDPON_TypeDef  POnE;
+	PIDMode_TypeDef InAuto;
+
+	PIDPON_TypeDef  POn;
+	PIDCD_TypeDef   ControllerDirection;
+
+	uint32_t        LastTime;
+	uint32_t        SampleTime;
+
+	double          DispKp;
+	double          DispKi;
+	double          DispKd;
+
+	double          Kp;
+	double          Ki;
+	double          Kd;
+
+	double          *MyInput;
+	double          *MyOutput;
+	double          *MySetpoint;
+
+	double          OutputSum;
+	double          LastInput;
+
+	double          OutMin;
+	double          OutMax;
+	
+}PID_TypeDef;
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Variables ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Enum ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Struct ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Class ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Prototype ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* :::::::::::::: Init ::::::::::::: */
+void PID_Init(PID_TypeDef *uPID);
+
+void PID(PID_TypeDef *uPID, double *Input, double *Output, double *Setpoint, double Kp, double Ki, double Kd, PIDPON_TypeDef POn, PIDCD_TypeDef ControllerDirection);
+void PID2(PID_TypeDef *uPID, double *Input, double *Output, double *Setpoint, double Kp, double Ki, double Kd, PIDCD_TypeDef ControllerDirection);
+
+/* ::::::::::: Computing ::::::::::: */
+uint8_t PID_Compute(PID_TypeDef *uPID);
+
+/* ::::::::::: PID Mode :::::::::::: */
+void            PID_SetMode(PID_TypeDef *uPID, PIDMode_TypeDef Mode);
+PIDMode_TypeDef PID_GetMode(PID_TypeDef *uPID);
+
+/* :::::::::: PID Limits ::::::::::: */
+void PID_SetOutputLimits(PID_TypeDef *uPID, double Min, double Max);
+
+/* :::::::::: PID Tunings :::::::::: */
+void PID_SetTunings(PID_TypeDef *uPID, double Kp, double Ki, double Kd);
+void PID_SetTunings2(PID_TypeDef *uPID, double Kp, double Ki, double Kd, PIDPON_TypeDef POn);
+
+/* ::::::::: PID Direction ::::::::: */
+void          PID_SetControllerDirection(PID_TypeDef *uPID, PIDCD_TypeDef Direction);
+PIDCD_TypeDef PID_GetDirection(PID_TypeDef *uPID);
+
+/* ::::::::: PID Sampling :::::::::: */
+void PID_SetSampleTime(PID_TypeDef *uPID, int32_t NewSampleTime);
+
+/* ::::::: Get Tunings Param ::::::: */
+double PID_GetKp(PID_TypeDef *uPID);
+double PID_GetKi(PID_TypeDef *uPID);
+double PID_GetKd(PID_TypeDef *uPID);
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ End of the program ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#endif /* __PID_H_ */
