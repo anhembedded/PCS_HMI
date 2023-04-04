@@ -2,7 +2,7 @@
  * File: _coder_system0TimeDomainf_api.c
  *
  * MATLAB Coder version            : 4.3
- * C/C++ source code generated on  : 02-Apr-2023 14:33:49
+ * C/C++ source code generated on  : 03-Apr-2023 08:40:05
  */
 
 /* Include Files */
@@ -23,13 +23,13 @@ emlrtContext emlrtContextGlobal = { true,/* bFirstTime */
 };
 
 /* Function Declarations */
-static real32_T b_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
+static real_T b_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
   emlrtMsgIdentifier *parentId);
-static real32_T c_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
-  const emlrtMsgIdentifier *msgId);
-static real32_T emlrt_marshallIn(const emlrtStack *sp, const mxArray *timeVar,
+static real_T c_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
+  emlrtMsgIdentifier *msgId);
+static real_T emlrt_marshallIn(const emlrtStack *sp, const mxArray *timeVar,
   const char_T *identifier);
-static const mxArray *emlrt_marshallOut(const real32_T u);
+static const mxArray *emlrt_marshallOut(const real_T u);
 
 /* Function Definitions */
 
@@ -37,12 +37,12 @@ static const mxArray *emlrt_marshallOut(const real32_T u);
  * Arguments    : const emlrtStack *sp
  *                const mxArray *u
  *                const emlrtMsgIdentifier *parentId
- * Return Type  : real32_T
+ * Return Type  : real_T
  */
-static real32_T b_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
+static real_T b_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
   emlrtMsgIdentifier *parentId)
 {
-  real32_T y;
+  real_T y;
   y = c_emlrt_marshallIn(sp, emlrtAlias(u), parentId);
   emlrtDestroyArray(&u);
   return y;
@@ -52,15 +52,15 @@ static real32_T b_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u, const
  * Arguments    : const emlrtStack *sp
  *                const mxArray *src
  *                const emlrtMsgIdentifier *msgId
- * Return Type  : real32_T
+ * Return Type  : real_T
  */
-static real32_T c_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
-  const emlrtMsgIdentifier *msgId)
+static real_T c_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src, const
+  emlrtMsgIdentifier *msgId)
 {
-  real32_T ret;
+  real_T ret;
   static const int32_T dims = 0;
-  emlrtCheckBuiltInR2012b(sp, msgId, src, "single|double", false, 0U, &dims);
-  emlrtImportArrayR2015b(sp, src, &ret, 4, false);
+  emlrtCheckBuiltInR2012b(sp, msgId, src, "double", false, 0U, &dims);
+  ret = *(real_T *)emlrtMxGetData(src);
   emlrtDestroyArray(&src);
   return ret;
 }
@@ -69,12 +69,12 @@ static real32_T c_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
  * Arguments    : const emlrtStack *sp
  *                const mxArray *timeVar
  *                const char_T *identifier
- * Return Type  : real32_T
+ * Return Type  : real_T
  */
-static real32_T emlrt_marshallIn(const emlrtStack *sp, const mxArray *timeVar,
+static real_T emlrt_marshallIn(const emlrtStack *sp, const mxArray *timeVar,
   const char_T *identifier)
 {
-  real32_T y;
+  real_T y;
   emlrtMsgIdentifier thisId;
   thisId.fIdentifier = (const char *)identifier;
   thisId.fParent = NULL;
@@ -85,16 +85,15 @@ static real32_T emlrt_marshallIn(const emlrtStack *sp, const mxArray *timeVar,
 }
 
 /*
- * Arguments    : const real32_T u
+ * Arguments    : const real_T u
  * Return Type  : const mxArray *
  */
-static const mxArray *emlrt_marshallOut(const real32_T u)
+static const mxArray *emlrt_marshallOut(const real_T u)
 {
   const mxArray *y;
   const mxArray *m;
   y = NULL;
-  m = emlrtCreateNumericMatrix(1, 1, mxSINGLE_CLASS, mxREAL);
-  *(real32_T *)emlrtMxGetData(m) = u;
+  m = emlrtCreateDoubleScalar(u);
   emlrtAssign(&y, m);
   return y;
 }
@@ -108,8 +107,8 @@ static const mxArray *emlrt_marshallOut(const real32_T u)
 void system0TimeDomainf_api(const mxArray * const prhs[2], int32_T nlhs, const
   mxArray *plhs[1])
 {
-  real32_T timeVar;
-  real32_T inputVar;
+  real_T timeVar;
+  real_T pidOut;
   emlrtStack st = { NULL,              /* site */
     NULL,                              /* tls */
     NULL                               /* prev */
@@ -120,10 +119,10 @@ void system0TimeDomainf_api(const mxArray * const prhs[2], int32_T nlhs, const
 
   /* Marshall function inputs */
   timeVar = emlrt_marshallIn(&st, emlrtAliasP(prhs[0]), "timeVar");
-  inputVar = emlrt_marshallIn(&st, emlrtAliasP(prhs[1]), "inputVar");
+  pidOut = emlrt_marshallIn(&st, emlrtAliasP(prhs[1]), "pidOut");
 
   /* Invoke the target function */
-  timeVar = system0TimeDomainf(timeVar, inputVar);
+  timeVar = system0TimeDomainf(timeVar, pidOut);
 
   /* Marshall function outputs */
   plhs[0] = emlrt_marshallOut(timeVar);

@@ -2,7 +2,7 @@
  * File: system0TimeDomainf.c
  *
  * MATLAB Coder version            : 4.3
- * C/C++ source code generated on  : 02-Apr-2023 14:33:49
+ * C/C++ source code generated on  : 03-Apr-2023 08:40:05
  */
 
 /* Include Files */
@@ -12,16 +12,16 @@
 /* Function Definitions */
 
 /*
- * Arguments    : float timeVar
- *                float inputVar
- * Return Type  : float
+ * Arguments    : double timeVar
+ *                double pidOut
+ * Return Type  : double
  */
-float system0TimeDomainf(float timeVar, float inputVar)
+double system0TimeDomainf(double timeVar, double pidOut)
 {
-  float outputArg1_tmp;
-  outputArg1_tmp = 6.70820427F * timeVar / 2.0F;
-  return inputVar - inputVar * (float)exp(-(9.0F * timeVar) / 2.0F) * ((float)
-    cosh(outputArg1_tmp) + 6.70820427F * (float)sinh(outputArg1_tmp) / 5.0F);
+  double systemOut_tmp;
+  systemOut_tmp = 6.7082039324993694 * timeVar / 2.0;
+  return pidOut - pidOut * exp(-(9.0 * timeVar) / 2.0) * (cosh(systemOut_tmp) +
+    6.7082039324993694 * sinh(systemOut_tmp) / 5.0);
 }
 
 /*

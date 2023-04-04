@@ -2307,7 +2307,7 @@
             "Type": "SlideMenu",
             "Name": "controlPanel",
             "Y": 1,
-            "Width": 426,
+            "Width": 821,
             "Height": 480,
             "LockPosition": true,
             "FileNameBackground": "__generated\\clay_theme_images_backgrounds_800x480_gradient_light.png",
@@ -3037,6 +3037,301 @@
             }
           }
         ]
+      },
+      {
+        "Name": "ClosedLoopSetting",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "boxBackground",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 214,
+              "Green": 236,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "ClosedLoopGraph",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "boxBackground",
+            "X": 1,
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 214,
+              "Green": 236,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Container",
+            "Name": "digitalInput",
+            "X": 18,
+            "Y": 419,
+            "Width": 334,
+            "Height": 41,
+            "Components": [
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxDigitalInput_0",
+                "X": 302,
+                "Y": 6,
+                "Width": 26,
+                "Height": 27,
+                "Color": {
+                  "Red": 148,
+                  "Green": 148,
+                  "Blue": 148
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxDigitalInput_1",
+                "X": 253,
+                "Y": 6,
+                "Width": 26,
+                "Height": 27,
+                "Color": {
+                  "Red": 148,
+                  "Green": 148,
+                  "Blue": 148
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxDigitalInput_2",
+                "X": 203,
+                "Y": 6,
+                "Width": 26,
+                "Height": 27,
+                "Color": {
+                  "Red": 148,
+                  "Green": 148,
+                  "Blue": 148
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxDigitalInput_3",
+                "X": 155,
+                "Y": 6,
+                "Width": 26,
+                "Height": 27,
+                "Color": {
+                  "Red": 148,
+                  "Green": 148,
+                  "Blue": 148
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxDigitalInput_4",
+                "X": 106,
+                "Y": 6,
+                "Width": 26,
+                "Height": 27,
+                "Color": {
+                  "Red": 148,
+                  "Green": 148,
+                  "Blue": 148
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxDigitalInput_5",
+                "X": 54,
+                "Y": 6,
+                "Width": 26,
+                "Height": 27,
+                "Color": {
+                  "Red": 148,
+                  "Green": 148,
+                  "Blue": 148
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxDigitalInput_6",
+                "Y": 6,
+                "Width": 26,
+                "Height": 27,
+                "Color": {
+                  "Red": 148,
+                  "Green": 148,
+                  "Blue": 148
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textDigitalInput_0",
+                "X": 310,
+                "Y": 9,
+                "Width": 11,
+                "Height": 20,
+                "TextId": "__SingleUse_OM9M",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textDigitalInput_1",
+                "X": 261,
+                "Y": 9,
+                "Width": 11,
+                "Height": 20,
+                "TextId": "__SingleUse_KIX6",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textDigitalInput_2",
+                "X": 210,
+                "Y": 9,
+                "Width": 11,
+                "Height": 20,
+                "TextId": "__SingleUse_B9YF",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textDigitalInput_3",
+                "X": 162,
+                "Y": 9,
+                "Width": 11,
+                "Height": 20,
+                "TextId": "__SingleUse_0VH3",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textDigitalInput_4",
+                "X": 113,
+                "Y": 9,
+                "Width": 11,
+                "Height": 20,
+                "TextId": "__SingleUse_1MDU",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textDigitalInput_5",
+                "X": 62,
+                "Y": 9,
+                "Width": 11,
+                "Height": 20,
+                "TextId": "__SingleUse_V2PK",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textDigitalInput_6",
+                "X": 1,
+                "Y": 9,
+                "Width": 26,
+                "Height": 25,
+                "TextId": "__SingleUse_FMVK",
+                "TextRotation": "0"
+              }
+            ]
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "graphBackgroud",
+            "X": 10,
+            "Y": 6,
+            "Width": 780,
+            "Height": 334,
+            "LockPosition": true,
+            "DataSeed": -1706446005,
+            "NumberOfValues": 600,
+            "MaxY": 10.3,
+            "Precision": "1",
+            "LastIndex": 599,
+            "XAxisScale": 1.0,
+            "LabelSizeTop": 17,
+            "LabelSizeBottom": 29,
+            "LabelSizeLeft": 24,
+            "PaddingRight": 10,
+            "GraphType": "GraphWrapClear",
+            "GraphDrawers": [],
+            "XAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 30.0,
+              "LineWidth": 1,
+              "Alpha": 64
+            },
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 1.0,
+              "LineWidth": 1,
+              "Alpha": 104
+            },
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 30.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 74,
+                "Green": 74,
+                "Blue": 74
+              },
+              "TextId": "__SingleUse_8LM6",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 1.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 74,
+                "Green": 74,
+                "Blue": 74
+              },
+              "TextId": "__SingleUse_WL29",
+              "TextRotation": "0",
+              "Position": "Left"
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "buttonDone1",
+            "X": 725,
+            "Width": 75,
+            "Height": 58,
+            "CustomContainerDefinitionName": "ButtonDone"
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
@@ -3620,6 +3915,71 @@
               "TextId": "__SingleUse_MKAC",
               "UseBuffer": true,
               "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CustomContainer1",
+        "X": 78,
+        "Width": 119,
+        "Height": 46,
+        "Components": [
+          {
+            "Type": "FlexButton",
+            "Name": "buttonOffset0",
+            "Width": 119,
+            "Height": 46,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 119,
+                "Height": 46,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Red": 87,
+                  "Green": 119,
+                  "Blue": 243
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textAreaOffset0",
+            "X": 10,
+            "Y": 10,
+            "Width": 105,
+            "Height": 24,
+            "TextId": "__SingleUse_VVW3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 214,
+              "Green": 236,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_5HJ7",
+              "UseBuffer": true,
+              "BufferSize": 6
             }
           }
         ],

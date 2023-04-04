@@ -6,6 +6,39 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_FMVK" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB"> 6</Translation>
+      </Text>
+      <Text Id="__SingleUse_V2PK" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_1MDU" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_0VH3" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_B9YF" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_KIX6" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_OM9M" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_WL29" Alignment="Right" TypographyId="GraphText">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8LM6" Alignment="Left" TypographyId="GraphText">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_5HJ7" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">000.00</Translation>
+      </Text>
+      <Text Id="__SingleUse_VVW3" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_DM5T" Alignment="Left" TypographyId="GraphText">
         <Translation Language="GB">Digital Output 4</Translation>
       </Text>

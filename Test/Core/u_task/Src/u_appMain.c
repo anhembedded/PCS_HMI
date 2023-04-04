@@ -23,7 +23,7 @@ void u_appMainCreate()
     u_appDigitalOutputCreate();
     u_appPwmCreate();
     u_appAdcCreate();
-    u_pidSImCreate();
+    u_appPidCreate();
 }
 
 static void mainApplication(void *param)

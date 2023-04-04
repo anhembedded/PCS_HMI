@@ -2,7 +2,7 @@
  * File: main.c
  *
  * MATLAB Coder version            : 4.3
- * C/C++ source code generated on  : 02-Apr-2023 14:33:49
+ * C/C++ source code generated on  : 03-Apr-2023 08:40:05
  */
 
 /*************************************************************************/
@@ -36,18 +36,18 @@
 #include "system0TimeDomainf_terminate.h"
 
 /* Function Declarations */
-static float argInit_real32_T(void);
+static double argInit_real_T(void);
 static void main_system0TimeDomainf(void);
 
 /* Function Definitions */
 
 /*
  * Arguments    : void
- * Return Type  : float
+ * Return Type  : double
  */
-static float argInit_real32_T(void)
+static double argInit_real_T(void)
 {
-  return 0.0F;
+  return 0.0;
 }
 
 /*
@@ -56,10 +56,10 @@ static float argInit_real32_T(void)
  */
 static void main_system0TimeDomainf(void)
 {
-  float timeVar_tmp;
+  double timeVar_tmp;
 
   /* Initialize function 'system0TimeDomainf' input arguments. */
-  timeVar_tmp = argInit_real32_T();
+  timeVar_tmp = argInit_real_T();
 
   /* Call the entry-point 'system0TimeDomainf'. */
   timeVar_tmp = system0TimeDomainf(timeVar_tmp, timeVar_tmp);

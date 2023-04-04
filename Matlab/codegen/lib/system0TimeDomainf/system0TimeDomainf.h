@@ -2,7 +2,7 @@
  * File: system0TimeDomainf.h
  *
  * MATLAB Coder version            : 4.3
- * C/C++ source code generated on  : 02-Apr-2023 14:33:49
+ * C/C++ source code generated on  : 03-Apr-2023 08:40:05
  */
 
 #ifndef SYSTEM0TIMEDOMAINF_H
@@ -15,7 +15,7 @@
 #include "system0TimeDomainf_types.h"
 
 /* Function Declarations */
-extern float system0TimeDomainf(float timeVar, float inputVar);
+extern double system0TimeDomainf(double timeVar, double pidOut);
 
 #endif
 

@@ -67,7 +67,9 @@
 			"u_appdigitaloutput.h": "c",
 			"pid.h": "c",
 			"u_pidsim.h": "c",
-			"u_appmain.h": "c"
+			"u_appmain.h": "c",
+			"task.h": "c",
+			"math.h": "c"
 		},
 		"cSpell.enabled": false
 	}

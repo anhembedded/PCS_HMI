@@ -2,7 +2,7 @@
 ## Makefile generated for MATLAB file/project 'system0TimeDomainf'. 
 ## 
 ## Makefile     : system0TimeDomainf_rtw.mk
-## Generated on : Sun Apr 02 14:33:51 2023
+## Generated on : Mon Apr 03 08:40:09 2023
 ## MATLAB Coder version: 4.3 (R2019b)
 ## 
 ## Build Info:
@@ -28,7 +28,7 @@ MATLAB_ROOT               = C:/PROGRA~1/POLYSP~1/R2019b
 MATLAB_BIN                = C:/PROGRA~1/POLYSP~1/R2019b/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
 MASTER_ANCHOR_DIR         = 
-START_DIR                 = C:/Project/Matlab/codegen/lib/system0TimeDomainf
+START_DIR                 = C:/Project/PCS_HMI/Matlab/codegen/lib/system0TimeDomainf
 TGT_FCN_LIB               = None
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -142,7 +142,7 @@ BUILD_TYPE = "Static Library"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR) -IC:/Project/Matlab -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert
+INCLUDES_BUILDINFO = -I$(START_DIR) -IC:/Project/PCS_HMI/Matlab -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -262,7 +262,7 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS)
 	$(CC) $(CFLAGS) -Fo"$@" $(subst /,\,"$<")
 
 
-%.obj : C:/Project/Matlab/%.c
+%.obj : C:/Project/PCS_HMI/Matlab/%.c
 	$(CC) $(CFLAGS) -Fo"$@" $(subst /,\,"$<")
 
 

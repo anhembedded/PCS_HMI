@@ -90,7 +90,7 @@
 
 	#elif defined   (  __GNUC__  ) /* GNU Compiler */
 
-	#pragma diag_suppress 177     /* Disable 'unused function' warning */
+	//#pragma diag_suppress 177     /* Disable 'unused function' warning */
 
 	#endif /* __ICCARM__ */
 
@@ -140,7 +140,10 @@
 		#define GetTime()   0
 
 	/* ------------------------------------------------------------------ */
-
+	#elif defined(USE_RTOS)
+	#include "FreeRTOS.h"
+	#include "task.h"
+	#define GetTime()   xTaskGetTickCount()
 	#elif defined(USE_HAL_DRIVER)  /* Check driver */
 
 		#define GetTime()   HAL_GetTick()
