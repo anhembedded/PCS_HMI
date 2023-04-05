@@ -6,44 +6,47 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_FMVK" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB"> 6</Translation>
+      <Text Id="__SingleUse_2OQ6" Alignment="Center" TypographyId="MainMenu">
+        <Translation Language="GB">Confirm</Translation>
       </Text>
-      <Text Id="__SingleUse_V2PK" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">5</Translation>
+      <Text Id="__SingleUse_IYGT" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">00.00</Translation>
       </Text>
-      <Text Id="__SingleUse_1MDU" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">4</Translation>
+      <Text Id="__SingleUse_JSBD" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB"> Set point: &lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_0VH3" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">3</Translation>
+      <Text Id="__SingleUse_4CQQ" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Output:</Translation>
       </Text>
-      <Text Id="__SingleUse_B9YF" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">2</Translation>
+      <Text Id="__SingleUse_WVKC" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">00.00</Translation>
       </Text>
-      <Text Id="__SingleUse_KIX6" Alignment="Left" TypographyId="MainMenu">
+      <Text Id="__SingleUse_MSS1" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Feedback: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_6CM6" Alignment="Center" TypographyId="KeyBoard">
+        <Translation Language="GB">Set</Translation>
+      </Text>
+      <Text Id="__SingleUse_AZT2" Alignment="Center" TypographyId="KeyBoard">
+        <Translation Language="GB">Start</Translation>
+      </Text>
+      <Text Id="__SingleUse_2CQX" Alignment="Center" TypographyId="KeyBoard">
+        <Translation Language="GB">Stop</Translation>
+      </Text>
+      <Text Id="__SingleUse_3O2A" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">1</Translation>
       </Text>
-      <Text Id="__SingleUse_OM9M" Alignment="Left" TypographyId="MainMenu">
+      <Text Id="__SingleUse_GT1U" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_R2I1" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_LHZC" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_RPJE" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">0</Translation>
-      </Text>
-      <Text Id="__SingleUse_WL29" Alignment="Right" TypographyId="GraphText">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_8LM6" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_5HJ7" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">000.00</Translation>
-      </Text>
-      <Text Id="__SingleUse_VVW3" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_DM5T" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Digital Output 4</Translation>
-      </Text>
-      <Text Id="__SingleUse_TJ55" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Digital Output 3</Translation>
       </Text>
       <Text Id="__SingleUse_TQT2" Alignment="Left" TypographyId="MainMenu">
         <Translation Language="GB">DI 6</Translation>
@@ -65,6 +68,45 @@
       </Text>
       <Text Id="__SingleUse_TJI5" Alignment="Left" TypographyId="MainMenu">
         <Translation Language="GB">DI 0</Translation>
+      </Text>
+      <Text Id="__SingleUse_N945" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB"> 6</Translation>
+      </Text>
+      <Text Id="__SingleUse_S08S" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">5</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q0JB" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_4K6G" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_CKYM" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZFTK" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_YO14" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_WL29" Alignment="Right" TypographyId="GraphText">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8LM6" Alignment="Left" TypographyId="GraphText">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_5HJ7" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">000.00</Translation>
+      </Text>
+      <Text Id="__SingleUse_VVW3" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_DM5T" Alignment="Left" TypographyId="GraphText">
+        <Translation Language="GB">Digital Output 4</Translation>
+      </Text>
+      <Text Id="__SingleUse_TJ55" Alignment="Left" TypographyId="GraphText">
+        <Translation Language="GB">Digital Output 3</Translation>
       </Text>
       <Text Id="__SingleUse_TYA6" Alignment="Right" TypographyId="GraphText">
         <Translation Language="GB">&lt;&gt;</Translation>

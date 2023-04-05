@@ -17,12 +17,10 @@ public:
 
     virtual void changeToStartScreen()
     {
-        gotoMainScreenNoTransition();
+        gotoClosedLoopSettingScreenNoTransition();
     }
 
     // Main
-    void gotoMainScreenNoTransition();
-
     void gotoMainScreenCoverTransitionEast();
 
     // Setting
@@ -31,14 +29,20 @@ public:
     // Mesuaring
     void gotoMesuaringScreenCoverTransitionEast();
 
+    // ClosedLoopSetting
+    void gotoClosedLoopSettingScreenNoTransition();
+
+    void gotoClosedLoopSettingScreenCoverTransitionEast();
+
+    // ClosedLoopGraph
+    void gotoClosedLoopGraphScreenCoverTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
     Model& model;
 
     // Main
-    void gotoMainScreenNoTransitionImpl();
-
     void gotoMainScreenCoverTransitionEastImpl();
 
     // Setting
@@ -46,6 +50,14 @@ protected:
 
     // Mesuaring
     void gotoMesuaringScreenCoverTransitionEastImpl();
+
+    // ClosedLoopSetting
+    void gotoClosedLoopSettingScreenNoTransitionImpl();
+
+    void gotoClosedLoopSettingScreenCoverTransitionEastImpl();
+
+    // ClosedLoopGraph
+    void gotoClosedLoopGraphScreenCoverTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

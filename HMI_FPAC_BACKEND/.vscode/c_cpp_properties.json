@@ -23,10 +23,10 @@
                 "${workspaceFolder}/TouchGFX/generated/texts/include",
                 "${workspaceFolder}/TouchGFX/gui/include",
                 "${workspaceFolder}/TouchGFX/generated/videos/include",
-                "C:/Project/CaoThangFinalProjectaa/CaoThangFinalProjectaa/Test/Core/u_driver/inc/",
-                "C:/Project/CaoThangFinalProjectaa/CaoThangFinalProjectaa/Test/Core/u_driver/",
-                "C:/Project/CaoThangFinalProjectaa/CaoThangFinalProjectaa/Test/Core/u_task/Inc/",
-                "C:/Project/CaoThangFinalProjectaa/CaoThangFinalProjectaa/Test/Core/u_task/"
+                "C:/Project/PCS_HMI/Test/Core/u_driver/inc/",
+                "C:/Project/PCS_HMI/Test/Core/u_driver/",
+                "C:/Project/PCS_HMI/Test/Core/u_task/Inc/",
+                "C:/Project/PCS_HMI/Test/Core/u_task/"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

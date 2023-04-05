@@ -20,6 +20,10 @@
 #include <gui/setting_screen/SettingPresenter.hpp>
 #include <gui/mesuaring_screen/MesuaringView.hpp>
 #include <gui/mesuaring_screen/MesuaringPresenter.hpp>
+#include <gui/closedloopsetting_screen/ClosedLoopSettingView.hpp>
+#include <gui/closedloopsetting_screen/ClosedLoopSettingPresenter.hpp>
+#include <gui/closedloopgraph_screen/ClosedLoopGraphView.hpp>
+#include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 
 
 /**
@@ -45,7 +49,9 @@ public:
     typedef touchgfx::meta::TypeList< MainView,
             touchgfx::meta::TypeList< SettingView,
             touchgfx::meta::TypeList< MesuaringView,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< ClosedLoopSettingView,
+            touchgfx::meta::TypeList< ClosedLoopGraphView,
+            touchgfx::meta::Nil > > > >
             > GeneratedViewTypes;
 
     /**
@@ -60,7 +66,9 @@ public:
     typedef touchgfx::meta::TypeList< MainPresenter,
             touchgfx::meta::TypeList< SettingPresenter,
             touchgfx::meta::TypeList< MesuaringPresenter,
-            touchgfx::meta::Nil > >
+            touchgfx::meta::TypeList< ClosedLoopSettingPresenter,
+            touchgfx::meta::TypeList< ClosedLoopGraphPresenter,
+            touchgfx::meta::Nil > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -84,7 +92,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoMainScreenNoTransition();
+        app.gotoClosedLoopSettingScreenNoTransition();
     }
 protected:
     FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)

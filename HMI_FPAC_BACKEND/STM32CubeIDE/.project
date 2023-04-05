@@ -340,6 +340,26 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/ClosedLoopGraphPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopgraph_screen/ClosedLoopGraphPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ClosedLoopGraphView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopgraph_screen/ClosedLoopGraphView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ClosedLoopSettingPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopsetting_screen/ClosedLoopSettingPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ClosedLoopSettingView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopsetting_screen/ClosedLoopSettingView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/FrontendApplication.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
@@ -350,6 +370,21 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/ButtonDone.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/CustomContainer1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/CustomContainer1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/DigitalInputIndicator.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DigitalInputIndicator.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/DigitalOutput.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DigitalOutput.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/GraphInf.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/GraphInf.cpp</locationURI>
@@ -358,6 +393,11 @@
 			<name>Application/User/gui/Keyboard.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Keyboard.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/SpOpFb.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SpOpFb.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/MainPresenter.cpp</name>
@@ -525,6 +565,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/ClosedLoopGraphViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/closedloopgraph_screen/ClosedLoopGraphViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/ClosedLoopSettingViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/closedloopsetting_screen/ClosedLoopSettingViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/FrontendApplicationBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
@@ -535,6 +585,21 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/ButtonDoneBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/CustomContainer1Base.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/CustomContainer1Base.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/DigitalInputIndicatorBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DigitalInputIndicatorBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/DigitalOutputBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DigitalOutputBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/GraphInfBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/GraphInfBase.cpp</locationURI>
@@ -543,6 +608,11 @@
 			<name>Application/User/generated/KeyboardBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/KeyboardBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/SpOpFbBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SpOpFbBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/MainViewBase.cpp</name>
@@ -583,6 +653,46 @@
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_micro_fill_normal.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_rounded_micro_fill_normal.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_lineprogress_backgrounds_image_plain_normal_tiny_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_lineprogress_backgrounds_image_plain_normal_tiny_0.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_lineprogress_fillers_plain_normal_tiny_active_0.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_lineprogress_fillers_plain_normal_tiny_active_0.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off_pressed.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_dark.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_dark.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_pressed.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_off_light.cpp</name>
@@ -648,6 +758,16 @@
 			<name>Application/User/generated/image_clay_theme_images_widgets_button_regular_height_36_medium_rounded_pressed.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_regular_height_36_medium_rounded_pressed.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_clay_theme_images_widgets_button_regular_height_36_small_round_action.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_regular_height_36_small_round_action.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_clay_theme_images_widgets_button_regular_height_36_small_round_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_regular_height_36_small_round_pressed.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_clay_theme_images_widgets_button_regular_height_36_tiny_rounded_action.cpp</name>
@@ -783,6 +903,21 @@
 			<name>Application/User/generated/image_icon_theme_images_file_download_done_50_50_5777F3.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_file_download_done_50_50_5777F3.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_action.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_action.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_active.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_off.cpp</name>

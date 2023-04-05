@@ -31,12 +31,13 @@ MainViewBase::MainViewBase() :
     buttonMesuaring.setAction(buttonCallback);
     add(buttonMesuaring);
 
-    buttonWithLabel1_1.setXY(190, 185);
-    buttonWithLabel1_1.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_PRESSED_ID));
-    buttonWithLabel1_1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_KZ50));
-    buttonWithLabel1_1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1_1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(87, 119, 243));
-    add(buttonWithLabel1_1);
+    clickButton_closedloopControlContinuous.setXY(190, 185);
+    clickButton_closedloopControlContinuous.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_PRESSED_ID));
+    clickButton_closedloopControlContinuous.setLabelText(touchgfx::TypedText(T___SINGLEUSE_KZ50));
+    clickButton_closedloopControlContinuous.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    clickButton_closedloopControlContinuous.setLabelColorPressed(touchgfx::Color::getColorFromRGB(87, 119, 243));
+    clickButton_closedloopControlContinuous.setAction(buttonCallback);
+    add(clickButton_closedloopControlContinuous);
 
     buttonLang.setXY(569, 352);
     buttonLang.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LANGUAGE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LANGUAGE_50_50_5777F3_SVG_ID));
@@ -73,5 +74,12 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonMesuaring clicked change screen to Mesuaring
         //Go to Mesuaring with screen transition towards East
         application().gotoMesuaringScreenCoverTransitionEast();
+    }
+    if (&src == &clickButton_closedloopControlContinuous)
+    {
+        //Interaction4
+        //When clickButton_closedloopControlContinuous clicked change screen to ClosedLoopGraph
+        //Go to ClosedLoopGraph with screen transition towards East
+        application().gotoClosedLoopGraphScreenCoverTransitionEast();
     }
 }
