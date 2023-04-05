@@ -3103,8 +3103,8 @@
             "Name": "boxWithBorder1",
             "X": 48,
             "Y": 47,
-            "Width": 519,
-            "Height": 170,
+            "Width": 570,
+            "Height": 214,
             "Color": {
               "Red": 255,
               "Green": 255,
@@ -3113,18 +3113,109 @@
             "BorderSize": 5
           },
           {
-            "Type": "RadioButton",
-            "Name": "radioButton1",
-            "X": 353,
-            "Y": 139,
-            "Width": 36,
-            "Height": 36,
-            "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_dark.png",
-            "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_pressed.png",
-            "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off.png",
-            "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off_pressed.png",
-            "RadioButtonGroup": "radioButtonGroup1",
-            "Preset": "alternate_theme\\presets\\radiobutton\\radio\\medium_dark_rounded.json"
+            "Type": "Slider",
+            "Name": "slider1_1",
+            "X": 66,
+            "Y": 70,
+            "Width": 432,
+            "Height": 32,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_large.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_large.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
+            "BackgroundX": 16,
+            "BackgroundY": 11,
+            "IndicatorMax": 400,
+            "ValueMax": 100,
+            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\large_rounded.json"
+          },
+          {
+            "Type": "Slider",
+            "Name": "slider1",
+            "X": 66,
+            "Y": 138,
+            "Width": 432,
+            "Height": 32,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_large.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_large.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
+            "BackgroundX": 16,
+            "BackgroundY": 11,
+            "IndicatorMax": 400,
+            "ValueMax": 100,
+            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\large_rounded.json"
+          },
+          {
+            "Type": "Slider",
+            "Name": "slider1_2",
+            "X": 66,
+            "Y": 208,
+            "Width": 432,
+            "Height": 32,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_large.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_large.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
+            "BackgroundX": 16,
+            "BackgroundY": 11,
+            "IndicatorMax": 400,
+            "ValueMax": 100,
+            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\large_rounded.json"
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder2",
+            "X": 498,
+            "Y": 66,
+            "Width": 102,
+            "Height": 41,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 209,
+              "Blue": 167
+            },
+            "BorderSize": 5
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder2_1",
+            "X": 498,
+            "Y": 134,
+            "Width": 102,
+            "Height": 41,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 209,
+              "Blue": 167
+            },
+            "BorderSize": 5
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder2_1_1",
+            "X": 498,
+            "Y": 204,
+            "Width": 102,
+            "Height": 41,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderColor": {
+              "Red": 209,
+              "Blue": 167
+            },
+            "BorderSize": 5
           }
         ],
         "Interactions": [
@@ -3358,15 +3449,6 @@
             "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_round_normal.json"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "digitalOutput1",
-            "Y": 358,
-            "Width": 800,
-            "Height": 121,
-            "LockPosition": true,
-            "CustomContainerDefinitionName": "DigitalOutput"
-          },
-          {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder2",
             "X": 455,
@@ -3379,6 +3461,15 @@
               "Blue": 255
             },
             "BorderSize": 5
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "digitalOutput1",
+            "Y": 358,
+            "Width": 800,
+            "Height": 121,
+            "LockPosition": true,
+            "CustomContainerDefinitionName": "DigitalOutput"
           },
           {
             "Type": "TextArea",

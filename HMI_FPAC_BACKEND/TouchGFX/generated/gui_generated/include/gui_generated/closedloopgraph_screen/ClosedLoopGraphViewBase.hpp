@@ -49,8 +49,8 @@ protected:
     DigitalInputIndicator digitalInputIndicator1;
     touchgfx::ButtonWithLabel buttonWithLabel_stop;
     touchgfx::ButtonWithLabel buttonWithLabel_set;
-    DigitalOutput digitalOutput1;
     touchgfx::BoxWithBorder boxWithBorder2;
+    DigitalOutput digitalOutput1;
     touchgfx::TextAreaWithOneWildcard textArea1;
     touchgfx::TextAreaWithOneWildcard textArea1_1;
     touchgfx::TextAreaWithOneWildcard textArea1_2;

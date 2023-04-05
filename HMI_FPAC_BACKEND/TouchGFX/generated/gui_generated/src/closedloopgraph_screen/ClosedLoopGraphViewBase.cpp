@@ -94,14 +94,14 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     buttonWithLabel_set.setAction(buttonCallback);
     add(buttonWithLabel_set);
 
-    digitalOutput1.setXY(0, 358);
-    add(digitalOutput1);
-
     boxWithBorder2.setPosition(455, 381, 95, 76);
     boxWithBorder2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder2.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder2.setBorderSize(5);
     add(boxWithBorder2);
+
+    digitalOutput1.setXY(0, 358);
+    add(digitalOutput1);
 
     textArea1.setXY(464, 389);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
