@@ -17,6 +17,7 @@
 #include <gui/containers/ButtonDone.hpp>
 #include <gui/containers/DigitalInputIndicator.hpp>
 #include <gui/containers/DigitalOutput.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class ClosedLoopGraphViewBase : public touchgfx::View<ClosedLoopGraphPresenter>
 {
@@ -35,6 +36,7 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box boxBackground;
+    SpOpFb spOpFb1_1;
     SpOpFb spOpFb1;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ButtonWithLabel buttonWithLabel_start;
@@ -48,6 +50,10 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabel_stop;
     touchgfx::ButtonWithLabel buttonWithLabel_set;
     DigitalOutput digitalOutput1;
+    touchgfx::BoxWithBorder boxWithBorder2;
+    touchgfx::TextAreaWithOneWildcard textArea1;
+    touchgfx::TextAreaWithOneWildcard textArea1_1;
+    touchgfx::TextAreaWithOneWildcard textArea1_2;
 
 private:
 

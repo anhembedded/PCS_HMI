@@ -33,7 +33,7 @@ MesuaringViewBase::MesuaringViewBase() :
     containerGraph.add(boxWithBorder1);
 
     graphOut.setPosition(1, 8, 789, 471);
-    graphOut.setScale(100);
+    graphOut.setScale(10);
     graphOut.setGraphAreaMargin(17, 24, 0, 29);
     graphOut.setGraphAreaPadding(0, 0, 10, 0);
     graphOut.setGraphRangeY(0.0f, 10.3f);
@@ -647,7 +647,7 @@ MesuaringViewBase::MesuaringViewBase() :
     containerGraph.add(graphOut);
 
     graphOut1.setPosition(1, 8, 789, 471);
-    graphOut1.setScale(100);
+    graphOut1.setScale(10);
     graphOut1.setGraphAreaMargin(17, 24, 0, 29);
     graphOut1.setGraphAreaPadding(0, 0, 10, 0);
     graphOut1.setGraphRangeY(0.0f, 10.3f);
@@ -1261,7 +1261,7 @@ MesuaringViewBase::MesuaringViewBase() :
     containerGraph.add(graphOut1);
 
     graphCH1.setPosition(1, 8, 789, 471);
-    graphCH1.setScale(100);
+    graphCH1.setScale(10);
     graphCH1.setGraphAreaMargin(17, 24, 0, 29);
     graphCH1.setGraphAreaPadding(0, 0, 10, 0);
     graphCH1.setGraphRangeY(0.0f, 10.3f);
@@ -1875,7 +1875,7 @@ MesuaringViewBase::MesuaringViewBase() :
     containerGraph.add(graphCH1);
 
     graphCH3.setPosition(1, 8, 789, 471);
-    graphCH3.setScale(100);
+    graphCH3.setScale(10);
     graphCH3.setGraphAreaMargin(17, 24, 0, 29);
     graphCH3.setGraphAreaPadding(0, 0, 10, 0);
     graphCH3.setGraphRangeY(0.0f, 10.3f);
@@ -2489,7 +2489,7 @@ MesuaringViewBase::MesuaringViewBase() :
     containerGraph.add(graphCH3);
 
     graphCH2.setPosition(1, 8, 789, 471);
-    graphCH2.setScale(100);
+    graphCH2.setScale(10);
     graphCH2.setGraphAreaMargin(17, 24, 0, 29);
     graphCH2.setGraphAreaPadding(0, 0, 10, 0);
     graphCH2.setGraphRangeY(0.0f, 10.3f);
@@ -3103,7 +3103,7 @@ MesuaringViewBase::MesuaringViewBase() :
     containerGraph.add(graphCH2);
 
     graphCH0.setPosition(1, 8, 789, 471);
-    graphCH0.setScale(100);
+    graphCH0.setScale(10);
     graphCH0.setGraphAreaMargin(17, 24, 0, 29);
     graphCH0.setGraphAreaPadding(0, 0, 10, 0);
     graphCH0.setGraphRangeY(0.0f, 10.3f);

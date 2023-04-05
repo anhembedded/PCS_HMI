@@ -1575,7 +1575,7 @@
                 "DataSeed": 913813516,
                 "NumberOfValues": 600,
                 "MaxY": 10.3,
-                "Precision": "0.01",
+                "Precision": "0.1",
                 "LastIndex": 599,
                 "XAxisScale": 1.0,
                 "InsertRandomValues": true,
@@ -1604,7 +1604,7 @@
                 "DataSeed": 489970647,
                 "NumberOfValues": 600,
                 "MaxY": 10.3,
-                "Precision": "0.01",
+                "Precision": "0.1",
                 "LastIndex": 599,
                 "XAxisScale": 1.0,
                 "InsertRandomValues": true,
@@ -1636,7 +1636,7 @@
                 "DataSeed": -652001152,
                 "NumberOfValues": 600,
                 "MaxY": 10.3,
-                "Precision": "0.01",
+                "Precision": "0.1",
                 "LastIndex": 599,
                 "XAxisScale": 1.0,
                 "InsertRandomValues": true,
@@ -1670,7 +1670,7 @@
                 "DataSeed": 1927967717,
                 "NumberOfValues": 600,
                 "MaxY": 10.3,
-                "Precision": "0.01",
+                "Precision": "0.1",
                 "LastIndex": 599,
                 "XAxisScale": 1.0,
                 "InsertRandomValues": true,
@@ -1704,7 +1704,7 @@
                 "DataSeed": -1549710663,
                 "NumberOfValues": 600,
                 "MaxY": 10.3,
-                "Precision": "0.01",
+                "Precision": "0.1",
                 "LastIndex": 599,
                 "XAxisScale": 1.0,
                 "InsertRandomValues": true,
@@ -1737,7 +1737,7 @@
                 "DataSeed": -1706446005,
                 "NumberOfValues": 600,
                 "MaxY": 10.3,
-                "Precision": "0.01",
+                "Precision": "0.1",
                 "LastIndex": 599,
                 "XAxisScale": 1.0,
                 "InsertRandomValues": true,
@@ -1765,6 +1765,7 @@
                 "Y": 8,
                 "Width": 789,
                 "Height": 471,
+                "LockPosition": true,
                 "DataSeed": -1706446005,
                 "NumberOfValues": 600,
                 "MaxY": 10.3,
@@ -3171,9 +3172,18 @@
           },
           {
             "Type": "CustomContainerInstance",
+            "Name": "spOpFb1_1",
+            "X": 590,
+            "Y": 381,
+            "Width": 204,
+            "Height": 76,
+            "CustomContainerDefinitionName": "SpOpFb"
+          },
+          {
+            "Type": "CustomContainerInstance",
             "Name": "spOpFb1",
             "X": 590,
-            "Y": 383,
+            "Y": 381,
             "Width": 204,
             "Height": 76,
             "CustomContainerDefinitionName": "SpOpFb"
@@ -3183,7 +3193,7 @@
             "Name": "boxWithBorder1",
             "X": 10,
             "Y": 379,
-            "Width": 437,
+            "Width": 431,
             "Height": 96,
             "Color": {
               "Red": 255,
@@ -3304,7 +3314,7 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel_stop",
-            "X": 299,
+            "X": 292,
             "Y": 391,
             "Width": 138,
             "Height": 36,
@@ -3355,6 +3365,62 @@
             "Height": 121,
             "LockPosition": true,
             "CustomContainerDefinitionName": "DigitalOutput"
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder2",
+            "X": 455,
+            "Y": 381,
+            "Width": 95,
+            "Height": 76,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 5
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 464,
+            "Y": 389,
+            "Width": 74,
+            "Height": 20,
+            "TextId": "__SingleUse_21S9",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_Z6EL"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 464,
+            "Y": 409,
+            "Width": 73,
+            "Height": 20,
+            "TextId": "__SingleUse_66OT",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_NIL7"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2",
+            "X": 464,
+            "Y": 429,
+            "Width": 73,
+            "Height": 20,
+            "TextId": "__SingleUse_5HQL",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_ABRK"
+            }
           }
         ],
         "Interactions": [

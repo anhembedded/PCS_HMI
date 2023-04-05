@@ -20,10 +20,13 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     boxBackground.setColor(touchgfx::Color::getColorFromRGB(214, 236, 255));
     add(boxBackground);
 
-    spOpFb1.setXY(590, 383);
+    spOpFb1_1.setXY(590, 381);
+    add(spOpFb1_1);
+
+    spOpFb1.setXY(590, 381);
     add(spOpFb1);
 
-    boxWithBorder1.setPosition(10, 379, 437, 96);
+    boxWithBorder1.setPosition(10, 379, 431, 96);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(5);
@@ -76,7 +79,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     digitalInputIndicator1.setXY(20, 434);
     add(digitalInputIndicator1);
 
-    buttonWithLabel_stop.setXY(299, 391);
+    buttonWithLabel_stop.setXY(292, 391);
     buttonWithLabel_stop.setBitmaps(touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
     buttonWithLabel_stop.setLabelText(touchgfx::TypedText(T___SINGLEUSE_2CQX));
     buttonWithLabel_stop.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -93,6 +96,36 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
 
     digitalOutput1.setXY(0, 358);
     add(digitalOutput1);
+
+    boxWithBorder2.setPosition(455, 381, 95, 76);
+    boxWithBorder2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorder2.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder2.setBorderSize(5);
+    add(boxWithBorder2);
+
+    textArea1.setXY(464, 389);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setWildcard(touchgfx::TypedText(T___SINGLEUSE_Z6EL).getText());
+    textArea1.resizeToCurrentText();
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_21S9));
+    add(textArea1);
+
+    textArea1_1.setXY(464, 409);
+    textArea1_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1_1.setLinespacing(0);
+    textArea1_1.setWildcard(touchgfx::TypedText(T___SINGLEUSE_NIL7).getText());
+    textArea1_1.resizeToCurrentText();
+    textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_66OT));
+    add(textArea1_1);
+
+    textArea1_2.setXY(464, 429);
+    textArea1_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1_2.setLinespacing(0);
+    textArea1_2.setWildcard(touchgfx::TypedText(T___SINGLEUSE_ABRK).getText());
+    textArea1_2.resizeToCurrentText();
+    textArea1_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5HQL));
+    add(textArea1_2);
 }
 
 ClosedLoopGraphViewBase::~ClosedLoopGraphViewBase()
@@ -102,6 +135,7 @@ ClosedLoopGraphViewBase::~ClosedLoopGraphViewBase()
 
 void ClosedLoopGraphViewBase::setupScreen()
 {
+    spOpFb1_1.initialize();
     spOpFb1.initialize();
     buttonDone1.initialize();
     digitalInputIndicator1.initialize();
