@@ -25,18 +25,75 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     buttonWithLabel_Confirm.setAction(buttonCallback);
     add(buttonWithLabel_Confirm);
 
-    boxWithBorder1.setPosition(48, 47, 519, 170);
+    PidCon.setPosition(66, 73, 640, 231);
+    boxWithBorder1.setPosition(7, 8, 633, 214);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(5);
-    add(boxWithBorder1);
+    PidCon.add(boxWithBorder1);
 
-    radioButton1.setXY(353, 139);
-    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUNDED_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUNDED_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUNDED_ON_DARK_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUNDED_ON_PRESSED_ID));
+    sliderKp.setXY(81, 30);
+    PidCon.add(sliderKp);
+
+    sliderKi.setXY(82, 95);
+    PidCon.add(sliderKi);
+
+    sliderKd.setXY(81, 163);
+    PidCon.add(sliderKd);
+
+    add(PidCon);
+
+    button_openModelWindow.setXY(22, 400);
+    button_openModelWindow.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
+    button_openModelWindow.setLabelText(touchgfx::TypedText(T___SINGLEUSE_LG1U));
+    button_openModelWindow.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    button_openModelWindow.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    button_openModelWindow.setAction(buttonCallback);
+    add(button_openModelWindow);
+
+    modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_ALTERNATE_THEME_IMAGES_CONTAINERS_LARGE_WIDE_OUTLINED_LIGHT_ID), 160, 105);
+    modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    modalWindow1.setShadeAlpha(169);
+    modalWindow1.hide();
+    radioButton1.setXY(29, 28);
+    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
     radioButton1.setSelected(false);
     radioButton1.setDeselectionEnabled(false);
     radioButtonGroup1.add(radioButton1);
-    add(radioButton1);
+    modalWindow1.add(radioButton1);
+
+    radioButton1_1.setXY(29, 85);
+    radioButton1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
+    radioButton1_1.setSelected(false);
+    radioButton1_1.setDeselectionEnabled(false);
+    radioButtonGroup1.add(radioButton1_1);
+    modalWindow1.add(radioButton1_1);
+
+    radioButton1_1_1.setXY(29, 146);
+    radioButton1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
+    radioButton1_1_1.setSelected(false);
+    radioButton1_1_1.setDeselectionEnabled(false);
+    radioButtonGroup1.add(radioButton1_1_1);
+    modalWindow1.add(radioButton1_1_1);
+
+    radioButton1_1_1_1.setXY(29, 208);
+    radioButton1_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
+    radioButton1_1_1_1.setSelected(false);
+    radioButton1_1_1_1.setDeselectionEnabled(false);
+    radioButtonGroup1.add(radioButton1_1_1_1);
+    modalWindow1.add(radioButton1_1_1_1);
+
+    button_closeModelWindow.setXY(342, 204);
+    button_closeModelWindow.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    button_closeModelWindow.setIconXY(50, 15);
+    button_closeModelWindow.setAction(buttonCallback);
+    modalWindow1.add(button_closeModelWindow);
+
+    add(modalWindow1);
+
+    keyboard.setXY(338, 27);
+    keyboard.setVisible(false);
+    add(keyboard);
 }
 
 ClosedLoopSettingViewBase::~ClosedLoopSettingViewBase()
@@ -46,7 +103,10 @@ ClosedLoopSettingViewBase::~ClosedLoopSettingViewBase()
 
 void ClosedLoopSettingViewBase::setupScreen()
 {
-
+    sliderKp.initialize();
+    sliderKi.initialize();
+    sliderKd.initialize();
+    keyboard.initialize();
 }
 
 void ClosedLoopSettingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -62,5 +122,21 @@ void ClosedLoopSettingViewBase::buttonCallbackHandler(const touchgfx::AbstractBu
         //When confirmInteraction completed change screen to ClosedLoopGraph
         //Go to ClosedLoopGraph with screen transition towards East
         application().gotoClosedLoopGraphScreenCoverTransitionEast();
+    }
+    if (&src == &button_openModelWindow)
+    {
+        //Interaction3
+        //When button_openModelWindow clicked show modalWindow1
+        //Show modalWindow1
+        modalWindow1.setVisible(true);
+        modalWindow1.invalidate();
+    }
+    if (&src == &button_closeModelWindow)
+    {
+        //Interaction4
+        //When button_closeModelWindow clicked hide modalWindow1
+        //Hide modalWindow1
+        modalWindow1.setVisible(false);
+        modalWindow1.invalidate();
     }
 }

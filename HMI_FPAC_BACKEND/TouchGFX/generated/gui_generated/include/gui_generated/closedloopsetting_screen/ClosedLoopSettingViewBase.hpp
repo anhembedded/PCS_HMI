@@ -9,9 +9,15 @@
 #include <gui/closedloopsetting_screen/ClosedLoopSettingPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <gui/containers/sliderWithText.hpp>
+#include <touchgfx/containers/ModalWindow.hpp>
 #include <touchgfx/widgets/RadioButton.hpp>
 #include <touchgfx/widgets/RadioButtonGroup.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <gui/containers/Keyboard.hpp>
+#include <touchgfx/mixins/Draggable.hpp>
 
 class ClosedLoopSettingViewBase : public touchgfx::View<ClosedLoopSettingPresenter>
 {
@@ -39,9 +45,20 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box boxBackground;
     touchgfx::ButtonWithLabel buttonWithLabel_Confirm;
+    touchgfx::Container PidCon;
     touchgfx::BoxWithBorder boxWithBorder1;
-    touchgfx::RadioButtonGroup<1> radioButtonGroup1;
+    sliderWithText sliderKp;
+    sliderWithText sliderKi;
+    sliderWithText sliderKd;
+    touchgfx::ButtonWithLabel button_openModelWindow;
+    touchgfx::ModalWindow modalWindow1;
+    touchgfx::RadioButtonGroup<4> radioButtonGroup1;
     touchgfx::RadioButton radioButton1;
+    touchgfx::RadioButton radioButton1_1;
+    touchgfx::RadioButton radioButton1_1_1;
+    touchgfx::RadioButton radioButton1_1_1_1;
+    touchgfx::ButtonWithIcon button_closeModelWindow;
+    touchgfx::Draggable< Keyboard > keyboard;
 
 private:
 

@@ -4654,76 +4654,43 @@ MesuaringViewBase::MesuaringViewBase() :
     boxWithBorder3.setBorderSize(5);
     SelectManinValue.add(boxWithBorder3);
 
-    buttonDigiOut1.setXY(11, 33);
-    buttonDigiOut1.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_INACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_ACTIVE_ID));
-    buttonDigiOut1.setAction(buttonCallback);
-    SelectManinValue.add(buttonDigiOut1);
-
-    buttonDigiOut2.setXY(11, 72);
-    buttonDigiOut2.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_INACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_ACTIVE_ID));
-    buttonDigiOut2.setAction(buttonCallback);
-    SelectManinValue.add(buttonDigiOut2);
-
-    buttonDigiOut3.setXY(11, 115);
-    buttonDigiOut3.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_INACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_ACTIVE_ID));
-    buttonDigiOut3.setAction(buttonCallback);
-    SelectManinValue.add(buttonDigiOut3);
-
-    buttonAnalogOut1.setXY(11, 238);
-    buttonAnalogOut1.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_INACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_ACTIVE_ID));
-    buttonAnalogOut1.setAction(buttonCallback);
-    SelectManinValue.add(buttonAnalogOut1);
-
-    buttonAnalogOut2.setXY(11, 279);
-    buttonAnalogOut2.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_INACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_ACTIVE_ID));
-    buttonAnalogOut2.setAction(buttonCallback);
-    SelectManinValue.add(buttonAnalogOut2);
-
-    buttonDigiOut3_1.setXY(11, 155);
-    buttonDigiOut3_1.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_INACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_ACTIVE_ID));
-    SelectManinValue.add(buttonDigiOut3_1);
-
-    buttonDigiOut3_1_1.setXY(11, 196);
-    buttonDigiOut3_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_INACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_ACTIVE_ID));
-    SelectManinValue.add(buttonDigiOut3_1_1);
-
-    textArea5_2_1.setXY(58, 80);
+    textArea5_2_1.setXY(100, 79);
     textArea5_2_1.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
     textArea5_2_1.setLinespacing(0);
     textArea5_2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_EWF4));
     SelectManinValue.add(textArea5_2_1);
 
-    textArea5_2_2.setXY(58, 123);
+    textArea5_2_2.setXY(100, 123);
     textArea5_2_2.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
     textArea5_2_2.setLinespacing(0);
     textArea5_2_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_71XP));
     SelectManinValue.add(textArea5_2_2);
 
-    textArea5_2_2_1.setXY(58, 163);
+    textArea5_2_2_1.setXY(100, 162);
     textArea5_2_2_1.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
     textArea5_2_2_1.setLinespacing(0);
     textArea5_2_2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TJ55));
     SelectManinValue.add(textArea5_2_2_1);
 
-    textArea5_2_2_1_1.setXY(58, 204);
+    textArea5_2_2_1_1.setXY(100, 204);
     textArea5_2_2_1_1.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
     textArea5_2_2_1_1.setLinespacing(0);
     textArea5_2_2_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DM5T));
     SelectManinValue.add(textArea5_2_2_1_1);
 
-    textArea5_2_3.setXY(57, 246);
+    textArea5_2_3.setXY(100, 246);
     textArea5_2_3.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
     textArea5_2_3.setLinespacing(0);
     textArea5_2_3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PXFY));
     SelectManinValue.add(textArea5_2_3);
 
-    textArea5_2.setXY(58, 41);
+    textArea5_2.setXY(100, 42);
     textArea5_2.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
     textArea5_2.setLinespacing(0);
     textArea5_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q4X0));
     SelectManinValue.add(textArea5_2);
 
-    textArea5_2_4.setXY(58, 287);
+    textArea5_2_4.setXY(100, 287);
     textArea5_2_4.setColor(touchgfx::Color::getColorFromRGB(87, 87, 87));
     textArea5_2_4.setLinespacing(0);
     textArea5_2_4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4014));
@@ -4734,6 +4701,55 @@ MesuaringViewBase::MesuaringViewBase() :
     textArea5_1_1_1_2_1.setLinespacing(0);
     textArea5_1_1_1_2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I5AO));
     SelectManinValue.add(textArea5_1_1_1_2_1);
+
+    radioButton1.setXY(34, 42);
+    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_PRESSED_ID));
+    radioButton1.setSelected(false);
+    radioButton1.setDeselectionEnabled(false);
+    radioButtonGroup_manip.add(radioButton1);
+    SelectManinValue.add(radioButton1);
+
+    radioButton1_1.setXY(34, 79);
+    radioButton1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_PRESSED_ID));
+    radioButton1_1.setSelected(false);
+    radioButton1_1.setDeselectionEnabled(false);
+    radioButtonGroup_manip.add(radioButton1_1);
+    SelectManinValue.add(radioButton1_1);
+
+    radioButton1_1_1.setXY(34, 123);
+    radioButton1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_PRESSED_ID));
+    radioButton1_1_1.setSelected(false);
+    radioButton1_1_1.setDeselectionEnabled(false);
+    radioButtonGroup_manip.add(radioButton1_1_1);
+    SelectManinValue.add(radioButton1_1_1);
+
+    radioButton1_1_1_1.setXY(34, 162);
+    radioButton1_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_PRESSED_ID));
+    radioButton1_1_1_1.setSelected(false);
+    radioButton1_1_1_1.setDeselectionEnabled(false);
+    radioButtonGroup_manip.add(radioButton1_1_1_1);
+    SelectManinValue.add(radioButton1_1_1_1);
+
+    radioButton1_1_1_1_1.setXY(34, 201);
+    radioButton1_1_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_PRESSED_ID));
+    radioButton1_1_1_1_1.setSelected(false);
+    radioButton1_1_1_1_1.setDeselectionEnabled(false);
+    radioButtonGroup_manip.add(radioButton1_1_1_1_1);
+    SelectManinValue.add(radioButton1_1_1_1_1);
+
+    radioButton1_1_1_1_1_1.setXY(34, 243);
+    radioButton1_1_1_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_PRESSED_ID));
+    radioButton1_1_1_1_1_1.setSelected(false);
+    radioButton1_1_1_1_1_1.setDeselectionEnabled(false);
+    radioButtonGroup_manip.add(radioButton1_1_1_1_1_1);
+    SelectManinValue.add(radioButton1_1_1_1_1_1);
+
+    radioButton1_1_1_1_1_1_1.setXY(34, 284);
+    radioButton1_1_1_1_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_SMALL_ROUND_ON_PRESSED_ID));
+    radioButton1_1_1_1_1_1_1.setSelected(false);
+    radioButton1_1_1_1_1_1_1.setDeselectionEnabled(false);
+    radioButtonGroup_manip.add(radioButton1_1_1_1_1_1_1);
+    SelectManinValue.add(radioButton1_1_1_1_1_1_1);
 
     controlPanel.add(SelectManinValue);
 
@@ -4871,41 +4887,6 @@ void MesuaringViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& sr
         //When buttonClearGraph clicked call virtual function
         //Call buttonClearGraphHandle
         buttonClearGraphHandle();
-    }
-    if (&src == &buttonDigiOut1)
-    {
-        //selectOutputHandle
-        //When buttonDigiOut1 clicked call virtual function
-        //Call buttonDigiOut1Handle
-        buttonDigiOut1Handle();
-    }
-    if (&src == &buttonDigiOut2)
-    {
-        //Interaction3
-        //When buttonDigiOut2 clicked call virtual function
-        //Call buttonDigiOut2Handle
-        buttonDigiOut2Handle();
-    }
-    if (&src == &buttonDigiOut3)
-    {
-        //Interaction4
-        //When buttonDigiOut3 clicked call virtual function
-        //Call buttonDigiOut3Handle
-        buttonDigiOut3Handle();
-    }
-    if (&src == &buttonAnalogOut1)
-    {
-        //Interaction5
-        //When buttonAnalogOut1 clicked call virtual function
-        //Call buttonAnalogOut1Handle
-        buttonAnalogOut1Handle();
-    }
-    if (&src == &buttonAnalogOut2)
-    {
-        //Interaction6
-        //When buttonAnalogOut2 clicked call virtual function
-        //Call buttonAnalogOut2Handle
-        buttonAnalogOut2Handle();
     }
 }
 

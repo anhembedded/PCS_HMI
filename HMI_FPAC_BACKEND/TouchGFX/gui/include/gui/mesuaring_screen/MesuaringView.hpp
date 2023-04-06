@@ -30,11 +30,7 @@ public:
     virtual void buttonGraphOutHandle();
     virtual void buttonClearGraphHandle();
 
-    virtual void buttonDigiOut1Handle();
-    virtual void buttonDigiOut2Handle();
-    virtual void buttonDigiOut3Handle();
-    virtual void buttonAnalogOut1Handle();
-    virtual void buttonAnalogOut2Handle();
+    
     virtual void buttonSetTimeHandle();
     virtual void graphLineMenuHandle();
     virtual void graphLineControlPanelHandle();

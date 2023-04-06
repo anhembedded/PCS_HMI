@@ -6,6 +6,15 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_IWZ6" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">00.00</Translation>
+      </Text>
+      <Text Id="__SingleUse_L00Q" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_LG1U" Alignment="Center" TypographyId="MainMenu">
+        <Translation Language="GB">actuator</Translation>
+      </Text>
       <Text Id="__SingleUse_ABRK" Alignment="Left" TypographyId="MainMenu">
         <Translation Language="GB">00.0</Translation>
       </Text>
@@ -65,27 +74,6 @@
       </Text>
       <Text Id="__SingleUse_RPJE" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">0</Translation>
-      </Text>
-      <Text Id="__SingleUse_TQT2" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">DI 6</Translation>
-      </Text>
-      <Text Id="__SingleUse_R9D5" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">DI 5</Translation>
-      </Text>
-      <Text Id="__SingleUse_ETMP" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">DI 4</Translation>
-      </Text>
-      <Text Id="__SingleUse_SJ5Z" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">DI 3</Translation>
-      </Text>
-      <Text Id="__SingleUse_7A7X" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">DI 2</Translation>
-      </Text>
-      <Text Id="__SingleUse_J264" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">DI 1</Translation>
-      </Text>
-      <Text Id="__SingleUse_TJI5" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">DI 0</Translation>
       </Text>
       <Text Id="__SingleUse_N945" Alignment="Left" TypographyId="MainMenu">
         <Translation Language="GB"> 6</Translation>

@@ -172,6 +172,23 @@
             }
           },
           {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1",
+            "X": 17,
+            "Y": 398,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_disabled.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_help_outline_50_50_E8F6FB.svg.png",
+            "IconX": 5,
+            "IconY": 5,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_disabled.json"
+          },
+          {
             "Type": "CustomContainerInstance",
             "Name": "buttonDone1",
             "X": 730,
@@ -182,11 +199,29 @@
           {
             "Type": "Container",
             "Name": "containerParameter",
-            "X": 14,
+            "X": 100,
             "Y": -15,
-            "Width": 601,
-            "Height": 295,
+            "Width": 618,
+            "Height": 305,
             "Components": [
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxWithBorder3",
+                "Y": 22,
+                "Width": 618,
+                "Height": 283,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "BorderColor": {
+                  "Red": 145,
+                  "Green": 1,
+                  "Blue": 133
+                },
+                "BorderSize": 5
+              },
               {
                 "Type": "BoxWithBorder",
                 "Name": "boxWithBorder1_1",
@@ -908,15 +943,15 @@
           {
             "Type": "Container",
             "Name": "analogContainer",
-            "X": 81,
-            "Y": 281,
+            "X": 134,
+            "Y": 331,
             "Width": 532,
             "Height": 97,
             "Components": [
               {
                 "Type": "Slider",
                 "Name": "sliderAnalogOut0",
-                "X": 10,
+                "X": 7,
                 "Y": 4,
                 "Width": 432,
                 "Height": 32,
@@ -1218,184 +1253,6 @@
             ]
           },
           {
-            "Type": "Container",
-            "Name": "digitalInput",
-            "X": 615,
-            "Y": 31,
-            "Width": 156,
-            "Height": 313,
-            "Components": [
-              {
-                "Type": "BoxWithBorder",
-                "Name": "boxDigitalInput_0",
-                "X": 10,
-                "Y": 5,
-                "Width": 26,
-                "Height": 27,
-                "Color": {
-                  "Red": 148,
-                  "Green": 148,
-                  "Blue": 148
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "boxDigitalInput_1",
-                "X": 10,
-                "Y": 51,
-                "Width": 26,
-                "Height": 27,
-                "Color": {
-                  "Red": 148,
-                  "Green": 148,
-                  "Blue": 148
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "boxDigitalInput_2",
-                "X": 10,
-                "Y": 98,
-                "Width": 26,
-                "Height": 27,
-                "Color": {
-                  "Red": 148,
-                  "Green": 148,
-                  "Blue": 148
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "boxDigitalInput_3",
-                "X": 10,
-                "Y": 146,
-                "Width": 26,
-                "Height": 27,
-                "Color": {
-                  "Red": 148,
-                  "Green": 148,
-                  "Blue": 148
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "boxDigitalInput_4",
-                "X": 10,
-                "Y": 192,
-                "Width": 26,
-                "Height": 27,
-                "Color": {
-                  "Red": 148,
-                  "Green": 148,
-                  "Blue": 148
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "boxDigitalInput_5",
-                "X": 10,
-                "Y": 237,
-                "Width": 26,
-                "Height": 27,
-                "Color": {
-                  "Red": 148,
-                  "Green": 148,
-                  "Blue": 148
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "BoxWithBorder",
-                "Name": "boxDigitalInput_6",
-                "X": 10,
-                "Y": 284,
-                "Width": 26,
-                "Height": 27,
-                "Color": {
-                  "Red": 148,
-                  "Green": 148,
-                  "Blue": 148
-                },
-                "BorderSize": 5
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textDigitalInput_0",
-                "X": 46,
-                "Y": 10,
-                "Width": 42,
-                "Height": 17,
-                "TextId": "__SingleUse_TJI5",
-                "TextRotation": "0"
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textDigitalInput_1",
-                "X": 46,
-                "Y": 56,
-                "Width": 42,
-                "Height": 17,
-                "TextId": "__SingleUse_J264",
-                "TextRotation": "0"
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textDigitalInput_2",
-                "X": 46,
-                "Y": 104,
-                "Width": 42,
-                "Height": 17,
-                "TextId": "__SingleUse_7A7X",
-                "TextRotation": "0"
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textDigitalInput_3",
-                "X": 46,
-                "Y": 151,
-                "Width": 42,
-                "Height": 17,
-                "TextId": "__SingleUse_SJ5Z",
-                "TextRotation": "0"
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textDigitalInput_4",
-                "X": 46,
-                "Y": 197,
-                "Width": 42,
-                "Height": 17,
-                "TextId": "__SingleUse_ETMP",
-                "TextRotation": "0"
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textDigitalInput_5",
-                "X": 46,
-                "Y": 242,
-                "Width": 42,
-                "Height": 17,
-                "TextId": "__SingleUse_R9D5",
-                "TextRotation": "0"
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textDigitalInput_6",
-                "X": 46,
-                "Y": 289,
-                "Width": 42,
-                "Height": 17,
-                "TextId": "__SingleUse_TQT2",
-                "TextRotation": "0"
-              }
-            ]
-          },
-          {
             "Type": "CustomContainerInstance",
             "Name": "keyboard1",
             "X": 352,
@@ -1405,6 +1262,47 @@
             "Visible": false,
             "CustomContainerDefinitionName": "Keyboard",
             "Draggable": true
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "digitalInputIndicator1",
+            "X": 282,
+            "Y": 295,
+            "Width": 194,
+            "Height": 41,
+            "CustomContainerDefinitionName": "DigitalInputIndicator"
+          },
+          {
+            "Type": "ModalWindow",
+            "Name": "modalWindow_inf",
+            "Width": 800,
+            "Height": 480,
+            "Visible": false,
+            "FileName": "__generated\\alternate_theme_images_containers_large_wide_outlined_dark.png",
+            "ModalX": 160,
+            "ModalY": 105,
+            "ModalWidth": 480,
+            "ModalHeight": 270,
+            "Alpha": 177,
+            "Components": [
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "buttonWithIcon2",
+                "X": 370,
+                "Y": 224,
+                "Width": 100,
+                "Height": 36,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_normal.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconX": 25,
+                "IconY": -7,
+                "IconHeight": 50,
+                "IconWidth": 50,
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_rounded_normal.json"
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -1517,6 +1415,11 @@
               "Type": "ActionCustom",
               "FunctionName": "sliderAnalogOutHandle1"
             }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "action1"
           }
         ]
       },
@@ -2523,6 +2426,7 @@
                 "Y": 55,
                 "Width": 236,
                 "Height": 323,
+                "LockPosition": true,
                 "Components": [
                   {
                     "Type": "BoxWithBorder",
@@ -2530,6 +2434,7 @@
                     "X": 3,
                     "Width": 233,
                     "Height": 325,
+                    "LockPosition": true,
                     "Color": {
                       "Red": 255,
                       "Green": 255,
@@ -2543,80 +2448,10 @@
                     "BorderSize": 5
                   },
                   {
-                    "Type": "ToggleButton",
-                    "Name": "buttonDigiOut1",
-                    "X": 11,
-                    "Y": 33,
-                    "Width": 214,
-                    "Height": 36,
-                    "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_active.png",
-                    "Released": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_inactive.png"
-                  },
-                  {
-                    "Type": "ToggleButton",
-                    "Name": "buttonDigiOut2",
-                    "X": 11,
-                    "Y": 72,
-                    "Width": 214,
-                    "Height": 36,
-                    "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_active.png",
-                    "Released": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_inactive.png"
-                  },
-                  {
-                    "Type": "ToggleButton",
-                    "Name": "buttonDigiOut3",
-                    "X": 11,
-                    "Y": 115,
-                    "Width": 214,
-                    "Height": 36,
-                    "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_active.png",
-                    "Released": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_inactive.png"
-                  },
-                  {
-                    "Type": "ToggleButton",
-                    "Name": "buttonAnalogOut1",
-                    "X": 11,
-                    "Y": 238,
-                    "Width": 214,
-                    "Height": 36,
-                    "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_active.png",
-                    "Released": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_inactive.png"
-                  },
-                  {
-                    "Type": "ToggleButton",
-                    "Name": "buttonAnalogOut2",
-                    "X": 11,
-                    "Y": 279,
-                    "Width": 214,
-                    "Height": 36,
-                    "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_active.png",
-                    "Released": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_inactive.png"
-                  },
-                  {
-                    "Type": "ToggleButton",
-                    "Name": "buttonDigiOut3_1",
-                    "X": 11,
-                    "Y": 155,
-                    "Width": 214,
-                    "Height": 36,
-                    "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_active.png",
-                    "Released": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_inactive.png"
-                  },
-                  {
-                    "Type": "ToggleButton",
-                    "Name": "buttonDigiOut3_1_1",
-                    "X": 11,
-                    "Y": 196,
-                    "Width": 214,
-                    "Height": 36,
-                    "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_active.png",
-                    "Released": "__generated\\dark_theme_images_widgets_button_regular_height_36_medium_rounded_inactive.png"
-                  },
-                  {
                     "Type": "TextArea",
                     "Name": "textArea5_2_1",
-                    "X": 58,
-                    "Y": 80,
+                    "X": 100,
+                    "Y": 79,
                     "Width": 121,
                     "Height": 19,
                     "TextId": "__SingleUse_EWF4",
@@ -2631,7 +2466,7 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea5_2_2",
-                    "X": 58,
+                    "X": 100,
                     "Y": 123,
                     "Width": 121,
                     "Height": 19,
@@ -2647,8 +2482,8 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea5_2_2_1",
-                    "X": 58,
-                    "Y": 163,
+                    "X": 100,
+                    "Y": 162,
                     "Width": 121,
                     "Height": 19,
                     "TextId": "__SingleUse_TJ55",
@@ -2663,7 +2498,7 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea5_2_2_1_1",
-                    "X": 58,
+                    "X": 100,
                     "Y": 204,
                     "Width": 121,
                     "Height": 19,
@@ -2679,7 +2514,7 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea5_2_3",
-                    "X": 57,
+                    "X": 100,
                     "Y": 246,
                     "Width": 123,
                     "Height": 19,
@@ -2695,8 +2530,8 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea5_2",
-                    "X": 58,
-                    "Y": 41,
+                    "X": 100,
+                    "Y": 42,
                     "Width": 121,
                     "Height": 19,
                     "TextId": "__SingleUse_Q4X0",
@@ -2711,7 +2546,7 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea5_2_4",
-                    "X": 58,
+                    "X": 100,
                     "Y": 287,
                     "Width": 123,
                     "Height": 19,
@@ -2739,6 +2574,104 @@
                       "Blue": 87
                     },
                     "AutoSize": true
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Name": "radioButton1",
+                    "X": 34,
+                    "Y": 42,
+                    "Width": 24,
+                    "Height": 24,
+                    "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_action.png",
+                    "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_pressed.png",
+                    "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off.png",
+                    "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off_pressed.png",
+                    "RadioButtonGroup": "radioButtonGroup_manip",
+                    "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_action_round_small.json"
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Name": "radioButton1_1",
+                    "X": 34,
+                    "Y": 79,
+                    "Width": 24,
+                    "Height": 24,
+                    "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_action.png",
+                    "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_pressed.png",
+                    "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off.png",
+                    "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off_pressed.png",
+                    "RadioButtonGroup": "radioButtonGroup_manip",
+                    "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_action_round_small.json"
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Name": "radioButton1_1_1",
+                    "X": 34,
+                    "Y": 123,
+                    "Width": 24,
+                    "Height": 24,
+                    "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_action.png",
+                    "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_pressed.png",
+                    "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off.png",
+                    "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off_pressed.png",
+                    "RadioButtonGroup": "radioButtonGroup_manip",
+                    "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_action_round_small.json"
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Name": "radioButton1_1_1_1",
+                    "X": 34,
+                    "Y": 162,
+                    "Width": 24,
+                    "Height": 24,
+                    "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_action.png",
+                    "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_pressed.png",
+                    "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off.png",
+                    "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off_pressed.png",
+                    "RadioButtonGroup": "radioButtonGroup_manip",
+                    "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_action_round_small.json"
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Name": "radioButton1_1_1_1_1",
+                    "X": 34,
+                    "Y": 201,
+                    "Width": 24,
+                    "Height": 24,
+                    "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_action.png",
+                    "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_pressed.png",
+                    "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off.png",
+                    "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off_pressed.png",
+                    "RadioButtonGroup": "radioButtonGroup_manip",
+                    "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_action_round_small.json"
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Name": "radioButton1_1_1_1_1_1",
+                    "X": 34,
+                    "Y": 243,
+                    "Width": 24,
+                    "Height": 24,
+                    "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_action.png",
+                    "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_pressed.png",
+                    "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off.png",
+                    "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off_pressed.png",
+                    "RadioButtonGroup": "radioButtonGroup_manip",
+                    "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_action_round_small.json"
+                  },
+                  {
+                    "Type": "RadioButton",
+                    "Name": "radioButton1_1_1_1_1_1_1",
+                    "X": 34,
+                    "Y": 284,
+                    "Width": 24,
+                    "Height": 24,
+                    "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_action.png",
+                    "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_on_pressed.png",
+                    "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off.png",
+                    "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_small_round_off_pressed.png",
+                    "RadioButtonGroup": "radioButtonGroup_manip",
+                    "Preset": "alternate_theme\\presets\\radiobutton\\radio\\small_action_round_small.json"
                   }
                 ]
               },
@@ -2950,61 +2883,6 @@
             }
           },
           {
-            "InteractionName": "selectOutputHandle",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonDigiOut1"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "buttonDigiOut1Handle"
-            }
-          },
-          {
-            "InteractionName": "Interaction3",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonDigiOut2"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "buttonDigiOut2Handle"
-            }
-          },
-          {
-            "InteractionName": "Interaction4",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonDigiOut3"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "buttonDigiOut3Handle"
-            }
-          },
-          {
-            "InteractionName": "Interaction5",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonAnalogOut1"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "buttonAnalogOut1Handle"
-            }
-          },
-          {
-            "InteractionName": "Interaction6",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonAnalogOut2"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "buttonAnalogOut2Handle"
-            }
-          },
-          {
             "InteractionName": "Interaction7",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -3099,123 +2977,177 @@
             "Preset": "clay_theme\\presets\\button\\regular\\height_36\\small_round_action.json"
           },
           {
-            "Type": "BoxWithBorder",
-            "Name": "boxWithBorder1",
-            "X": 48,
-            "Y": 47,
-            "Width": 570,
-            "Height": 214,
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "BorderSize": 5
-          },
-          {
-            "Type": "Slider",
-            "Name": "slider1_1",
+            "Type": "Container",
+            "Name": "PidCon",
             "X": 66,
-            "Y": 70,
-            "Width": 432,
-            "Height": 32,
-            "IsHorizontalSlider": true,
-            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_large.png",
-            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_large.png",
-            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
-            "BackgroundX": 16,
-            "BackgroundY": 11,
-            "IndicatorMax": 400,
-            "ValueMax": 100,
-            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\large_rounded.json"
+            "Y": 73,
+            "Width": 640,
+            "Height": 231,
+            "Components": [
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxWithBorder1",
+                "X": 7,
+                "Y": 8,
+                "Width": 633,
+                "Height": 214,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "sliderKp",
+                "X": 81,
+                "Y": 30,
+                "Width": 534,
+                "Height": 41,
+                "CustomContainerDefinitionName": "sliderWithText"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "sliderKi",
+                "X": 82,
+                "Y": 95,
+                "Width": 534,
+                "Height": 41,
+                "CustomContainerDefinitionName": "sliderWithText"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "sliderKd",
+                "X": 81,
+                "Y": 163,
+                "Width": 534,
+                "Height": 41,
+                "CustomContainerDefinitionName": "sliderWithText"
+              }
+            ]
           },
           {
-            "Type": "Slider",
-            "Name": "slider1",
-            "X": 66,
-            "Y": 138,
-            "Width": 432,
-            "Height": 32,
-            "IsHorizontalSlider": true,
-            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_large.png",
-            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_large.png",
-            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
-            "BackgroundX": 16,
-            "BackgroundY": 11,
-            "IndicatorMax": 400,
-            "ValueMax": 100,
-            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\large_rounded.json"
-          },
-          {
-            "Type": "Slider",
-            "Name": "slider1_2",
-            "X": 66,
-            "Y": 208,
-            "Width": 432,
-            "Height": 32,
-            "IsHorizontalSlider": true,
-            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_large.png",
-            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_large.png",
-            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
-            "BackgroundX": 16,
-            "BackgroundY": 11,
-            "IndicatorMax": 400,
-            "ValueMax": 100,
-            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\large_rounded.json"
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Name": "boxWithBorder2",
-            "X": 498,
-            "Y": 66,
-            "Width": 102,
-            "Height": 41,
-            "Color": {
+            "Type": "ButtonWithLabel",
+            "Name": "button_openModelWindow",
+            "X": 22,
+            "Y": 400,
+            "Width": 188,
+            "Height": 80,
+            "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_36_small_rounded_pressed.png",
+            "Released": "__generated\\clay_theme_images_widgets_button_regular_height_36_small_rounded_action.png",
+            "TextId": "__SingleUse_LG1U",
+            "ReleasedColor": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "BorderColor": {
-              "Red": 209,
-              "Blue": 167
-            },
-            "BorderSize": 5
-          },
-          {
-            "Type": "BoxWithBorder",
-            "Name": "boxWithBorder2_1",
-            "X": 498,
-            "Y": 134,
-            "Width": 102,
-            "Height": 41,
-            "Color": {
+            "PressedColor": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "BorderColor": {
-              "Red": 209,
-              "Blue": 167
-            },
-            "BorderSize": 5
+            "TextRotation": "0",
+            "Preset": "clay_theme\\presets\\button\\regular\\height_36\\small_rounded_action.json"
           },
           {
-            "Type": "BoxWithBorder",
-            "Name": "boxWithBorder2_1_1",
-            "X": 498,
-            "Y": 204,
-            "Width": 102,
-            "Height": 41,
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "BorderColor": {
-              "Red": 209,
-              "Blue": 167
-            },
-            "BorderSize": 5
+            "Type": "ModalWindow",
+            "Name": "modalWindow1",
+            "Width": 800,
+            "Height": 480,
+            "Visible": false,
+            "FileName": "__generated\\alternate_theme_images_containers_large_wide_outlined_light.png",
+            "ModalX": 160,
+            "ModalY": 105,
+            "ModalWidth": 480,
+            "ModalHeight": 270,
+            "Alpha": 169,
+            "Components": [
+              {
+                "Type": "RadioButton",
+                "Name": "radioButton1",
+                "X": 29,
+                "Y": 28,
+                "Width": 36,
+                "Height": 36,
+                "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_action.png",
+                "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_pressed.png",
+                "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_off.png",
+                "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_off_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup1",
+                "Preset": "alternate_theme\\presets\\radiobutton\\radio\\medium_action_round.json"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "radioButton1_1",
+                "X": 29,
+                "Y": 85,
+                "Width": 36,
+                "Height": 36,
+                "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_action.png",
+                "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_pressed.png",
+                "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_off.png",
+                "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_off_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup1",
+                "Preset": "alternate_theme\\presets\\radiobutton\\radio\\medium_action_round.json"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "radioButton1_1_1",
+                "X": 29,
+                "Y": 146,
+                "Width": 36,
+                "Height": 36,
+                "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_action.png",
+                "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_pressed.png",
+                "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_off.png",
+                "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_off_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup1",
+                "Preset": "alternate_theme\\presets\\radiobutton\\radio\\medium_action_round.json"
+              },
+              {
+                "Type": "RadioButton",
+                "Name": "radioButton1_1_1_1",
+                "X": 29,
+                "Y": 208,
+                "Width": 36,
+                "Height": 36,
+                "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_action.png",
+                "FileNameSelectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_pressed.png",
+                "FileNameUnselected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_off.png",
+                "FileNameUnselectedPressed": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_off_pressed.png",
+                "RadioButtonGroup": "radioButtonGroup1",
+                "Preset": "alternate_theme\\presets\\radiobutton\\radio\\medium_action_round.json"
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "button_closeModelWindow",
+                "X": 342,
+                "Y": 204,
+                "Width": 150,
+                "Height": 80,
+                "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.png",
+                "Released": "__generated\\clay_theme_images_widgets_button_regular_height_36_tiny_rounded_action.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconX": 50,
+                "IconY": 15,
+                "IconHeight": 50,
+                "IconWidth": 50,
+                "Preset": "clay_theme\\presets\\button\\regular\\height_36\\tiny_rounded_action.json"
+              }
+            ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "keyboard",
+            "X": 338,
+            "Y": 27,
+            "Width": 343,
+            "Height": 426,
+            "Visible": false,
+            "CustomContainerDefinitionName": "Keyboard",
+            "Draggable": true
           }
         ],
         "Interactions": [
@@ -3242,6 +3174,38 @@
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "ClosedLoopGraph"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_Confirm"
+            },
+            "Action": {
+              "Type": "ActionNone"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_openModelWindow"
+            },
+            "Action": {
+              "Type": "ActionShow",
+              "ActionComponent": "modalWindow1"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_closeModelWindow"
+            },
+            "Action": {
+              "Type": "ActionHide",
+              "ActionComponent": "modalWindow1"
             }
           }
         ]
@@ -4657,6 +4621,121 @@
             },
             "Action": {
               "Type": "ActionNone"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "sliderWithText",
+        "X": 133,
+        "Y": 199,
+        "Width": 534,
+        "Height": 41,
+        "Components": [
+          {
+            "Type": "FlexButton",
+            "Name": "buttonText",
+            "X": 432,
+            "Y": 4,
+            "Width": 102,
+            "Height": 32,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 32,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Red": 87,
+                  "Green": 119,
+                  "Blue": 243
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Slider",
+            "Name": "slider_analog",
+            "Y": 4,
+            "Width": 432,
+            "Height": 32,
+            "LockPosition": true,
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_large.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_large.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_light.png",
+            "BackgroundX": 16,
+            "BackgroundY": 11,
+            "IndicatorMax": 400,
+            "ValueMax": 1023,
+            "Preset": "alternate_theme\\presets\\slider\\horizontal\\thick\\large_rounded.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "text_analogVal",
+            "X": 457,
+            "Y": 5,
+            "Width": 51,
+            "Height": 27,
+            "TextId": "__SingleUse_L00Q",
+            "TextRotation": "0",
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_IWZ6",
+              "UseBuffer": true,
+              "BufferSize": 6
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "slider_analog_valueChangeHandle",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_analog"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_analog_valueChangeHandle"
+            }
+          },
+          {
+            "InteractionName": "slider_analog_valueConfirmHandle",
+            "Trigger": {
+              "Type": "TriggerSliderValueConfirmed",
+              "TriggerComponent": "slider_analog"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_analog_valueConfirmHandle"
+            }
+          },
+          {
+            "InteractionName": "buttonTextClickHandle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonText"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonTextClickHandle"
             }
           }
         ]

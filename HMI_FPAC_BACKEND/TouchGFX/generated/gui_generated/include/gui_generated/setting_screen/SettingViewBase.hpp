@@ -8,6 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/setting_screen/SettingPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <gui/containers/ButtonDone.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
@@ -20,6 +21,8 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <gui/containers/Keyboard.hpp>
 #include <touchgfx/mixins/Draggable.hpp>
+#include <gui/containers/DigitalInputIndicator.hpp>
+#include <touchgfx/containers/ModalWindow.hpp>
 
 class SettingViewBase : public touchgfx::View<SettingPresenter>
 {
@@ -27,6 +30,15 @@ public:
     SettingViewBase();
     virtual ~SettingViewBase();
     virtual void setupScreen();
+
+    /*
+     * Custom Actions
+     */
+    virtual void action1()
+    {
+        // Override and implement this function in Screen1
+    }
+    
 
     /*
      * Virtual Action Handlers
@@ -82,8 +94,10 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box Background;
+    touchgfx::ButtonWithIcon buttonWithIcon1;
     ButtonDone buttonDone1;
     touchgfx::Container containerParameter;
+    touchgfx::BoxWithBorder boxWithBorder3;
     touchgfx::BoxWithBorder boxWithBorder1_1;
     touchgfx::BoxWithBorder boxWithBorder1_1_1;
     touchgfx::BoxWithBorder boxWithBorder1_1_2;
@@ -138,22 +152,10 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder2;
     touchgfx::TextAreaWithOneWildcard textBinay;
     touchgfx::Image image1;
-    touchgfx::Container digitalInput;
-    touchgfx::BoxWithBorder boxDigitalInput_0;
-    touchgfx::BoxWithBorder boxDigitalInput_1;
-    touchgfx::BoxWithBorder boxDigitalInput_2;
-    touchgfx::BoxWithBorder boxDigitalInput_3;
-    touchgfx::BoxWithBorder boxDigitalInput_4;
-    touchgfx::BoxWithBorder boxDigitalInput_5;
-    touchgfx::BoxWithBorder boxDigitalInput_6;
-    touchgfx::TextArea textDigitalInput_0;
-    touchgfx::TextArea textDigitalInput_1;
-    touchgfx::TextArea textDigitalInput_2;
-    touchgfx::TextArea textDigitalInput_3;
-    touchgfx::TextArea textDigitalInput_4;
-    touchgfx::TextArea textDigitalInput_5;
-    touchgfx::TextArea textDigitalInput_6;
     touchgfx::Draggable< Keyboard > keyboard1;
+    DigitalInputIndicator digitalInputIndicator1;
+    touchgfx::ModalWindow modalWindow_inf;
+    touchgfx::ButtonWithIcon buttonWithIcon2;
 
     /*
      * Wildcard Buffers

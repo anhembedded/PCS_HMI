@@ -3,8 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/setting_screen/SettingViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 SettingViewBase::SettingViewBase() :
     flexButtonCallback(this, &SettingViewBase::flexButtonCallbackHandler),
@@ -18,10 +18,21 @@ SettingViewBase::SettingViewBase() :
     Background.setColor(touchgfx::Color::getColorFromRGB(214, 236, 255));
     add(Background);
 
+    buttonWithIcon1.setXY(17, 398);
+    buttonWithIcon1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_HELP_OUTLINE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonWithIcon1.setIconXY(5, 5);
+    add(buttonWithIcon1);
+
     buttonDone1.setXY(730, 0);
     add(buttonDone1);
 
-    containerParameter.setPosition(14, -15, 601, 295);
+    containerParameter.setPosition(100, -15, 618, 305);
+    boxWithBorder3.setPosition(0, 22, 618, 283);
+    boxWithBorder3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorder3.setBorderColor(touchgfx::Color::getColorFromRGB(145, 1, 133));
+    boxWithBorder3.setBorderSize(5);
+    containerParameter.add(boxWithBorder3);
+
     boxWithBorder1_1.setPosition(453, 66, 140, 46);
     boxWithBorder1_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1_1.setBorderColor(touchgfx::Color::getColorFromRGB(219, 0, 132));
@@ -256,8 +267,8 @@ SettingViewBase::SettingViewBase() :
 
     add(containerParameter);
 
-    analogContainer.setPosition(81, 281, 532, 97);
-    sliderAnalogOut0.setXY(10, 4);
+    analogContainer.setPosition(134, 331, 532, 97);
+    sliderAnalogOut0.setXY(7, 4);
     sliderAnalogOut0.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_TRACK_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_FILLER_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_ROUNDED_LIGHT_ID));
     sliderAnalogOut0.setupHorizontalSlider(16, 11, 0, 0, 400);
     sliderAnalogOut0.setValueRange(0, 4095);
@@ -385,96 +396,23 @@ SettingViewBase::SettingViewBase() :
 
     add(slideMenu1);
 
-    digitalInput.setPosition(615, 31, 156, 313);
-    boxDigitalInput_0.setPosition(10, 5, 26, 27);
-    boxDigitalInput_0.setColor(touchgfx::Color::getColorFromRGB(148, 148, 148));
-    boxDigitalInput_0.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxDigitalInput_0.setBorderSize(5);
-    digitalInput.add(boxDigitalInput_0);
-
-    boxDigitalInput_1.setPosition(10, 51, 26, 27);
-    boxDigitalInput_1.setColor(touchgfx::Color::getColorFromRGB(148, 148, 148));
-    boxDigitalInput_1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxDigitalInput_1.setBorderSize(5);
-    digitalInput.add(boxDigitalInput_1);
-
-    boxDigitalInput_2.setPosition(10, 98, 26, 27);
-    boxDigitalInput_2.setColor(touchgfx::Color::getColorFromRGB(148, 148, 148));
-    boxDigitalInput_2.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxDigitalInput_2.setBorderSize(5);
-    digitalInput.add(boxDigitalInput_2);
-
-    boxDigitalInput_3.setPosition(10, 146, 26, 27);
-    boxDigitalInput_3.setColor(touchgfx::Color::getColorFromRGB(148, 148, 148));
-    boxDigitalInput_3.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxDigitalInput_3.setBorderSize(5);
-    digitalInput.add(boxDigitalInput_3);
-
-    boxDigitalInput_4.setPosition(10, 192, 26, 27);
-    boxDigitalInput_4.setColor(touchgfx::Color::getColorFromRGB(148, 148, 148));
-    boxDigitalInput_4.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxDigitalInput_4.setBorderSize(5);
-    digitalInput.add(boxDigitalInput_4);
-
-    boxDigitalInput_5.setPosition(10, 237, 26, 27);
-    boxDigitalInput_5.setColor(touchgfx::Color::getColorFromRGB(148, 148, 148));
-    boxDigitalInput_5.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxDigitalInput_5.setBorderSize(5);
-    digitalInput.add(boxDigitalInput_5);
-
-    boxDigitalInput_6.setPosition(10, 284, 26, 27);
-    boxDigitalInput_6.setColor(touchgfx::Color::getColorFromRGB(148, 148, 148));
-    boxDigitalInput_6.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    boxDigitalInput_6.setBorderSize(5);
-    digitalInput.add(boxDigitalInput_6);
-
-    textDigitalInput_0.setPosition(46, 10, 42, 17);
-    textDigitalInput_0.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textDigitalInput_0.setLinespacing(0);
-    textDigitalInput_0.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TJI5));
-    digitalInput.add(textDigitalInput_0);
-
-    textDigitalInput_1.setPosition(46, 56, 42, 17);
-    textDigitalInput_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textDigitalInput_1.setLinespacing(0);
-    textDigitalInput_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J264));
-    digitalInput.add(textDigitalInput_1);
-
-    textDigitalInput_2.setPosition(46, 104, 42, 17);
-    textDigitalInput_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textDigitalInput_2.setLinespacing(0);
-    textDigitalInput_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7A7X));
-    digitalInput.add(textDigitalInput_2);
-
-    textDigitalInput_3.setPosition(46, 151, 42, 17);
-    textDigitalInput_3.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textDigitalInput_3.setLinespacing(0);
-    textDigitalInput_3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_SJ5Z));
-    digitalInput.add(textDigitalInput_3);
-
-    textDigitalInput_4.setPosition(46, 197, 42, 17);
-    textDigitalInput_4.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textDigitalInput_4.setLinespacing(0);
-    textDigitalInput_4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ETMP));
-    digitalInput.add(textDigitalInput_4);
-
-    textDigitalInput_5.setPosition(46, 242, 42, 17);
-    textDigitalInput_5.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textDigitalInput_5.setLinespacing(0);
-    textDigitalInput_5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_R9D5));
-    digitalInput.add(textDigitalInput_5);
-
-    textDigitalInput_6.setPosition(46, 289, 42, 17);
-    textDigitalInput_6.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textDigitalInput_6.setLinespacing(0);
-    textDigitalInput_6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_TQT2));
-    digitalInput.add(textDigitalInput_6);
-
-    add(digitalInput);
-
     keyboard1.setXY(352, 39);
     keyboard1.setVisible(false);
     add(keyboard1);
+
+    digitalInputIndicator1.setXY(282, 295);
+    add(digitalInputIndicator1);
+
+    modalWindow_inf.setBackground(touchgfx::BitmapId(BITMAP_ALTERNATE_THEME_IMAGES_CONTAINERS_LARGE_WIDE_OUTLINED_DARK_ID), 160, 105);
+    modalWindow_inf.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    modalWindow_inf.setShadeAlpha(177);
+    modalWindow_inf.hide();
+    buttonWithIcon2.setXY(370, 224);
+    buttonWithIcon2.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonWithIcon2.setIconXY(25, -7);
+    modalWindow_inf.add(buttonWithIcon2);
+
+    add(modalWindow_inf);
 }
 
 SettingViewBase::~SettingViewBase()
@@ -486,6 +424,7 @@ void SettingViewBase::setupScreen()
 {
     buttonDone1.initialize();
     keyboard1.initialize();
+    digitalInputIndicator1.initialize();
 }
 
 void SettingViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)

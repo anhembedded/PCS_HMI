@@ -21,6 +21,8 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/Button.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/widgets/RadioButton.hpp>
+#include <touchgfx/widgets/RadioButtonGroup.hpp>
 #include <touchgfx/containers/Slider.hpp>
 #include <gui/containers/Keyboard.hpp>
 #include <gui/containers/ButtonDone.hpp>
@@ -73,26 +75,6 @@ public:
         // Override and implement this function in Mesuaring
     }
     virtual void buttonClearGraphHandle()
-    {
-        // Override and implement this function in Mesuaring
-    }
-    virtual void buttonDigiOut1Handle()
-    {
-        // Override and implement this function in Mesuaring
-    }
-    virtual void buttonDigiOut2Handle()
-    {
-        // Override and implement this function in Mesuaring
-    }
-    virtual void buttonDigiOut3Handle()
-    {
-        // Override and implement this function in Mesuaring
-    }
-    virtual void buttonAnalogOut1Handle()
-    {
-        // Override and implement this function in Mesuaring
-    }
-    virtual void buttonAnalogOut2Handle()
     {
         // Override and implement this function in Mesuaring
     }
@@ -204,13 +186,6 @@ protected:
     touchgfx::TextAreaWithOneWildcard textSetTime;
     touchgfx::Container SelectManinValue;
     touchgfx::BoxWithBorder boxWithBorder3;
-    touchgfx::ToggleButton buttonDigiOut1;
-    touchgfx::ToggleButton buttonDigiOut2;
-    touchgfx::ToggleButton buttonDigiOut3;
-    touchgfx::ToggleButton buttonAnalogOut1;
-    touchgfx::ToggleButton buttonAnalogOut2;
-    touchgfx::ToggleButton buttonDigiOut3_1;
-    touchgfx::ToggleButton buttonDigiOut3_1_1;
     touchgfx::TextArea textArea5_2_1;
     touchgfx::TextArea textArea5_2_2;
     touchgfx::TextArea textArea5_2_2_1;
@@ -219,6 +194,14 @@ protected:
     touchgfx::TextArea textArea5_2;
     touchgfx::TextArea textArea5_2_4;
     touchgfx::TextArea textArea5_1_1_1_2_1;
+    touchgfx::RadioButtonGroup<7> radioButtonGroup_manip;
+    touchgfx::RadioButton radioButton1;
+    touchgfx::RadioButton radioButton1_1;
+    touchgfx::RadioButton radioButton1_1_1;
+    touchgfx::RadioButton radioButton1_1_1_1;
+    touchgfx::RadioButton radioButton1_1_1_1_1;
+    touchgfx::RadioButton radioButton1_1_1_1_1_1;
+    touchgfx::RadioButton radioButton1_1_1_1_1_1_1;
     touchgfx::TextAreaWithOneWildcard textAreaAnalogOut;
     touchgfx::Slider sliderAnalogOut;
     touchgfx::Slider sliderPWM;
