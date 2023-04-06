@@ -6,6 +6,36 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_986R" Alignment="Left" TypographyId="KeyBoard">
+        <Translation Language="GB">00000000000.0</Translation>
+      </Text>
+      <Text Id="__SingleUse_KJC5" Alignment="Right" TypographyId="KeyBoard">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_2BAG" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">1.00</Translation>
+      </Text>
+      <Text Id="__SingleUse_7ZAQ" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VXIL" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">00.00</Translation>
+      </Text>
+      <Text Id="__SingleUse_YYC4" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OE6Z" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">00.00</Translation>
+      </Text>
+      <Text Id="__SingleUse_9BL3" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3N9N" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">00.00</Translation>
+      </Text>
+      <Text Id="__SingleUse_YH98" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_IWZ6" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">00.00</Translation>
       </Text>
@@ -352,12 +382,6 @@
         <Translation Language="GB">0.00</Translation>
       </Text>
       <Text Id="__SingleUse_8R2G" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_2BAG" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">1.00</Translation>
-      </Text>
-      <Text Id="__SingleUse_7ZAQ" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_2333" Alignment="Left" TypographyId="MainMenu">

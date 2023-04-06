@@ -9,6 +9,7 @@ class Keyboard : public KeyboardBase
 {
 public:
     Keyboard();
+    float buffer;
     virtual ~Keyboard() {}
 
     virtual void initialize();

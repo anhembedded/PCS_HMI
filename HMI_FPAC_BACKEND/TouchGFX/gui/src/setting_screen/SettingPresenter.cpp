@@ -20,7 +20,7 @@ void SettingPresenter::notifyADCChanged(std::array<uint32_t, 4> arrayParameters)
 }
 void SettingPresenter::notifyDigitalInput(uint32_t registerVar)
 {
-    view.drawDigtalInputState(registerVar);
+  //  view.drawDigtalInputState(registerVar);
 }
 void SettingPresenter::notifyAnalogOutputChanged_1(uint32_t registerVar)
 {

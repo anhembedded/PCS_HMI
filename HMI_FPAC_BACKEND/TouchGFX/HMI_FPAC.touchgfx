@@ -2999,31 +2999,166 @@
                 "BorderSize": 5
               },
               {
-                "Type": "CustomContainerInstance",
-                "Name": "sliderKp",
-                "X": 81,
-                "Y": 30,
-                "Width": 534,
-                "Height": 41,
-                "CustomContainerDefinitionName": "sliderWithText"
+                "Type": "FlexButton",
+                "Name": "buttonText_Kd",
+                "X": 40,
+                "Y": 167,
+                "Width": 102,
+                "Height": 32,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 102,
+                    "Height": 32,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 87,
+                      "Green": 119,
+                      "Blue": 243
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
               },
               {
-                "Type": "CustomContainerInstance",
-                "Name": "sliderKi",
-                "X": 82,
-                "Y": 95,
-                "Width": 534,
-                "Height": 41,
-                "CustomContainerDefinitionName": "sliderWithText"
+                "Type": "FlexButton",
+                "Name": "buttonText_Ki",
+                "X": 40,
+                "Y": 99,
+                "Width": 102,
+                "Height": 32,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 102,
+                    "Height": 32,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 87,
+                      "Green": 119,
+                      "Blue": 243
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
               },
               {
-                "Type": "CustomContainerInstance",
-                "Name": "sliderKd",
-                "X": 81,
-                "Y": 163,
-                "Width": 534,
-                "Height": 41,
-                "CustomContainerDefinitionName": "sliderWithText"
+                "Type": "FlexButton",
+                "Name": "buttonText_Kp",
+                "X": 42,
+                "Y": 27,
+                "Width": 102,
+                "Height": 32,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 102,
+                    "Height": 32,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 87,
+                      "Green": 119,
+                      "Blue": 243
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_analogVal_Kd",
+                "X": 65,
+                "Y": 168,
+                "Width": 51,
+                "Height": 27,
+                "TextId": "__SingleUse_YH98",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_3N9N",
+                  "UseBuffer": true,
+                  "BufferSize": 6
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_analogVal_Ki",
+                "X": 65,
+                "Y": 100,
+                "Width": 51,
+                "Height": 27,
+                "TextId": "__SingleUse_9BL3",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_OE6Z",
+                  "UseBuffer": true,
+                  "BufferSize": 6
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_analogVal_Kp",
+                "X": 67,
+                "Y": 28,
+                "Width": 51,
+                "Height": 27,
+                "TextId": "__SingleUse_YYC4",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_VXIL",
+                  "UseBuffer": true,
+                  "BufferSize": 6
+                }
               }
             ]
           },
@@ -3140,14 +3275,13 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "keyboard",
-            "X": 338,
+            "Name": "keyboard1",
+            "X": 333,
             "Y": 27,
             "Width": 343,
             "Height": 426,
             "Visible": false,
-            "CustomContainerDefinitionName": "Keyboard",
-            "Draggable": true
+            "CustomContainerDefinitionName": "Keyboard"
           }
         ],
         "Interactions": [
@@ -3206,6 +3340,39 @@
             "Action": {
               "Type": "ActionHide",
               "ActionComponent": "modalWindow1"
+            }
+          },
+          {
+            "InteractionName": "buttonText_Kp_clickHandle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonText_Kp"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonText_Kp_clickHandle"
+            }
+          },
+          {
+            "InteractionName": "buttonText_Ki_clickHandle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonText_Ki"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonText_Ki_clickHandle"
+            }
+          },
+          {
+            "InteractionName": "buttonText_Kd_clickHandle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonText_Kd"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonText_Kd_clickHandle"
             }
           }
         ]
@@ -3521,9 +3688,8 @@
       {
         "Name": "Keyboard",
         "X": 456,
-        "Y": 54,
         "Width": 343,
-        "Height": 426,
+        "Height": 480,
         "Components": [
           {
             "Type": "BoxWithBorder",
@@ -3872,6 +4038,32 @@
             "Width": 50,
             "Height": 50,
             "RelativeFilename": "__generated\\icon_theme_images_editor_format_align_justify_50_50_86898C.svg.png"
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder2",
+            "Y": 426,
+            "Width": 344,
+            "Height": 54,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "BorderSize": 5
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_buffer",
+            "X": 6,
+            "Y": 436,
+            "Width": 326,
+            "Height": 35,
+            "TextId": "__SingleUse_KJC5",
+            "TextRotation": "0",
+            "Wildcard1": {
+              "TextId": "__SingleUse_986R"
+            }
           }
         ],
         "Interactions": [
@@ -4698,7 +4890,6 @@
             "Y": 4,
             "Width": 432,
             "Height": 32,
-            "LockPosition": true,
             "IsHorizontalSlider": true,
             "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_track_large.png",
             "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_filler_large.png",
@@ -4756,8 +4947,7 @@
               "TriggerComponent": "buttonText"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "buttonTextClickHandle"
+              "Type": "ActionShow"
             }
           }
         ]

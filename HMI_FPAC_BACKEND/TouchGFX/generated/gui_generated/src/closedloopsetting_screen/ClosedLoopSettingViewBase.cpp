@@ -7,7 +7,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
-    buttonCallback(this, &ClosedLoopSettingViewBase::buttonCallbackHandler)
+    buttonCallback(this, &ClosedLoopSettingViewBase::buttonCallbackHandler),
+    flexButtonCallback(this, &ClosedLoopSettingViewBase::flexButtonCallbackHandler)
 {
     __background.setPosition(0, 0, 800, 480);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -32,14 +33,53 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     boxWithBorder1.setBorderSize(5);
     PidCon.add(boxWithBorder1);
 
-    sliderKp.setXY(81, 30);
-    PidCon.add(sliderKp);
+    buttonText_Kd.setBoxWithBorderPosition(0, 0, 102, 32);
+    buttonText_Kd.setBorderSize(5);
+    buttonText_Kd.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(87, 119, 243), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    buttonText_Kd.setAction(flexButtonCallback);
+    buttonText_Kd.setPosition(40, 167, 102, 32);
+    PidCon.add(buttonText_Kd);
 
-    sliderKi.setXY(82, 95);
-    PidCon.add(sliderKi);
+    buttonText_Ki.setBoxWithBorderPosition(0, 0, 102, 32);
+    buttonText_Ki.setBorderSize(5);
+    buttonText_Ki.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(87, 119, 243), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    buttonText_Ki.setAction(flexButtonCallback);
+    buttonText_Ki.setPosition(40, 99, 102, 32);
+    PidCon.add(buttonText_Ki);
 
-    sliderKd.setXY(81, 163);
-    PidCon.add(sliderKd);
+    buttonText_Kp.setBoxWithBorderPosition(0, 0, 102, 32);
+    buttonText_Kp.setBorderSize(5);
+    buttonText_Kp.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(87, 119, 243), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    buttonText_Kp.setAction(flexButtonCallback);
+    buttonText_Kp.setPosition(42, 27, 102, 32);
+    PidCon.add(buttonText_Kp);
+
+    text_analogVal_Kd.setXY(65, 168);
+    text_analogVal_Kd.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    text_analogVal_Kd.setLinespacing(0);
+    Unicode::snprintf(text_analogVal_KdBuffer, TEXT_ANALOGVAL_KD_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_3N9N).getText());
+    text_analogVal_Kd.setWildcard(text_analogVal_KdBuffer);
+    text_analogVal_Kd.resizeToCurrentText();
+    text_analogVal_Kd.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YH98));
+    PidCon.add(text_analogVal_Kd);
+
+    text_analogVal_Ki.setXY(65, 100);
+    text_analogVal_Ki.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    text_analogVal_Ki.setLinespacing(0);
+    Unicode::snprintf(text_analogVal_KiBuffer, TEXT_ANALOGVAL_KI_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_OE6Z).getText());
+    text_analogVal_Ki.setWildcard(text_analogVal_KiBuffer);
+    text_analogVal_Ki.resizeToCurrentText();
+    text_analogVal_Ki.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9BL3));
+    PidCon.add(text_analogVal_Ki);
+
+    text_analogVal_Kp.setXY(67, 28);
+    text_analogVal_Kp.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    text_analogVal_Kp.setLinespacing(0);
+    Unicode::snprintf(text_analogVal_KpBuffer, TEXT_ANALOGVAL_KP_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VXIL).getText());
+    text_analogVal_Kp.setWildcard(text_analogVal_KpBuffer);
+    text_analogVal_Kp.resizeToCurrentText();
+    text_analogVal_Kp.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YYC4));
+    PidCon.add(text_analogVal_Kp);
 
     add(PidCon);
 
@@ -91,9 +131,9 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
 
     add(modalWindow1);
 
-    keyboard.setXY(338, 27);
-    keyboard.setVisible(false);
-    add(keyboard);
+    keyboard1.setXY(333, 27);
+    keyboard1.setVisible(false);
+    add(keyboard1);
 }
 
 ClosedLoopSettingViewBase::~ClosedLoopSettingViewBase()
@@ -103,10 +143,7 @@ ClosedLoopSettingViewBase::~ClosedLoopSettingViewBase()
 
 void ClosedLoopSettingViewBase::setupScreen()
 {
-    sliderKp.initialize();
-    sliderKi.initialize();
-    sliderKd.initialize();
-    keyboard.initialize();
+    keyboard1.initialize();
 }
 
 void ClosedLoopSettingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -138,5 +175,30 @@ void ClosedLoopSettingViewBase::buttonCallbackHandler(const touchgfx::AbstractBu
         //Hide modalWindow1
         modalWindow1.setVisible(false);
         modalWindow1.invalidate();
+    }
+}
+
+void ClosedLoopSettingViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &buttonText_Kp)
+    {
+        //buttonText_Kp_clickHandle
+        //When buttonText_Kp clicked call virtual function
+        //Call buttonText_Kp_clickHandle
+        buttonText_Kp_clickHandle();
+    }
+    if (&src == &buttonText_Ki)
+    {
+        //buttonText_Ki_clickHandle
+        //When buttonText_Ki clicked call virtual function
+        //Call buttonText_Ki_clickHandle
+        buttonText_Ki_clickHandle();
+    }
+    if (&src == &buttonText_Kd)
+    {
+        //buttonText_Kd_clickHandle
+        //When buttonText_Kd clicked call virtual function
+        //Call buttonText_Kd_clickHandle
+        buttonText_Kd_clickHandle();
     }
 }

@@ -10,7 +10,7 @@ KeyboardBase::KeyboardBase() :
     buttonCallback(this, &KeyboardBase::buttonCallbackHandler)
 {
     setWidth(343);
-    setHeight(426);
+    setHeight(480);
     boxWithBorder1.setPosition(0, 0, 343, 426);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(173, 173, 173));
@@ -133,6 +133,19 @@ KeyboardBase::KeyboardBase() :
     image1.setXY(282, 182);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_EDITOR_FORMAT_ALIGN_JUSTIFY_50_50_86898C_SVG_ID));
     add(image1);
+
+    boxWithBorder2.setPosition(0, 426, 344, 54);
+    boxWithBorder2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorder2.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder2.setBorderSize(5);
+    add(boxWithBorder2);
+
+    textArea_buffer.setPosition(6, 436, 326, 35);
+    textArea_buffer.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea_buffer.setLinespacing(0);
+    textArea_buffer.setWildcard(touchgfx::TypedText(T___SINGLEUSE_986R).getText());
+    textArea_buffer.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KJC5));
+    add(textArea_buffer);
 }
 
 KeyboardBase::~KeyboardBase()

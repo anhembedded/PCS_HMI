@@ -28,9 +28,7 @@ public:
     virtual void sliderAnalogOutHandle0(int value);
     virtual void sliderAnalogOutHandle1(int value);
     void setADC(std::array<uint32_t, 4> arrayParameters);
-    void drawDigtalInputState(decltype(boxDigitalInput_0) &boxParam, uint8_t state);
-    void drawDigtalInputState(uint32_t regiterVar);
-
+   
 protected:
     float f_channelFactor0;
     float f_channelFactor1;
@@ -78,7 +76,7 @@ private:
     void drawTextAdcIn3(float adcValue);
 
     float adcRawValueToVoltage(uint32_t adcVal) const;
-    uint32_t readBit(uint32_t res, uint8_t pos) const;
+   
 };
 
 #endif /* INCLUDE_GUI_SETTING_SCREEN_SETTINGVIEW */

@@ -11,13 +11,13 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
-#include <gui/containers/sliderWithText.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <touchgfx/widgets/RadioButton.hpp>
 #include <touchgfx/widgets/RadioButtonGroup.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <gui/containers/Keyboard.hpp>
-#include <touchgfx/mixins/Draggable.hpp>
 
 class ClosedLoopSettingViewBase : public touchgfx::View<ClosedLoopSettingPresenter>
 {
@@ -30,6 +30,18 @@ public:
      * Virtual Action Handlers
      */
     virtual void confirmUpdateParamter()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
+    virtual void buttonText_Kp_clickHandle()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
+    virtual void buttonText_Ki_clickHandle()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
+    virtual void buttonText_Kd_clickHandle()
     {
         // Override and implement this function in ClosedLoopSetting
     }
@@ -47,9 +59,12 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabel_Confirm;
     touchgfx::Container PidCon;
     touchgfx::BoxWithBorder boxWithBorder1;
-    sliderWithText sliderKp;
-    sliderWithText sliderKi;
-    sliderWithText sliderKd;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Kd;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Ki;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Kp;
+    touchgfx::TextAreaWithOneWildcard text_analogVal_Kd;
+    touchgfx::TextAreaWithOneWildcard text_analogVal_Ki;
+    touchgfx::TextAreaWithOneWildcard text_analogVal_Kp;
     touchgfx::ButtonWithLabel button_openModelWindow;
     touchgfx::ModalWindow modalWindow1;
     touchgfx::RadioButtonGroup<4> radioButtonGroup1;
@@ -58,7 +73,17 @@ protected:
     touchgfx::RadioButton radioButton1_1_1;
     touchgfx::RadioButton radioButton1_1_1_1;
     touchgfx::ButtonWithIcon button_closeModelWindow;
-    touchgfx::Draggable< Keyboard > keyboard;
+    Keyboard keyboard1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXT_ANALOGVAL_KD_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar text_analogVal_KdBuffer[TEXT_ANALOGVAL_KD_SIZE];
+    static const uint16_t TEXT_ANALOGVAL_KI_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar text_analogVal_KiBuffer[TEXT_ANALOGVAL_KI_SIZE];
+    static const uint16_t TEXT_ANALOGVAL_KP_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar text_analogVal_KpBuffer[TEXT_ANALOGVAL_KP_SIZE];
 
 private:
 
@@ -66,11 +91,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<ClosedLoopSettingViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<ClosedLoopSettingViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

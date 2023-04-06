@@ -11,6 +11,7 @@
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class KeyboardBase : public touchgfx::Container
 {
@@ -100,6 +101,8 @@ protected:
     touchgfx::ButtonWithLabel button2;
     touchgfx::ButtonWithLabel button3;
     touchgfx::Image image1;
+    touchgfx::BoxWithBorder boxWithBorder2;
+    touchgfx::TextAreaWithOneWildcard textArea_buffer;
 
 private:
 

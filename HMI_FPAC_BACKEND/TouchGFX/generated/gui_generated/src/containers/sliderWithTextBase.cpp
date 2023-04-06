@@ -8,15 +8,13 @@
 
 sliderWithTextBase::sliderWithTextBase() :
     sliderValueChangedCallback(this, &sliderWithTextBase::sliderValueChangedCallbackHandler),
-    sliderValueConfirmedCallback(this, &sliderWithTextBase::sliderValueConfirmedCallbackHandler),
-    flexButtonCallback(this, &sliderWithTextBase::flexButtonCallbackHandler)
+    sliderValueConfirmedCallback(this, &sliderWithTextBase::sliderValueConfirmedCallbackHandler)
 {
     setWidth(534);
     setHeight(41);
     buttonText.setBoxWithBorderPosition(0, 0, 102, 32);
     buttonText.setBorderSize(5);
     buttonText.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(87, 119, 243), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    buttonText.setAction(flexButtonCallback);
     buttonText.setPosition(432, 4, 102, 32);
     add(buttonText);
 
@@ -68,16 +66,5 @@ void sliderWithTextBase::sliderValueConfirmedCallbackHandler(const touchgfx::Sli
         //When slider_analog value confirmed call virtual function
         //Call slider_analog_valueConfirmHandle
         slider_analog_valueConfirmHandle(value);
-    }
-}
-
-void sliderWithTextBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
-{
-    if (&src == &buttonText)
-    {
-        //buttonTextClickHandle
-        //When buttonText clicked call virtual function
-        //Call buttonTextClickHandle
-        buttonTextClickHandle();
     }
 }

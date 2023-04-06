@@ -28,10 +28,6 @@ public:
     {
         // Override and implement this function in sliderWithText
     }
-    virtual void buttonTextClickHandle()
-    {
-        // Override and implement this function in sliderWithText
-    }
 
 protected:
     FrontendApplication& application() {
@@ -58,14 +54,12 @@ private:
      */
     touchgfx::Callback<sliderWithTextBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
     touchgfx::Callback<sliderWithTextBase, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
-    touchgfx::Callback<sliderWithTextBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
-    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

@@ -31,6 +31,8 @@ private:
     ClosedLoopSettingPresenter();
 
     ClosedLoopSettingView& view;
+
+  
 };
 
 #endif // CLOSEDLOOPSETTINGPRESENTER_HPP
