@@ -2,6 +2,7 @@
 #define KEYBOARD_HPP
 
 #include <gui_generated/containers/KeyboardBase.hpp>
+#include <touchgfx/hal/Types.hpp>
 #include <string>
 #include <stdint.h>
 
@@ -26,8 +27,10 @@ public:
     void buttonDelClickHandler() final;
     void buttonDotClickHandler() final;
     void buttonEnterClickHandler() final;
+   
 
     void callKeyboard(float *desNumber, uint8_t maxOfDesBuffer);
+    void callKeyboard(float* desNumber, uint8_t maxOfDesBuffer, void (*callerRedraw)());
 
 protected:
     std::string keyBoardBuffer; 
@@ -35,10 +38,16 @@ protected:
     float* inputNumber;
     uint8_t maxOfDesBuffer;
     void (*updateDisplay)(float number);
+    void (*callerRedraw_ptr)(void);
 private:
+    void drawTextAreaBuffer();
     void clearBuffer()
     {
-        keyBoardBuffer.clear();
+        keyBoardBuffer.clear();     
+        for (auto& i : textArea_bufferBuffer)
+        {
+            i = 0;
+        }
     }
     void numericButtonLogic(char ch)
     {
@@ -46,10 +55,8 @@ private:
         {
             keyBoardBuffer = keyBoardBuffer + ch;
             indexBuffer++;
-            if (inputNumber != nullptr)
-            {
-                *inputNumber = std::stof(keyBoardBuffer);
-            }
+            buffer = std::stof(keyBoardBuffer);
+            drawTextAreaBuffer();
         }
         else
         {

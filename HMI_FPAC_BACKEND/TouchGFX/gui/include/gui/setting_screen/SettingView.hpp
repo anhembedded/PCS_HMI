@@ -28,6 +28,23 @@ public:
     virtual void sliderAnalogOutHandle0(int value);
     virtual void sliderAnalogOutHandle1(int value);
     void setADC(std::array<uint32_t, 4> arrayParameters);
+
+    void drawTextAreaFactor0();
+    void drawTextAreaFactor1();
+    void drawTextAreaFactor2();
+    void drawTextAreaFactor3();
+    void drawTextAreaOffset0();
+    void drawTextAreaOffset1();
+    void drawTextAreaOffset2();
+    void drawTextAreaOffset3();
+    void drawTextProcessVar0();
+    void drawTextProcessVar1();
+    void drawTextProcessVar2();
+    void drawTextProcessVar3();
+    void drawTextAdcIn0(float adcValue);
+    void drawTextAdcIn1(float adcValue);
+    void drawTextAdcIn2(float adcValue);
+    void drawTextAdcIn3(float adcValue);
    
 protected:
     float f_channelFactor0;
@@ -58,22 +75,7 @@ private:
     void updateAnalogOut0();
     void updateAnalogOut1();
 
-    void drawTextAreaFactor0();
-    void drawTextAreaFactor1();
-    void drawTextAreaFactor2();
-    void drawTextAreaFactor3();
-    void drawTextAreaOffset0();
-    void drawTextAreaOffset1();
-    void drawTextAreaOffset2();
-    void drawTextAreaOffset3();
-    void drawTextProcessVar0();
-    void drawTextProcessVar1();
-    void drawTextProcessVar2();
-    void drawTextProcessVar3();
-    void drawTextAdcIn0(float adcValue);
-    void drawTextAdcIn1(float adcValue);
-    void drawTextAdcIn2(float adcValue);
-    void drawTextAdcIn3(float adcValue);
+  
 
     float adcRawValueToVoltage(uint32_t adcVal) const;
    

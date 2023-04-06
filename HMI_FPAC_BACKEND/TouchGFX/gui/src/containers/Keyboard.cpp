@@ -1,7 +1,8 @@
 #include <gui/containers/Keyboard.hpp>
 #include <cstring>
 
-Keyboard::Keyboard()
+
+Keyboard::Keyboard() : callerRedraw_ptr(nullptr)
 {
 
 }
@@ -72,7 +73,13 @@ void Keyboard::buttonEnterClickHandler()
     this->setVisible(false);
     this->invalidate();
     clearBuffer();
+    *inputNumber = this->buffer;
+    if (this->callerRedraw_ptr != nullptr)
+    {
+        this->callerRedraw_ptr();
+    }
     inputNumber = nullptr;
+    
 }
 
 void Keyboard::buttonDelClickHandler()
@@ -81,23 +88,15 @@ void Keyboard::buttonDelClickHandler()
     {
         keyBoardBuffer.pop_back();
         indexBuffer--;
-        if (inputNumber != nullptr)
-        {
+        
             if (!keyBoardBuffer.empty())
             {
-                *inputNumber = std::stof(keyBoardBuffer);
+                this->buffer = std::stof(keyBoardBuffer);
             }
             else
             {
-                *inputNumber = 0.F;
+                this->buffer = 0.F;
             }
-           
-        }
-        else
-        {
-            return;
-        }
-       
     }
     else
     {
@@ -108,10 +107,27 @@ void Keyboard::buttonDelClickHandler()
 
 void Keyboard::callKeyboard(float* desNumber, uint8_t maxOfDesBuffer)
 {
-    setXY(352, 39);
+    setXY(93   , 0);
     clearBuffer();
     inputNumber = desNumber;
     this->maxOfDesBuffer = maxOfDesBuffer;
     setVisible(true);
     invalidate();
+}
+
+void Keyboard::callKeyboard(float* desNumber, uint8_t maxOfDesBuffer, void(*callerRedraw)())
+{
+    setXY(93, 0);
+    clearBuffer();
+    inputNumber = desNumber;
+    this->maxOfDesBuffer = maxOfDesBuffer;
+    this->callerRedraw_ptr = callerRedraw;
+    setVisible(true);
+    invalidate();
+}
+
+void Keyboard::drawTextAreaBuffer()
+{
+    Unicode::snprintfFloat(textArea_bufferBuffer, TEXTAREA_BUFFER_SIZE, "%10.2f", static_cast<float>(this->buffer));
+    textArea_buffer.invalidate();
 }

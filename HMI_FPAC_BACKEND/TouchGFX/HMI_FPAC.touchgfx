@@ -1254,17 +1254,6 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "keyboard1",
-            "X": 352,
-            "Y": 39,
-            "Width": 343,
-            "Height": 426,
-            "Visible": false,
-            "CustomContainerDefinitionName": "Keyboard",
-            "Draggable": true
-          },
-          {
-            "Type": "CustomContainerInstance",
             "Name": "digitalInputIndicator1",
             "X": 282,
             "Y": 295,
@@ -1303,6 +1292,16 @@
                 "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_rounded_normal.json"
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "keyboard1",
+            "X": 93,
+            "Width": 343,
+            "Height": 480,
+            "Visible": false,
+            "CustomContainerDefinitionName": "Keyboard",
+            "Draggable": true
           }
         ],
         "Interactions": [
@@ -2749,7 +2748,7 @@
             "X": 448,
             "Y": 54,
             "Width": 343,
-            "Height": 426,
+            "Height": 480,
             "Visible": false,
             "CustomContainerDefinitionName": "Keyboard"
           },
@@ -3279,7 +3278,7 @@
             "X": 333,
             "Y": 27,
             "Width": 343,
-            "Height": 426,
+            "Height": 480,
             "Visible": false,
             "CustomContainerDefinitionName": "Keyboard"
           }
@@ -3965,7 +3964,7 @@
             "Type": "ButtonWithLabel",
             "Name": "buttonEnter",
             "X": 6,
-            "Y": 342,
+            "Y": 341,
             "Width": 264,
             "Height": 80,
             "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_36_medium_rounded_pressed.png",
@@ -4062,8 +4061,22 @@
             "TextId": "__SingleUse_KJC5",
             "TextRotation": "0",
             "Wildcard1": {
-              "TextId": "__SingleUse_986R"
+              "TextId": "KeyboardBuffer",
+              "UseBuffer": true,
+              "BufferSize": 13
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 256,
+            "Y": 405,
+            "Width": 76,
+            "Height": 35,
+            "TextId": "__SingleUse_CMEB",
+            "TextRotation": "0",
+            "Alpha": 121,
+            "AutoSize": true
           }
         ],
         "Interactions": [

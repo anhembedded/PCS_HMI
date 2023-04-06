@@ -106,7 +106,7 @@ KeyboardBase::KeyboardBase() :
     buttonDel.setAction(buttonCallback);
     add(buttonDel);
 
-    buttonEnter.setXY(6, 342);
+    buttonEnter.setXY(6, 341);
     buttonEnter.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_PRESSED_ID));
     buttonEnter.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6R6O));
     buttonEnter.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
@@ -143,9 +143,17 @@ KeyboardBase::KeyboardBase() :
     textArea_buffer.setPosition(6, 436, 326, 35);
     textArea_buffer.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea_buffer.setLinespacing(0);
-    textArea_buffer.setWildcard(touchgfx::TypedText(T___SINGLEUSE_986R).getText());
+    Unicode::snprintf(textArea_bufferBuffer, TEXTAREA_BUFFER_SIZE, "%s", touchgfx::TypedText(T_KEYBOARDBUFFER).getText());
+    textArea_buffer.setWildcard(textArea_bufferBuffer);
     textArea_buffer.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KJC5));
     add(textArea_buffer);
+
+    textArea1.setXY(256, 405);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CMEB));
+    textArea1.setAlpha(121);
+    add(textArea1);
 }
 
 KeyboardBase::~KeyboardBase()

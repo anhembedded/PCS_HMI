@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class KeyboardBase : public touchgfx::Container
 {
@@ -103,6 +104,13 @@ protected:
     touchgfx::Image image1;
     touchgfx::BoxWithBorder boxWithBorder2;
     touchgfx::TextAreaWithOneWildcard textArea_buffer;
+    touchgfx::TextArea textArea1;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXTAREA_BUFFER_SIZE = 13;
+    touchgfx::Unicode::UnicodeChar textArea_bufferBuffer[TEXTAREA_BUFFER_SIZE];
 
 private:
 

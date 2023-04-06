@@ -47,7 +47,7 @@ void SettingView::handleTickEvent()
     drawTextAdcIn2(f_analogChannel2);
     drawTextAdcIn3(f_analogChannel3);
 
-    drawTextProcessVar0();
+   /* drawTextProcessVar0();
     drawTextProcessVar1();
     drawTextProcessVar2();
     drawTextProcessVar3();
@@ -60,7 +60,7 @@ void SettingView::handleTickEvent()
     drawTextAreaOffset0();
     drawTextAreaOffset1();
     drawTextAreaOffset2();
-    drawTextAreaOffset3();
+    drawTextAreaOffset3();*/
 
    
 #endif // ! SIMULATOR
@@ -68,6 +68,7 @@ void SettingView::handleTickEvent()
 
 inline void SettingView::buttonTextFactor0ClickHandle()
 {
+   
     keyboard1.callKeyboard(&f_channelFactor0, TEXTAREAFACTOR0_SIZE);
 }
 

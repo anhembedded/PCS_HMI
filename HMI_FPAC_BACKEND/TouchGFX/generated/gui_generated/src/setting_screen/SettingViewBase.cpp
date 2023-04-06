@@ -396,10 +396,6 @@ SettingViewBase::SettingViewBase() :
 
     add(slideMenu1);
 
-    keyboard1.setXY(352, 39);
-    keyboard1.setVisible(false);
-    add(keyboard1);
-
     digitalInputIndicator1.setXY(282, 295);
     add(digitalInputIndicator1);
 
@@ -413,6 +409,10 @@ SettingViewBase::SettingViewBase() :
     modalWindow_inf.add(buttonWithIcon2);
 
     add(modalWindow_inf);
+
+    keyboard1.setXY(93, 0);
+    keyboard1.setVisible(false);
+    add(keyboard1);
 }
 
 SettingViewBase::~SettingViewBase()
@@ -423,8 +423,8 @@ SettingViewBase::~SettingViewBase()
 void SettingViewBase::setupScreen()
 {
     buttonDone1.initialize();
-    keyboard1.initialize();
     digitalInputIndicator1.initialize();
+    keyboard1.initialize();
 }
 
 void SettingViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
