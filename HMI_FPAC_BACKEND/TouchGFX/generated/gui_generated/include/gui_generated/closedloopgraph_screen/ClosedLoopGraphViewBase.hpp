@@ -14,6 +14,7 @@
 #include <touchgfx/widgets/graph/GraphWrapAndClear.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <gui/containers/ButtonDone.hpp>
 #include <gui/containers/DigitalInputIndicator.hpp>
 #include <gui/containers/DigitalOutput.hpp>
@@ -45,6 +46,10 @@ protected:
     touchgfx::GraphElementGridY graphBackgroudMajorYAxisGrid;
     touchgfx::GraphLabelsX graphBackgroudMajorXAxisLabel;
     touchgfx::GraphLabelsY graphBackgroudMajorYAxisLabel;
+    touchgfx::GraphElementDiamonds graphBackgroudDiamonds1;
+    touchgfx::PainterRGB565 graphBackgroudDiamonds1Painter;
+    touchgfx::GraphElementLine graphBackgroudLine1;
+    touchgfx::PainterRGB565 graphBackgroudLine1Painter;
     ButtonDone buttonDone1;
     DigitalInputIndicator digitalInputIndicator1;
     touchgfx::ButtonWithLabel buttonWithLabel_stop;

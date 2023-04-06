@@ -3288,18 +3288,40 @@
             "Width": 780,
             "Height": 380,
             "LockPosition": true,
-            "DataSeed": -1706446005,
+            "DataSeed": -252019952,
             "NumberOfValues": 600,
             "MaxY": 10.3,
             "Precision": "1",
             "LastIndex": 599,
             "XAxisScale": 1.0,
+            "InsertRandomValues": true,
             "LabelSizeTop": 17,
             "LabelSizeBottom": 29,
             "LabelSizeLeft": 24,
             "PaddingRight": 10,
             "GraphType": "GraphWrapClear",
-            "GraphDrawers": [],
+            "GraphDrawers": [
+              {
+                "Type": "DiamondsDrawer",
+                "DiamondWidth": 14,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 20,
+                  "Green": 151,
+                  "Blue": 197
+                }
+              },
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 196,
+                  "Green": 22,
+                  "Blue": 185
+                }
+              }
+            ],
             "XAxisGrid": {
               "Type": "GraphGrid",
               "Color": {
