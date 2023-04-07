@@ -15,7 +15,16 @@ public:
     virtual void handleTickEvent();
 protected:
 private:
+
+    void updateScreenParam();
     uint32_t viewTick;
+    pidParam_type pidParam;
+
+    void drawTextAreaKp();
+    void drawTextAreaKi();
+    void drawTextAreaKd();
+    
+
 };
 
 #endif // CLOSEDLOOPGRAPHVIEW_HPP

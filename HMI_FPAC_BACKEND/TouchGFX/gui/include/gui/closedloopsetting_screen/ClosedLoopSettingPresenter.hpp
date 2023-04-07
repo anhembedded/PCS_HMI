@@ -25,6 +25,15 @@ public:
      */
     virtual void deactivate();
 
+    void setPidParam(pidParam_type pid)
+    {
+        model->setPidParam(pid);
+    }
+    pidParam_type getPidParam()
+    {
+        return model->getPidParam();
+    }
+
     virtual ~ClosedLoopSettingPresenter() {};
 
 private:

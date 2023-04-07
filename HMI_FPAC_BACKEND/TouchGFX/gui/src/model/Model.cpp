@@ -76,8 +76,14 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 }
 
 #ifdef SIMULATOR
+
 uint32_t Model::modelGetTick()
 {
     return this->tickVal;
 }
 #endif // SIMULATOR
+
+float pidParam_type::getFloatSetpint()
+{
+    return 0.0f;
+}

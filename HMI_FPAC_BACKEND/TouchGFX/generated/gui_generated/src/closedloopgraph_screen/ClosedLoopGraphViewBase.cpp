@@ -713,29 +713,32 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     digitalOutput1.setXY(0, 358);
     add(digitalOutput1);
 
-    textArea1.setXY(464, 389);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea1.setLinespacing(0);
-    textArea1.setWildcard(touchgfx::TypedText(T___SINGLEUSE_Z6EL).getText());
-    textArea1.resizeToCurrentText();
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_21S9));
-    add(textArea1);
+    text_analogVal_Kp.setXY(464, 389);
+    text_analogVal_Kp.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    text_analogVal_Kp.setLinespacing(0);
+    Unicode::snprintf(text_analogVal_KpBuffer, TEXT_ANALOGVAL_KP_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_Z6EL).getText());
+    text_analogVal_Kp.setWildcard(text_analogVal_KpBuffer);
+    text_analogVal_Kp.resizeToCurrentText();
+    text_analogVal_Kp.setTypedText(touchgfx::TypedText(T___SINGLEUSE_21S9));
+    add(text_analogVal_Kp);
 
-    textArea1_1.setXY(464, 409);
-    textArea1_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea1_1.setLinespacing(0);
-    textArea1_1.setWildcard(touchgfx::TypedText(T___SINGLEUSE_NIL7).getText());
-    textArea1_1.resizeToCurrentText();
-    textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_66OT));
-    add(textArea1_1);
+    text_analogVal_Ki.setXY(464, 409);
+    text_analogVal_Ki.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    text_analogVal_Ki.setLinespacing(0);
+    Unicode::snprintf(text_analogVal_KiBuffer, TEXT_ANALOGVAL_KI_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_NIL7).getText());
+    text_analogVal_Ki.setWildcard(text_analogVal_KiBuffer);
+    text_analogVal_Ki.resizeToCurrentText();
+    text_analogVal_Ki.setTypedText(touchgfx::TypedText(T___SINGLEUSE_66OT));
+    add(text_analogVal_Ki);
 
-    textArea1_2.setXY(464, 429);
-    textArea1_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea1_2.setLinespacing(0);
-    textArea1_2.setWildcard(touchgfx::TypedText(T___SINGLEUSE_ABRK).getText());
-    textArea1_2.resizeToCurrentText();
-    textArea1_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5HQL));
-    add(textArea1_2);
+    text_analogVal_Kd.setXY(464, 429);
+    text_analogVal_Kd.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    text_analogVal_Kd.setLinespacing(0);
+    Unicode::snprintf(text_analogVal_KdBuffer, TEXT_ANALOGVAL_KD_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ABRK).getText());
+    text_analogVal_Kd.setWildcard(text_analogVal_KdBuffer);
+    text_analogVal_Kd.resizeToCurrentText();
+    text_analogVal_Kd.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5HQL));
+    add(text_analogVal_Kd);
 }
 
 ClosedLoopGraphViewBase::~ClosedLoopGraphViewBase()

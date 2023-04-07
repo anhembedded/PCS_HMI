@@ -56,9 +56,19 @@ protected:
     touchgfx::ButtonWithLabel buttonWithLabel_set;
     touchgfx::BoxWithBorder boxWithBorder2;
     DigitalOutput digitalOutput1;
-    touchgfx::TextAreaWithOneWildcard textArea1;
-    touchgfx::TextAreaWithOneWildcard textArea1_1;
-    touchgfx::TextAreaWithOneWildcard textArea1_2;
+    touchgfx::TextAreaWithOneWildcard text_analogVal_Kp;
+    touchgfx::TextAreaWithOneWildcard text_analogVal_Ki;
+    touchgfx::TextAreaWithOneWildcard text_analogVal_Kd;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t TEXT_ANALOGVAL_KP_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar text_analogVal_KpBuffer[TEXT_ANALOGVAL_KP_SIZE];
+    static const uint16_t TEXT_ANALOGVAL_KI_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar text_analogVal_KiBuffer[TEXT_ANALOGVAL_KI_SIZE];
+    static const uint16_t TEXT_ANALOGVAL_KD_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar text_analogVal_KdBuffer[TEXT_ANALOGVAL_KD_SIZE];
 
 private:
 

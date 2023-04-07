@@ -10,6 +10,24 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_LHG6" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Tracing Time: 60s</Translation>
+      </Text>
+      <Text Id="__SingleUse_DV10" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Sampler Time: 0.1</Translation>
+      </Text>
+      <Text Id="__SingleUse_RCEA" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Sampler Time: 0.1</Translation>
+      </Text>
+      <Text Id="__SingleUse_WWI1" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Ki</Translation>
+      </Text>
+      <Text Id="__SingleUse_NU1K" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Kd</Translation>
+      </Text>
+      <Text Id="__SingleUse_DZ4N" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Kp</Translation>
+      </Text>
       <Text Id="__SingleUse_CMEB" Alignment="Left" TypographyId="Small">
         <Translation Language="GB">Anh.Embedded</Translation>
       </Text>

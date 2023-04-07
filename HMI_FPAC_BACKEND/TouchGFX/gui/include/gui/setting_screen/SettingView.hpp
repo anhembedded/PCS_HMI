@@ -33,6 +33,7 @@ public:
     void drawTextAreaFactor1();
     void drawTextAreaFactor2();
     void drawTextAreaFactor3();
+
     void drawTextAreaOffset0();
     void drawTextAreaOffset1();
     void drawTextAreaOffset2();
@@ -41,6 +42,7 @@ public:
     void drawTextProcessVar1();
     void drawTextProcessVar2();
     void drawTextProcessVar3();
+    void drawTextFloat(decltype(textAreaFactor1Buffer) textBuffer, decltype(TEXTAREAFACTOR1_SIZE) textBufferSize,decltype("%4.2f") textFormat,decltype(textAreaFactor0) textObject, float number);
     void drawTextAdcIn0(float adcValue);
     void drawTextAdcIn1(float adcValue);
     void drawTextAdcIn2(float adcValue);

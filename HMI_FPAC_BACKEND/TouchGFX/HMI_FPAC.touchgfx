@@ -2953,6 +2953,17 @@
             }
           },
           {
+            "Type": "TextArea",
+            "Name": "textArea2_1",
+            "X": 530,
+            "Y": 103,
+            "Width": 164,
+            "Height": 20,
+            "TextId": "__SingleUse_DV10",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel_Confirm",
             "X": 612,
@@ -2998,10 +3009,21 @@
                 "BorderSize": 5
               },
               {
+                "Type": "TextArea",
+                "Name": "textArea1_1_1",
+                "X": 28,
+                "Y": 98,
+                "Width": 18,
+                "Height": 20,
+                "TextId": "__SingleUse_WWI1",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
                 "Type": "FlexButton",
                 "Name": "buttonText_Kd",
-                "X": 40,
-                "Y": 167,
+                "X": 79,
+                "Y": 157,
                 "Width": 102,
                 "Height": 32,
                 "ButtonTrigger": {
@@ -3038,8 +3060,8 @@
               {
                 "Type": "FlexButton",
                 "Name": "buttonText_Ki",
-                "X": 40,
-                "Y": 99,
+                "X": 79,
+                "Y": 92,
                 "Width": 102,
                 "Height": 32,
                 "ButtonTrigger": {
@@ -3076,8 +3098,8 @@
               {
                 "Type": "FlexButton",
                 "Name": "buttonText_Kp",
-                "X": 42,
-                "Y": 27,
+                "X": 79,
+                "Y": 24,
                 "Width": 102,
                 "Height": 32,
                 "ButtonTrigger": {
@@ -3114,8 +3136,8 @@
               {
                 "Type": "TextArea",
                 "Name": "text_analogVal_Kd",
-                "X": 65,
-                "Y": 168,
+                "X": 104,
+                "Y": 158,
                 "Width": 51,
                 "Height": 27,
                 "TextId": "__SingleUse_YH98",
@@ -3130,8 +3152,8 @@
               {
                 "Type": "TextArea",
                 "Name": "text_analogVal_Ki",
-                "X": 65,
-                "Y": 100,
+                "X": 104,
+                "Y": 93,
                 "Width": 51,
                 "Height": 27,
                 "TextId": "__SingleUse_9BL3",
@@ -3146,8 +3168,8 @@
               {
                 "Type": "TextArea",
                 "Name": "text_analogVal_Kp",
-                "X": 67,
-                "Y": 28,
+                "X": 104,
+                "Y": 25,
                 "Width": 51,
                 "Height": 27,
                 "TextId": "__SingleUse_YYC4",
@@ -3158,6 +3180,28 @@
                   "UseBuffer": true,
                   "BufferSize": 6
                 }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1",
+                "X": 25,
+                "Y": 30,
+                "Width": 24,
+                "Height": 20,
+                "TextId": "__SingleUse_DZ4N",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1_1",
+                "X": 28,
+                "Y": 163,
+                "Width": 24,
+                "Height": 20,
+                "TextId": "__SingleUse_NU1K",
+                "TextRotation": "0",
+                "AutoSize": true
               }
             ]
           },
@@ -3281,6 +3325,28 @@
             "Height": 480,
             "Visible": false,
             "CustomContainerDefinitionName": "Keyboard"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 530,
+            "Y": 103,
+            "Width": 164,
+            "Height": 20,
+            "TextId": "__SingleUse_RCEA",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2_2",
+            "X": 530,
+            "Y": 138,
+            "Width": 161,
+            "Height": 20,
+            "TextId": "__SingleUse_LHG6",
+            "TextRotation": "0",
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -3625,7 +3691,7 @@
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1",
+            "Name": "text_analogVal_Kp",
             "X": 464,
             "Y": 389,
             "Width": 74,
@@ -3634,12 +3700,14 @@
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_Z6EL"
+              "TextId": "__SingleUse_Z6EL",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1_1",
+            "Name": "text_analogVal_Ki",
             "X": 464,
             "Y": 409,
             "Width": 73,
@@ -3648,12 +3716,14 @@
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_NIL7"
+              "TextId": "__SingleUse_NIL7",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           },
           {
             "Type": "TextArea",
-            "Name": "textArea1_2",
+            "Name": "text_analogVal_Kd",
             "X": 464,
             "Y": 429,
             "Width": 73,
@@ -3662,7 +3732,9 @@
             "TextRotation": "0",
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_ABRK"
+              "TextId": "__SingleUse_ABRK",
+              "UseBuffer": true,
+              "BufferSize": 10
             }
           }
         ],
@@ -4072,7 +4144,7 @@
             "X": 256,
             "Y": 405,
             "Width": 76,
-            "Height": 35,
+            "Height": 13,
             "TextId": "__SingleUse_CMEB",
             "TextRotation": "0",
             "Alpha": 121,

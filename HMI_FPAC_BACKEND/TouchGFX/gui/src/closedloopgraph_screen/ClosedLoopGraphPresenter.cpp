@@ -16,3 +16,9 @@ void ClosedLoopGraphPresenter::deactivate()
 {
 
 }
+
+pidParam_type ClosedLoopGraphPresenter::getPidParam()
+{
+    return model->pidParam;
+}
+

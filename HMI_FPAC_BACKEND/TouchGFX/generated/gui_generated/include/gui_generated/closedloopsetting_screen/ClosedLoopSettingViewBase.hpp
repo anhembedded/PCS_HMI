@@ -8,6 +8,7 @@
 #include <mvp/View.hpp>
 #include <gui/closedloopsetting_screen/ClosedLoopSettingPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
@@ -56,15 +57,19 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box boxBackground;
+    touchgfx::TextArea textArea2_1;
     touchgfx::ButtonWithLabel buttonWithLabel_Confirm;
     touchgfx::Container PidCon;
     touchgfx::BoxWithBorder boxWithBorder1;
+    touchgfx::TextArea textArea1_1_1;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Kd;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Ki;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Kp;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kd;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Ki;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kp;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea1_1;
     touchgfx::ButtonWithLabel button_openModelWindow;
     touchgfx::ModalWindow modalWindow1;
     touchgfx::RadioButtonGroup<4> radioButtonGroup1;
@@ -74,6 +79,8 @@ protected:
     touchgfx::RadioButton radioButton1_1_1_1;
     touchgfx::ButtonWithIcon button_closeModelWindow;
     Keyboard keyboard1;
+    touchgfx::TextArea textArea2;
+    touchgfx::TextArea textArea2_2;
 
     /*
      * Wildcard Buffers

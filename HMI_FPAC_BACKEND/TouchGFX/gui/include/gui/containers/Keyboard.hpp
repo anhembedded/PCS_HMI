@@ -6,6 +6,8 @@
 #include <string>
 #include <stdint.h>
 
+//#include "gui/setting_screen/SettingView.hpp"
+
 class Keyboard : public KeyboardBase
 {
 public:

@@ -2,7 +2,7 @@
 
 ClosedLoopGraphView::ClosedLoopGraphView()
 {
-
+   
 }
 
 void ClosedLoopGraphView::setupScreen()
@@ -23,4 +23,15 @@ void ClosedLoopGraphView::handleTickEvent()
 #endif // SIMULATOR
 
    
+}
+
+void ClosedLoopGraphView::updateScreenParam()
+{
+      
+}
+
+void ClosedLoopGraphView::drawTextAreaKp()
+{
+    Unicode::snprintfFloat(text_analogVal_KpBuffer, TEXT_ANALOGVAL_KP_SIZE, "%2.2f", static_cast<float>(this->pidParam.f_kp));
+    text_analogVal_Kp.invalidate();
 }

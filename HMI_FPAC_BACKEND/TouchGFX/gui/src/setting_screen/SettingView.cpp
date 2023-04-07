@@ -1,7 +1,6 @@
 #include <gui/setting_screen/SettingView.hpp>
 #include <touchgfx/Color.hpp>
 
-float adcFloat[4];
 SettingView::SettingView() : f_channelFactor0(1.),
                              f_channelFactor1(1.),
                              f_channelFactor2(1.),
@@ -47,7 +46,7 @@ void SettingView::handleTickEvent()
     drawTextAdcIn2(f_analogChannel2);
     drawTextAdcIn3(f_analogChannel3);
 
-   /* drawTextProcessVar0();
+    drawTextProcessVar0();
     drawTextProcessVar1();
     drawTextProcessVar2();
     drawTextProcessVar3();
@@ -60,7 +59,7 @@ void SettingView::handleTickEvent()
     drawTextAreaOffset0();
     drawTextAreaOffset1();
     drawTextAreaOffset2();
-    drawTextAreaOffset3();*/
+    drawTextAreaOffset3();
 
    
 #endif // ! SIMULATOR
@@ -126,11 +125,12 @@ void SettingView::setADC(std::array<uint32_t, 4> arrayParameters)
     drawTextAdcIn1(f_analogChannel1);
     drawTextAdcIn2(f_analogChannel2);
     drawTextAdcIn3(f_analogChannel3);
-
+   
     drawTextProcessVar0();
     drawTextProcessVar1();
     drawTextProcessVar2();
     drawTextProcessVar3();
+  
 }
 
 void SettingView::updateAnalogOut0()
@@ -219,6 +219,11 @@ inline void SettingView::drawTextProcessVar3()
     f_channelProcessVariable3 = (f_analogChannel3 * f_channelFactor3) + f_channelOffset3;
     Unicode::snprintfFloat(textProcessVar3Buffer, TEXTPROCESSVAR3_SIZE, "%4.2f", static_cast<float>(f_channelProcessVariable3));
     textProcessVar3.invalidate();
+}
+void SettingView::drawTextFloat(decltype(textAreaFactor1Buffer) textBuffer, decltype(TEXTAREAFACTOR1_SIZE) textBufferSize, decltype("%4.2f") textFormat, decltype(textAreaFactor0) textObject, float number)
+{
+    Unicode::snprintfFloat(textBuffer, textBufferSize, textFormat, number);
+    textObject.invalidate();
 }
 inline void SettingView::drawTextAdcIn0(float adcValue)
 {

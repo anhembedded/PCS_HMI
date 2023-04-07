@@ -27,6 +27,8 @@ public:
 
     virtual ~ClosedLoopGraphPresenter() {};
 
+    virtual pidParam_type getPidParam();
+
 private:
     ClosedLoopGraphPresenter();
 

@@ -15,6 +15,8 @@
 class ModelListener
 {
 public:
+
+   
     ModelListener() : model(0) {}
 
     virtual ~ModelListener() {}
@@ -38,6 +40,14 @@ public:
     virtual void notifyDigitalIntputChanged_5(uint32_t registerVar) {}
     virtual void notifyDigitalIntputChanged_6(uint32_t registerVar) {}
 
+    
+
+
+
+
+    
+  
+    
 protected:
     Model *model;
 };

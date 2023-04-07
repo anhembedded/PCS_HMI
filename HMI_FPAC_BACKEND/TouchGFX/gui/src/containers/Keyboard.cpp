@@ -97,6 +97,7 @@ void Keyboard::buttonDelClickHandler()
             {
                 this->buffer = 0.F;
             }
+            drawTextAreaBuffer();
     }
     else
     {

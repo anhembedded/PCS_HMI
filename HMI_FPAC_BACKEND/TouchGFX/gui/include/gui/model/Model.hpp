@@ -13,7 +13,16 @@
 #else
  
 #endif
+struct pidParam_type
+{
+    float f_kp;
+    float f_ki;
+    float f_kd;
+    uint32_t u32_setPoint;
+    
+    float getFloatSetpint();
 
+};
 
 class ModelListener;
 
@@ -32,6 +41,7 @@ class ModelListener;
 class Model
 {
 public:
+    pidParam_type pidParam;
     Model();
 
     /**
@@ -52,6 +62,7 @@ public:
 
     void sendAdcOuputToBackEnd_1(uint32_t registerVar);
     void sendAdcOuputToBackEnd_0(uint32_t registerVar);
+
 #ifndef SIMULATOR
    
     std::array<uint32_t, 4> getCurrentADC() const
@@ -59,7 +70,14 @@ public:
         return adcValue;
     };
 #endif // !SIMULATOR
-
+    void setPidParam(pidParam_type pidSet)
+    {
+        this->pidParam = pidSet;
+    }
+    pidParam_type getPidParam()
+    {
+        return   this->pidParam;
+    }
 protected:
     /**
      * Pointer to the currently active presenter.
@@ -69,7 +87,7 @@ protected:
     uint32_t modelGetTick();
     uint32_t tickVal;
 #endif // SIMULATOR
-
+    
 private:
 #ifndef SIMULATOR
     u_pwm_dutyCycle_type dutyCycleVal;
