@@ -3059,6 +3059,44 @@
               },
               {
                 "Type": "FlexButton",
+                "Name": "buttonText_setPoint",
+                "X": 309,
+                "Y": 158,
+                "Width": 102,
+                "Height": 32,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 102,
+                    "Height": 32,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 217,
+                      "Green": 4,
+                      "Blue": 192
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
                 "Name": "buttonText_Ki",
                 "X": 79,
                 "Y": 92,
@@ -3151,6 +3189,22 @@
               },
               {
                 "Type": "TextArea",
+                "Name": "text_setPoint",
+                "X": 329,
+                "Y": 161,
+                "Width": 63,
+                "Height": 27,
+                "TextId": "__SingleUse_C405",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_RKRI",
+                  "UseBuffer": true,
+                  "BufferSize": 6
+                }
+              },
+              {
+                "Type": "TextArea",
                 "Name": "text_analogVal_Ki",
                 "X": 104,
                 "Y": 93,
@@ -3189,6 +3243,17 @@
                 "Width": 24,
                 "Height": 20,
                 "TextId": "__SingleUse_DZ4N",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea1_2",
+                "X": 221,
+                "Y": 165,
+                "Width": 76,
+                "Height": 20,
+                "TextId": "__SingleUse_UCX8",
                 "TextRotation": "0",
                 "AutoSize": true
               },
@@ -3439,6 +3504,17 @@
               "Type": "ActionCustom",
               "FunctionName": "buttonText_Kd_clickHandle"
             }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonText_setPoint"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonText_setPoint_clickHandle"
+            }
           }
         ]
       },
@@ -3456,15 +3532,6 @@
               "Green": 236,
               "Blue": 255
             }
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "spOpFb1_1",
-            "X": 590,
-            "Y": 381,
-            "Width": 204,
-            "Height": 76,
-            "CustomContainerDefinitionName": "SpOpFb"
           },
           {
             "Type": "CustomContainerInstance",
@@ -3520,40 +3587,18 @@
             "Width": 780,
             "Height": 380,
             "LockPosition": true,
-            "DataSeed": -252019952,
+            "DataSeed": -1305830385,
             "NumberOfValues": 600,
             "MaxY": 10.3,
             "Precision": "1",
             "LastIndex": 599,
             "XAxisScale": 1.0,
-            "InsertRandomValues": true,
             "LabelSizeTop": 17,
             "LabelSizeBottom": 29,
             "LabelSizeLeft": 24,
             "PaddingRight": 10,
             "GraphType": "GraphWrapClear",
-            "GraphDrawers": [
-              {
-                "Type": "DiamondsDrawer",
-                "DiamondWidth": 14,
-                "FileNameImage": "",
-                "Color": {
-                  "Red": 20,
-                  "Green": 151,
-                  "Blue": 197
-                }
-              },
-              {
-                "Type": "LineDrawer",
-                "LineWidth": 2,
-                "FileNameImage": "",
-                "Color": {
-                  "Red": 196,
-                  "Green": 22,
-                  "Blue": 185
-                }
-              }
-            ],
+            "GraphDrawers": [],
             "XAxisGrid": {
               "Type": "GraphGrid",
               "Color": {
@@ -3693,9 +3738,9 @@
             "Type": "TextArea",
             "Name": "text_analogVal_Kp",
             "X": 464,
-            "Y": 389,
+            "Y": 384,
             "Width": 74,
-            "Height": 20,
+            "Height": 27,
             "TextId": "__SingleUse_21S9",
             "TextRotation": "0",
             "AutoSize": true,
@@ -3709,9 +3754,9 @@
             "Type": "TextArea",
             "Name": "text_analogVal_Ki",
             "X": 464,
-            "Y": 409,
-            "Width": 73,
-            "Height": 20,
+            "Y": 405,
+            "Width": 74,
+            "Height": 27,
             "TextId": "__SingleUse_66OT",
             "TextRotation": "0",
             "AutoSize": true,
@@ -3724,10 +3769,10 @@
           {
             "Type": "TextArea",
             "Name": "text_analogVal_Kd",
-            "X": 464,
-            "Y": 429,
+            "X": 465,
+            "Y": 426,
             "Width": 73,
-            "Height": 20,
+            "Height": 27,
             "TextId": "__SingleUse_5HQL",
             "TextRotation": "0",
             "AutoSize": true,

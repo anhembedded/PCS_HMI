@@ -69,7 +69,9 @@
 			"u_pidsim.h": "c",
 			"u_appmain.h": "c",
 			"task.h": "c",
-			"math.h": "c"
+			"math.h": "c",
+			"u_lfc_firmware.h": "c",
+			"u_lfc_appmain.h": "c"
 		},
 		"cSpell.enabled": false
 	}

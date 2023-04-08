@@ -52,6 +52,13 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     buttonText_Kd.setPosition(79, 157, 102, 32);
     PidCon.add(buttonText_Kd);
 
+    buttonText_setPoint.setBoxWithBorderPosition(0, 0, 102, 32);
+    buttonText_setPoint.setBorderSize(5);
+    buttonText_setPoint.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(217, 4, 192), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    buttonText_setPoint.setAction(flexButtonCallback);
+    buttonText_setPoint.setPosition(309, 158, 102, 32);
+    PidCon.add(buttonText_setPoint);
+
     buttonText_Ki.setBoxWithBorderPosition(0, 0, 102, 32);
     buttonText_Ki.setBorderSize(5);
     buttonText_Ki.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(87, 119, 243), touchgfx::Color::getColorFromRGB(51, 102, 153));
@@ -74,6 +81,15 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     text_analogVal_Kd.resizeToCurrentText();
     text_analogVal_Kd.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YH98));
     PidCon.add(text_analogVal_Kd);
+
+    text_setPoint.setXY(329, 161);
+    text_setPoint.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    text_setPoint.setLinespacing(0);
+    Unicode::snprintf(text_setPointBuffer, TEXT_SETPOINT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_RKRI).getText());
+    text_setPoint.setWildcard(text_setPointBuffer);
+    text_setPoint.resizeToCurrentText();
+    text_setPoint.setTypedText(touchgfx::TypedText(T___SINGLEUSE_C405));
+    PidCon.add(text_setPoint);
 
     text_analogVal_Ki.setXY(104, 93);
     text_analogVal_Ki.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -98,6 +114,12 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DZ4N));
     PidCon.add(textArea1);
+
+    textArea1_2.setXY(221, 165);
+    textArea1_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1_2.setLinespacing(0);
+    textArea1_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UCX8));
+    PidCon.add(textArea1_2);
 
     textArea1_1.setXY(28, 163);
     textArea1_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -236,5 +258,12 @@ void ClosedLoopSettingViewBase::flexButtonCallbackHandler(const touchgfx::Abstra
         //When buttonText_Kd clicked call virtual function
         //Call buttonText_Kd_clickHandle
         buttonText_Kd_clickHandle();
+    }
+    if (&src == &buttonText_setPoint)
+    {
+        //Interaction5
+        //When buttonText_setPoint clicked call virtual function
+        //Call buttonText_setPoint_clickHandle
+        buttonText_setPoint_clickHandle();
     }
 }

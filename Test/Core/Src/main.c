@@ -45,6 +45,8 @@
 #include "u_firmwareDefination.h"
 #include "u_appMain.h"
 
+#include "u_lfc_firmware.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -146,7 +148,7 @@ int main(void)
   LL_ADC_Enable(ADC1);
   HAL_Delay(10);
   u_appMainCreate();
-
+  U_LFC_GPIO_Init();
   /* USER CODE END 2 */
 
   /* Init scheduler */

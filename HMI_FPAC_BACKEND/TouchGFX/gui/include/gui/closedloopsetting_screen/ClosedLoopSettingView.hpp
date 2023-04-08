@@ -31,6 +31,10 @@ public:
     {
         keyboard1.callKeyboard(&pidParam.f_kd, TEXT_ANALOGVAL_KD_SIZE);
     }
+    virtual void buttonText_setPoint_clickHandle()
+    {
+        keyboard1.callKeyboard(&pidParam.f_setPoint, TEXT_SETPOINT_SIZE);
+    }
 
     virtual void confirmUpdateParamter()
     {
@@ -40,6 +44,7 @@ public:
     void drawTextAreaKp();
     void drawTextAreaKi();
     void drawTextAreaKd();
+    void drawTextAreaSetPoint();
 protected:
 private:
     void textFrequencyUpdate();

@@ -18,8 +18,7 @@ struct pidParam_type
     float f_kp;
     float f_ki;
     float f_kd;
-    uint32_t u32_setPoint;
-    
+    float f_setPoint;
     float getFloatSetpint();
 
 };

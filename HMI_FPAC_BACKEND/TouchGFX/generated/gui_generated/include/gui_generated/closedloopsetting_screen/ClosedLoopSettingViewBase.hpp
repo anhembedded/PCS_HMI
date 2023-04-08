@@ -46,6 +46,10 @@ public:
     {
         // Override and implement this function in ClosedLoopSetting
     }
+    virtual void buttonText_setPoint_clickHandle()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
 
 protected:
     FrontendApplication& application() {
@@ -63,12 +67,15 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::TextArea textArea1_1_1;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Kd;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_setPoint;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Ki;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Kp;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kd;
+    touchgfx::TextAreaWithOneWildcard text_setPoint;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Ki;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kp;
     touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea1_2;
     touchgfx::TextArea textArea1_1;
     touchgfx::ButtonWithLabel button_openModelWindow;
     touchgfx::ModalWindow modalWindow1;
@@ -87,6 +94,8 @@ protected:
      */
     static const uint16_t TEXT_ANALOGVAL_KD_SIZE = 6;
     touchgfx::Unicode::UnicodeChar text_analogVal_KdBuffer[TEXT_ANALOGVAL_KD_SIZE];
+    static const uint16_t TEXT_SETPOINT_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar text_setPointBuffer[TEXT_SETPOINT_SIZE];
     static const uint16_t TEXT_ANALOGVAL_KI_SIZE = 6;
     touchgfx::Unicode::UnicodeChar text_analogVal_KiBuffer[TEXT_ANALOGVAL_KI_SIZE];
     static const uint16_t TEXT_ANALOGVAL_KP_SIZE = 6;
