@@ -10,6 +10,18 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_3ADE" Alignment="Left" TypographyId="KeyBoard">
+        <Translation Language="GB">Temperature</Translation>
+      </Text>
+      <Text Id="__SingleUse_7FCC" Alignment="Left" TypographyId="KeyBoard">
+        <Translation Language="GB">Pressure</Translation>
+      </Text>
+      <Text Id="__SingleUse_D8Z6" Alignment="Left" TypographyId="KeyBoard">
+        <Translation Language="GB">Flow rate</Translation>
+      </Text>
+      <Text Id="__SingleUse_2W9I" Alignment="Left" TypographyId="KeyBoard">
+        <Translation Language="GB">Level</Translation>
+      </Text>
       <Text Id="__SingleUse_RKRI" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">000.00</Translation>
       </Text>

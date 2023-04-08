@@ -127,6 +127,18 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NU1K));
     PidCon.add(textArea1_1);
 
+    textArea2.setXY(464, 30);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RCEA));
+    PidCon.add(textArea2);
+
+    textArea2_2.setXY(464, 65);
+    textArea2_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2_2.setLinespacing(0);
+    textArea2_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LHG6));
+    PidCon.add(textArea2_2);
+
     add(PidCon);
 
     button_openModelWindow.setXY(22, 400);
@@ -175,23 +187,35 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     button_closeModelWindow.setAction(buttonCallback);
     modalWindow1.add(button_closeModelWindow);
 
+    textArea3.setXY(87, 29);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 14, 122));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2W9I));
+    modalWindow1.add(textArea3);
+
+    textArea3_1.setXY(86, 88);
+    textArea3_1.setColor(touchgfx::Color::getColorFromRGB(0, 14, 122));
+    textArea3_1.setLinespacing(0);
+    textArea3_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D8Z6));
+    modalWindow1.add(textArea3_1);
+
+    textArea3_1_1.setXY(87, 146);
+    textArea3_1_1.setColor(touchgfx::Color::getColorFromRGB(0, 14, 122));
+    textArea3_1_1.setLinespacing(0);
+    textArea3_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7FCC));
+    modalWindow1.add(textArea3_1_1);
+
+    textArea3_1_1_1.setXY(87, 209);
+    textArea3_1_1_1.setColor(touchgfx::Color::getColorFromRGB(0, 14, 122));
+    textArea3_1_1_1.setLinespacing(0);
+    textArea3_1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3ADE));
+    modalWindow1.add(textArea3_1_1_1);
+
     add(modalWindow1);
 
     keyboard1.setXY(333, 27);
     keyboard1.setVisible(false);
     add(keyboard1);
-
-    textArea2.setXY(530, 103);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RCEA));
-    add(textArea2);
-
-    textArea2_2.setXY(530, 138);
-    textArea2_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea2_2.setLinespacing(0);
-    textArea2_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LHG6));
-    add(textArea2_2);
 }
 
 ClosedLoopSettingViewBase::~ClosedLoopSettingViewBase()

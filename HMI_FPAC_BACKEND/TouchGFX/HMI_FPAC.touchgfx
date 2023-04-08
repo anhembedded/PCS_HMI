@@ -3267,6 +3267,28 @@
                 "TextId": "__SingleUse_NU1K",
                 "TextRotation": "0",
                 "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea2",
+                "X": 464,
+                "Y": 30,
+                "Width": 164,
+                "Height": 20,
+                "TextId": "__SingleUse_RCEA",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea2_2",
+                "X": 464,
+                "Y": 65,
+                "Width": 161,
+                "Height": 20,
+                "TextId": "__SingleUse_LHG6",
+                "TextRotation": "0",
+                "AutoSize": true
               }
             ]
           },
@@ -3378,6 +3400,66 @@
                 "IconHeight": 50,
                 "IconWidth": 50,
                 "Preset": "clay_theme\\presets\\button\\regular\\height_36\\tiny_rounded_action.json"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3",
+                "X": 87,
+                "Y": 29,
+                "Width": 83,
+                "Height": 34,
+                "TextId": "__SingleUse_2W9I",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 14,
+                  "Blue": 122
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3_1",
+                "X": 86,
+                "Y": 88,
+                "Width": 148,
+                "Height": 35,
+                "TextId": "__SingleUse_D8Z6",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 14,
+                  "Blue": 122
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3_1_1",
+                "X": 87,
+                "Y": 146,
+                "Width": 139,
+                "Height": 35,
+                "TextId": "__SingleUse_7FCC",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 14,
+                  "Blue": 122
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3_1_1_1",
+                "X": 87,
+                "Y": 209,
+                "Width": 203,
+                "Height": 35,
+                "TextId": "__SingleUse_3ADE",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 14,
+                  "Blue": 122
+                },
+                "AutoSize": true
               }
             ]
           },
@@ -3390,28 +3472,6 @@
             "Height": 480,
             "Visible": false,
             "CustomContainerDefinitionName": "Keyboard"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 530,
-            "Y": 103,
-            "Width": 164,
-            "Height": 20,
-            "TextId": "__SingleUse_RCEA",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_2",
-            "X": 530,
-            "Y": 138,
-            "Width": 161,
-            "Height": 20,
-            "TextId": "__SingleUse_LHG6",
-            "TextRotation": "0",
-            "AutoSize": true
           }
         ],
         "Interactions": [

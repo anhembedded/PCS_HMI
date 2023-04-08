@@ -77,6 +77,8 @@ protected:
     touchgfx::TextArea textArea1;
     touchgfx::TextArea textArea1_2;
     touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea textArea2;
+    touchgfx::TextArea textArea2_2;
     touchgfx::ButtonWithLabel button_openModelWindow;
     touchgfx::ModalWindow modalWindow1;
     touchgfx::RadioButtonGroup<4> radioButtonGroup1;
@@ -85,9 +87,11 @@ protected:
     touchgfx::RadioButton radioButton1_1_1;
     touchgfx::RadioButton radioButton1_1_1_1;
     touchgfx::ButtonWithIcon button_closeModelWindow;
+    touchgfx::TextArea textArea3;
+    touchgfx::TextArea textArea3_1;
+    touchgfx::TextArea textArea3_1_1;
+    touchgfx::TextArea textArea3_1_1_1;
     Keyboard keyboard1;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea2_2;
 
     /*
      * Wildcard Buffers
