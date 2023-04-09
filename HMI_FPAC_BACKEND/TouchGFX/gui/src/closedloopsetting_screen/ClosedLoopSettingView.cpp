@@ -12,6 +12,7 @@ void ClosedLoopSettingView::setupScreen()
     this->drawTextAreaKp();
     this->drawTextAreaKi();
     this->drawTextAreaKd();
+    this->drawTextAreaSetPoint();
 }
 
 void ClosedLoopSettingView::tearDownScreen()
@@ -41,6 +42,13 @@ void ClosedLoopSettingView::drawTextAreaKd()
     text_analogVal_Kd.invalidate();
 }
 
+void ClosedLoopSettingView::drawTextAreaSetPoint()
+{
+    Unicode::snprintfFloat(text_setPointBuffer, TEXT_SETPOINT_SIZE, "%3.2f", static_cast<float>(this->pidParam.f_setPoint));
+    text_setPoint.invalidate();
+
+}
+
 void ClosedLoopSettingView::textFrequencyUpdate()
 {
     if (this->u32_tick % 10)
@@ -48,5 +56,6 @@ void ClosedLoopSettingView::textFrequencyUpdate()
         this->drawTextAreaKp();
         this->drawTextAreaKi();
         this->drawTextAreaKd();
+        this->drawTextAreaSetPoint();
      }
 }

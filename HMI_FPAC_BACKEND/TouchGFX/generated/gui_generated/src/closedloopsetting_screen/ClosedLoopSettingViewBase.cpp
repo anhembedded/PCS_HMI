@@ -8,7 +8,8 @@
 
 ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     buttonCallback(this, &ClosedLoopSettingViewBase::buttonCallbackHandler),
-    flexButtonCallback(this, &ClosedLoopSettingViewBase::flexButtonCallbackHandler)
+    flexButtonCallback(this, &ClosedLoopSettingViewBase::flexButtonCallbackHandler),
+    radioButtonSelectedCallback(this, &ClosedLoopSettingViewBase::radioButtonSelectedCallbackHandler)
 {
     __background.setPosition(0, 0, 800, 480);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -52,6 +53,13 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     buttonText_Kd.setPosition(79, 157, 102, 32);
     PidCon.add(buttonText_Kd);
 
+    buttonText_setPoint.setBoxWithBorderPosition(0, 0, 102, 32);
+    buttonText_setPoint.setBorderSize(5);
+    buttonText_setPoint.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(217, 4, 192), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    buttonText_setPoint.setAction(flexButtonCallback);
+    buttonText_setPoint.setPosition(309, 158, 102, 32);
+    PidCon.add(buttonText_setPoint);
+
     buttonText_Ki.setBoxWithBorderPosition(0, 0, 102, 32);
     buttonText_Ki.setBorderSize(5);
     buttonText_Ki.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(87, 119, 243), touchgfx::Color::getColorFromRGB(51, 102, 153));
@@ -74,6 +82,15 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     text_analogVal_Kd.resizeToCurrentText();
     text_analogVal_Kd.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YH98));
     PidCon.add(text_analogVal_Kd);
+
+    text_setPoint.setXY(329, 161);
+    text_setPoint.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    text_setPoint.setLinespacing(0);
+    Unicode::snprintf(text_setPointBuffer, TEXT_SETPOINT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_RKRI).getText());
+    text_setPoint.setWildcard(text_setPointBuffer);
+    text_setPoint.resizeToCurrentText();
+    text_setPoint.setTypedText(touchgfx::TypedText(T___SINGLEUSE_C405));
+    PidCon.add(text_setPoint);
 
     text_analogVal_Ki.setXY(104, 93);
     text_analogVal_Ki.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -99,11 +116,29 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DZ4N));
     PidCon.add(textArea1);
 
+    textArea1_2.setXY(221, 165);
+    textArea1_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea1_2.setLinespacing(0);
+    textArea1_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UCX8));
+    PidCon.add(textArea1_2);
+
     textArea1_1.setXY(28, 163);
     textArea1_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1_1.setLinespacing(0);
     textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NU1K));
     PidCon.add(textArea1_1);
+
+    textArea2.setXY(464, 30);
+    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2.setLinespacing(0);
+    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RCEA));
+    PidCon.add(textArea2);
+
+    textArea2_2.setXY(464, 65);
+    textArea2_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea2_2.setLinespacing(0);
+    textArea2_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LHG6));
+    PidCon.add(textArea2_2);
 
     add(PidCon);
 
@@ -118,34 +153,35 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_ALTERNATE_THEME_IMAGES_CONTAINERS_LARGE_WIDE_OUTLINED_LIGHT_ID), 160, 105);
     modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     modalWindow1.setShadeAlpha(169);
-    modalWindow1.hide();
-    radioButton1.setXY(29, 28);
-    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
-    radioButton1.setSelected(false);
-    radioButton1.setDeselectionEnabled(false);
-    radioButtonGroup1.add(radioButton1);
-    modalWindow1.add(radioButton1);
+    radioButtonGroup1.setRadioButtonSelectedHandler(radioButtonSelectedCallback);
+    
+    button_level.setXY(29, 28);
+    button_level.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
+    button_level.setSelected(false);
+    button_level.setDeselectionEnabled(false);
+    radioButtonGroup1.add(button_level);
+    modalWindow1.add(button_level);
 
-    radioButton1_1.setXY(29, 85);
-    radioButton1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
-    radioButton1_1.setSelected(false);
-    radioButton1_1.setDeselectionEnabled(false);
-    radioButtonGroup1.add(radioButton1_1);
-    modalWindow1.add(radioButton1_1);
+    button_flowRate.setXY(29, 83);
+    button_flowRate.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
+    button_flowRate.setSelected(false);
+    button_flowRate.setDeselectionEnabled(false);
+    radioButtonGroup1.add(button_flowRate);
+    modalWindow1.add(button_flowRate);
 
-    radioButton1_1_1.setXY(29, 146);
-    radioButton1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
-    radioButton1_1_1.setSelected(false);
-    radioButton1_1_1.setDeselectionEnabled(false);
-    radioButtonGroup1.add(radioButton1_1_1);
-    modalWindow1.add(radioButton1_1_1);
+    button_pressure.setXY(29, 146);
+    button_pressure.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
+    button_pressure.setSelected(false);
+    button_pressure.setDeselectionEnabled(false);
+    radioButtonGroup1.add(button_pressure);
+    modalWindow1.add(button_pressure);
 
-    radioButton1_1_1_1.setXY(29, 208);
-    radioButton1_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
-    radioButton1_1_1_1.setSelected(false);
-    radioButton1_1_1_1.setDeselectionEnabled(false);
-    radioButtonGroup1.add(radioButton1_1_1_1);
-    modalWindow1.add(radioButton1_1_1_1);
+    button_temperature.setXY(29, 208);
+    button_temperature.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_OFF_PRESSED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_RADIOBUTTON_RADIO_MEDIUM_ROUND_ON_PRESSED_ID));
+    button_temperature.setSelected(false);
+    button_temperature.setDeselectionEnabled(false);
+    radioButtonGroup1.add(button_temperature);
+    modalWindow1.add(button_temperature);
 
     button_closeModelWindow.setXY(342, 204);
     button_closeModelWindow.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
@@ -153,23 +189,35 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     button_closeModelWindow.setAction(buttonCallback);
     modalWindow1.add(button_closeModelWindow);
 
+    textArea3.setXY(87, 29);
+    textArea3.setColor(touchgfx::Color::getColorFromRGB(0, 14, 122));
+    textArea3.setLinespacing(0);
+    textArea3.setTypedText(touchgfx::TypedText(T___SINGLEUSE_2W9I));
+    modalWindow1.add(textArea3);
+
+    textt.setXY(86, 88);
+    textt.setColor(touchgfx::Color::getColorFromRGB(0, 14, 122));
+    textt.setLinespacing(0);
+    textt.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D8Z6));
+    modalWindow1.add(textt);
+
+    textArea3_1_1.setXY(87, 146);
+    textArea3_1_1.setColor(touchgfx::Color::getColorFromRGB(0, 14, 122));
+    textArea3_1_1.setLinespacing(0);
+    textArea3_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_7FCC));
+    modalWindow1.add(textArea3_1_1);
+
+    textArea3_1_1_1.setXY(87, 209);
+    textArea3_1_1_1.setColor(touchgfx::Color::getColorFromRGB(0, 14, 122));
+    textArea3_1_1_1.setLinespacing(0);
+    textArea3_1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3ADE));
+    modalWindow1.add(textArea3_1_1_1);
+
     add(modalWindow1);
 
     keyboard1.setXY(333, 27);
     keyboard1.setVisible(false);
     add(keyboard1);
-
-    textArea2.setXY(530, 103);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RCEA));
-    add(textArea2);
-
-    textArea2_2.setXY(530, 138);
-    textArea2_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    textArea2_2.setLinespacing(0);
-    textArea2_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LHG6));
-    add(textArea2_2);
 }
 
 ClosedLoopSettingViewBase::~ClosedLoopSettingViewBase()
@@ -236,5 +284,44 @@ void ClosedLoopSettingViewBase::flexButtonCallbackHandler(const touchgfx::Abstra
         //When buttonText_Kd clicked call virtual function
         //Call buttonText_Kd_clickHandle
         buttonText_Kd_clickHandle();
+    }
+    if (&src == &buttonText_setPoint)
+    {
+        //Interaction5
+        //When buttonText_setPoint clicked call virtual function
+        //Call buttonText_setPoint_clickHandle
+        buttonText_setPoint_clickHandle();
+    }
+}
+
+void ClosedLoopSettingViewBase::radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &button_level)
+    {
+        //Interaction6
+        //When button_level selected call virtual function
+        //Call button_level_select_Handle
+        button_level_select_Handle();
+    }
+    if (&src == &button_flowRate)
+    {
+        //Interaction7
+        //When button_flowRate selected call virtual function
+        //Call button_flowRate_select_Handle
+        button_flowRate_select_Handle();
+    }
+    if (&src == &button_pressure)
+    {
+        //Interaction8
+        //When button_pressure selected call virtual function
+        //Call button_pressure_select_Handle
+        button_pressure_select_Handle();
+    }
+    if (&src == &button_temperature)
+    {
+        //Interaction9
+        //When button_temperature selected call virtual function
+        //Call button_temperature_select_Handle
+        button_temperature_select_Handle();
     }
 }

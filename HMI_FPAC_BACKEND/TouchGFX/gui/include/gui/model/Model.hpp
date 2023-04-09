@@ -18,10 +18,15 @@ struct pidParam_type
     float f_kp;
     float f_ki;
     float f_kd;
-    uint32_t u32_setPoint;
-    
+    float f_setPoint;
     float getFloatSetpint();
-
+};
+enum class  actualValue_type
+{
+     level,
+     flowRate,
+     pressure,
+     temperature
 };
 
 class ModelListener;
@@ -42,6 +47,7 @@ class Model
 {
 public:
     pidParam_type pidParam;
+    actualValue_type actualValue;
     Model();
 
     /**
@@ -70,14 +76,11 @@ public:
         return adcValue;
     };
 #endif // !SIMULATOR
-    void setPidParam(pidParam_type pidSet)
-    {
-        this->pidParam = pidSet;
-    }
-    pidParam_type getPidParam()
-    {
-        return   this->pidParam;
-    }
+    void setPidParam(pidParam_type pidSet);
+    pidParam_type getPidParam();
+    void setActualValue(actualValue_type view_actualValue);
+    actualValue_type getActualValue();
+    
 protected:
     /**
      * Pointer to the currently active presenter.

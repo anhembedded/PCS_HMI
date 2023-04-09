@@ -24,6 +24,7 @@ private:
     void drawTextAreaKi();
     void drawTextAreaKd();
     
+    
 
 };
 

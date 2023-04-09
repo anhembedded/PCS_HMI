@@ -46,6 +46,26 @@ public:
     {
         // Override and implement this function in ClosedLoopSetting
     }
+    virtual void buttonText_setPoint_clickHandle()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
+    virtual void button_level_select_Handle()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
+    virtual void button_flowRate_select_Handle()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
+    virtual void button_pressure_select_Handle()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
+    virtual void button_temperature_select_Handle()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
 
 protected:
     FrontendApplication& application() {
@@ -63,30 +83,39 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::TextArea textArea1_1_1;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Kd;
+    touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_setPoint;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Ki;
     touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  buttonText_Kp;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kd;
+    touchgfx::TextAreaWithOneWildcard text_setPoint;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Ki;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kp;
     touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea1_2;
     touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea textArea2;
+    touchgfx::TextArea textArea2_2;
     touchgfx::ButtonWithLabel button_openModelWindow;
     touchgfx::ModalWindow modalWindow1;
     touchgfx::RadioButtonGroup<4> radioButtonGroup1;
-    touchgfx::RadioButton radioButton1;
-    touchgfx::RadioButton radioButton1_1;
-    touchgfx::RadioButton radioButton1_1_1;
-    touchgfx::RadioButton radioButton1_1_1_1;
+    touchgfx::RadioButton button_level;
+    touchgfx::RadioButton button_flowRate;
+    touchgfx::RadioButton button_pressure;
+    touchgfx::RadioButton button_temperature;
     touchgfx::ButtonWithIcon button_closeModelWindow;
+    touchgfx::TextArea textArea3;
+    touchgfx::TextArea textt;
+    touchgfx::TextArea textArea3_1_1;
+    touchgfx::TextArea textArea3_1_1_1;
     Keyboard keyboard1;
-    touchgfx::TextArea textArea2;
-    touchgfx::TextArea textArea2_2;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t TEXT_ANALOGVAL_KD_SIZE = 6;
     touchgfx::Unicode::UnicodeChar text_analogVal_KdBuffer[TEXT_ANALOGVAL_KD_SIZE];
+    static const uint16_t TEXT_SETPOINT_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar text_setPointBuffer[TEXT_SETPOINT_SIZE];
     static const uint16_t TEXT_ANALOGVAL_KI_SIZE = 6;
     touchgfx::Unicode::UnicodeChar text_analogVal_KiBuffer[TEXT_ANALOGVAL_KI_SIZE];
     static const uint16_t TEXT_ANALOGVAL_KP_SIZE = 6;
@@ -99,12 +128,14 @@ private:
      */
     touchgfx::Callback<ClosedLoopSettingViewBase, const touchgfx::AbstractButton&> buttonCallback;
     touchgfx::Callback<ClosedLoopSettingViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+    touchgfx::Callback<ClosedLoopSettingViewBase, const touchgfx::AbstractButton&> radioButtonSelectedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
     void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    void radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

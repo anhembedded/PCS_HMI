@@ -3059,6 +3059,44 @@
               },
               {
                 "Type": "FlexButton",
+                "Name": "buttonText_setPoint",
+                "X": 309,
+                "Y": 158,
+                "Width": 102,
+                "Height": 32,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 102,
+                    "Height": 32,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Red": 217,
+                      "Green": 4,
+                      "Blue": 192
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
                 "Name": "buttonText_Ki",
                 "X": 79,
                 "Y": 92,
@@ -3151,6 +3189,22 @@
               },
               {
                 "Type": "TextArea",
+                "Name": "text_setPoint",
+                "X": 329,
+                "Y": 161,
+                "Width": 63,
+                "Height": 27,
+                "TextId": "__SingleUse_C405",
+                "TextRotation": "0",
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "__SingleUse_RKRI",
+                  "UseBuffer": true,
+                  "BufferSize": 6
+                }
+              },
+              {
+                "Type": "TextArea",
                 "Name": "text_analogVal_Ki",
                 "X": 104,
                 "Y": 93,
@@ -3194,12 +3248,45 @@
               },
               {
                 "Type": "TextArea",
+                "Name": "textArea1_2",
+                "X": 221,
+                "Y": 165,
+                "Width": 76,
+                "Height": 20,
+                "TextId": "__SingleUse_UCX8",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
                 "Name": "textArea1_1",
                 "X": 28,
                 "Y": 163,
                 "Width": 24,
                 "Height": 20,
                 "TextId": "__SingleUse_NU1K",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea2",
+                "X": 464,
+                "Y": 30,
+                "Width": 164,
+                "Height": 20,
+                "TextId": "__SingleUse_RCEA",
+                "TextRotation": "0",
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea2_2",
+                "X": 464,
+                "Y": 65,
+                "Width": 161,
+                "Height": 20,
+                "TextId": "__SingleUse_LHG6",
                 "TextRotation": "0",
                 "AutoSize": true
               }
@@ -3233,7 +3320,6 @@
             "Name": "modalWindow1",
             "Width": 800,
             "Height": 480,
-            "Visible": false,
             "FileName": "__generated\\alternate_theme_images_containers_large_wide_outlined_light.png",
             "ModalX": 160,
             "ModalY": 105,
@@ -3243,7 +3329,7 @@
             "Components": [
               {
                 "Type": "RadioButton",
-                "Name": "radioButton1",
+                "Name": "button_level",
                 "X": 29,
                 "Y": 28,
                 "Width": 36,
@@ -3257,9 +3343,9 @@
               },
               {
                 "Type": "RadioButton",
-                "Name": "radioButton1_1",
+                "Name": "button_flowRate",
                 "X": 29,
-                "Y": 85,
+                "Y": 83,
                 "Width": 36,
                 "Height": 36,
                 "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_action.png",
@@ -3271,7 +3357,7 @@
               },
               {
                 "Type": "RadioButton",
-                "Name": "radioButton1_1_1",
+                "Name": "button_pressure",
                 "X": 29,
                 "Y": 146,
                 "Width": 36,
@@ -3285,7 +3371,7 @@
               },
               {
                 "Type": "RadioButton",
-                "Name": "radioButton1_1_1_1",
+                "Name": "button_temperature",
                 "X": 29,
                 "Y": 208,
                 "Width": 36,
@@ -3313,6 +3399,66 @@
                 "IconHeight": 50,
                 "IconWidth": 50,
                 "Preset": "clay_theme\\presets\\button\\regular\\height_36\\tiny_rounded_action.json"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3",
+                "X": 87,
+                "Y": 29,
+                "Width": 83,
+                "Height": 35,
+                "TextId": "__SingleUse_2W9I",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 14,
+                  "Blue": 122
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textt",
+                "X": 86,
+                "Y": 88,
+                "Width": 148,
+                "Height": 35,
+                "TextId": "__SingleUse_D8Z6",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 14,
+                  "Blue": 122
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3_1_1",
+                "X": 87,
+                "Y": 146,
+                "Width": 139,
+                "Height": 35,
+                "TextId": "__SingleUse_7FCC",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 14,
+                  "Blue": 122
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea3_1_1_1",
+                "X": 87,
+                "Y": 209,
+                "Width": 203,
+                "Height": 35,
+                "TextId": "__SingleUse_3ADE",
+                "TextRotation": "0",
+                "Color": {
+                  "Green": 14,
+                  "Blue": 122
+                },
+                "AutoSize": true
               }
             ]
           },
@@ -3325,28 +3471,6 @@
             "Height": 480,
             "Visible": false,
             "CustomContainerDefinitionName": "Keyboard"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2",
-            "X": 530,
-            "Y": 103,
-            "Width": 164,
-            "Height": 20,
-            "TextId": "__SingleUse_RCEA",
-            "TextRotation": "0",
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea2_2",
-            "X": 530,
-            "Y": 138,
-            "Width": 161,
-            "Height": 20,
-            "TextId": "__SingleUse_LHG6",
-            "TextRotation": "0",
-            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -3439,6 +3563,61 @@
               "Type": "ActionCustom",
               "FunctionName": "buttonText_Kd_clickHandle"
             }
+          },
+          {
+            "InteractionName": "Interaction5",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonText_setPoint"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonText_setPoint_clickHandle"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "button_level"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_level_select_Handle"
+            }
+          },
+          {
+            "InteractionName": "Interaction7",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "button_flowRate"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_flowRate_select_Handle"
+            }
+          },
+          {
+            "InteractionName": "Interaction8",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "button_pressure"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_pressure_select_Handle"
+            }
+          },
+          {
+            "InteractionName": "Interaction9",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "button_temperature"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_temperature_select_Handle"
+            }
           }
         ]
       },
@@ -3456,15 +3635,6 @@
               "Green": 236,
               "Blue": 255
             }
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "spOpFb1_1",
-            "X": 590,
-            "Y": 381,
-            "Width": 204,
-            "Height": 76,
-            "CustomContainerDefinitionName": "SpOpFb"
           },
           {
             "Type": "CustomContainerInstance",
@@ -3520,40 +3690,18 @@
             "Width": 780,
             "Height": 380,
             "LockPosition": true,
-            "DataSeed": -252019952,
+            "DataSeed": -1305830385,
             "NumberOfValues": 600,
             "MaxY": 10.3,
             "Precision": "1",
             "LastIndex": 599,
             "XAxisScale": 1.0,
-            "InsertRandomValues": true,
             "LabelSizeTop": 17,
             "LabelSizeBottom": 29,
             "LabelSizeLeft": 24,
             "PaddingRight": 10,
             "GraphType": "GraphWrapClear",
-            "GraphDrawers": [
-              {
-                "Type": "DiamondsDrawer",
-                "DiamondWidth": 14,
-                "FileNameImage": "",
-                "Color": {
-                  "Red": 20,
-                  "Green": 151,
-                  "Blue": 197
-                }
-              },
-              {
-                "Type": "LineDrawer",
-                "LineWidth": 2,
-                "FileNameImage": "",
-                "Color": {
-                  "Red": 196,
-                  "Green": 22,
-                  "Blue": 185
-                }
-              }
-            ],
+            "GraphDrawers": [],
             "XAxisGrid": {
               "Type": "GraphGrid",
               "Color": {
@@ -3693,9 +3841,9 @@
             "Type": "TextArea",
             "Name": "text_analogVal_Kp",
             "X": 464,
-            "Y": 389,
+            "Y": 384,
             "Width": 74,
-            "Height": 20,
+            "Height": 27,
             "TextId": "__SingleUse_21S9",
             "TextRotation": "0",
             "AutoSize": true,
@@ -3709,9 +3857,9 @@
             "Type": "TextArea",
             "Name": "text_analogVal_Ki",
             "X": 464,
-            "Y": 409,
-            "Width": 73,
-            "Height": 20,
+            "Y": 405,
+            "Width": 74,
+            "Height": 27,
             "TextId": "__SingleUse_66OT",
             "TextRotation": "0",
             "AutoSize": true,
@@ -3724,10 +3872,10 @@
           {
             "Type": "TextArea",
             "Name": "text_analogVal_Kd",
-            "X": 464,
-            "Y": 429,
+            "X": 465,
+            "Y": 426,
             "Width": 73,
-            "Height": 20,
+            "Height": 27,
             "TextId": "__SingleUse_5HQL",
             "TextRotation": "0",
             "AutoSize": true,
@@ -4874,7 +5022,7 @@
             "Name": "textArea_setPoint",
             "X": 9,
             "Y": 6,
-            "Width": 152,
+            "Width": 178,
             "Height": 17,
             "TextId": "__SingleUse_JSBD",
             "TextRotation": "0",
@@ -4900,11 +5048,10 @@
             "Name": "textArea_feedback",
             "X": 13,
             "Y": 23,
-            "Width": 148,
+            "Width": 174,
             "Height": 20,
             "TextId": "__SingleUse_MSS1",
             "TextRotation": "0",
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_WVKC",
               "UseBuffer": true,
