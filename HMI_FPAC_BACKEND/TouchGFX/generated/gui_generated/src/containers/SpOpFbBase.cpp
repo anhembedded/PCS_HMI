@@ -29,7 +29,7 @@ SpOpFbBase::SpOpFbBase()
     lineProgress_output.setValue(0);
     add(lineProgress_output);
 
-    textArea_setPoint.setPosition(9, 6, 152, 17);
+    textArea_setPoint.setPosition(9, 6, 178, 17);
     textArea_setPoint.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea_setPoint.setLinespacing(0);
     Unicode::snprintf(textArea_setPointBuffer, TEXTAREA_SETPOINT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_IYGT).getText());
@@ -43,12 +43,11 @@ SpOpFbBase::SpOpFbBase()
     textArea1_1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_4CQQ));
     add(textArea1_1_1_1);
 
-    textArea_feedback.setXY(13, 23);
+    textArea_feedback.setPosition(13, 23, 174, 20);
     textArea_feedback.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea_feedback.setLinespacing(0);
     Unicode::snprintf(textArea_feedbackBuffer, TEXTAREA_FEEDBACK_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_WVKC).getText());
     textArea_feedback.setWildcard(textArea_feedbackBuffer);
-    textArea_feedback.resizeToCurrentText();
     textArea_feedback.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MSS1));
     add(textArea_feedback);
 }

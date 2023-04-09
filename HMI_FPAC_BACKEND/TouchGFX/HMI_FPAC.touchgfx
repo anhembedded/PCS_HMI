@@ -3320,7 +3320,6 @@
             "Name": "modalWindow1",
             "Width": 800,
             "Height": 480,
-            "Visible": false,
             "FileName": "__generated\\alternate_theme_images_containers_large_wide_outlined_light.png",
             "ModalX": 160,
             "ModalY": 105,
@@ -3330,7 +3329,7 @@
             "Components": [
               {
                 "Type": "RadioButton",
-                "Name": "radioButton1",
+                "Name": "button_level",
                 "X": 29,
                 "Y": 28,
                 "Width": 36,
@@ -3344,9 +3343,9 @@
               },
               {
                 "Type": "RadioButton",
-                "Name": "radioButton1_1",
+                "Name": "button_flowRate",
                 "X": 29,
-                "Y": 85,
+                "Y": 83,
                 "Width": 36,
                 "Height": 36,
                 "FileNameSelected": "__generated\\alternate_theme_images_widgets_radiobutton_radio_medium_round_on_action.png",
@@ -3358,7 +3357,7 @@
               },
               {
                 "Type": "RadioButton",
-                "Name": "radioButton1_1_1",
+                "Name": "button_pressure",
                 "X": 29,
                 "Y": 146,
                 "Width": 36,
@@ -3372,7 +3371,7 @@
               },
               {
                 "Type": "RadioButton",
-                "Name": "radioButton1_1_1_1",
+                "Name": "button_temperature",
                 "X": 29,
                 "Y": 208,
                 "Width": 36,
@@ -3407,7 +3406,7 @@
                 "X": 87,
                 "Y": 29,
                 "Width": 83,
-                "Height": 34,
+                "Height": 35,
                 "TextId": "__SingleUse_2W9I",
                 "TextRotation": "0",
                 "Color": {
@@ -3418,7 +3417,7 @@
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea3_1",
+                "Name": "textt",
                 "X": 86,
                 "Y": 88,
                 "Width": 148,
@@ -3574,6 +3573,50 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "buttonText_setPoint_clickHandle"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "button_level"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_level_select_Handle"
+            }
+          },
+          {
+            "InteractionName": "Interaction7",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "button_flowRate"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_flowRate_select_Handle"
+            }
+          },
+          {
+            "InteractionName": "Interaction8",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "button_pressure"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_pressure_select_Handle"
+            }
+          },
+          {
+            "InteractionName": "Interaction9",
+            "Trigger": {
+              "Type": "TriggerRadioButtonSelected",
+              "TriggerComponent": "button_temperature"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_temperature_select_Handle"
             }
           }
         ]
@@ -4979,7 +5022,7 @@
             "Name": "textArea_setPoint",
             "X": 9,
             "Y": 6,
-            "Width": 152,
+            "Width": 178,
             "Height": 17,
             "TextId": "__SingleUse_JSBD",
             "TextRotation": "0",
@@ -5005,11 +5048,10 @@
             "Name": "textArea_feedback",
             "X": 13,
             "Y": 23,
-            "Width": 148,
+            "Width": 174,
             "Height": 20,
             "TextId": "__SingleUse_MSS1",
             "TextRotation": "0",
-            "AutoSize": true,
             "Wildcard1": {
               "TextId": "__SingleUse_WVKC",
               "UseBuffer": true,

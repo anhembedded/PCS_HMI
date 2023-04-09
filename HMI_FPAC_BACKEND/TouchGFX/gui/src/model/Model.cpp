@@ -75,6 +75,30 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 #endif // SIMULATOR
 }
 
+// !SIMULATOR
+
+ void Model::setPidParam(pidParam_type pidSet)
+{
+    this->pidParam = pidSet;
+    
+}
+
+ pidParam_type Model::getPidParam()
+{
+    return   this->pidParam;
+}
+
+ void Model::setActualValue(actualValue_type view_actualValue)
+{
+    this->actualValue = view_actualValue;
+    touchgfx_printf("actual! %d \n", actualValue);
+}
+
+ actualValue_type Model::getActualValue()
+{
+    return   this->actualValue;
+}
+
 #ifdef SIMULATOR
 
 uint32_t Model::modelGetTick()

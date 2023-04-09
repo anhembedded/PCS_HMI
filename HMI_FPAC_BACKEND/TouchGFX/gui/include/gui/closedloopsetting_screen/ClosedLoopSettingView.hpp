@@ -10,6 +10,7 @@ public:
    
 
     pidParam_type pidParam;
+    actualValue_type actualValue;
     
 
     ClosedLoopSettingView();
@@ -40,7 +41,28 @@ public:
     {
         presenter->setPidParam(pidParam);
     }
+    virtual void button_level_select_Handle()
+    {
+        this->actualValue = actualValue_type::level;
+        presenter->setActualValue(this->actualValue);
+    }
+    virtual void button_flowRate_select_Handle()
+    {
+        this->actualValue = actualValue_type::flowRate;
+        presenter->setActualValue(this->actualValue);
+    }
+    virtual void button_pressure_select_Handle()
+    {
+        this->actualValue = actualValue_type::pressure;
+        presenter->setActualValue(this->actualValue);
+    }
+    virtual void button_temperature_select_Handle()
+    {
+        this->actualValue = actualValue_type::temperature;
+        presenter->setActualValue(this->actualValue);
+    }
 
+    
     void drawTextAreaKp();
     void drawTextAreaKi();
     void drawTextAreaKd();
@@ -49,7 +71,7 @@ protected:
 private:
     void textFrequencyUpdate();
     uint32_t u32_tick;
-   
+    
 };
 
 #endif // CLOSEDLOOPSETTINGVIEW_HPP
