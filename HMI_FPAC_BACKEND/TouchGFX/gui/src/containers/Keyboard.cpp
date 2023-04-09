@@ -109,6 +109,8 @@ void Keyboard::buttonDelClickHandler()
 void Keyboard::callKeyboard(float* desNumber, uint8_t maxOfDesBuffer)
 {
     setXY(93   , 0);
+    indexBuffer = 0;
+
     clearBuffer();
     inputNumber = desNumber;
     this->maxOfDesBuffer = maxOfDesBuffer;

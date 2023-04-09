@@ -47,6 +47,12 @@ MainViewBase::MainViewBase() :
     image1.setXY(0, -1);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_EFFECTS_800X480_SHADE_RIGHT_LIGHT_ID));
     add(image1);
+
+    button_information.setXY(30, 352);
+    button_information.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_TINY_ROUNDED_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_INFO_OUTLINE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_COMMUNICATION_LIVE_HELP_50_50_5777F3_SVG_ID));
+    button_information.setIconXY(55, 22);
+    button_information.setAction(buttonCallback);
+    add(button_information);
 }
 
 MainViewBase::~MainViewBase()
@@ -81,5 +87,12 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When clickButton_closedloopControlContinuous clicked change screen to ClosedLoopGraph
         //Go to ClosedLoopGraph with screen transition towards East
         application().gotoClosedLoopGraphScreenCoverTransitionEast();
+    }
+    if (&src == &button_information)
+    {
+        //Interaction5
+        //When button_information clicked change screen to Information
+        //Go to Information with block transition
+        application().gotoInformationScreenBlockTransition();
     }
 }

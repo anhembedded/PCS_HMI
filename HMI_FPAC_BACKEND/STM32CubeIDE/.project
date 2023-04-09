@@ -405,6 +405,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/sliderWithText.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/InformationPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/information_screen/InformationPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/InformationView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/information_screen/InformationView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/MainPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/main_screen/MainPresenter.cpp</locationURI>
@@ -625,6 +635,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/sliderWithTextBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/InformationViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/information_screen/InformationViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/MainViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/main_screen/MainViewBase.cpp</locationURI>
@@ -800,14 +815,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_effects_800x480_shade_top_dark.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_clay_theme_images_widgets_button_icon_round_micro_fill_normal.cpp</name>
+			<name>Application/User/generated/image_clay_theme_images_widgets_button_icon_rounded_tiny_fill_action.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_icon_round_micro_fill_normal.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_clay_theme_images_widgets_button_icon_round_micro_fill_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_icon_round_micro_fill_pressed.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_icon_rounded_tiny_fill_action.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_clay_theme_images_widgets_button_icon_rounded_tiny_fill_normal.cpp</name>
@@ -945,14 +955,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_done_50_50_E8F6FB.svg.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_icon_theme_images_action_done_outline_50_50_000000.svg.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_done_outline_50_50_000000.svg.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_icon_theme_images_action_help_outline_50_50_E8F6FB.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_help_outline_50_50_E8F6FB.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_action_info_outline_50_50_E8F6FB.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_info_outline_50_50_E8F6FB.svg.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_icon_theme_images_action_language_50_50_5777F3.svg.cpp</name>
@@ -975,6 +985,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_action_settings_50_50_E8F6FB.svg.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_icon_theme_images_communication_live_help_50_50_5777F3.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_communication_live_help_50_50_5777F3.svg.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_icon_theme_images_editor_format_align_justify_50_50_86898C.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_editor_format_align_justify_50_50_86898C.svg.cpp</locationURI>
@@ -983,6 +998,11 @@
 			<name>Application/User/generated/image_icon_theme_images_file_download_done_50_50_5777F3.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_file_download_done_50_50_5777F3.svg.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_icon_theme_images_hardware_keyboard_backspace_50_50_000000.svg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_hardware_keyboard_backspace_50_50_000000.svg.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_action.cpp</name>
@@ -998,6 +1018,11 @@
 			<name>Application/User/generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_Screenshot.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_Screenshot.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_off.cpp</name>

@@ -5,13 +5,14 @@
 
 #include <stdint.h>
 #include <touchgfx/Utils.hpp>
+#include <array>
 
 #ifndef SIMULATOR
-    #include "u_appMain.h"
-    #include "u_pwm.h"
-    #include "array"
+#include "u_appMain.h"
+#include "u_pwm.h"
+#include "array"
 #else
- 
+
 #endif
 struct pidParam_type
 {
@@ -21,12 +22,40 @@ struct pidParam_type
     float f_setPoint;
     float getFloatSetpint();
 };
-enum class  actualValue_type
+enum class actualValue_type
 {
-     level,
-     flowRate,
-     pressure,
-     temperature
+    level,
+    flowRate,
+    pressure,
+    temperature
+};
+
+struct settingVar_type
+{
+    const float maxVolage = 10.0F;
+    const uint32_t rawAnalogMax = 1024U;
+
+    std::array<float, 4> f_factor;
+    std::array<float, 4> f_offset;
+    std::array<uint32_t, 4> u32_analogVal;
+    settingVar_type &operator=(settingVar_type other)
+    {
+        f_factor = other.f_factor;
+        f_offset = other.f_offset;
+        u32_analogVal = other.u32_analogVal;
+        return *this;
+    }
+
+    float getAnalogValueFloat(uint32_t indexChannel)
+    {
+        auto vol = static_cast<float>(u32_analogVal.at(indexChannel)) / rawAnalogMax;
+        vol = vol * maxVolage;
+        return vol;
+    }
+    float getProcessValue(uint32_t indexChannel)
+    {
+        return (getAnalogValueFloat(u32_analogVal.at(indexChannel)) * f_factor.at(indexChannel)) + f_offset.at(indexChannel);
+    }
 };
 
 class ModelListener;
@@ -48,6 +77,7 @@ class Model
 public:
     pidParam_type pidParam;
     actualValue_type actualValue;
+    settingVar_type settingVar;
     Model();
 
     /**
@@ -70,7 +100,7 @@ public:
     void sendAdcOuputToBackEnd_0(uint32_t registerVar);
 
 #ifndef SIMULATOR
-   
+
     std::array<uint32_t, 4> getCurrentADC() const
     {
         return adcValue;
@@ -80,7 +110,15 @@ public:
     pidParam_type getPidParam();
     void setActualValue(actualValue_type view_actualValue);
     actualValue_type getActualValue();
-    
+    void setSettingVar(settingVar_type setVar)
+    {
+        this->settingVar = setVar;
+    }
+    settingVar_type getSettingVar()
+    {
+        return this->settingVar;
+    }
+
 protected:
     /**
      * Pointer to the currently active presenter.
@@ -90,7 +128,7 @@ protected:
     uint32_t modelGetTick();
     uint32_t tickVal;
 #endif // SIMULATOR
-    
+
 private:
 #ifndef SIMULATOR
     u_pwm_dutyCycle_type dutyCycleVal;
@@ -108,7 +146,6 @@ public:
     {
         return myDummyVar;
     }
-  
 };
 
 #endif /* INCLUDE_GUI_MODEL_MODEL */

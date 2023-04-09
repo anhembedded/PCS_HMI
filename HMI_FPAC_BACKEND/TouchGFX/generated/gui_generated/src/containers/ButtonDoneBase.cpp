@@ -7,11 +7,11 @@
 ButtonDoneBase::ButtonDoneBase() :
     buttonCallback(this, &ButtonDoneBase::buttonCallbackHandler)
 {
-    setWidth(75);
-    setHeight(58);
-    buttonSetting.setXY(-14, -24);
-    buttonSetting.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUND_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_OUTLINE_50_50_000000_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_FILE_DOWNLOAD_DONE_50_50_5777F3_SVG_ID));
-    buttonSetting.setIconXY(27, 21);
+    setWidth(68);
+    setHeight(70);
+    buttonSetting.setXY(-30, -23);
+    buttonSetting.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_BACKSPACE_50_50_000000_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_FILE_DOWNLOAD_DONE_50_50_5777F3_SVG_ID));
+    buttonSetting.setIconXY(39, 33);
     buttonSetting.setAction(buttonCallback);
     add(buttonSetting);
 }

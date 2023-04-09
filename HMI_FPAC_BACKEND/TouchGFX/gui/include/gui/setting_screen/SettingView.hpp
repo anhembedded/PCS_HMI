@@ -27,6 +27,10 @@ public:
     virtual void buttonTextOffset3ClickHandle();
     virtual void sliderAnalogOutHandle0(int value);
     virtual void sliderAnalogOutHandle1(int value);
+    virtual void button_confirm_ClickHandle()
+    {
+        presenter->setSettingVar(this->settingVar);
+    }
     void setADC(std::array<uint32_t, 4> arrayParameters);
 
     void drawTextAreaFactor0();
@@ -42,12 +46,12 @@ public:
     void drawTextProcessVar1();
     void drawTextProcessVar2();
     void drawTextProcessVar3();
-    void drawTextFloat(decltype(textAreaFactor1Buffer) textBuffer, decltype(TEXTAREAFACTOR1_SIZE) textBufferSize,decltype("%4.2f") textFormat,decltype(textAreaFactor0) textObject, float number);
+    void drawTextFloat(decltype(textAreaFactor1Buffer) textBuffer, decltype(TEXTAREAFACTOR1_SIZE) textBufferSize, decltype("%4.2f") textFormat, decltype(textAreaFactor0) textObject, float number);
     void drawTextAdcIn0(float adcValue);
     void drawTextAdcIn1(float adcValue);
     void drawTextAdcIn2(float adcValue);
     void drawTextAdcIn3(float adcValue);
-   
+
 protected:
     float f_channelFactor0;
     float f_channelFactor1;
@@ -73,14 +77,12 @@ protected:
     uint32_t u32_channelAnalogOut1;
 
 private:
+    settingVar_type settingVar;
     const float maxVol = 10.f;
     void updateAnalogOut0();
     void updateAnalogOut1();
 
-  
-
     float adcRawValueToVoltage(uint32_t adcVal) const;
-   
 };
 
 #endif /* INCLUDE_GUI_SETTING_SCREEN_SETTINGVIEW */

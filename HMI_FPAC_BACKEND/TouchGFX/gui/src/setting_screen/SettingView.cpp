@@ -25,6 +25,7 @@ SettingView::SettingView() : f_channelFactor0(1.),
 void SettingView::setupScreen()
 {
     SettingViewBase::setupScreen();
+    settingVar = presenter->getSettingVar();
 }
 
 void SettingView::tearDownScreen()
@@ -61,49 +62,48 @@ void SettingView::handleTickEvent()
     drawTextAreaOffset2();
     drawTextAreaOffset3();
 
-   
 #endif // ! SIMULATOR
 }
 
 inline void SettingView::buttonTextFactor0ClickHandle()
 {
-   
-    keyboard1.callKeyboard(&f_channelFactor0, TEXTAREAFACTOR0_SIZE);
+
+    keyboard1.callKeyboard(&settingVar.f_factor[0], TEXTAREAFACTOR0_SIZE);
 }
 
 inline void SettingView::buttonTextFactor1ClickHandle()
 {
-    keyboard1.callKeyboard(&f_channelFactor1, TEXTAREAFACTOR1_SIZE);
+    keyboard1.callKeyboard(&settingVar.f_factor[1], TEXTAREAFACTOR1_SIZE);
 }
 
 inline void SettingView::buttonTextFactor2ClickHandle()
 {
-    keyboard1.callKeyboard(&f_channelFactor2, TEXTAREAFACTOR2_SIZE);
+    keyboard1.callKeyboard(&settingVar.f_factor[2], TEXTAREAFACTOR2_SIZE);
 }
 
 inline void SettingView::buttonTextFactor3ClickHandle()
 {
-    keyboard1.callKeyboard(&f_channelFactor3, TEXTAREAFACTOR3_SIZE);
+    keyboard1.callKeyboard(&settingVar.f_factor[3], TEXTAREAFACTOR3_SIZE);
 }
 
 inline void SettingView::buttonTextOffset0ClickHandle()
 {
-    keyboard1.callKeyboard(&f_channelOffset0, TEXTAREAOFFSET0_SIZE);
+    keyboard1.callKeyboard(&settingVar.f_offset[0], TEXTAREAOFFSET0_SIZE);
 }
 
 inline void SettingView::buttonTextOffset1ClickHandle()
 {
-    keyboard1.callKeyboard(&f_channelOffset1, TEXTAREAOFFSET1_SIZE);
+    keyboard1.callKeyboard(&settingVar.f_offset[1], TEXTAREAOFFSET1_SIZE);
 }
 
 inline void SettingView::buttonTextOffset2ClickHandle()
 {
-    keyboard1.callKeyboard(&f_channelOffset2, TEXTAREAOFFSET2_SIZE);
+    keyboard1.callKeyboard(&settingVar.f_offset[2], TEXTAREAOFFSET2_SIZE);
 }
 
 inline void SettingView::buttonTextOffset3ClickHandle()
 {
-    keyboard1.callKeyboard(&f_channelOffset3, TEXTAREAOFFSET3_SIZE);
+    keyboard1.callKeyboard(&settingVar.f_offset[3], TEXTAREAOFFSET3_SIZE);
 }
 
 void SettingView::sliderAnalogOutHandle0(int value)
@@ -125,12 +125,11 @@ void SettingView::setADC(std::array<uint32_t, 4> arrayParameters)
     drawTextAdcIn1(f_analogChannel1);
     drawTextAdcIn2(f_analogChannel2);
     drawTextAdcIn3(f_analogChannel3);
-   
+
     drawTextProcessVar0();
     drawTextProcessVar1();
     drawTextProcessVar2();
     drawTextProcessVar3();
-  
 }
 
 void SettingView::updateAnalogOut0()
@@ -158,66 +157,70 @@ void SettingView::updateAnalogOut1()
 }
 void SettingView::drawTextAreaFactor0()
 {
-    Unicode::snprintfFloat(textAreaFactor0Buffer, TEXTAREAFACTOR0_SIZE, "%4.2f", static_cast<float>(f_channelFactor0));
+    Unicode::snprintfFloat(textAreaFactor0Buffer, TEXTAREAFACTOR0_SIZE, "%4.2f", static_cast<float>(settingVar.f_factor[0]));
     textAreaFactor0.invalidate();
 }
 void SettingView::drawTextAreaFactor1()
 {
-    Unicode::snprintfFloat(textAreaFactor1Buffer, TEXTAREAFACTOR1_SIZE, "%4.2f", static_cast<float>(f_channelFactor1));
+    Unicode::snprintfFloat(textAreaFactor1Buffer, TEXTAREAFACTOR1_SIZE, "%4.2f", static_cast<float>(settingVar.f_factor[1]));
     textAreaFactor1.invalidate();
 }
 inline void SettingView::drawTextAreaFactor2()
 {
-    Unicode::snprintfFloat(textAreaFactor2Buffer, TEXTAREAFACTOR2_SIZE, "%4.2f", static_cast<float>(f_channelFactor2));
+    Unicode::snprintfFloat(textAreaFactor2Buffer, TEXTAREAFACTOR2_SIZE, "%4.2f", static_cast<float>(settingVar.f_factor[2]));
     textAreaFactor2.invalidate();
 }
 inline void SettingView::drawTextAreaFactor3()
 {
-    Unicode::snprintfFloat(textAreaFactor3Buffer, TEXTAREAFACTOR3_SIZE, "%4.2f", static_cast<float>(f_channelFactor3));
+    Unicode::snprintfFloat(textAreaFactor3Buffer, TEXTAREAFACTOR3_SIZE, "%4.2f", static_cast<float>(settingVar.f_factor[3]));
     textAreaFactor3.invalidate();
 }
 inline void SettingView::drawTextAreaOffset0()
 {
-    Unicode::snprintfFloat(textAreaOffset0Buffer, TEXTAREAOFFSET0_SIZE, "%4.2f", static_cast<float>(f_channelOffset0));
+    Unicode::snprintfFloat(textAreaOffset0Buffer, TEXTAREAOFFSET0_SIZE, "%4.2f", static_cast<float>(settingVar.f_offset[0]));
     textAreaOffset0.invalidate();
 }
 inline void SettingView::drawTextAreaOffset1()
 {
-    Unicode::snprintfFloat(textAreaOffset1Buffer, TEXTAREAOFFSET1_SIZE, "%4.2f", static_cast<float>(f_channelOffset1));
+    Unicode::snprintfFloat(textAreaOffset1Buffer, TEXTAREAOFFSET1_SIZE, "%4.2f", static_cast<float>(settingVar.f_offset[1]));
     textAreaOffset1.invalidate();
 }
 inline void SettingView::drawTextAreaOffset2()
 {
-    Unicode::snprintfFloat(textAreaOffset2Buffer, TEXTAREAOFFSET2_SIZE, "%4.2f", static_cast<float>(f_channelOffset2));
+    Unicode::snprintfFloat(textAreaOffset2Buffer, TEXTAREAOFFSET2_SIZE, "%4.2f", static_cast<float>(settingVar.f_offset[2]));
     textAreaOffset2.invalidate();
 }
 inline void SettingView::drawTextAreaOffset3()
 {
-    Unicode::snprintfFloat(textAreaOffset3Buffer, TEXTAREAOFFSET3_SIZE, "%4.2f", static_cast<float>(f_channelOffset3));
+    Unicode::snprintfFloat(textAreaOffset3Buffer, TEXTAREAOFFSET3_SIZE, "%4.2f", static_cast<float>(settingVar.f_offset[3]));
     textAreaOffset3.invalidate();
 }
 inline void SettingView::drawTextProcessVar0()
 {
     f_channelProcessVariable0 = (f_analogChannel0 * f_channelFactor0) + f_channelOffset0;
-    Unicode::snprintfFloat(textProcessVar0Buffer, TEXTPROCESSVAR0_SIZE, "%4.2f", static_cast<float>(f_channelProcessVariable0));
+    auto processVar = settingVar.getProcessValue(0);
+    Unicode::snprintfFloat(textProcessVar0Buffer, TEXTPROCESSVAR0_SIZE, "%4.2f", static_cast<float>(processVar));
     textProcessVar0.invalidate();
 }
 inline void SettingView::drawTextProcessVar1()
 {
     f_channelProcessVariable1 = (f_analogChannel1 * f_channelFactor1) + f_channelOffset1;
-    Unicode::snprintfFloat(textProcessVar1Buffer, TEXTPROCESSVAR1_SIZE, "%4.2f", static_cast<float>(f_channelProcessVariable1));
+    auto processVar = settingVar.getProcessValue(1);
+    Unicode::snprintfFloat(textProcessVar1Buffer, TEXTPROCESSVAR1_SIZE, "%4.2f", static_cast<float>(processVar));
     textProcessVar1.invalidate();
 }
 inline void SettingView::drawTextProcessVar2()
 {
     f_channelProcessVariable2 = (f_analogChannel2 * f_channelFactor2) + f_channelOffset2;
-    Unicode::snprintfFloat(textProcessVar2Buffer, TEXTPROCESSVAR2_SIZE, "%4.2f", static_cast<float>(f_channelProcessVariable2));
+    auto processVar = settingVar.getProcessValue(2);
+    Unicode::snprintfFloat(textProcessVar2Buffer, TEXTPROCESSVAR2_SIZE, "%4.2f", static_cast<float>(processVar));
     textProcessVar2.invalidate();
 }
 inline void SettingView::drawTextProcessVar3()
 {
     f_channelProcessVariable3 = (f_analogChannel3 * f_channelFactor3) + f_channelOffset3;
-    Unicode::snprintfFloat(textProcessVar3Buffer, TEXTPROCESSVAR3_SIZE, "%4.2f", static_cast<float>(f_channelProcessVariable3));
+    auto processVar = settingVar.getProcessValue(3);
+    Unicode::snprintfFloat(textProcessVar3Buffer, TEXTPROCESSVAR3_SIZE, "%4.2f", static_cast<float>(processVar));
     textProcessVar3.invalidate();
 }
 void SettingView::drawTextFloat(decltype(textAreaFactor1Buffer) textBuffer, decltype(TEXTAREAFACTOR1_SIZE) textBufferSize, decltype("%4.2f") textFormat, decltype(textAreaFactor0) textObject, float number)

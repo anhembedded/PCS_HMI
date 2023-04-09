@@ -153,6 +153,7 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     modalWindow1.setBackground(touchgfx::BitmapId(BITMAP_ALTERNATE_THEME_IMAGES_CONTAINERS_LARGE_WIDE_OUTLINED_LIGHT_ID), 160, 105);
     modalWindow1.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     modalWindow1.setShadeAlpha(169);
+    modalWindow1.hide();
     radioButtonGroup1.setRadioButtonSelectedHandler(radioButtonSelectedCallback);
     
     button_level.setXY(29, 28);

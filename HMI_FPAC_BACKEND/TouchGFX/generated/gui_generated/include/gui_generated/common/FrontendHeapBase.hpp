@@ -10,6 +10,7 @@
 
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <touchgfx/transitions/CoverTransition.hpp>
+#include <touchgfx/transitions/BlockTransition.hpp>
 
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
@@ -24,6 +25,8 @@
 #include <gui/closedloopsetting_screen/ClosedLoopSettingPresenter.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphView.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
+#include <gui/information_screen/InformationView.hpp>
+#include <gui/information_screen/InformationPresenter.hpp>
 
 
 /**
@@ -51,7 +54,8 @@ public:
             touchgfx::meta::TypeList< MesuaringView,
             touchgfx::meta::TypeList< ClosedLoopSettingView,
             touchgfx::meta::TypeList< ClosedLoopGraphView,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< InformationView,
+            touchgfx::meta::Nil > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -68,7 +72,8 @@ public:
             touchgfx::meta::TypeList< MesuaringPresenter,
             touchgfx::meta::TypeList< ClosedLoopSettingPresenter,
             touchgfx::meta::TypeList< ClosedLoopGraphPresenter,
-            touchgfx::meta::Nil > > > >
+            touchgfx::meta::TypeList< InformationPresenter,
+            touchgfx::meta::Nil > > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -82,7 +87,8 @@ public:
      */
     typedef touchgfx::meta::TypeList< touchgfx::NoTransition,
             touchgfx::meta::TypeList< CoverTransition<EAST>,
-            touchgfx::meta::Nil >
+            touchgfx::meta::TypeList< BlockTransition,
+            touchgfx::meta::Nil > >
             > GeneratedTransitionTypes;
 
     /**
@@ -92,7 +98,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoClosedLoopSettingScreenNoTransition();
+        app.gotoMainScreenNoTransition();
     }
 protected:
     FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)

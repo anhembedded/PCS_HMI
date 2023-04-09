@@ -8,7 +8,8 @@
 
 SettingViewBase::SettingViewBase() :
     flexButtonCallback(this, &SettingViewBase::flexButtonCallbackHandler),
-    sliderValueChangedCallback(this, &SettingViewBase::sliderValueChangedCallbackHandler)
+    sliderValueChangedCallback(this, &SettingViewBase::sliderValueChangedCallbackHandler),
+    buttonCallback(this, &SettingViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 800, 480);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -18,15 +19,15 @@ SettingViewBase::SettingViewBase() :
     Background.setColor(touchgfx::Color::getColorFromRGB(214, 236, 255));
     add(Background);
 
-    buttonWithIcon1.setXY(17, 398);
+    buttonWithIcon1.setXY(17, 400);
     buttonWithIcon1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_HELP_OUTLINE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
     buttonWithIcon1.setIconXY(5, 5);
     add(buttonWithIcon1);
 
-    buttonDone1.setXY(730, 0);
+    buttonDone1.setXY(725, 0);
     add(buttonDone1);
 
-    containerParameter.setPosition(100, -15, 618, 305);
+    containerParameter.setPosition(77, -16, 618, 305);
     boxWithBorder3.setPosition(0, 22, 618, 283);
     boxWithBorder3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder3.setBorderColor(touchgfx::Color::getColorFromRGB(145, 1, 133));
@@ -267,7 +268,7 @@ SettingViewBase::SettingViewBase() :
 
     add(containerParameter);
 
-    analogContainer.setPosition(134, 331, 532, 97);
+    analogContainer.setPosition(223, 336, 506, 94);
     sliderAnalogOut0.setXY(7, 4);
     sliderAnalogOut0.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_TRACK_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_FILLER_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_ROUNDED_LIGHT_ID));
     sliderAnalogOut0.setupHorizontalSlider(16, 11, 0, 0, 400);
@@ -413,6 +414,12 @@ SettingViewBase::SettingViewBase() :
     keyboard1.setXY(93, 0);
     keyboard1.setVisible(false);
     add(keyboard1);
+
+    button_Confirm.setXY(59, 372);
+    button_Confirm.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    button_Confirm.setIconXY(39, 33);
+    button_Confirm.setAction(buttonCallback);
+    add(button_Confirm);
 }
 
 SettingViewBase::~SettingViewBase()
@@ -502,5 +509,16 @@ void SettingViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider& 
         //When sliderAnalogOut1 value changed call virtual function
         //Call sliderAnalogOutHandle1
         sliderAnalogOutHandle1(value);
+    }
+}
+
+void SettingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &button_Confirm)
+    {
+        //button_confirm_ClickHandle
+        //When button_Confirm clicked call virtual function
+        //Call button_confirm_ClickHandle
+        button_confirm_ClickHandle();
     }
 }

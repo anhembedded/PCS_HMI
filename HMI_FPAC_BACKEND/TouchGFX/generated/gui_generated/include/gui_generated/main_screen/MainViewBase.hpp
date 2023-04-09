@@ -34,6 +34,7 @@ protected:
     touchgfx::ButtonWithLabel clickButton_closedloopControlContinuous;
     touchgfx::ButtonWithIcon buttonLang;
     touchgfx::Image image1;
+    touchgfx::ButtonWithIcon button_information;
 
 private:
 

@@ -53,7 +53,11 @@ private:
     }
     void numericButtonLogic(char ch)
     {
-        if (indexBuffer <= maxOfDesBuffer)
+        if (indexBuffer == 0 && ch == '.')
+        {
+            numericButtonLogic('0');
+            numericButtonLogic(ch);
+        }else if (indexBuffer <= maxOfDesBuffer)
         {
             keyBoardBuffer = keyBoardBuffer + ch;
             indexBuffer++;

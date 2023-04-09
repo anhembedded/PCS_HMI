@@ -83,6 +83,10 @@ public:
     {
         // Override and implement this function in Setting
     }
+    virtual void button_confirm_ClickHandle()
+    {
+        // Override and implement this function in Setting
+    }
 
 protected:
     FrontendApplication& application() {
@@ -156,6 +160,7 @@ protected:
     touchgfx::ModalWindow modalWindow_inf;
     touchgfx::ButtonWithIcon buttonWithIcon2;
     touchgfx::Draggable< Keyboard > keyboard1;
+    touchgfx::ButtonWithIcon button_Confirm;
 
     /*
      * Wildcard Buffers
@@ -204,12 +209,14 @@ private:
      */
     touchgfx::Callback<SettingViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
     touchgfx::Callback<SettingViewBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
+    touchgfx::Callback<SettingViewBase, const touchgfx::AbstractButton&> buttonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

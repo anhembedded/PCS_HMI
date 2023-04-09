@@ -19,6 +19,8 @@
 #include <gui/closedloopsetting_screen/ClosedLoopSettingPresenter.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphView.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
+#include <gui/information_screen/InformationView.hpp>
+#include <gui/information_screen/InformationPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -38,6 +40,17 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
  */
 
 // Main
+
+void FrontendApplicationBase::gotoMainScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMainScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMainScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<MainView, MainPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
 
 void FrontendApplicationBase::gotoMainScreenCoverTransitionEast()
 {
@@ -78,17 +91,6 @@ void FrontendApplicationBase::gotoMesuaringScreenCoverTransitionEastImpl()
 
 // ClosedLoopSetting
 
-void FrontendApplicationBase::gotoClosedLoopSettingScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoClosedLoopSettingScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoClosedLoopSettingScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<ClosedLoopSettingView, ClosedLoopSettingPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
 void FrontendApplicationBase::gotoClosedLoopSettingScreenCoverTransitionEast()
 {
     transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoClosedLoopSettingScreenCoverTransitionEastImpl);
@@ -111,4 +113,17 @@ void FrontendApplicationBase::gotoClosedLoopGraphScreenCoverTransitionEast()
 void FrontendApplicationBase::gotoClosedLoopGraphScreenCoverTransitionEastImpl()
 {
     touchgfx::makeTransition<ClosedLoopGraphView, ClosedLoopGraphPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Information
+
+void FrontendApplicationBase::gotoInformationScreenBlockTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoInformationScreenBlockTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoInformationScreenBlockTransitionImpl()
+{
+    touchgfx::makeTransition<InformationView, InformationPresenter, touchgfx::BlockTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

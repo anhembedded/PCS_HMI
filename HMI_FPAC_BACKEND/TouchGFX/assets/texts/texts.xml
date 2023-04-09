@@ -10,6 +10,9 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_ASQG" Alignment="Left" TypographyId="KeyBoard">
+        <Translation Language="GB">Anh.Embedded</Translation>
+      </Text>
       <Text Id="__SingleUse_3ADE" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">Temperature</Translation>
       </Text>
