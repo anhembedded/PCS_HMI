@@ -25,8 +25,14 @@ void Model::tick()
 {
 #ifdef SIMULATOR
     tickVal++;
-    if (tickVal % 10)
+    if (tickVal % 1000)
     {
+        for (auto &i : analogIn.u32_10BitAnalogIn)
+        {
+            i =  i++;
+        }
+
+      
     }
 
 #else
@@ -99,6 +105,16 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
     return   this->actualValue;
 }
 
+  void Model::setSettingVar(settingVar_type setVar)
+ {
+     this->settingVar = setVar;
+ }
+
+  settingVar_type Model::getSettingVar()
+ {
+     return this->settingVar;
+ }
+
 #ifdef SIMULATOR
 
 uint32_t Model::modelGetTick()
@@ -110,4 +126,16 @@ uint32_t Model::modelGetTick()
 float pidParam_type::getFloatSetpint()
 {
     return 0.0f;
+}
+
+float analogIn_type::getAnalogValueFloat(uint32_t indexChannel)
+{
+    auto vol = static_cast<float>(u32_10BitAnalogIn.at(indexChannel)) / rawAnalogMax;
+    vol = vol * maxVolage;
+    return vol;
+}
+
+float settingVar_type::getProcessValue(uint32_t indexChannel, float analogInFloat)
+{
+    return (analogInFloat * f_factor.at(indexChannel)) + f_offset.at(indexChannel);
 }

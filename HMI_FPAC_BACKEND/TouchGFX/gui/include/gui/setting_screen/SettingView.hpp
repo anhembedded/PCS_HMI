@@ -78,10 +78,11 @@ protected:
 
 private:
     settingVar_type settingVar;
+    analogIn_type analogIn;
     const float maxVol = 10.f;
     void updateAnalogOut0();
     void updateAnalogOut1();
-
+    analogIn_type getAnalogIn();
     float adcRawValueToVoltage(uint32_t adcVal) const;
 };
 

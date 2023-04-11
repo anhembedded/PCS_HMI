@@ -40,6 +40,10 @@ public:
     {
         return model->getSettingVar();
     }
+    analogIn_type getAnalogIn()
+    {
+        return model->getAnalogIn();
+    }
 
 private:
     SettingPresenter();

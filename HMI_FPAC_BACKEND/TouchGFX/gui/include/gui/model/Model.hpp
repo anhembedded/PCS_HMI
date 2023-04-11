@@ -30,6 +30,20 @@ enum class actualValue_type
     temperature
 };
 
+struct analogIn_type
+{
+    const float maxVolage = 10.0F;
+    const uint32_t rawAnalogMax = 1024U;
+    std::array<uint32_t, 4> u32_10BitAnalogIn;
+
+    float getAnalogValueFloat(uint32_t indexChannel);
+    analogIn_type& operator=(analogIn_type other)
+    {
+        u32_10BitAnalogIn = other.u32_10BitAnalogIn;
+        return *this;
+    }
+};
+
 struct settingVar_type
 {
     const float maxVolage = 10.0F;
@@ -37,25 +51,15 @@ struct settingVar_type
 
     std::array<float, 4> f_factor;
     std::array<float, 4> f_offset;
-    std::array<uint32_t, 4> u32_analogVal;
     settingVar_type &operator=(settingVar_type other)
     {
         f_factor = other.f_factor;
         f_offset = other.f_offset;
-        u32_analogVal = other.u32_analogVal;
+      
         return *this;
     }
 
-    float getAnalogValueFloat(uint32_t indexChannel)
-    {
-        auto vol = static_cast<float>(u32_analogVal.at(indexChannel)) / rawAnalogMax;
-        vol = vol * maxVolage;
-        return vol;
-    }
-    float getProcessValue(uint32_t indexChannel)
-    {
-        return (getAnalogValueFloat(u32_analogVal.at(indexChannel)) * f_factor.at(indexChannel)) + f_offset.at(indexChannel);
-    }
+    float getProcessValue(uint32_t indexChannel, float analogInFloat);
 };
 
 class ModelListener;
@@ -78,6 +82,7 @@ public:
     pidParam_type pidParam;
     actualValue_type actualValue;
     settingVar_type settingVar;
+    analogIn_type analogIn;
     Model();
 
     /**
@@ -110,13 +115,11 @@ public:
     pidParam_type getPidParam();
     void setActualValue(actualValue_type view_actualValue);
     actualValue_type getActualValue();
-    void setSettingVar(settingVar_type setVar)
+    void setSettingVar(settingVar_type setVar);
+    settingVar_type getSettingVar();
+    analogIn_type getAnalogIn()
     {
-        this->settingVar = setVar;
-    }
-    settingVar_type getSettingVar()
-    {
-        return this->settingVar;
+        return this->analogIn;
     }
 
 protected:

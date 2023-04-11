@@ -37,15 +37,12 @@ void SettingView::handleTickEvent()
 {
 
 #ifdef SIMULATOR
-    f_analogChannel0 = adcRawValueToVoltage((uint32_t)1023);
-    f_analogChannel1 = adcRawValueToVoltage(0u);
-    f_analogChannel2 = adcRawValueToVoltage(500u);
-    f_analogChannel3 = adcRawValueToVoltage(10u);
 
-    drawTextAdcIn0(f_analogChannel0);
-    drawTextAdcIn1(f_analogChannel1);
-    drawTextAdcIn2(f_analogChannel2);
-    drawTextAdcIn3(f_analogChannel3);
+    this->analogIn = getAnalogIn();
+    drawTextAdcIn0(analogIn.getAnalogValueFloat(0));
+    drawTextAdcIn1(analogIn.getAnalogValueFloat(1));
+    drawTextAdcIn2(analogIn.getAnalogValueFloat(2));
+    drawTextAdcIn3(analogIn.getAnalogValueFloat(3));
 
     drawTextProcessVar0();
     drawTextProcessVar1();
@@ -116,15 +113,12 @@ void SettingView::sliderAnalogOutHandle1(int value)
 }
 void SettingView::setADC(std::array<uint32_t, 4> arrayParameters)
 {
-    f_analogChannel0 = adcRawValueToVoltage(arrayParameters.at(0));
-    f_analogChannel1 = adcRawValueToVoltage(arrayParameters.at(1));
-    f_analogChannel2 = adcRawValueToVoltage(arrayParameters.at(2));
-    f_analogChannel3 = adcRawValueToVoltage(arrayParameters.at(3));
+ 
 
-    drawTextAdcIn0(f_analogChannel0);
-    drawTextAdcIn1(f_analogChannel1);
-    drawTextAdcIn2(f_analogChannel2);
-    drawTextAdcIn3(f_analogChannel3);
+    drawTextAdcIn0(analogIn.getAnalogValueFloat(0));
+    drawTextAdcIn1(analogIn.getAnalogValueFloat(1));
+    drawTextAdcIn2(analogIn.getAnalogValueFloat(2));
+    drawTextAdcIn3(analogIn.getAnalogValueFloat(3));
 
     drawTextProcessVar0();
     drawTextProcessVar1();
@@ -154,6 +148,10 @@ void SettingView::updateAnalogOut1()
 #ifndef SIMMULATION
     presenter->notifyAnalogOutputChanged_1(u32_channelAnalogOut1);
 #endif // !SIMMULATION
+}
+ analogIn_type SettingView::getAnalogIn()
+{
+    return presenter->getAnalogIn();
 }
 void SettingView::drawTextAreaFactor0()
 {
@@ -198,28 +196,32 @@ inline void SettingView::drawTextAreaOffset3()
 inline void SettingView::drawTextProcessVar0()
 {
     f_channelProcessVariable0 = (f_analogChannel0 * f_channelFactor0) + f_channelOffset0;
-    auto processVar = settingVar.getProcessValue(0);
+    auto  analogFloat = analogIn.getAnalogValueFloat(0);
+    auto processVar = settingVar.getProcessValue(0, analogFloat);
     Unicode::snprintfFloat(textProcessVar0Buffer, TEXTPROCESSVAR0_SIZE, "%4.2f", static_cast<float>(processVar));
     textProcessVar0.invalidate();
 }
 inline void SettingView::drawTextProcessVar1()
 {
     f_channelProcessVariable1 = (f_analogChannel1 * f_channelFactor1) + f_channelOffset1;
-    auto processVar = settingVar.getProcessValue(1);
+    auto  analogFloat = analogIn.getAnalogValueFloat(1);
+    auto processVar = settingVar.getProcessValue(1, analogFloat);
     Unicode::snprintfFloat(textProcessVar1Buffer, TEXTPROCESSVAR1_SIZE, "%4.2f", static_cast<float>(processVar));
     textProcessVar1.invalidate();
 }
 inline void SettingView::drawTextProcessVar2()
 {
     f_channelProcessVariable2 = (f_analogChannel2 * f_channelFactor2) + f_channelOffset2;
-    auto processVar = settingVar.getProcessValue(2);
+    auto  analogFloat = analogIn.getAnalogValueFloat(2);
+    auto processVar = settingVar.getProcessValue(2, analogFloat);
     Unicode::snprintfFloat(textProcessVar2Buffer, TEXTPROCESSVAR2_SIZE, "%4.2f", static_cast<float>(processVar));
     textProcessVar2.invalidate();
 }
 inline void SettingView::drawTextProcessVar3()
 {
     f_channelProcessVariable3 = (f_analogChannel3 * f_channelFactor3) + f_channelOffset3;
-    auto processVar = settingVar.getProcessValue(3);
+    auto  analogFloat = analogIn.getAnalogValueFloat(3);
+    auto processVar = settingVar.getProcessValue(3, analogFloat);
     Unicode::snprintfFloat(textProcessVar3Buffer, TEXTPROCESSVAR3_SIZE, "%4.2f", static_cast<float>(processVar));
     textProcessVar3.invalidate();
 }
