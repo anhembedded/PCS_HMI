@@ -62,6 +62,10 @@ struct settingVar_type
     float getProcessValue(uint32_t indexChannel, float analogInFloat);
 };
 
+struct digitaOut_type
+{
+
+};
 class ModelListener;
 
 /**

@@ -47,13 +47,13 @@ void SettingView::handleTickEvent()
 #endif // ! SIMULATOR
 }
 
-inline void SettingView::buttonTextFactor0ClickHandle()
+inline void SettingView::buttonTextFactor0ClickHandle()  
 {
 
     keyboard1.callKeyboard(&settingVar.f_factor[0], TEXTAREAFACTOR0_SIZE);
 }
 
-inline void SettingView::buttonTextFactor1ClickHandle()
+inline void  SettingView::buttonTextFactor1ClickHandle()  
 {
     keyboard1.callKeyboard(&settingVar.f_factor[1], TEXTAREAFACTOR1_SIZE);
 }
