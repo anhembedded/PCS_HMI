@@ -13,24 +13,21 @@ public:
     const float maxVoltage = 10.0f;
     SettingView();
     virtual ~SettingView() {}
-    virtual void setupScreen();
+    virtual void setupScreen() ;
     virtual void tearDownScreen();
     void handleTickEvent() override;
 
-    virtual void buttonTextFactor0ClickHandle();
-    virtual void buttonTextFactor1ClickHandle();
-    virtual void buttonTextFactor2ClickHandle();
-    virtual void buttonTextFactor3ClickHandle();
-    virtual void buttonTextOffset0ClickHandle();
-    virtual void buttonTextOffset1ClickHandle();
-    virtual void buttonTextOffset2ClickHandle();
-    virtual void buttonTextOffset3ClickHandle();
-    virtual void sliderAnalogOutHandle0(int value);
-    virtual void sliderAnalogOutHandle1(int value);
-    virtual void button_confirm_ClickHandle()
-    {
-        presenter->setSettingVar(this->settingVar);
-    }
+    virtual void buttonTextFactor0ClickHandle() final;
+    virtual void buttonTextFactor1ClickHandle() final;
+    virtual void buttonTextFactor2ClickHandle() final;
+    virtual void buttonTextFactor3ClickHandle() final;
+    virtual void buttonTextOffset0ClickHandle() final;
+    virtual void buttonTextOffset1ClickHandle() final;
+    virtual void buttonTextOffset2ClickHandle() final;
+    virtual void buttonTextOffset3ClickHandle() final;
+    virtual void sliderAnalogOutHandle0(int value) final;
+    virtual void sliderAnalogOutHandle1(int value) final;
+    virtual void button_confirm_ClickHandle() final;
     void setADC(std::array<uint32_t, 4> arrayParameters);
 
     void drawTextAreaFactor0();
@@ -53,25 +50,6 @@ public:
     void drawTextAdcIn3(float adcValue);
 
 protected:
-    float f_channelFactor0;
-    float f_channelFactor1;
-    float f_channelFactor2;
-    float f_channelFactor3;
-
-    float f_channelOffset0;
-    float f_channelOffset1;
-    float f_channelOffset2;
-    float f_channelOffset3;
-
-    float f_channelProcessVariable0;
-    float f_channelProcessVariable1;
-    float f_channelProcessVariable2;
-    float f_channelProcessVariable3;
-
-    float f_analogChannel0;
-    float f_analogChannel1;
-    float f_analogChannel2;
-    float f_analogChannel3;
 
     uint32_t u32_channelAnalogOut0;
     uint32_t u32_channelAnalogOut1;

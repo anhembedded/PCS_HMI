@@ -1,23 +1,8 @@
 #include <gui/setting_screen/SettingView.hpp>
 #include <touchgfx/Color.hpp>
 
-SettingView::SettingView() : f_channelFactor0(1.),
-                             f_channelFactor1(1.),
-                             f_channelFactor2(1.),
-                             f_channelFactor3(1.),
-                             f_channelOffset0(0.),
-                             f_channelOffset1(0.),
-                             f_channelOffset2(0.),
-                             f_channelOffset3(0.),
-                             f_channelProcessVariable0(0.),
-                             f_channelProcessVariable1(0.),
-                             f_channelProcessVariable2(0.),
-                             f_channelProcessVariable3(0.),
-                             f_analogChannel0(0.f),
-                             f_analogChannel1(0.f),
-                             f_analogChannel2(0.f),
-                             f_analogChannel3(0.f),
-                             u32_channelAnalogOut0(0u),
+SettingView::SettingView() : 
+                           u32_channelAnalogOut0(0u),
                              u32_channelAnalogOut1(0u)
 {
 }
@@ -111,6 +96,10 @@ void SettingView::sliderAnalogOutHandle1(int value)
 {
     updateAnalogOut1();
 }
+ void SettingView::button_confirm_ClickHandle()
+{
+    presenter->setSettingVar(this->settingVar);
+}
 void SettingView::setADC(std::array<uint32_t, 4> arrayParameters)
 {
  
@@ -195,7 +184,7 @@ inline void SettingView::drawTextAreaOffset3()
 }
 inline void SettingView::drawTextProcessVar0()
 {
-    f_channelProcessVariable0 = (f_analogChannel0 * f_channelFactor0) + f_channelOffset0;
+   
     auto  analogFloat = analogIn.getAnalogValueFloat(0);
     auto processVar = settingVar.getProcessValue(0, analogFloat);
     Unicode::snprintfFloat(textProcessVar0Buffer, TEXTPROCESSVAR0_SIZE, "%4.2f", static_cast<float>(processVar));
@@ -203,7 +192,7 @@ inline void SettingView::drawTextProcessVar0()
 }
 inline void SettingView::drawTextProcessVar1()
 {
-    f_channelProcessVariable1 = (f_analogChannel1 * f_channelFactor1) + f_channelOffset1;
+    
     auto  analogFloat = analogIn.getAnalogValueFloat(1);
     auto processVar = settingVar.getProcessValue(1, analogFloat);
     Unicode::snprintfFloat(textProcessVar1Buffer, TEXTPROCESSVAR1_SIZE, "%4.2f", static_cast<float>(processVar));
@@ -211,7 +200,7 @@ inline void SettingView::drawTextProcessVar1()
 }
 inline void SettingView::drawTextProcessVar2()
 {
-    f_channelProcessVariable2 = (f_analogChannel2 * f_channelFactor2) + f_channelOffset2;
+   
     auto  analogFloat = analogIn.getAnalogValueFloat(2);
     auto processVar = settingVar.getProcessValue(2, analogFloat);
     Unicode::snprintfFloat(textProcessVar2Buffer, TEXTPROCESSVAR2_SIZE, "%4.2f", static_cast<float>(processVar));
@@ -219,7 +208,7 @@ inline void SettingView::drawTextProcessVar2()
 }
 inline void SettingView::drawTextProcessVar3()
 {
-    f_channelProcessVariable3 = (f_analogChannel3 * f_channelFactor3) + f_channelOffset3;
+    
     auto  analogFloat = analogIn.getAnalogValueFloat(3);
     auto processVar = settingVar.getProcessValue(3, analogFloat);
     Unicode::snprintfFloat(textProcessVar3Buffer, TEXTPROCESSVAR3_SIZE, "%4.2f", static_cast<float>(processVar));

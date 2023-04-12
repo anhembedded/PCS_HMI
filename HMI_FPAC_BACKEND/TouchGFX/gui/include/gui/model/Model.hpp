@@ -37,7 +37,7 @@ struct analogIn_type
     std::array<uint32_t, 4> u32_10BitAnalogIn;
 
     float getAnalogValueFloat(uint32_t indexChannel);
-    analogIn_type& operator=(analogIn_type other)
+    analogIn_type& operator=(analogIn_type other) noexcept
     {
         u32_10BitAnalogIn = other.u32_10BitAnalogIn;
         return *this;
@@ -51,7 +51,7 @@ struct settingVar_type
 
     std::array<float, 4> f_factor;
     std::array<float, 4> f_offset;
-    settingVar_type &operator=(settingVar_type other)
+    settingVar_type &operator=(settingVar_type other) noexcept
     {
         f_factor = other.f_factor;
         f_offset = other.f_offset;
@@ -117,10 +117,7 @@ public:
     actualValue_type getActualValue();
     void setSettingVar(settingVar_type setVar);
     settingVar_type getSettingVar();
-    analogIn_type getAnalogIn()
-    {
-        return this->analogIn;
-    }
+    analogIn_type getAnalogIn();
 
 protected:
     /**

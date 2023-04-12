@@ -29,7 +29,7 @@ void Model::tick()
     {
         for (auto &i : analogIn.u32_10BitAnalogIn)
         {
-            i =  i++;
+            i =  (i +1);
         }
 
       
@@ -83,7 +83,7 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 
 // !SIMULATOR
 
- void Model::setPidParam(pidParam_type pidSet)
+ void Model::setPidParam(pidParam_type pidSet)  
 {
     this->pidParam = pidSet;
     
@@ -114,6 +114,11 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
  {
      return this->settingVar;
  }
+
+   analogIn_type Model::getAnalogIn()
+  {
+      return this->analogIn;
+  }
 
 #ifdef SIMULATOR
 

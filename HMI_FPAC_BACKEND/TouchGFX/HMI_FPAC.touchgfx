@@ -875,7 +875,7 @@
                 "Wildcard1": {
                   "TextId": "__SingleUse_YI40",
                   "UseBuffer": true,
-                  "BufferSize": 4
+                  "BufferSize": 5
                 }
               },
               {
@@ -890,7 +890,7 @@
                 "Wildcard1": {
                   "TextId": "__SingleUse_468E",
                   "UseBuffer": true,
-                  "BufferSize": 4
+                  "BufferSize": 5
                 }
               },
               {
@@ -905,7 +905,7 @@
                 "Wildcard1": {
                   "TextId": "__SingleUse_2HH1",
                   "UseBuffer": true,
-                  "BufferSize": 4
+                  "BufferSize": 5
                 }
               },
               {
@@ -920,7 +920,7 @@
                 "Wildcard1": {
                   "TextId": "__SingleUse_A386",
                   "UseBuffer": true,
-                  "BufferSize": 4
+                  "BufferSize": 5
                 }
               },
               {
@@ -974,7 +974,7 @@
             "Name": "analogContainer",
             "X": 223,
             "Y": 336,
-            "Width": 506,
+            "Width": 527,
             "Height": 94,
             "Components": [
               {

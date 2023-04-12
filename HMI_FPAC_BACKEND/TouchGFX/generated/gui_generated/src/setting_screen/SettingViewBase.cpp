@@ -268,7 +268,7 @@ SettingViewBase::SettingViewBase() :
 
     add(containerParameter);
 
-    analogContainer.setPosition(223, 336, 506, 94);
+    analogContainer.setPosition(223, 336, 527, 94);
     sliderAnalogOut0.setXY(7, 4);
     sliderAnalogOut0.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_TRACK_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_FILLER_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_ROUNDED_LIGHT_ID));
     sliderAnalogOut0.setupHorizontalSlider(16, 11, 0, 0, 400);

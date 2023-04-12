@@ -189,13 +189,13 @@ protected:
     touchgfx::Unicode::UnicodeChar textProcessVar2Buffer[TEXTPROCESSVAR2_SIZE];
     static const uint16_t TEXTPROCESSVAR3_SIZE = 10;
     touchgfx::Unicode::UnicodeChar textProcessVar3Buffer[TEXTPROCESSVAR3_SIZE];
-    static const uint16_t TEXTAREACH0_SIZE = 4;
+    static const uint16_t TEXTAREACH0_SIZE = 5;
     touchgfx::Unicode::UnicodeChar textAreaCH0Buffer[TEXTAREACH0_SIZE];
-    static const uint16_t TEXTAREACH1_SIZE = 4;
+    static const uint16_t TEXTAREACH1_SIZE = 5;
     touchgfx::Unicode::UnicodeChar textAreaCH1Buffer[TEXTAREACH1_SIZE];
-    static const uint16_t TEXTAREACH2_SIZE = 4;
+    static const uint16_t TEXTAREACH2_SIZE = 5;
     touchgfx::Unicode::UnicodeChar textAreaCH2Buffer[TEXTAREACH2_SIZE];
-    static const uint16_t TEXTAREACH3_SIZE = 4;
+    static const uint16_t TEXTAREACH3_SIZE = 5;
     touchgfx::Unicode::UnicodeChar textAreaCH3Buffer[TEXTAREACH3_SIZE];
     static const uint16_t TEXTAREAANALOGOUT1_SIZE = 4;
     touchgfx::Unicode::UnicodeChar textAreaAnalogOut1Buffer[TEXTAREAANALOGOUT1_SIZE];
