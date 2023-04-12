@@ -2,8 +2,8 @@
 // Created by hoang on 3/24/2023.
 //
 
-#ifndef TEST_U_GPIO_H
-#define TEST_U_GPIO_H
+#ifndef CORE_U_DRIVER_INC_U_GPIO
+#define CORE_U_DRIVER_INC_U_GPIO
 
 #include "stm32f4xx.h"
 #include <stdint.h>
@@ -61,4 +61,4 @@ void digitalInputChangedHandler_4();
 void digitalInputChangedHandler_5();
 void digitalInputChangedHandler_6();
 
-#endif // TEST_U_GPIO_H
+#endif /* CORE_U_DRIVER_INC_U_GPIO */

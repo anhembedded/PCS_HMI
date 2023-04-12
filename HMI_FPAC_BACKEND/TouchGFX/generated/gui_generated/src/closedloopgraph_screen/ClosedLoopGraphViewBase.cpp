@@ -23,14 +23,14 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     spOpFb1.setXY(590, 381);
     add(spOpFb1);
 
-    boxWithBorder1.setPosition(10, 379, 431, 96);
+    boxWithBorder1.setPosition(10, 380, 431, 96);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(5);
     add(boxWithBorder1);
 
-    buttonWithLabel_start.setXY(136, 391);
-    buttonWithLabel_start.setBitmaps(touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTIVE_ID), touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
+    buttonWithLabel_start.setXY(133, 392);
+    buttonWithLabel_start.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
     buttonWithLabel_start.setLabelText(touchgfx::TypedText(T___SINGLEUSE_AZT2));
     buttonWithLabel_start.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel_start.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -76,15 +76,19 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     digitalInputIndicator1.setXY(20, 434);
     add(digitalInputIndicator1);
 
-    buttonWithLabel_stop.setXY(292, 391);
-    buttonWithLabel_stop.setBitmaps(touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
+    box1.setPosition(286, 397, 141, 37);
+    box1.setColor(touchgfx::Color::getColorFromRGB(89, 89, 89));
+    add(box1);
+
+    buttonWithLabel_stop.setXY(283, 393);
+    buttonWithLabel_stop.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
     buttonWithLabel_stop.setLabelText(touchgfx::TypedText(T___SINGLEUSE_2CQX));
     buttonWithLabel_stop.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel_stop.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     add(buttonWithLabel_stop);
 
     buttonWithLabel_set.setXY(20, 391);
-    buttonWithLabel_set.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
+    buttonWithLabel_set.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_PRESSED_ID));
     buttonWithLabel_set.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6CM6));
     buttonWithLabel_set.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel_set.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));

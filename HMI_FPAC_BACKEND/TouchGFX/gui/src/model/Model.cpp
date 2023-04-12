@@ -25,14 +25,19 @@ void Model::tick()
 {
 #ifdef SIMULATOR
     tickVal++;
-    if (tickVal % 1000)
+    if ((tickVal % 60) == 0)
     {
         for (auto &i : analogIn.u32_10BitAnalogIn)
         {
             i =  (i +1);
         }
-
+        for (auto& i : digitalInput.u8_digiIn)
+        {
+            i = rand() % 2;
+        }
       
+
+
     }
 
 #else
@@ -66,8 +71,7 @@ void Model::sendAdcOuputToBackEnd_1(uint32_t registerVar)
 {
 #ifdef SIMULATOR
     touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
-#endif // SIMULATOR
-#ifndef SIMULATOR
+#else
     xQueueSend(queue_updatePwmCh0Handle, &registerVar, 0);
 #endif // !SIMULATOR
 }
@@ -110,6 +114,16 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
      this->settingVar = setVar;
  }
 
+   void Model::setDigitalOut(digitaOut_type setOutput)
+  {
+      digitalOutput = setOutput;
+  }
+
+    void Model::setDigitalIn(digitalIn_type setInput)
+   {
+       digitalInput = setInput;
+   }
+
   settingVar_type Model::getSettingVar()
  {
      return this->settingVar;
@@ -119,6 +133,16 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
   {
       return this->analogIn;
   }
+
+    digitaOut_type Model::getDigitalOut()
+   {
+       return digitalOutput;
+   }
+
+     digitalIn_type Model::getDigitalIn()
+    {
+        return digitalInput;
+    }
 
 #ifdef SIMULATOR
 
@@ -142,5 +166,7 @@ float analogIn_type::getAnalogValueFloat(uint32_t indexChannel)
 
 float settingVar_type::getProcessValue(uint32_t indexChannel, float analogInFloat)
 {
-    return (analogInFloat * f_factor.at(indexChannel)) + f_offset.at(indexChannel);
+    auto multiFactor = analogInFloat * f_factor.at(indexChannel);
+    auto res = multiFactor + f_offset.at(indexChannel);
+    return res;
 }

@@ -18,6 +18,30 @@ public:
     virtual ~DigitalOutputBase();
     virtual void initialize();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void buttonDigital0Handle()
+    {
+        // Override and implement this function in DigitalOutput
+    }
+    virtual void buttonDigital1Handle()
+    {
+        // Override and implement this function in DigitalOutput
+    }
+    virtual void buttonDigital2Handle()
+    {
+        // Override and implement this function in DigitalOutput
+    }
+    virtual void buttonDigital3Handle()
+    {
+        // Override and implement this function in DigitalOutput
+    }
+    virtual void buttonDigital4Handle()
+    {
+        // Override and implement this function in DigitalOutput
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -28,10 +52,10 @@ protected:
      */
     touchgfx::SlideMenu binaryMenu;
     touchgfx::Container binaryButton;
-    touchgfx::ToggleButton toggleButtonDigitalOut3_1_1_1;
-    touchgfx::ToggleButton toggleButtonDigitalOut3_1_1_1_1;
-    touchgfx::ToggleButton toggleButtonDigitalOut3_1_1_1_1_1;
-    touchgfx::ToggleButton toggleButtonDigitalOut3_1_1_1_1_1_1;
+    touchgfx::ToggleButton buttonDigital4;
+    touchgfx::ToggleButton buttonDigital3;
+    touchgfx::ToggleButton buttonDigital2;
+    touchgfx::ToggleButton buttonDigital1;
     touchgfx::ToggleButton buttonDigital0;
     touchgfx::TextArea textArea4;
     touchgfx::TextArea textArea4_2;
@@ -41,6 +65,16 @@ protected:
     touchgfx::Image image1_1;
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<DigitalOutputBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

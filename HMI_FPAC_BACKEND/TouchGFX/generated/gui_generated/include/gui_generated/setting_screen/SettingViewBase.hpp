@@ -16,13 +16,11 @@
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/Slider.hpp>
-#include <touchgfx/containers/SlideMenu.hpp>
-#include <touchgfx/widgets/ToggleButton.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <gui/containers/DigitalInputIndicator.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <gui/containers/Keyboard.hpp>
 #include <touchgfx/mixins/Draggable.hpp>
+#include <gui/containers/DigitalOutput.hpp>
 
 class SettingViewBase : public touchgfx::View<SettingPresenter>
 {
@@ -139,28 +137,12 @@ protected:
     touchgfx::Slider sliderAnalogOut1;
     touchgfx::TextAreaWithOneWildcard textAreaAnalogOut1;
     touchgfx::TextAreaWithOneWildcard textAreaAnalogOut0;
-    touchgfx::SlideMenu slideMenu1;
-    touchgfx::Container binaryButton;
-    touchgfx::ToggleButton buttonDigital5;
-    touchgfx::ToggleButton buttonDigital4;
-    touchgfx::ToggleButton buttonDigital3;
-    touchgfx::ToggleButton buttonDigital2;
-    touchgfx::ToggleButton buttonDigital1;
-    touchgfx::ToggleButton buttonDigital0;
-    touchgfx::TextArea textArea4;
-    touchgfx::TextArea textArea4_2;
-    touchgfx::TextArea textArea4_2_1;
-    touchgfx::TextArea textArea4_2_1_1;
-    touchgfx::TextArea textArea4_2_1_1_1;
-    touchgfx::TextArea textArea4_1;
-    touchgfx::BoxWithBorder boxWithBorder2;
-    touchgfx::TextAreaWithOneWildcard textBinay;
-    touchgfx::Image image1;
     DigitalInputIndicator digitalInputIndicator1;
     touchgfx::ModalWindow modalWindow_inf;
     touchgfx::ButtonWithIcon buttonWithIcon2;
     touchgfx::Draggable< Keyboard > keyboard1;
     touchgfx::ButtonWithIcon button_Confirm;
+    DigitalOutput digitalOutput1;
 
     /*
      * Wildcard Buffers

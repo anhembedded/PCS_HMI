@@ -49,19 +49,27 @@ public:
     void drawTextAdcIn2(float adcValue);
     void drawTextAdcIn3(float adcValue);
 
+    void drawDigitalIn(uint8_t index, uint8_t state);
+
 protected:
 
     uint32_t u32_channelAnalogOut0;
     uint32_t u32_channelAnalogOut1;
 
 private:
+    uint32_t tick;
     settingVar_type settingVar;
     analogIn_type analogIn;
+    digitaOut_type digitalOutput;
+    digitalIn_type digitalInput;
     const float maxVol = 10.f;
     void updateAnalogOut0();
     void updateAnalogOut1();
     analogIn_type getAnalogIn();
     float adcRawValueToVoltage(uint32_t adcVal) const;
+    digitalIn_type getDigitalIn();
+    void setDigitalOut(digitaOut_type digiOut);
+    digitaOut_type getDigitalOut();
 };
 
 #endif /* INCLUDE_GUI_SETTING_SCREEN_SETTINGVIEW */

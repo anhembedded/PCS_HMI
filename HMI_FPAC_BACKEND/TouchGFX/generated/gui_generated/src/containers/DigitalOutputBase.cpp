@@ -6,7 +6,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Color.hpp>
 
-DigitalOutputBase::DigitalOutputBase()
+DigitalOutputBase::DigitalOutputBase() :
+    buttonCallback(this, &DigitalOutputBase::buttonCallbackHandler)
 {
     setWidth(800);
     setHeight(121);
@@ -23,24 +24,29 @@ DigitalOutputBase::DigitalOutputBase()
     binaryMenu.setAnimationDuration(18);
     binaryMenu.setExpandedStateTimeout(0);
     binaryButton.setPosition(391, 38, 495, 126);
-    toggleButtonDigitalOut3_1_1_1.setXY(232, 19);
-    toggleButtonDigitalOut3_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
-    binaryButton.add(toggleButtonDigitalOut3_1_1_1);
+    buttonDigital4.setXY(232, 19);
+    buttonDigital4.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital4.setAction(buttonCallback);
+    binaryButton.add(buttonDigital4);
 
-    toggleButtonDigitalOut3_1_1_1_1.setXY(284, 19);
-    toggleButtonDigitalOut3_1_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
-    binaryButton.add(toggleButtonDigitalOut3_1_1_1_1);
+    buttonDigital3.setXY(284, 19);
+    buttonDigital3.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital3.setAction(buttonCallback);
+    binaryButton.add(buttonDigital3);
 
-    toggleButtonDigitalOut3_1_1_1_1_1.setXY(339, 19);
-    toggleButtonDigitalOut3_1_1_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
-    binaryButton.add(toggleButtonDigitalOut3_1_1_1_1_1);
+    buttonDigital2.setXY(339, 19);
+    buttonDigital2.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital2.setAction(buttonCallback);
+    binaryButton.add(buttonDigital2);
 
-    toggleButtonDigitalOut3_1_1_1_1_1_1.setXY(395, 19);
-    toggleButtonDigitalOut3_1_1_1_1_1_1.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
-    binaryButton.add(toggleButtonDigitalOut3_1_1_1_1_1_1);
+    buttonDigital1.setXY(395, 19);
+    buttonDigital1.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital1.setAction(buttonCallback);
+    binaryButton.add(buttonDigital1);
 
     buttonDigital0.setXY(450, 19);
     buttonDigital0.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital0.setAction(buttonCallback);
     binaryButton.add(buttonDigital0);
 
     textArea4.setXY(461, 49);
@@ -90,4 +96,43 @@ DigitalOutputBase::~DigitalOutputBase()
 void DigitalOutputBase::initialize()
 {
 
+}
+
+void DigitalOutputBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttonDigital0)
+    {
+        //buttonDigital0Handle
+        //When buttonDigital0 clicked call virtual function
+        //Call buttonDigital0Handle
+        buttonDigital0Handle();
+    }
+    if (&src == &buttonDigital1)
+    {
+        //Interaction1
+        //When buttonDigital1 clicked call virtual function
+        //Call buttonDigital1Handle
+        buttonDigital1Handle();
+    }
+    if (&src == &buttonDigital2)
+    {
+        //Interaction2
+        //When buttonDigital2 clicked call virtual function
+        //Call buttonDigital2Handle
+        buttonDigital2Handle();
+    }
+    if (&src == &buttonDigital3)
+    {
+        //Interaction3
+        //When buttonDigital3 clicked call virtual function
+        //Call buttonDigital3Handle
+        buttonDigital3Handle();
+    }
+    if (&src == &buttonDigital4)
+    {
+        //Interaction4
+        //When buttonDigital4 clicked call virtual function
+        //Call buttonDigital4Handle
+        buttonDigital4Handle();
+    }
 }

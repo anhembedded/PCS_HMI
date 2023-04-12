@@ -46,6 +46,7 @@ protected:
     touchgfx::GraphLabelsY graphBackgroudMajorYAxisLabel;
     ButtonDone buttonDone1;
     DigitalInputIndicator digitalInputIndicator1;
+    touchgfx::Box box1;
     touchgfx::ButtonWithLabel buttonWithLabel_stop;
     touchgfx::ButtonWithLabel buttonWithLabel_set;
     touchgfx::BoxWithBorder boxWithBorder2;

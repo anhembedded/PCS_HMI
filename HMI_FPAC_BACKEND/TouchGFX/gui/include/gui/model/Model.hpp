@@ -64,7 +64,12 @@ struct settingVar_type
 
 struct digitaOut_type
 {
+    std::array<uint8_t, 5> u8_digiOut;
 
+};
+struct digitalIn_type
+{
+    std::array<uint8_t, 7> u8_digiIn;
 };
 class ModelListener;
 
@@ -87,6 +92,8 @@ public:
     actualValue_type actualValue;
     settingVar_type settingVar;
     analogIn_type analogIn;
+    digitaOut_type digitalOutput;
+    digitalIn_type digitalInput;
     Model();
 
     /**
@@ -115,13 +122,22 @@ public:
         return adcValue;
     };
 #endif // !SIMULATOR
-    void setPidParam(pidParam_type pidSet);
     pidParam_type getPidParam();
-    void setActualValue(actualValue_type view_actualValue);
     actualValue_type getActualValue();
-    void setSettingVar(settingVar_type setVar);
     settingVar_type getSettingVar();
     analogIn_type getAnalogIn();
+    digitaOut_type getDigitalOut();
+    digitalIn_type getDigitalIn();
+
+
+    void setPidParam(pidParam_type pidSet);
+    void setActualValue(actualValue_type view_actualValue);
+    void setSettingVar(settingVar_type setVar);
+
+    void setDigitalOut(digitaOut_type setOutput);
+    void setDigitalIn(digitalIn_type setInput);
+
+
 
 protected:
     /**
@@ -141,15 +157,6 @@ private:
 #endif // !SIMULATOR
 };
 
-class dummyClass_type
-{
-public:
-    uint32_t myDummyVar;
-    uint32_t myDummyVar2;
-    uint32_t getVar()
-    {
-        return myDummyVar;
-    }
-};
+
 
 #endif /* INCLUDE_GUI_MODEL_MODEL */

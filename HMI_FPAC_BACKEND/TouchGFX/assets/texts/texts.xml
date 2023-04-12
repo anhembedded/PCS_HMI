@@ -343,30 +343,6 @@
       <Text Id="__SingleUse_V9CU" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">0</Translation>
       </Text>
-      <Text Id="__SingleUse_IVSE" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">000</Translation>
-      </Text>
-      <Text Id="__SingleUse_HS9M" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_DHN0" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">5</Translation>
-      </Text>
-      <Text Id="__SingleUse_PZYL" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">4</Translation>
-      </Text>
-      <Text Id="__SingleUse_KVOW" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">3</Translation>
-      </Text>
-      <Text Id="__SingleUse_1QZK" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">2</Translation>
-      </Text>
-      <Text Id="__SingleUse_OS6T" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">1</Translation>
-      </Text>
-      <Text Id="__SingleUse_NZ9U" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">0</Translation>
-      </Text>
       <Text Id="__SingleUse_MKAC" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">10</Translation>
       </Text>
@@ -401,16 +377,16 @@
         <Translation Language="GB">ProcessVar</Translation>
       </Text>
       <Text Id="__SingleUse_A386" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">00.0</Translation>
+        <Translation Language="GB">00.00</Translation>
       </Text>
       <Text Id="__SingleUse_2HH1" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">00.0</Translation>
+        <Translation Language="GB">00.00</Translation>
       </Text>
       <Text Id="__SingleUse_468E" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">00.0</Translation>
+        <Translation Language="GB">00.00</Translation>
       </Text>
       <Text Id="__SingleUse_YI40" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">00.0</Translation>
+        <Translation Language="GB">00.00</Translation>
       </Text>
       <Text Id="__SingleUse_OA5M" Alignment="Left" TypographyId="MainMenu">
         <Translation Language="GB">0.00</Translation>

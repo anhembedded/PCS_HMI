@@ -45,6 +45,24 @@ public:
         return model->getAnalogIn();
     }
 
+    digitaOut_type getDigitalOut()
+    {
+        return model->getDigitalOut();
+    }
+    digitalIn_type getDigitalIn()
+    {
+        return model->getDigitalIn();
+    }
+
+    void setDigitalOut(digitaOut_type setOutput)
+    {
+        model->setDigitalOut(setOutput);
+    }
+    void setDigitalIn(digitalIn_type setInput)
+    {
+        model->setDigitalIn(setInput);
+    }
+
 private:
     SettingPresenter();
 

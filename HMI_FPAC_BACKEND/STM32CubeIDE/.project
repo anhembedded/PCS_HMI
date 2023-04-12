@@ -695,16 +695,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_rounded_tiny_fill_disabled.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_round_normal.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_normal.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_normal.cpp</locationURI>
@@ -935,6 +925,21 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_slider_horizontal_thick_track_large.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_action.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_action.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_active.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_glass_theme_images_widgets_slider_horizontal_thick_filler_small.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_slider_horizontal_thick_filler_small.cpp</locationURI>
@@ -1003,21 +1008,6 @@
 			<name>Application/User/generated/image_icon_theme_images_hardware_keyboard_backspace_50_50_000000.svg.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_hardware_keyboard_backspace_50_50_000000.svg.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_action.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_action.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_active.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_active.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_light_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_Screenshot.cpp</name>
