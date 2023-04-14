@@ -69,7 +69,7 @@ Footer
 
 *.pdf
 *xlsx
-*.drawio
+#*.drawio
 
 
 HMI_FPAC_BACKEND/Middlewares/ST/touchgfx/

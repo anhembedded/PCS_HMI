@@ -29,6 +29,14 @@ enum class actualValue_type
     pressure,
     temperature
 };
+enum class activeScreen
+{
+    main,
+    setting,
+    mesuaring,
+    closedLoopSetting,
+    closedLoopGraph
+};
 
 struct analogIn_type
 {
