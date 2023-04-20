@@ -27,6 +27,8 @@
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 #include <gui/information_screen/InformationView.hpp>
 #include <gui/information_screen/InformationPresenter.hpp>
+#include <gui/carfollowing_screen/CarFollowingView.hpp>
+#include <gui/carfollowing_screen/CarFollowingPresenter.hpp>
 
 
 /**
@@ -55,7 +57,8 @@ public:
             touchgfx::meta::TypeList< ClosedLoopSettingView,
             touchgfx::meta::TypeList< ClosedLoopGraphView,
             touchgfx::meta::TypeList< InformationView,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::TypeList< CarFollowingView,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -73,7 +76,8 @@ public:
             touchgfx::meta::TypeList< ClosedLoopSettingPresenter,
             touchgfx::meta::TypeList< ClosedLoopGraphPresenter,
             touchgfx::meta::TypeList< InformationPresenter,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::TypeList< CarFollowingPresenter,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedPresenterTypes;
 
     /**

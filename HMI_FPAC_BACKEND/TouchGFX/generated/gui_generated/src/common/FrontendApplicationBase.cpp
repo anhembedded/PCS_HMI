@@ -21,6 +21,8 @@
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 #include <gui/information_screen/InformationView.hpp>
 #include <gui/information_screen/InformationPresenter.hpp>
+#include <gui/carfollowing_screen/CarFollowingView.hpp>
+#include <gui/carfollowing_screen/CarFollowingPresenter.hpp>
 
 using namespace touchgfx;
 

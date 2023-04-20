@@ -3805,6 +3805,23 @@
           }
         ],
         "Interactions": []
+      },
+      {
+        "Name": "CarFollowing",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "boxBackground",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 214,
+              "Green": 236,
+              "Blue": 255
+            }
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
