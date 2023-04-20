@@ -10,6 +10,18 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_1646" Alignment="Center" TypographyId="MainMenu">
+        <Translation Language="GB">Closed-loop Control Continuous</Translation>
+      </Text>
+      <Text Id="__SingleUse_7CMX" Alignment="Center" TypographyId="KeyBoard">
+        <Translation Language="GB">Set</Translation>
+      </Text>
+      <Text Id="__SingleUse_9ZAT" Alignment="Right" TypographyId="GraphText">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_DS94" Alignment="Left" TypographyId="GraphText">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_ASQG" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">Anh.Embedded</Translation>
       </Text>

@@ -79,6 +79,29 @@
             "Preset": "clay_theme\\presets\\button\\regular\\height_50\\large_round_action.json"
           },
           {
+            "Type": "ButtonWithLabel",
+            "Name": "clickButton_closedloopControlContinuous_1",
+            "X": 190,
+            "Y": 266,
+            "Width": 420,
+            "Height": 94,
+            "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_pressed.png",
+            "Released": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_action.png",
+            "TextId": "__SingleUse_1646",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 87,
+              "Green": 119,
+              "Blue": 243
+            },
+            "TextRotation": "0",
+            "Preset": "clay_theme\\presets\\button\\regular\\height_50\\large_round_action.json"
+          },
+          {
             "Type": "ButtonWithIcon",
             "Name": "buttonLang",
             "X": 569,
@@ -3808,17 +3831,304 @@
       },
       {
         "Name": "CarFollowing",
+        "CanvasBufferSize": 12000,
         "Components": [
           {
-            "Type": "Box",
-            "Name": "boxBackground",
+            "Type": "Image",
+            "Name": "image1",
             "Width": 800,
             "Height": 480,
+            "RelativeFilename": "__generated\\dark_theme_images_backgrounds_800x480_asphalt.png"
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder1",
+            "X": 729,
+            "Y": 116,
+            "Width": 50,
+            "Height": 355,
             "Color": {
-              "Red": 214,
-              "Green": 236,
+              "Red": 168,
+              "Green": 168,
+              "Blue": 168
+            },
+            "BorderSize": 6
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_set",
+            "X": 17,
+            "Y": 200,
+            "Width": 138,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_small_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_small_rounded_normal.png",
+            "TextId": "__SingleUse_7CMX",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
               "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\small_rounded_normal.json"
+          },
+          {
+            "Type": "Gauge",
+            "Name": "gauge1_1",
+            "X": 242,
+            "Y": 9,
+            "Width": 236,
+            "Height": 236,
+            "Preset": "glass_theme\\presets\\gauges\\small\\light_filled.json",
+            "FileNameBackground": "__generated\\glass_theme_images_widgets_gauge_small_backgrounds_light_filled.png",
+            "RotationCenterX": 118.0,
+            "RotationCenterY": 118.0,
+            "StartAngle": -119.0,
+            "EndAngle": 122.0,
+            "RangeMax": 1023.0,
+            "InitialValue": 300.0,
+            "Easing": "Linear",
+            "EasingOption": "In",
+            "FileNameNeedle": "__generated\\glass_theme_images_widgets_gauge_small_needles_rough.png",
+            "NeedleRotationCenterX": 8.0,
+            "NeedleRotationCenterY": 53.0,
+            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+            "UseArc": true,
+            "FileNameArc": "__generated\\glass_theme_images_widgets_gauge_small_fillers_swoop.png",
+            "ArcColor": {
+              "Red": 20,
+              "Green": 151,
+              "Blue": 197
+            },
+            "SetArcPosition": true,
+            "ArcX": 45.0,
+            "ArcY": 43.0,
+            "ArcWidth": 146.0,
+            "ArcHeight": 108.0,
+            "ArcRadius": 79.0,
+            "ArcLineWidth": 78.0,
+            "ArcCapStyle": "Butt"
+          },
+          {
+            "Type": "Gauge",
+            "Name": "gauge1",
+            "X": 446,
+            "Y": -19,
+            "Width": 292,
+            "Height": 292,
+            "Preset": "glass_theme\\presets\\gauges\\medium\\light_precision.json",
+            "FileNameBackground": "__generated\\glass_theme_images_widgets_gauge_medium_backgrounds_light_precision.png",
+            "RotationCenterX": 146.0,
+            "RotationCenterY": 146.0,
+            "StartAngle": -113.0,
+            "EndAngle": 112.0,
+            "RangeMax": 1023.0,
+            "InitialValue": 50.0,
+            "Easing": "Linear",
+            "EasingOption": "In",
+            "FileNameNeedle": "__generated\\glass_theme_images_widgets_gauge_medium_needles_rough.png",
+            "NeedleRotationCenterX": 10.0,
+            "NeedleRotationCenterY": 65.0,
+            "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
+            "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
+            "FileNameArc": "__generated\\glass_theme_images_widgets_gauge_large_fillers_swoop.png",
+            "ArcColor": {
+              "Red": 20,
+              "Green": 151,
+              "Blue": 197
+            },
+            "SetArcPosition": true,
+            "ArcX": 59.0,
+            "ArcY": 57.0,
+            "ArcWidth": 270.0,
+            "ArcHeight": 198.0,
+            "ArcRadius": 137.0,
+            "ArcLineWidth": 136.0,
+            "ArcCapStyle": "Butt"
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "graphBackgroud",
+            "Y": 236,
+            "Width": 706,
+            "Height": 244,
+            "DataSeed": -1305830385,
+            "NumberOfValues": 600,
+            "MaxY": 10.3,
+            "Precision": "1",
+            "LastIndex": 599,
+            "XAxisScale": 1.0,
+            "LabelSizeTop": 17,
+            "LabelSizeBottom": 29,
+            "LabelSizeLeft": 24,
+            "PaddingRight": 10,
+            "GraphType": "GraphWrapClear",
+            "GraphDrawers": [],
+            "XAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Green": 255,
+                "Blue": 17
+              },
+              "Interval": 30.0,
+              "LineWidth": 1,
+              "Alpha": 64
+            },
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 255,
+                "Green": 255,
+                "Blue": 255
+              },
+              "Interval": 1.0,
+              "LineWidth": 1,
+              "Alpha": 104
+            },
+            "XAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 30.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 255,
+                "Blue": 204
+              },
+              "TextId": "__SingleUse_DS94",
+              "TextRotation": "0",
+              "Position": "Bottom"
+            },
+            "YAxisLabel": {
+              "Type": "GraphLabel",
+              "Interval": 1.0,
+              "DecimalSeparator": "Point",
+              "TextColor": {
+                "Red": 255,
+                "Green": 225
+              },
+              "TextId": "__SingleUse_9ZAT",
+              "TextRotation": "0",
+              "Position": "Left"
             }
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "graphFeedBack",
+            "Y": 236,
+            "Width": 706,
+            "Height": 244,
+            "DataSeed": -984943855,
+            "NumberOfValues": 600,
+            "MaxY": 10.3,
+            "Precision": "0.1",
+            "LastIndex": 599,
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "LabelSizeTop": 17,
+            "LabelSizeBottom": 29,
+            "LabelSizeLeft": 24,
+            "PaddingRight": 10,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 252,
+                  "Green": 68,
+                  "Blue": 68
+                }
+              }
+            ]
+          },
+          {
+            "Type": "DynamicGraph",
+            "Name": "graphSetPoint",
+            "Y": 236,
+            "Width": 706,
+            "Height": 244,
+            "DataSeed": -1659264797,
+            "NumberOfValues": 600,
+            "MaxY": 10.3,
+            "Precision": "0.1",
+            "LastIndex": 599,
+            "XAxisScale": 1.0,
+            "InsertRandomValues": true,
+            "LabelSizeTop": 17,
+            "LabelSizeBottom": 29,
+            "LabelSizeLeft": 24,
+            "PaddingRight": 10,
+            "GraphType": "GraphScroll",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 119,
+                  "Green": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ImageProgress",
+            "Name": "imageProgress1",
+            "X": 12,
+            "Y": 9,
+            "Width": 110,
+            "Height": 40,
+            "FileNameProgress": "__generated\\glass_theme_images_widgets_imageprogress_styled_batteries_battery_large_active.png",
+            "AnchorAtZero": true,
+            "Direction": "Right",
+            "Preset": "glass_theme\\presets\\imageprogress\\styled\\batteries\\active.json",
+            "FileNameBackground": "__generated\\glass_theme_images_widgets_imageprogress_styled_batteries_battery_large.png",
+            "IndicatorPositionX": 5,
+            "IndicatorPositionY": 5,
+            "IndicatorPositionWidth": 94,
+            "IndicatorPositionHeight": 30,
+            "ProgressRangeMax": 1023,
+            "ProgressInitialValue": 500
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "buttonDone1",
+            "X": 720,
+            "Width": 68,
+            "Height": 70,
+            "CustomContainerDefinitionName": "ButtonDone"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton1",
+            "X": 17,
+            "Y": 127,
+            "Width": 138,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_active.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded_active_text.json"
+          },
+          {
+            "Type": "Slider",
+            "Name": "slider1",
+            "X": 738,
+            "Y": 127,
+            "Width": 32,
+            "Height": 332,
+            "BackgroundUnselected": "__generated\\alternate_theme_images_widgets_slider_vertical_thick_track_medium.png",
+            "BackgroundSelected": "__generated\\alternate_theme_images_widgets_slider_vertical_thick_filler_medium.png",
+            "Indicator": "__generated\\alternate_theme_images_widgets_slider_vertical_thick_round_light.png",
+            "BackgroundX": 11,
+            "BackgroundY": 16,
+            "IndicatorMax": 300,
+            "ValueMax": 100
           }
         ],
         "Interactions": []

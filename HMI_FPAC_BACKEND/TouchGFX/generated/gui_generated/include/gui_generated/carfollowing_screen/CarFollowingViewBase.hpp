@@ -8,6 +8,19 @@
 #include <mvp/View.hpp>
 #include <gui/carfollowing_screen/CarFollowingPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/Gauge.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp>
+#include <touchgfx/widgets/graph/GraphWrapAndClear.hpp>
+#include <touchgfx/widgets/graph/GraphElements.hpp>
+#include <touchgfx/widgets/graph/GraphLabels.hpp>
+#include <touchgfx/widgets/graph/GraphScroll.hpp>
+#include <touchgfx/widgets/canvas/PainterRGB565.hpp>
+#include <touchgfx/containers/progress_indicators/ImageProgress.hpp>
+#include <gui/containers/ButtonDone.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/containers/Slider.hpp>
 
 class CarFollowingViewBase : public touchgfx::View<CarFollowingPresenter>
 {
@@ -25,9 +38,34 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Box boxBackground;
+    touchgfx::Image image1;
+    touchgfx::ButtonWithLabel buttonWithLabel_set;
+    touchgfx::Gauge gauge1_1;
+    touchgfx::PainterRGB565Bitmap gauge1_1Painter;
+    touchgfx::Gauge gauge1;
+    touchgfx::GraphWrapAndClear<600> graphBackgroud;
+    touchgfx::GraphElementGridX graphBackgroudMajorXAxisGrid;
+    touchgfx::GraphElementGridY graphBackgroudMajorYAxisGrid;
+    touchgfx::GraphLabelsX graphBackgroudMajorXAxisLabel;
+    touchgfx::GraphLabelsY graphBackgroudMajorYAxisLabel;
+    touchgfx::GraphScroll<600> graphFeedBack;
+    touchgfx::GraphElementLine graphFeedBackLine1;
+    touchgfx::PainterRGB565 graphFeedBackLine1Painter;
+    touchgfx::GraphScroll<600> graphSetPoint;
+    touchgfx::GraphElementLine graphSetPointLine1;
+    touchgfx::PainterRGB565 graphSetPointLine1Painter;
+    touchgfx::ImageProgress imageProgress1;
+    ButtonDone buttonDone1;
+    touchgfx::ToggleButton toggleButton1;
+    touchgfx::Slider slider1;
 
 private:
+
+    /*
+     * Canvas Buffer Size
+     */
+    static const uint32_t CANVAS_BUFFER_SIZE = 12000;
+    uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
 
 };
 

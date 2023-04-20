@@ -680,6 +680,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_alternate_theme_images_backgrounds_800x480_spotlights.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_backgrounds_800x480_spotlights.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_alternate_theme_images_containers_large_wide_outlined_dark.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_containers_large_wide_outlined_dark.cpp</locationURI>
@@ -708,6 +713,16 @@
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_tiny_fill_disabled.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_rounded_tiny_fill_disabled.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_small_rounded_normal.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_36_small_rounded_normal.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_normal.cpp</name>
@@ -783,6 +798,31 @@
 			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_large.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_large.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_vertical_thick_filler_medium.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_vertical_thick_filler_medium.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_vertical_thick_round_light.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_vertical_thick_round_light.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_vertical_thick_track_medium.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_vertical_thick_track_medium.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_active.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_off_light.cpp</name>
@@ -953,6 +993,46 @@
 			<name>Application/User/generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_pressed.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_glass_theme_images_widgets_gauge_large_fillers_swoop.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_large_fillers_swoop.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_glass_theme_images_widgets_gauge_medium_backgrounds_light_precision.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_medium_backgrounds_light_precision.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_glass_theme_images_widgets_gauge_medium_needles_rough.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_medium_needles_rough.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_filled.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_backgrounds_light_filled.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_fillers_swoop.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_glass_theme_images_widgets_gauge_small_needles_rough.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_gauge_small_needles_rough.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_glass_theme_images_widgets_imageprogress_styled_batteries_battery_large.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_imageprogress_styled_batteries_battery_large.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_glass_theme_images_widgets_imageprogress_styled_batteries_battery_large_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_imageprogress_styled_batteries_battery_large_active.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_glass_theme_images_widgets_slider_horizontal_thick_filler_small.cpp</name>
