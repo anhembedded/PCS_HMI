@@ -8,7 +8,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 CarFollowingViewBase::CarFollowingViewBase() :
-    buttonCallback(this, &CarFollowingViewBase::buttonCallbackHandler)
+    buttonCallback(this, &CarFollowingViewBase::buttonCallbackHandler),
+    sliderValueConfirmedCallback(this, &CarFollowingViewBase::sliderValueConfirmedCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -1323,15 +1324,15 @@ CarFollowingViewBase::CarFollowingViewBase() :
     graphSetPoint.addDataPoint(6.96081f);
     add(graphSetPoint);
 
-    imageProgress1.setXY(12, 9);
-    imageProgress1.setProgressIndicatorPosition(5, 5, 94, 30);
-    imageProgress1.setRange(0, 1023);
-    imageProgress1.setDirection(touchgfx::AbstractDirectionProgress::RIGHT);
-    imageProgress1.setBackground(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_IMAGEPROGRESS_STYLED_BATTERIES_BATTERY_LARGE_ID));
-    imageProgress1.setBitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_IMAGEPROGRESS_STYLED_BATTERIES_BATTERY_LARGE_ACTIVE_ID);
-    imageProgress1.setValue(500);
-    imageProgress1.setAnchorAtZero(true);
-    add(imageProgress1);
+    imageProgress_battery.setXY(12, 9);
+    imageProgress_battery.setProgressIndicatorPosition(5, 5, 94, 30);
+    imageProgress_battery.setRange(0, 1023);
+    imageProgress_battery.setDirection(touchgfx::AbstractDirectionProgress::RIGHT);
+    imageProgress_battery.setBackground(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_IMAGEPROGRESS_STYLED_BATTERIES_BATTERY_LARGE_ID));
+    imageProgress_battery.setBitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_IMAGEPROGRESS_STYLED_BATTERIES_BATTERY_LARGE_ACTIVE_ID);
+    imageProgress_battery.setValue(500);
+    imageProgress_battery.setAnchorAtZero(true);
+    add(imageProgress_battery);
 
     buttonDone1.setXY(720, 0);
     add(buttonDone1);
@@ -1346,6 +1347,7 @@ CarFollowingViewBase::CarFollowingViewBase() :
     slider_Pwm.setupVerticalSlider(11, 16, 0, 0, 300);
     slider_Pwm.setValueRange(0, 1023);
     slider_Pwm.setValue(0);
+    slider_Pwm.setStopValueCallback(sliderValueConfirmedCallback);
     add(slider_Pwm);
 }
 
@@ -1374,5 +1376,16 @@ void CarFollowingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton&
         //When button_onOff clicked call virtual function
         //Call button_onOff_Handle
         button_onOff_Handle();
+    }
+}
+
+void CarFollowingViewBase::sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value)
+{
+    if (&src == &slider_Pwm)
+    {
+        //Interaction3
+        //When slider_Pwm value confirmed call virtual function
+        //Call slider_PwmConfirm_Handle
+        slider_PwmConfirm_Handle(value);
     }
 }

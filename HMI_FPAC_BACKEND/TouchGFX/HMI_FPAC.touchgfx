@@ -4086,7 +4086,7 @@
           },
           {
             "Type": "ImageProgress",
-            "Name": "imageProgress1",
+            "Name": "imageProgress_battery",
             "X": 12,
             "Y": 9,
             "Width": 110,
@@ -4161,6 +4161,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "button_onOff_Handle"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerSliderValueConfirmed",
+              "TriggerComponent": "slider_Pwm"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_PwmConfirm_Handle"
             }
           }
         ]

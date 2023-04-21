@@ -37,6 +37,10 @@ public:
     {
         // Override and implement this function in CarFollowing
     }
+    virtual void slider_PwmConfirm_Handle(int value)
+    {
+        // Override and implement this function in CarFollowing
+    }
 
 protected:
     FrontendApplication& application() {
@@ -64,7 +68,7 @@ protected:
     touchgfx::GraphScroll<600> graphSetPoint;
     touchgfx::GraphElementLine graphSetPointLine1;
     touchgfx::PainterRGB565 graphSetPointLine1Painter;
-    touchgfx::ImageProgress imageProgress1;
+    touchgfx::ImageProgress imageProgress_battery;
     ButtonDone buttonDone1;
     touchgfx::ToggleButton button_onOff;
     touchgfx::Slider slider_Pwm;
@@ -81,11 +85,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<CarFollowingViewBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<CarFollowingViewBase, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
 
 };
 
