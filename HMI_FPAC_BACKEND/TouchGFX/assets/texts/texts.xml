@@ -10,9 +10,6 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_1646" Alignment="Center" TypographyId="MainMenu">
-        <Translation Language="GB">Closed-loop Control Continuous</Translation>
-      </Text>
       <Text Id="__SingleUse_7CMX" Alignment="Center" TypographyId="KeyBoard">
         <Translation Language="GB">Set</Translation>
       </Text>

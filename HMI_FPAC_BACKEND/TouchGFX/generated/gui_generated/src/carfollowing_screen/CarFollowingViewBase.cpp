@@ -7,7 +7,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-CarFollowingViewBase::CarFollowingViewBase()
+CarFollowingViewBase::CarFollowingViewBase() :
+    buttonCallback(this, &CarFollowingViewBase::buttonCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
     
@@ -16,44 +17,51 @@ CarFollowingViewBase::CarFollowingViewBase()
     add(__background);
 
     image1.setXY(0, 0);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_800X480_SPOTLIGHTS_ID));
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_BACKGROUNDS_800X480_ASPHALT_ID));
     add(image1);
+
+    boxWithBorder1.setPosition(729, 116, 50, 355);
+    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(168, 168, 168));
+    boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder1.setBorderSize(6);
+    add(boxWithBorder1);
 
     buttonWithLabel_set.setXY(17, 200);
     buttonWithLabel_set.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
     buttonWithLabel_set.setLabelText(touchgfx::TypedText(T___SINGLEUSE_7CMX));
     buttonWithLabel_set.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel_set.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_set.setAction(buttonCallback);
     add(buttonWithLabel_set);
 
-    gauge1_1.setBackground(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_FILLED_ID));
-    gauge1_1.setPosition(242, 9, 236, 236);
-    gauge1_1.setCenter(118, 118);
-    gauge1_1.setStartEndAngle(-119, 122);
-    gauge1_1.setRange(0, 1023);
-    gauge1_1.setValue(300);
-    gauge1_1.setNeedle(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_NEEDLES_ROUGH_ID, 8, 53);
-    gauge1_1.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    gauge1_1.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    gauge1_1.setArcVisible();
-    gauge1_1Painter.setBitmap(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_FILLERS_SWOOP_ID));
-    gauge1_1.getArc().setPainter(gauge1_1Painter);
-    gauge1_1.getArc().setRadius(79);
-    gauge1_1.getArc().setLineWidth(78);
-    gauge1_1.getArc().setCapPrecision(180);
-    gauge1_1.setArcPosition(45, 43, 146, 108);
-    add(gauge1_1);
+    gaugeLeft.setBackground(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_BACKGROUNDS_LIGHT_FILLED_ID));
+    gaugeLeft.setPosition(242, 9, 236, 236);
+    gaugeLeft.setCenter(118, 118);
+    gaugeLeft.setStartEndAngle(-119, 122);
+    gaugeLeft.setRange(0, 1023);
+    gaugeLeft.setValue(300);
+    gaugeLeft.setNeedle(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_NEEDLES_ROUGH_ID, 8, 53);
+    gaugeLeft.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    gaugeLeft.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    gaugeLeft.setArcVisible();
+    gaugeLeftPainter.setBitmap(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_SMALL_FILLERS_SWOOP_ID));
+    gaugeLeft.getArc().setPainter(gaugeLeftPainter);
+    gaugeLeft.getArc().setRadius(79);
+    gaugeLeft.getArc().setLineWidth(78);
+    gaugeLeft.getArc().setCapPrecision(180);
+    gaugeLeft.setArcPosition(45, 43, 146, 108);
+    add(gaugeLeft);
 
-    gauge1.setBackground(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_MEDIUM_BACKGROUNDS_LIGHT_PRECISION_ID));
-    gauge1.setPosition(446, -19, 292, 292);
-    gauge1.setCenter(146, 146);
-    gauge1.setStartEndAngle(-113, 112);
-    gauge1.setRange(0, 1023);
-    gauge1.setValue(50);
-    gauge1.setNeedle(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_MEDIUM_NEEDLES_ROUGH_ID, 10, 65);
-    gauge1.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    gauge1.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
-    add(gauge1);
+    gaugeRight.setBackground(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_MEDIUM_BACKGROUNDS_LIGHT_PRECISION_ID));
+    gaugeRight.setPosition(446, -19, 292, 292);
+    gaugeRight.setCenter(146, 146);
+    gaugeRight.setStartEndAngle(-113, 112);
+    gaugeRight.setRange(0, 1023);
+    gaugeRight.setValue(50);
+    gaugeRight.setNeedle(BITMAP_GLASS_THEME_IMAGES_WIDGETS_GAUGE_MEDIUM_NEEDLES_ROUGH_ID, 10, 65);
+    gaugeRight.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    gaugeRight.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
+    add(gaugeRight);
 
     graphBackgroud.setPosition(0, 236, 706, 244);
     graphBackgroud.setScale(1);
@@ -1328,16 +1336,17 @@ CarFollowingViewBase::CarFollowingViewBase()
     buttonDone1.setXY(720, 0);
     add(buttonDone1);
 
-    toggleButton1.setXY(17, 127);
-    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_OFF_NORMAL_ID));
-    add(toggleButton1);
+    button_onOff.setXY(17, 127);
+    button_onOff.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_ON_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_TEXT_OFF_NORMAL_ID));
+    button_onOff.setAction(buttonCallback);
+    add(button_onOff);
 
-    slider1.setXY(738, 127);
-    slider1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_VERTICAL_THICK_TRACK_MEDIUM_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_VERTICAL_THICK_FILLER_MEDIUM_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_VERTICAL_THICK_ROUND_LIGHT_ID));
-    slider1.setupVerticalSlider(11, 16, 0, 0, 300);
-    slider1.setValueRange(0, 100);
-    slider1.setValue(0);
-    add(slider1);
+    slider_Pwm.setXY(738, 127);
+    slider_Pwm.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_VERTICAL_THICK_TRACK_MEDIUM_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_VERTICAL_THICK_FILLER_MEDIUM_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SLIDER_VERTICAL_THICK_ROUND_LIGHT_ID));
+    slider_Pwm.setupVerticalSlider(11, 16, 0, 0, 300);
+    slider_Pwm.setValueRange(0, 1023);
+    slider_Pwm.setValue(0);
+    add(slider_Pwm);
 }
 
 CarFollowingViewBase::~CarFollowingViewBase()
@@ -1348,4 +1357,22 @@ CarFollowingViewBase::~CarFollowingViewBase()
 void CarFollowingViewBase::setupScreen()
 {
     buttonDone1.initialize();
+}
+
+void CarFollowingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttonWithLabel_set)
+    {
+        //Interaction1
+        //When buttonWithLabel_set clicked change screen to ClosedLoopGraph
+        //Go to ClosedLoopGraph with screen transition towards East
+        application().gotoClosedLoopGraphScreenCoverTransitionEast();
+    }
+    if (&src == &button_onOff)
+    {
+        //Interaction2
+        //When button_onOff clicked call virtual function
+        //Call button_onOff_Handle
+        button_onOff_Handle();
+    }
 }

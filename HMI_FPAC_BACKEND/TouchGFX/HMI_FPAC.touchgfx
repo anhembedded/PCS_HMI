@@ -36,7 +36,7 @@
             "Type": "ButtonWithLabel",
             "Name": "buttonMesuaring",
             "X": 190,
-            "Y": 106,
+            "Y": 69,
             "Width": 420,
             "Height": 94,
             "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_pressed.png",
@@ -59,35 +59,12 @@
             "Type": "ButtonWithLabel",
             "Name": "clickButton_closedloopControlContinuous",
             "X": 190,
-            "Y": 185,
+            "Y": 148,
             "Width": 420,
             "Height": 94,
             "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_pressed.png",
             "Released": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_action.png",
             "TextId": "__SingleUse_KZ50",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 87,
-              "Green": 119,
-              "Blue": 243
-            },
-            "TextRotation": "0",
-            "Preset": "clay_theme\\presets\\button\\regular\\height_50\\large_round_action.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "clickButton_closedloopControlContinuous_1",
-            "X": 190,
-            "Y": 266,
-            "Width": 420,
-            "Height": 94,
-            "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_pressed.png",
-            "Released": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_action.png",
-            "TextId": "__SingleUse_1646",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -142,6 +119,23 @@
             "IconHeight": 50,
             "IconWidth": 50,
             "Preset": "clay_theme\\presets\\button\\regular\\height_50\\tiny_rounded_action.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonCarFollowLine",
+            "X": 190,
+            "Y": 228,
+            "Width": 420,
+            "Height": 94,
+            "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_pressed.png",
+            "Released": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_action.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_commute_50_50_E8F6FB.svg.png",
+            "IconX": 185,
+            "IconY": 22,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "clay_theme\\presets\\button\\regular\\height_50\\large_round_action.json"
           }
         ],
         "Interactions": [
@@ -203,6 +197,19 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionBlock",
               "ActionComponent": "Information"
+            }
+          },
+          {
+            "InteractionName": "Interaction6",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonCarFollowLine"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "CarFollowing"
             }
           }
         ]
@@ -3879,7 +3886,7 @@
           },
           {
             "Type": "Gauge",
-            "Name": "gauge1_1",
+            "Name": "gaugeLeft",
             "X": 242,
             "Y": 9,
             "Width": 236,
@@ -3917,7 +3924,7 @@
           },
           {
             "Type": "Gauge",
-            "Name": "gauge1",
+            "Name": "gaugeRight",
             "X": 446,
             "Y": -19,
             "Width": 292,
@@ -4106,7 +4113,7 @@
           },
           {
             "Type": "ToggleButton",
-            "Name": "toggleButton1",
+            "Name": "button_onOff",
             "X": 17,
             "Y": 127,
             "Width": 138,
@@ -4117,7 +4124,7 @@
           },
           {
             "Type": "Slider",
-            "Name": "slider1",
+            "Name": "slider_Pwm",
             "X": 738,
             "Y": 127,
             "Width": 32,
@@ -4128,10 +4135,35 @@
             "BackgroundX": 11,
             "BackgroundY": 16,
             "IndicatorMax": 300,
-            "ValueMax": 100
+            "ValueMax": 1023
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_set"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionCover",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "ClosedLoopGraph"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_onOff"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_onOff_Handle"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [

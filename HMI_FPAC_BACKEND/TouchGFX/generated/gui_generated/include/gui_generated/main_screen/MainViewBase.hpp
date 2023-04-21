@@ -35,6 +35,7 @@ protected:
     touchgfx::ButtonWithIcon buttonLang;
     touchgfx::Image image1;
     touchgfx::ButtonWithIcon button_information;
+    touchgfx::ButtonWithIcon buttonCarFollowLine;
 
 private:
 

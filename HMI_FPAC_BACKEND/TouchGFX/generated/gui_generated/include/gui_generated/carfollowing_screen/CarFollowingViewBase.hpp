@@ -9,6 +9,7 @@
 #include <gui/carfollowing_screen/CarFollowingPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/Gauge.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565Bitmap.hpp>
@@ -29,6 +30,14 @@ public:
     virtual ~CarFollowingViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void button_onOff_Handle()
+    {
+        // Override and implement this function in CarFollowing
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -39,10 +48,11 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Image image1;
+    touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ButtonWithLabel buttonWithLabel_set;
-    touchgfx::Gauge gauge1_1;
-    touchgfx::PainterRGB565Bitmap gauge1_1Painter;
-    touchgfx::Gauge gauge1;
+    touchgfx::Gauge gaugeLeft;
+    touchgfx::PainterRGB565Bitmap gaugeLeftPainter;
+    touchgfx::Gauge gaugeRight;
     touchgfx::GraphWrapAndClear<600> graphBackgroud;
     touchgfx::GraphElementGridX graphBackgroudMajorXAxisGrid;
     touchgfx::GraphElementGridY graphBackgroudMajorYAxisGrid;
@@ -56,8 +66,8 @@ protected:
     touchgfx::PainterRGB565 graphSetPointLine1Painter;
     touchgfx::ImageProgress imageProgress1;
     ButtonDone buttonDone1;
-    touchgfx::ToggleButton toggleButton1;
-    touchgfx::Slider slider1;
+    touchgfx::ToggleButton button_onOff;
+    touchgfx::Slider slider_Pwm;
 
 private:
 
@@ -66,6 +76,16 @@ private:
      */
     static const uint32_t CANVAS_BUFFER_SIZE = 12000;
     uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<CarFollowingViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

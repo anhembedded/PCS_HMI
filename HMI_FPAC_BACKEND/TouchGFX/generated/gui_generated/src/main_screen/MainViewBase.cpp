@@ -23,7 +23,7 @@ MainViewBase::MainViewBase() :
     buttonSetting.setAction(buttonCallback);
     add(buttonSetting);
 
-    buttonMesuaring.setXY(190, 106);
+    buttonMesuaring.setXY(190, 69);
     buttonMesuaring.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_PRESSED_ID));
     buttonMesuaring.setLabelText(touchgfx::TypedText(T___SINGLEUSE_JGV0));
     buttonMesuaring.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -31,7 +31,7 @@ MainViewBase::MainViewBase() :
     buttonMesuaring.setAction(buttonCallback);
     add(buttonMesuaring);
 
-    clickButton_closedloopControlContinuous.setXY(190, 185);
+    clickButton_closedloopControlContinuous.setXY(190, 148);
     clickButton_closedloopControlContinuous.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_PRESSED_ID));
     clickButton_closedloopControlContinuous.setLabelText(touchgfx::TypedText(T___SINGLEUSE_KZ50));
     clickButton_closedloopControlContinuous.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -53,6 +53,12 @@ MainViewBase::MainViewBase() :
     button_information.setIconXY(55, 22);
     button_information.setAction(buttonCallback);
     add(button_information);
+
+    buttonCarFollowLine.setXY(190, 228);
+    buttonCarFollowLine.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_COMMUTE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonCarFollowLine.setIconXY(185, 22);
+    buttonCarFollowLine.setAction(buttonCallback);
+    add(buttonCarFollowLine);
 }
 
 MainViewBase::~MainViewBase()
@@ -94,5 +100,12 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When button_information clicked change screen to Information
         //Go to Information with block transition
         application().gotoInformationScreenBlockTransition();
+    }
+    if (&src == &buttonCarFollowLine)
+    {
+        //Interaction6
+        //When buttonCarFollowLine clicked change screen to CarFollowing
+        //Go to CarFollowing with screen transition towards East
+        application().gotoCarFollowingScreenCoverTransitionEast();
     }
 }

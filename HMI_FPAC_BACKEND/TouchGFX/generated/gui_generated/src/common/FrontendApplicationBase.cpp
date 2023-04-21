@@ -129,3 +129,16 @@ void FrontendApplicationBase::gotoInformationScreenBlockTransitionImpl()
 {
     touchgfx::makeTransition<InformationView, InformationPresenter, touchgfx::BlockTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
+
+// CarFollowing
+
+void FrontendApplicationBase::gotoCarFollowingScreenCoverTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoCarFollowingScreenCoverTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoCarFollowingScreenCoverTransitionEastImpl()
+{
+    touchgfx::makeTransition<CarFollowingView, CarFollowingPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}

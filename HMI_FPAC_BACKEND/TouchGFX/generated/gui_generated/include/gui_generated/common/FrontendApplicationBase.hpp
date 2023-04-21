@@ -40,6 +40,9 @@ public:
     // Information
     void gotoInformationScreenBlockTransition();
 
+    // CarFollowing
+    void gotoCarFollowingScreenCoverTransitionEast();
+
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
@@ -64,6 +67,9 @@ protected:
 
     // Information
     void gotoInformationScreenBlockTransitionImpl();
+
+    // CarFollowing
+    void gotoCarFollowingScreenCoverTransitionEastImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP
