@@ -8,7 +8,6 @@
 #include <mvp/View.hpp>
 #include <gui/carfollowing_screen/CarFollowingPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/Gauge.hpp>
@@ -41,6 +40,10 @@ public:
     {
         // Override and implement this function in CarFollowing
     }
+    virtual void slider_PwmChange_Handle(int value)
+    {
+        // Override and implement this function in CarFollowing
+    }
 
 protected:
     FrontendApplication& application() {
@@ -51,7 +54,6 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::Image image1;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ButtonWithLabel buttonWithLabel_set;
     touchgfx::Gauge gaugeLeft;
@@ -86,12 +88,14 @@ private:
      */
     touchgfx::Callback<CarFollowingViewBase, const touchgfx::AbstractButton&> buttonCallback;
     touchgfx::Callback<CarFollowingViewBase, const touchgfx::Slider&, int> sliderValueConfirmedCallback;
+    touchgfx::Callback<CarFollowingViewBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
     void sliderValueConfirmedCallbackHandler(const touchgfx::Slider& src, int value);
+    void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
 
 };
 
