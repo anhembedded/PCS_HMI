@@ -11,7 +11,6 @@
 #include <gui/containers/ButtonDone.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/Image.hpp>
 
 class InformationViewBase : public touchgfx::View<InformationPresenter>
 {
@@ -33,7 +32,6 @@ protected:
     ButtonDone buttonDone1;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::TextArea textArea1;
-    touchgfx::Image image1;
 
 private:
 

@@ -4,7 +4,6 @@
 #include <gui_generated/information_screen/InformationViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
-#include <images/BitmapDatabase.hpp>
 
 InformationViewBase::InformationViewBase()
 {
@@ -30,10 +29,6 @@ InformationViewBase::InformationViewBase()
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ASQG));
     add(textArea1);
-
-    image1.setXY(0, 66);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_SCREENSHOT_ID));
-    add(image1);
 }
 
 InformationViewBase::~InformationViewBase()

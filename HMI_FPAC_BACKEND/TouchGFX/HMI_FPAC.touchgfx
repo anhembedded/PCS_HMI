@@ -3794,14 +3794,6 @@
               "Blue": 145
             },
             "AutoSize": true
-          },
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "Y": 66,
-            "Width": 800,
-            "Height": 360,
-            "RelativeFilename": "Screenshot.png"
           }
         ],
         "Interactions": []
