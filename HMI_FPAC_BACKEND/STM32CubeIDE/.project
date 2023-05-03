@@ -810,6 +810,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_large.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_medium_round_small_off_light.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_medium_round_small_off_light.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_medium_round_small_on_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_medium_round_small_on_active.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_off_light.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_off_light.cpp</locationURI>
@@ -963,16 +973,6 @@
 			<name>Application/User/generated/image_clay_theme_images_widgets_slider_horizontal_thick_track_large.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_slider_horizontal_thick_track_large.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_clay_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_clay_theme_images_widgets_togglebutton_medium_rounded_text_on_active.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_togglebutton_medium_rounded_text_on_active.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_action.cpp</name>

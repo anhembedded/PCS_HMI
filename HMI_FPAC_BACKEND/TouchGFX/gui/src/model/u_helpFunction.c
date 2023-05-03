@@ -31,5 +31,5 @@ float help_uniformIncreaseSteadilyMotion(float t, float v)
 float help_uniformlyAcceleratedLinearMotion(float t, float a)
 {
     /* S = 0.5 * (a* pow(t,2)) */
-    return 0.5f * (a * powf(t, 2));
+    return 0.5F * (a * powf(t, 2));
 }
