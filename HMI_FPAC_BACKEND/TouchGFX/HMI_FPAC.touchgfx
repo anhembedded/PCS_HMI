@@ -3799,9 +3799,9 @@
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder1",
-            "X": 19,
-            "Y": 427,
-            "Width": 287,
+            "X": 18,
+            "Y": 413,
+            "Width": 272,
             "Height": 51,
             "Color": {
               "Red": 255,
@@ -3813,8 +3813,8 @@
           {
             "Type": "TextArea",
             "Name": "textArea1",
-            "X": 45,
-            "Y": 435,
+            "X": 34,
+            "Y": 421,
             "Width": 236,
             "Height": 35,
             "TextId": "__SingleUse_ASQG",
@@ -3824,14 +3824,6 @@
               "Blue": 145
             },
             "AutoSize": true
-          },
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "Y": 66,
-            "Width": 800,
-            "Height": 360,
-            "RelativeFilename": "Screenshot.png"
           }
         ],
         "Interactions": []
@@ -3840,13 +3832,6 @@
         "Name": "CarFollowing",
         "CanvasBufferSize": 12000,
         "Components": [
-          {
-            "Type": "Image",
-            "Name": "image1",
-            "Width": 800,
-            "Height": 480,
-            "RelativeFilename": "__generated\\dark_theme_images_backgrounds_800x480_asphalt.png"
-          },
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder1",
@@ -3887,35 +3872,35 @@
           {
             "Type": "Gauge",
             "Name": "gaugeLeft",
-            "X": 242,
-            "Y": 9,
-            "Width": 236,
-            "Height": 236,
-            "Preset": "glass_theme\\presets\\gauges\\small\\light_filled.json",
-            "FileNameBackground": "__generated\\glass_theme_images_widgets_gauge_small_backgrounds_light_filled.png",
-            "RotationCenterX": 118.0,
-            "RotationCenterY": 118.0,
+            "X": 267,
+            "Y": 33,
+            "Width": 184,
+            "Height": 184,
+            "Preset": "alternate_theme\\presets\\gauges\\small\\dark_filled.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_small_backgrounds_dark_filled.png",
+            "RotationCenterX": 92.0,
+            "RotationCenterY": 92.0,
             "StartAngle": -119.0,
             "EndAngle": 122.0,
             "RangeMax": 1023.0,
             "InitialValue": 300.0,
             "Easing": "Linear",
             "EasingOption": "In",
-            "FileNameNeedle": "__generated\\glass_theme_images_widgets_gauge_small_needles_rough.png",
+            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_small_needles_rough.png",
             "NeedleRotationCenterX": 8.0,
             "NeedleRotationCenterY": 53.0,
             "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
             "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
             "UseArc": true,
-            "FileNameArc": "__generated\\glass_theme_images_widgets_gauge_small_fillers_swoop.png",
+            "FileNameArc": "__generated\\alternate_theme_images_widgets_gauge_small_fillers_swoop.png",
             "ArcColor": {
               "Red": 20,
               "Green": 151,
               "Blue": 197
             },
             "SetArcPosition": true,
-            "ArcX": 45.0,
-            "ArcY": 43.0,
+            "ArcX": 19.0,
+            "ArcY": 19.0,
             "ArcWidth": 146.0,
             "ArcHeight": 108.0,
             "ArcRadius": 79.0,
@@ -3925,38 +3910,38 @@
           {
             "Type": "Gauge",
             "Name": "gaugeRight",
-            "X": 446,
-            "Y": -19,
-            "Width": 292,
-            "Height": 292,
-            "Preset": "glass_theme\\presets\\gauges\\medium\\light_precision.json",
-            "FileNameBackground": "__generated\\glass_theme_images_widgets_gauge_medium_backgrounds_light_precision.png",
-            "RotationCenterX": 146.0,
-            "RotationCenterY": 146.0,
+            "X": 466,
+            "Y": 5,
+            "Width": 240,
+            "Height": 240,
+            "Preset": "alternate_theme\\presets\\gauges\\medium\\dark_precision.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_gauge_medium_backgrounds_dark_precision.png",
+            "RotationCenterX": 120.0,
+            "RotationCenterY": 120.0,
             "StartAngle": -113.0,
             "EndAngle": 112.0,
             "RangeMax": 1023.0,
             "InitialValue": 50.0,
             "Easing": "Linear",
             "EasingOption": "In",
-            "FileNameNeedle": "__generated\\glass_theme_images_widgets_gauge_medium_needles_rough.png",
+            "FileNameNeedle": "__generated\\alternate_theme_images_widgets_gauge_medium_needles_rough.png",
             "NeedleRotationCenterX": 10.0,
             "NeedleRotationCenterY": 65.0,
             "NeedleMovingRenderingAlgorithm": "Bilinear Interpolation",
             "NeedleSteadyRenderingAlgorithm": "Bilinear Interpolation",
-            "FileNameArc": "__generated\\glass_theme_images_widgets_gauge_large_fillers_swoop.png",
+            "FileNameArc": "__generated\\alternate_theme_images_widgets_gauge_medium_fillers_swoop.png",
             "ArcColor": {
               "Red": 20,
               "Green": 151,
               "Blue": 197
             },
             "SetArcPosition": true,
-            "ArcX": 59.0,
-            "ArcY": 57.0,
-            "ArcWidth": 270.0,
-            "ArcHeight": 198.0,
-            "ArcRadius": 137.0,
-            "ArcLineWidth": 136.0,
+            "ArcX": 23.0,
+            "ArcY": 23.0,
+            "ArcWidth": 192.0,
+            "ArcHeight": 142.0,
+            "ArcRadius": 100.0,
+            "ArcLineWidth": 99.0,
             "ArcCapStyle": "Butt"
           },
           {
@@ -4032,7 +4017,7 @@
             "DataSeed": -984943855,
             "NumberOfValues": 600,
             "MaxY": 10.3,
-            "Precision": "0.1",
+            "Precision": "0.01",
             "LastIndex": 599,
             "XAxisScale": 1.0,
             "InsertRandomValues": true,
@@ -4063,7 +4048,7 @@
             "DataSeed": -1659264797,
             "NumberOfValues": 600,
             "MaxY": 10.3,
-            "Precision": "0.1",
+            "Precision": "0.01",
             "LastIndex": 599,
             "XAxisScale": 1.0,
             "InsertRandomValues": true,
@@ -4091,11 +4076,11 @@
             "Y": 9,
             "Width": 110,
             "Height": 40,
-            "FileNameProgress": "__generated\\glass_theme_images_widgets_imageprogress_styled_batteries_battery_large_active.png",
+            "FileNameProgress": "__generated\\light_theme_images_widgets_imageprogress_styled_batteries_battery_large_light.png",
             "AnchorAtZero": true,
             "Direction": "Right",
-            "Preset": "glass_theme\\presets\\imageprogress\\styled\\batteries\\active.json",
-            "FileNameBackground": "__generated\\glass_theme_images_widgets_imageprogress_styled_batteries_battery_large.png",
+            "Preset": "light_theme\\presets\\imageprogress\\styled\\batteries\\neutral.json",
+            "FileNameBackground": "__generated\\light_theme_images_widgets_imageprogress_styled_batteries_battery_large.png",
             "IndicatorPositionX": 5,
             "IndicatorPositionY": 5,
             "IndicatorPositionWidth": 94,
@@ -4118,9 +4103,9 @@
             "Y": 127,
             "Width": 138,
             "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.png",
-            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_text_on_active.png",
-            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded_active_text.json"
+            "Pressed": "__generated\\glass_theme_images_widgets_togglebutton_medium_round_text_off_normal.png",
+            "Released": "__generated\\glass_theme_images_widgets_togglebutton_medium_round_text_on_active.png",
+            "Preset": "glass_theme\\presets\\togglebutton\\medium\\round_active_text.json"
           },
           {
             "Type": "Slider",
@@ -4172,6 +4157,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "slider_PwmConfirm_Handle"
+            }
+          },
+          {
+            "InteractionName": "Interaction4",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_Pwm"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_PwmChange_Handle"
             }
           }
         ]

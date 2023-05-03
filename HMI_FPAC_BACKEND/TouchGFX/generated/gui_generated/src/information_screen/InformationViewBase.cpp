@@ -4,7 +4,6 @@
 #include <gui_generated/information_screen/InformationViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
-#include <images/BitmapDatabase.hpp>
 
 InformationViewBase::InformationViewBase()
 {
@@ -19,21 +18,17 @@ InformationViewBase::InformationViewBase()
     buttonDone1.setXY(720, 0);
     add(buttonDone1);
 
-    boxWithBorder1.setPosition(19, 427, 287, 51);
+    boxWithBorder1.setPosition(18, 413, 272, 51);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(5);
     add(boxWithBorder1);
 
-    textArea1.setXY(45, 435);
+    textArea1.setXY(34, 421);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 12, 145));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ASQG));
     add(textArea1);
-
-    image1.setXY(0, 66);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_SCREENSHOT_ID));
-    add(image1);
 }
 
 InformationViewBase::~InformationViewBase()
