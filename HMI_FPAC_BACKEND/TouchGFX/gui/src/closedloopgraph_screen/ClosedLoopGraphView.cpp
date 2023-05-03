@@ -1,8 +1,13 @@
 #include <gui/closedloopgraph_screen/ClosedLoopGraphView.hpp>
+#ifdef  SIMULATOR
+
+#endif //  simulator
+
 
 ClosedLoopGraphView::ClosedLoopGraphView()
 {
-   
+  
+    diff_constructor(&this->diffVar, 0, 0);
 }
 
 void ClosedLoopGraphView::setupScreen()
@@ -25,7 +30,12 @@ void ClosedLoopGraphView::tearDownScreen()
 void ClosedLoopGraphView::handleTickEvent()
 {
 #ifdef SIMULATOR
+    float diff_var;
     viewTick++;
+    mathTick = mathTick + 0.01f;
+    diff_var = diff_getRes(&this->diffVar, mathTick, help_sinFunction(5, mathTick));
+    graphFeadback.addDataPoint(help_sinFunction(5, mathTick));
+    graphSetpoint.addDataPoint(diff_var);
     spOpFb1.drawLineProgressOutput((int)viewTick % 1023u);
 #endif // SIMULATOR
 

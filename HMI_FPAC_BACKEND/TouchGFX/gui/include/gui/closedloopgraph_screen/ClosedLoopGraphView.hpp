@@ -1,6 +1,11 @@
 #ifndef CLOSEDLOOPGRAPHVIEW_HPP
 #define CLOSEDLOOPGRAPHVIEW_HPP
 
+extern "C"
+{
+#include "gui/model/u_helpFunction.h"
+}
+
 #include <gui_generated/closedloopgraph_screen/ClosedLoopGraphViewBase.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 
@@ -19,12 +24,16 @@ private:
     void updateScreenParam();
     uint32_t viewTick;
     pidParam_type pidParam;
+    float mathTick;
 
     void drawTextAreaKp();
     void drawTextAreaKi();
     void drawTextAreaKd();
     
-    
+    struct diff_type diffVar;
+
+
+   
 
 };
 

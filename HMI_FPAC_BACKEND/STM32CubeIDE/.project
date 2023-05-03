@@ -405,6 +405,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/sliderWithText.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/DevPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dev_screen/DevPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/DevView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dev_screen/DevView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/InformationPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/information_screen/InformationPresenter.cpp</locationURI>
@@ -438,6 +448,11 @@
 			<name>Application/User/gui/Model.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/u_helpFunction.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/u_helpFunction.c</locationURI>
 		</link>
 		<link>
 			<name>Application/User/gui/SettingPresenter.cpp</name>
@@ -635,6 +650,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/sliderWithTextBase.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/DevViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/dev_screen/DevViewBase.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/InformationViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/information_screen/InformationViewBase.cpp</locationURI>
@@ -733,6 +753,26 @@
 			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_round_on_pressed.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_round_on_pressed.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off_pressed.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_dark.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_dark.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_pressed.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_pressed.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_off.cpp</name>
@@ -923,6 +963,16 @@
 			<name>Application/User/generated/image_clay_theme_images_widgets_slider_horizontal_thick_track_large.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_slider_horizontal_thick_track_large.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_clay_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_togglebutton_medium_rounded_text_off_normal.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_clay_theme_images_widgets_togglebutton_medium_rounded_text_on_active.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_togglebutton_medium_rounded_text_on_active.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_dark_theme_images_widgets_button_regular_height_36_small_rounded_action.cpp</name>

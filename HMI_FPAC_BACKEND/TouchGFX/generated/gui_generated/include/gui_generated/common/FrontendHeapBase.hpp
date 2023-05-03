@@ -27,6 +27,8 @@
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 #include <gui/information_screen/InformationView.hpp>
 #include <gui/information_screen/InformationPresenter.hpp>
+#include <gui/dev_screen/DevView.hpp>
+#include <gui/dev_screen/DevPresenter.hpp>
 
 
 /**
@@ -55,7 +57,8 @@ public:
             touchgfx::meta::TypeList< ClosedLoopSettingView,
             touchgfx::meta::TypeList< ClosedLoopGraphView,
             touchgfx::meta::TypeList< InformationView,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::TypeList< DevView,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -73,7 +76,8 @@ public:
             touchgfx::meta::TypeList< ClosedLoopSettingPresenter,
             touchgfx::meta::TypeList< ClosedLoopGraphPresenter,
             touchgfx::meta::TypeList< InformationPresenter,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::TypeList< DevPresenter,
+            touchgfx::meta::Nil > > > > > >
             > GeneratedPresenterTypes;
 
     /**
@@ -98,7 +102,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoMainScreenNoTransition();
+        app.gotoDevScreenNoTransition();
     }
 protected:
     FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)

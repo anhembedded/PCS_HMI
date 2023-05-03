@@ -154,7 +154,7 @@ protected:
     ModelListener *modelListener;
 #ifdef SIMULATOR
     uint32_t modelGetTick();
-    uint32_t tickVal;
+    uint32_t frameTickVal;
 #endif // SIMULATOR
 
 private:

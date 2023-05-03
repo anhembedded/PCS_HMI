@@ -10,6 +10,30 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_H03V" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">A</Translation>
+      </Text>
+      <Text Id="__SingleUse_30XT" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">V</Translation>
+      </Text>
+      <Text Id="__SingleUse_2ZR8" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">S</Translation>
+      </Text>
+      <Text Id="__SingleUse_PKNS" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">uniformIncreaseSteadilyMotion</Translation>
+      </Text>
+      <Text Id="__SingleUse_M6HU" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">uniformlyAcceleratedLinearMotion</Translation>
+      </Text>
+      <Text Id="__SingleUse_HMK5" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">sineFunction</Translation>
+      </Text>
+      <Text Id="__SingleUse_AC8Q" Alignment="Right" TypographyId="GraphText">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_08V4" Alignment="Left" TypographyId="GraphText">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_ASQG" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">Anh.Embedded</Translation>
       </Text>

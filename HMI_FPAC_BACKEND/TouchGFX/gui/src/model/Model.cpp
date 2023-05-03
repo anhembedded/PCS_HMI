@@ -24,21 +24,9 @@ Model::Model() : modelListener(0)
 void Model::tick()
 {
 #ifdef SIMULATOR
-    tickVal++;
-    if ((tickVal % 60) == 0)
-    {
-        for (auto &i : analogIn.u32_10BitAnalogIn)
-        {
-            i =  (i +1);
-        }
-        for (auto& i : digitalInput.u8_digiIn)
-        {
-            i = rand() % 2;
-        }
-      
-
-
-    }
+    frameTickVal++;
+  
+   
 
 #else
     auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, &u32_adcPtr, 0);
@@ -148,7 +136,7 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 
 uint32_t Model::modelGetTick()
 {
-    return this->tickVal;
+    return this->frameTickVal;
 }
 #endif // SIMULATOR
 

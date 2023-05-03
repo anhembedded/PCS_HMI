@@ -71,7 +71,8 @@
 			"task.h": "c",
 			"math.h": "c",
 			"u_lfc_firmware.h": "c",
-			"u_lfc_appmain.h": "c"
+			"u_lfc_appmain.h": "c",
+			"u_helpfunction.h": "c"
 		},
 		"cSpell.enabled": false
 	}
