@@ -64,8 +64,8 @@ private:
     void reinitFunction()
     {
         mathTick = 0;
-        diff_constructor(&this->diffVar, 0, 0);
-        diff_constructor(&this->diffVar2, 0, 0);
+        diff_constructor(&this->diffVar, 0.F, 0.F);
+        diff_constructor(&this->diffVar2, 0.F, 0.F);
     }
 };
 

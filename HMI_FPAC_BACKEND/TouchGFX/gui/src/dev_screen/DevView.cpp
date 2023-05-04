@@ -22,13 +22,14 @@ void DevView::handleTickEvent()
     float diff_var = 0.0F;;
     float diff_var2 = 0.0F;;
     float y = 0.0F;
+    float system;
     mathTick = mathTick + 0.01F;
 
     if (isRun == whichFunction_type::run)
     {
         if (whichFunction == whichFunction_type::sine)
         {
-            y = help_sinFunction(5, mathTick);
+            y = help_sinFunction(3, mathTick);
         }
         else if (whichFunction == whichFunction_type::increase)
         {
@@ -36,15 +37,25 @@ void DevView::handleTickEvent()
         }
         else if(whichFunction == whichFunction_type::accelerated)
         {
-            y = help_uniformlyAcceleratedLinearMotion(mathTick, 4.F);
+           
+                y = help_uniformlyAcceleratedLinearMotion(mathTick, 4.F);
+            if (y >= 4.F)
+            {
+                y = 4.F;
+            }
+          
+            
         }
 
         diff_var = diff_getRes(&this->diffVar, mathTick, y);
         diff_var2 = diff_getRes(&this->diffVar2, mathTick, diff_var);
+        system = help_systemOneEquationOfMotion(y, diff_var, diff_var2, mathTick);
+
 
         graphS.addDataPoint(y);
-        graphV.addDataPoint(diff_var);
-        graphA.addDataPoint(diff_var2);
+        graphV.addDataPoint(system);
+      //  graphV.addDataPoint(diff_var);
+      //  graphA.addDataPoint(diff_var2);
     }
     else
     {
