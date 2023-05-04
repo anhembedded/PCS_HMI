@@ -1,13 +1,12 @@
 #ifndef INCLUDE_GUI_DEV_SCREEN_DEVVIEW
 #define INCLUDE_GUI_DEV_SCREEN_DEVVIEW
 
+#include <gui_generated/dev_screen/DevViewBase.hpp>
+#include <gui/dev_screen/DevPresenter.hpp>
 extern "C"
 {
 #include "gui/model/u_helpFunction.h"
 }
-
-#include <gui_generated/dev_screen/DevViewBase.hpp>
-#include <gui/dev_screen/DevPresenter.hpp>
 
 enum class whichFunction_type
 {
