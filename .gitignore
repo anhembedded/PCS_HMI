@@ -67,8 +67,8 @@ ctrlp.root
 Footer
 © 2023 GitHub, Inc.
 
-*.pdf
-*xlsx
+#*.pdf
+#*xlsx
 #*.drawio
 
 
