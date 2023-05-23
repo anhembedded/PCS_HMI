@@ -43,6 +43,17 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
 
 // Main
 
+void FrontendApplicationBase::gotoMainScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMainScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoMainScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<MainView, MainPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
 void FrontendApplicationBase::gotoMainScreenCoverTransitionEast()
 {
     transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMainScreenCoverTransitionEastImpl);
@@ -117,17 +128,4 @@ void FrontendApplicationBase::gotoInformationScreenBlockTransition()
 void FrontendApplicationBase::gotoInformationScreenBlockTransitionImpl()
 {
     touchgfx::makeTransition<InformationView, InformationPresenter, touchgfx::BlockTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// Dev
-
-void FrontendApplicationBase::gotoDevScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoDevScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoDevScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<DevView, DevPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

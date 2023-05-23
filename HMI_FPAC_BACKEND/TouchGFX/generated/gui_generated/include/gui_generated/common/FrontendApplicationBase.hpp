@@ -17,10 +17,12 @@ public:
 
     virtual void changeToStartScreen()
     {
-        gotoDevScreenNoTransition();
+        gotoMainScreenNoTransition();
     }
 
     // Main
+    void gotoMainScreenNoTransition();
+
     void gotoMainScreenCoverTransitionEast();
 
     // Setting
@@ -38,15 +40,14 @@ public:
     // Information
     void gotoInformationScreenBlockTransition();
 
-    // Dev
-    void gotoDevScreenNoTransition();
-
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
     Model& model;
 
     // Main
+    void gotoMainScreenNoTransitionImpl();
+
     void gotoMainScreenCoverTransitionEastImpl();
 
     // Setting
@@ -63,9 +64,6 @@ protected:
 
     // Information
     void gotoInformationScreenBlockTransitionImpl();
-
-    // Dev
-    void gotoDevScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP
