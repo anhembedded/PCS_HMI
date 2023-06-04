@@ -405,16 +405,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/sliderWithText.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/DevPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dev_screen/DevPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/DevView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/dev_screen/DevView.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/InformationPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/information_screen/InformationPresenter.cpp</locationURI>
@@ -650,11 +640,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/sliderWithTextBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/DevViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/dev_screen/DevViewBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/InformationViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/information_screen/InformationViewBase.cpp</locationURI>
@@ -755,26 +740,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_round_on_pressed.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_off_pressed.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_dark.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_dark.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_rounded_on_pressed.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_off.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_off.cpp</locationURI>
@@ -808,16 +773,6 @@
 			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_large.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_large.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_medium_round_small_off_light.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_medium_round_small_off_light.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_medium_round_small_on_active.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_medium_round_small_on_active.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_off_light.cpp</name>

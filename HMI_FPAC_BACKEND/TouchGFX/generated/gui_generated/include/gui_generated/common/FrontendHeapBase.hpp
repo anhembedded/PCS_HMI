@@ -27,8 +27,6 @@
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 #include <gui/information_screen/InformationView.hpp>
 #include <gui/information_screen/InformationPresenter.hpp>
-#include <gui/dev_screen/DevView.hpp>
-#include <gui/dev_screen/DevPresenter.hpp>
 
 
 /**
@@ -57,8 +55,7 @@ public:
             touchgfx::meta::TypeList< ClosedLoopSettingView,
             touchgfx::meta::TypeList< ClosedLoopGraphView,
             touchgfx::meta::TypeList< InformationView,
-            touchgfx::meta::TypeList< DevView,
-            touchgfx::meta::Nil > > > > > >
+            touchgfx::meta::Nil > > > > >
             > GeneratedViewTypes;
 
     /**
@@ -76,8 +73,7 @@ public:
             touchgfx::meta::TypeList< ClosedLoopSettingPresenter,
             touchgfx::meta::TypeList< ClosedLoopGraphPresenter,
             touchgfx::meta::TypeList< InformationPresenter,
-            touchgfx::meta::TypeList< DevPresenter,
-            touchgfx::meta::Nil > > > > > >
+            touchgfx::meta::Nil > > > > >
             > GeneratedPresenterTypes;
 
     /**

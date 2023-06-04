@@ -21,8 +21,6 @@
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 #include <gui/information_screen/InformationView.hpp>
 #include <gui/information_screen/InformationPresenter.hpp>
-#include <gui/dev_screen/DevView.hpp>
-#include <gui/dev_screen/DevPresenter.hpp>
 
 using namespace touchgfx;
 
