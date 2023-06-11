@@ -272,7 +272,7 @@ SettingViewBase::SettingViewBase() :
     sliderAnalogOut0.setXY(7, 4);
     sliderAnalogOut0.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_TRACK_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_FILLER_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_ROUNDED_LIGHT_ID));
     sliderAnalogOut0.setupHorizontalSlider(16, 11, 0, 0, 400);
-    sliderAnalogOut0.setValueRange(0, 4095);
+    sliderAnalogOut0.setValueRange(0, 1023);
     sliderAnalogOut0.setValue(0);
     sliderAnalogOut0.setNewValueCallback(sliderValueChangedCallback);
     analogContainer.add(sliderAnalogOut0);
@@ -280,7 +280,7 @@ SettingViewBase::SettingViewBase() :
     sliderAnalogOut1.setXY(10, 62);
     sliderAnalogOut1.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_TRACK_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_FILLER_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_ROUNDED_LIGHT_ID));
     sliderAnalogOut1.setupHorizontalSlider(16, 11, 0, 0, 400);
-    sliderAnalogOut1.setValueRange(0, 4095);
+    sliderAnalogOut1.setValueRange(0, 1023);
     sliderAnalogOut1.setValue(0);
     sliderAnalogOut1.setNewValueCallback(sliderValueChangedCallback);
     analogContainer.add(sliderAnalogOut1);
@@ -327,8 +327,81 @@ SettingViewBase::SettingViewBase() :
     button_Confirm.setAction(buttonCallback);
     add(button_Confirm);
 
-    digitalOutput1.setXY(0, 358);
-    add(digitalOutput1);
+    binaryMenu.setXY(-86, 339);
+    binaryMenu.setup(touchgfx::SlideMenu::NORTH,
+        touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_BARS_1024X600_BOTTOM_DIM_DARK_ID),
+        touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID),
+        touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID),
+        601, 43, 730, 0);
+    binaryMenu.setState(touchgfx::SlideMenu::COLLAPSED);
+    binaryMenu.setVisiblePixelsWhenCollapsed(39);
+    binaryMenu.setHiddenPixelsWhenExpanded(0);
+    binaryMenu.setAnimationEasingEquation(touchgfx::EasingEquations::cubicEaseInOut);
+    binaryMenu.setAnimationDuration(18);
+    binaryMenu.setExpandedStateTimeout(0);
+    binaryButton.setPosition(391, 38, 495, 126);
+    buttonDigital4.setXY(232, 19);
+    buttonDigital4.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital4.setAction(buttonCallback);
+    binaryButton.add(buttonDigital4);
+
+    buttonDigital3.setXY(284, 19);
+    buttonDigital3.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital3.setAction(buttonCallback);
+    binaryButton.add(buttonDigital3);
+
+    buttonDigital2.setXY(339, 19);
+    buttonDigital2.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital2.setAction(buttonCallback);
+    binaryButton.add(buttonDigital2);
+
+    buttonDigital1.setXY(395, 19);
+    buttonDigital1.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital1.setAction(buttonCallback);
+    binaryButton.add(buttonDigital1);
+
+    buttonDigital0.setXY(450, 19);
+    buttonDigital0.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital0.setAction(buttonCallback);
+    binaryButton.add(buttonDigital0);
+
+    textArea4.setXY(461, 49);
+    textArea4.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
+    textArea4.setLinespacing(0);
+    textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ASIA));
+    binaryButton.add(textArea4);
+
+    textArea4_2.setXY(350, 50);
+    textArea4_2.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
+    textArea4_2.setLinespacing(0);
+    textArea4_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_40OR));
+    binaryButton.add(textArea4_2);
+
+    textArea4_2_1.setXY(295, 50);
+    textArea4_2_1.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
+    textArea4_2_1.setLinespacing(0);
+    textArea4_2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QZC5));
+    binaryButton.add(textArea4_2_1);
+
+    textArea4_2_1_1.setXY(243, 50);
+    textArea4_2_1_1.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
+    textArea4_2_1_1.setLinespacing(0);
+    textArea4_2_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LR6J));
+    binaryButton.add(textArea4_2_1_1);
+
+    textArea4_1.setXY(405, 50);
+    textArea4_1.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
+    textArea4_1.setLinespacing(0);
+    textArea4_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5Q9V));
+    binaryButton.add(textArea4_1);
+
+    binaryMenu.add(binaryButton);
+
+    image1_1.setXY(85, 57);
+    image1_1.setBitmap(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_EFFECTS_800X480_SHADE_TOP_DARK_ID));
+    binaryMenu.add(image1_1);
+
+    add(binaryMenu);
 }
 
 SettingViewBase::~SettingViewBase()
@@ -341,7 +414,6 @@ void SettingViewBase::setupScreen()
     buttonDone1.initialize();
     digitalInputIndicator1.initialize();
     keyboard1.initialize();
-    digitalOutput1.initialize();
 }
 
 void SettingViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
@@ -430,5 +502,40 @@ void SettingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When button_Confirm clicked call virtual function
         //Call button_confirm_ClickHandle
         button_confirm_ClickHandle();
+    }
+    if (&src == &buttonDigital0)
+    {
+        //buttonDigital0Handle
+        //When buttonDigital0 clicked call virtual function
+        //Call buttonDigital0Handle
+        buttonDigital0Handle();
+    }
+    if (&src == &buttonDigital1)
+    {
+        //buttonDigital1Handle
+        //When buttonDigital1 clicked call virtual function
+        //Call buttonDigital1Handle
+        buttonDigital1Handle();
+    }
+    if (&src == &buttonDigital2)
+    {
+        //buttonDigital2Handle
+        //When buttonDigital2 clicked call virtual function
+        //Call buttonDigital2Handle
+        buttonDigital2Handle();
+    }
+    if (&src == &buttonDigital3)
+    {
+        //buttonDigital3Handle
+        //When buttonDigital3 clicked call virtual function
+        //Call buttonDigital3Handle
+        buttonDigital3Handle();
+    }
+    if (&src == &buttonDigital4)
+    {
+        //buttonDigital4Handle
+        //When buttonDigital4 clicked call virtual function
+        //Call buttonDigital4Handle
+        buttonDigital4Handle();
     }
 }

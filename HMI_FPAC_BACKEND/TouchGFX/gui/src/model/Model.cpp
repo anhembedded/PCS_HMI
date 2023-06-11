@@ -25,9 +25,6 @@ void Model::tick()
 {
 #ifdef SIMULATOR
     frameTickVal++;
-  
-   
-
 #else
     auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, &u32_adcPtr, 0);
     if (isRecieved == pdTRUE)
@@ -36,6 +33,12 @@ void Model::tick()
         adcValue.at(1) = u32_adcPtr[1];
         adcValue.at(2) = u32_adcPtr[2];
         adcValue.at(3) = u32_adcPtr[3];
+
+        analogIn.u32_10BitAnalogIn.at(0) = u32_adcPtr[0];
+        analogIn.u32_10BitAnalogIn.at(1) = u32_adcPtr[1];
+        analogIn.u32_10BitAnalogIn.at(2) = u32_adcPtr[2];
+        analogIn.u32_10BitAnalogIn.at(3) = u32_adcPtr[3];
+        
 
         if (modelListener != 0)
         {
@@ -73,6 +76,18 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 #endif // SIMULATOR
 }
 
+void Model::sendDigitalOutputToBackEnd()
+{
+#ifdef SIMULATOR
+    touchgfx_printf("DigitalOutputSendToBackend: %d, %d, %d,%d  \n", 
+        digitalOutput.u8_digiOut.at(3),
+        digitalOutput.u8_digiOut.at(2),
+        digitalOutput.u8_digiOut.at(1),
+        digitalOutput.u8_digiOut.at(0));
+#endif // SIMULATOR
+
+}
+
 // !SIMULATOR
 
  void Model::setPidParam(pidParam_type pidSet)  
@@ -104,7 +119,9 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 
    void Model::setDigitalOut(digitaOut_type setOutput)
   {
+
       digitalOutput = setOutput;
+      this->sendDigitalOutputToBackEnd();
   }
 
     void Model::setDigitalIn(digitalIn_type setInput)

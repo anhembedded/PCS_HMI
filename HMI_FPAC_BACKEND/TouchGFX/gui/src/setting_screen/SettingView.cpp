@@ -1,6 +1,8 @@
 #include <gui/setting_screen/SettingView.hpp>
 #include <touchgfx/Color.hpp>
 
+#include <touchgfx/Application.hpp>
+
 SettingView::SettingView() : u32_channelAnalogOut0(0u),
                              u32_channelAnalogOut1(0u)
 {
@@ -19,37 +21,47 @@ void SettingView::tearDownScreen()
 
 void SettingView::handleTickEvent()
 {
+    this->tick++;
+
+    if (!(this->tick % 50))
+    {
+        this->analogIn = getAnalogIn();
+        this->digitalInput = getDigitalIn();
+        drawTextAdcIn0(analogIn.getAnalogValueFloat(0));
+        drawTextAdcIn1(analogIn.getAnalogValueFloat(1));
+        drawTextAdcIn2(analogIn.getAnalogValueFloat(2));
+        drawTextAdcIn3(analogIn.getAnalogValueFloat(3));
+
+        drawTextProcessVar0();
+        drawTextProcessVar1();
+        drawTextProcessVar2();
+        drawTextProcessVar3();
+
+        drawTextAreaFactor0();
+        drawTextAreaFactor1();
+        drawTextAreaFactor2();
+        drawTextAreaFactor3();
+
+        drawTextAreaOffset0();
+        drawTextAreaOffset1();
+        drawTextAreaOffset2();
+        drawTextAreaOffset3();
+
+       
+    }
+    if (!(this->tick % 10))
+    {
+        for (uint8_t i = 0; i <= 6; i++)
+        {
+            drawDigitalIn(i, digitalInput.u8_digiIn.at(i));
+        }
+    }
 
 #ifdef SIMULATOR
 
-    this->tick++;
+   
 
-    this->analogIn = getAnalogIn();
-    this->digitalInput = getDigitalIn();
-    drawTextAdcIn0(analogIn.getAnalogValueFloat(0));
-    drawTextAdcIn1(analogIn.getAnalogValueFloat(1));
-    drawTextAdcIn2(analogIn.getAnalogValueFloat(2));
-    drawTextAdcIn3(analogIn.getAnalogValueFloat(3));
-
-    drawTextProcessVar0();
-    drawTextProcessVar1();
-    drawTextProcessVar2();
-    drawTextProcessVar3();
-
-    drawTextAreaFactor0();
-    drawTextAreaFactor1();
-    drawTextAreaFactor2();
-    drawTextAreaFactor3();
-
-    drawTextAreaOffset0();
-    drawTextAreaOffset1();
-    drawTextAreaOffset2();
-    drawTextAreaOffset3();
-
-    for (uint8_t i = 0; i <= 6; i++)
-    {
-        drawDigitalIn(i, digitalInput.u8_digiIn.at(i));
-    }
+  
 
 #endif // ! SIMULATOR
 }

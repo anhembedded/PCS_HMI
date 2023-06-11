@@ -11,6 +11,11 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     337, // T_KEYBOARDBUFFER: "00000000.00"
+    115, // T___SINGLEUSE_5Q9V: "1"
+    262, // T___SINGLEUSE_LR6J: "4"
+    245, // T___SINGLEUSE_QZC5: "3"
+    228, // T___SINGLEUSE_40OR: "2"
+    194, // T___SINGLEUSE_ASIA: "0"
     324, // T___SINGLEUSE_ASQG: "Anh.Embedded"
     349, // T___SINGLEUSE_3ADE: "Temperature"
     430, // T___SINGLEUSE_7FCC: "Pressure"

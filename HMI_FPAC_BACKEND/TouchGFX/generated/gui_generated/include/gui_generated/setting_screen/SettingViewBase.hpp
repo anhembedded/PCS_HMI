@@ -20,7 +20,9 @@
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <gui/containers/Keyboard.hpp>
 #include <touchgfx/mixins/Draggable.hpp>
-#include <gui/containers/DigitalOutput.hpp>
+#include <touchgfx/containers/SlideMenu.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class SettingViewBase : public touchgfx::View<SettingPresenter>
 {
@@ -85,6 +87,26 @@ public:
     {
         // Override and implement this function in Setting
     }
+    virtual void buttonDigital0Handle()
+    {
+        // Override and implement this function in Setting
+    }
+    virtual void buttonDigital1Handle()
+    {
+        // Override and implement this function in Setting
+    }
+    virtual void buttonDigital2Handle()
+    {
+        // Override and implement this function in Setting
+    }
+    virtual void buttonDigital3Handle()
+    {
+        // Override and implement this function in Setting
+    }
+    virtual void buttonDigital4Handle()
+    {
+        // Override and implement this function in Setting
+    }
 
 protected:
     FrontendApplication& application() {
@@ -142,7 +164,19 @@ protected:
     touchgfx::ButtonWithIcon buttonWithIcon2;
     touchgfx::Draggable< Keyboard > keyboard1;
     touchgfx::ButtonWithIcon button_Confirm;
-    DigitalOutput digitalOutput1;
+    touchgfx::SlideMenu binaryMenu;
+    touchgfx::Container binaryButton;
+    touchgfx::ToggleButton buttonDigital4;
+    touchgfx::ToggleButton buttonDigital3;
+    touchgfx::ToggleButton buttonDigital2;
+    touchgfx::ToggleButton buttonDigital1;
+    touchgfx::ToggleButton buttonDigital0;
+    touchgfx::TextArea textArea4;
+    touchgfx::TextArea textArea4_2;
+    touchgfx::TextArea textArea4_2_1;
+    touchgfx::TextArea textArea4_2_1_1;
+    touchgfx::TextArea textArea4_1;
+    touchgfx::Image image1_1;
 
     /*
      * Wildcard Buffers

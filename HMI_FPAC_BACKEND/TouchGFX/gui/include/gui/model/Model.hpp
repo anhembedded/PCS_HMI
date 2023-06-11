@@ -122,6 +122,7 @@ public:
 
     void sendAdcOuputToBackEnd_1(uint32_t registerVar);
     void sendAdcOuputToBackEnd_0(uint32_t registerVar);
+    void sendDigitalOutputToBackEnd( );
 
 #ifndef SIMULATOR
 
@@ -130,21 +131,19 @@ public:
         return adcValue;
     };
 #endif // !SIMULATOR
-    pidParam_type getPidParam();
-    actualValue_type getActualValue();
-    settingVar_type getSettingVar();
-    analogIn_type getAnalogIn();
-    digitaOut_type getDigitalOut();
-    digitalIn_type getDigitalIn();
+    pidParam_type       getPidParam();
+    actualValue_type    getActualValue();
+    settingVar_type     getSettingVar();
+    analogIn_type       getAnalogIn();
+    digitaOut_type      getDigitalOut();
+    digitalIn_type      getDigitalIn();
 
 
     void setPidParam(pidParam_type pidSet);
     void setActualValue(actualValue_type view_actualValue);
     void setSettingVar(settingVar_type setVar);
-
     void setDigitalOut(digitaOut_type setOutput);
     void setDigitalIn(digitalIn_type setInput);
-
 
 
 protected:
@@ -158,11 +157,10 @@ protected:
 #endif // SIMULATOR
 
 private:
-#ifndef SIMULATOR
-    u_pwm_dutyCycle_type dutyCycleVal;
+
     uint32_t *u32_adcPtr;
     std::array<uint32_t, 4> adcValue;
-#endif // !SIMULATOR
+
 };
 
 

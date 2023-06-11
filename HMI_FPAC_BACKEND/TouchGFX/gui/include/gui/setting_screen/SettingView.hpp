@@ -28,13 +28,73 @@ public:
     virtual void sliderAnalogOutHandle0(int value) final;
     virtual void sliderAnalogOutHandle1(int value) final;
     virtual void button_confirm_ClickHandle() final;
+    virtual void buttonDigital0Handle()    final
+    {
+        if (buttonDigital0.getState() == ClickEvent::RELEASED)
+        {
+            digitalOutput.u8_digiOut.at(0) = 1U;
+        }
+        else
+        {
+            digitalOutput.u8_digiOut.at(0) = 0U;
+        }
+        setDigitalOut(this->digitalOutput);
+    }
+    virtual void buttonDigital1Handle()  final
+    {
+        if (buttonDigital1.getState() == ClickEvent::RELEASED)
+        {
+            digitalOutput.u8_digiOut.at(1) = 1U;
+        }
+        else
+        {
+            digitalOutput.u8_digiOut.at(1) = 0U;
+        }
+        setDigitalOut(this->digitalOutput);
+    }
+    virtual void buttonDigital2Handle()    final
+    {
+        if (buttonDigital2.getState() == ClickEvent::RELEASED)
+        {
+            digitalOutput.u8_digiOut.at(2) = 1U;
+        }
+        else
+        {
+            digitalOutput.u8_digiOut.at(2) = 0U;
+        }
+        setDigitalOut(this->digitalOutput);
+    }
+    virtual void buttonDigital3Handle()    final
+    {
+        if (buttonDigital3.getState() == ClickEvent::RELEASED)
+        {
+            digitalOutput.u8_digiOut.at(3) = 1U;
+        }
+        else
+        {
+            digitalOutput.u8_digiOut.at(3) = 0U;
+        }
+        setDigitalOut(this->digitalOutput);
+    }
+    virtual void buttonDigital4Handle()  final
+    {
+        if (buttonDigital4.getState() == ClickEvent::RELEASED)
+        {
+            digitalOutput.u8_digiOut.at(4) = 1U;
+        }
+        else
+        {
+            digitalOutput.u8_digiOut.at(4) = 0U;
+        }
+        setDigitalOut(this->digitalOutput);
+    }
+
     void setADC(std::array<uint32_t, 4> arrayParameters);
 
     void drawTextAreaFactor0();
     void drawTextAreaFactor1();
     void drawTextAreaFactor2();
     void drawTextAreaFactor3();
-
     void drawTextAreaOffset0();
     void drawTextAreaOffset1();
     void drawTextAreaOffset2();

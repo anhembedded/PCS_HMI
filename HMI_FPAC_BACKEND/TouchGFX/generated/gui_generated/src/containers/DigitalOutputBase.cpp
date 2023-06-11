@@ -14,9 +14,9 @@ DigitalOutputBase::DigitalOutputBase() :
     binaryMenu.setXY(-86, -19);
     binaryMenu.setup(touchgfx::SlideMenu::NORTH,
         touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_BARS_1024X600_BOTTOM_DIM_DARK_ID),
-        touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_NORMAL_ID),
-        touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTIVE_ID),
-        601, 43, 731, 21);
+        touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID),
+        touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID),
+        601, 43, 730, 0);
     binaryMenu.setState(touchgfx::SlideMenu::COLLAPSED);
     binaryMenu.setVisiblePixelsWhenCollapsed(39);
     binaryMenu.setHiddenPixelsWhenExpanded(0);

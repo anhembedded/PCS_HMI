@@ -10,6 +10,21 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_5Q9V" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_LR6J" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_QZC5" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_40OR" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_ASIA" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">0</Translation>
+      </Text>
       <Text Id="__SingleUse_ASQG" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">Anh.Embedded</Translation>
       </Text>

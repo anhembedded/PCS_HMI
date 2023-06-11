@@ -39,6 +39,7 @@
             "Y": 106,
             "Width": 420,
             "Height": 94,
+            "Visible": false,
             "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_pressed.png",
             "Released": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_action.png",
             "TextId": "__SingleUse_JGV0",
@@ -59,7 +60,7 @@
             "Type": "ButtonWithLabel",
             "Name": "clickButton_closedloopControlContinuous",
             "X": 190,
-            "Y": 185,
+            "Y": 145,
             "Width": 420,
             "Height": 94,
             "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_50_large_round_pressed.png",
@@ -991,7 +992,7 @@
                 "BackgroundX": 16,
                 "BackgroundY": 11,
                 "IndicatorMax": 400,
-                "ValueMax": 4095,
+                "ValueMax": 1023,
                 "Preset": "clay_theme\\presets\\slider\\horizontal\\thick\\large_rounded.json"
               },
               {
@@ -1001,7 +1002,6 @@
                 "Y": 62,
                 "Width": 432,
                 "Height": 32,
-                "LockPosition": true,
                 "IsHorizontalSlider": true,
                 "BackgroundUnselected": "__generated\\clay_theme_images_widgets_slider_horizontal_thick_track_large.png",
                 "BackgroundSelected": "__generated\\clay_theme_images_widgets_slider_horizontal_thick_filler_large.png",
@@ -1009,7 +1009,7 @@
                 "BackgroundX": 16,
                 "BackgroundY": 11,
                 "IndicatorMax": 400,
-                "ValueMax": 4095,
+                "ValueMax": 1023,
                 "Preset": "clay_theme\\presets\\slider\\horizontal\\thick\\large_rounded.json"
               },
               {
@@ -1113,12 +1113,177 @@
             "Preset": "clay_theme\\presets\\button\\icon\\rounded\\tiny_fill_action.json"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "digitalOutput1",
-            "Y": 358,
-            "Width": 800,
-            "Height": 121,
-            "CustomContainerDefinitionName": "DigitalOutput"
+            "Type": "SlideMenu",
+            "Name": "binaryMenu",
+            "X": -86,
+            "Y": 339,
+            "Width": 1625,
+            "Height": 143,
+            "FileNameBackground": "__generated\\clay_theme_images_bars_1024x600_bottom_dim_dark.png",
+            "BackgroundX": 601,
+            "BackgroundY": 43,
+            "UseButton": true,
+            "FileNameButtonPressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_action.png",
+            "FileNameButtonReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+            "ButtonX": 730,
+            "State": "Collapsed",
+            "ExpandDirection": "North",
+            "Easing": "Cubic",
+            "EasingOption": "InOut",
+            "AnimationDuration": 300,
+            "VisiblePixelsWhenCollapsed": 39,
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "binaryButton",
+                "X": 391,
+                "Y": 38,
+                "Width": 495,
+                "Height": 126,
+                "Components": [
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "buttonDigital4",
+                    "X": 232,
+                    "Y": 19,
+                    "Width": 34,
+                    "Height": 62,
+                    "Pressed": "on.png",
+                    "Released": "off.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "buttonDigital3",
+                    "X": 284,
+                    "Y": 19,
+                    "Width": 34,
+                    "Height": 62,
+                    "Pressed": "on.png",
+                    "Released": "off.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "buttonDigital2",
+                    "X": 339,
+                    "Y": 19,
+                    "Width": 34,
+                    "Height": 62,
+                    "Pressed": "on.png",
+                    "Released": "off.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "buttonDigital1",
+                    "X": 395,
+                    "Y": 19,
+                    "Width": 34,
+                    "Height": 62,
+                    "Pressed": "on.png",
+                    "Released": "off.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "buttonDigital0",
+                    "X": 450,
+                    "Y": 19,
+                    "Width": 34,
+                    "Height": 62,
+                    "Pressed": "on.png",
+                    "Released": "off.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea4",
+                    "X": 461,
+                    "Y": 49,
+                    "Width": 12,
+                    "Height": 27,
+                    "TextId": "__SingleUse_ASIA",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 34,
+                      "Green": 42,
+                      "Blue": 56
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea4_2",
+                    "X": 350,
+                    "Y": 50,
+                    "Width": 12,
+                    "Height": 27,
+                    "TextId": "__SingleUse_40OR",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 34,
+                      "Green": 42,
+                      "Blue": 56
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea4_2_1",
+                    "X": 295,
+                    "Y": 50,
+                    "Width": 12,
+                    "Height": 27,
+                    "TextId": "__SingleUse_QZC5",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 34,
+                      "Green": 42,
+                      "Blue": 56
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea4_2_1_1",
+                    "X": 243,
+                    "Y": 50,
+                    "Width": 12,
+                    "Height": 27,
+                    "TextId": "__SingleUse_LR6J",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 34,
+                      "Green": 42,
+                      "Blue": 56
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea4_1",
+                    "X": 405,
+                    "Y": 50,
+                    "Width": 12,
+                    "Height": 27,
+                    "TextId": "__SingleUse_5Q9V",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 34,
+                      "Green": 42,
+                      "Blue": 56
+                    },
+                    "AutoSize": true
+                  }
+                ]
+              },
+              {
+                "Type": "Image",
+                "Name": "image1_1",
+                "X": 85,
+                "Y": 57,
+                "Width": 800,
+                "Height": 150,
+                "LockPosition": true,
+                "RelativeFilename": "__generated\\clay_theme_images_effects_800x480_shade_top_dark.png"
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -1241,6 +1406,61 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "button_confirm_ClickHandle"
+            }
+          },
+          {
+            "InteractionName": "buttonDigital0Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDigital0"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDigital0Handle"
+            }
+          },
+          {
+            "InteractionName": "buttonDigital1Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDigital1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDigital1Handle"
+            }
+          },
+          {
+            "InteractionName": "buttonDigital2Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDigital2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDigital2Handle"
+            }
+          },
+          {
+            "InteractionName": "buttonDigital3Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDigital3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDigital3Handle"
+            }
+          },
+          {
+            "InteractionName": "buttonDigital4Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDigital4"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDigital4Handle"
             }
           }
         ],
@@ -4757,10 +4977,9 @@
             "BackgroundX": 601,
             "BackgroundY": 43,
             "UseButton": true,
-            "FileNameButtonPressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_active.png",
-            "FileNameButtonReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_normal.png",
-            "ButtonX": 731,
-            "ButtonY": 21,
+            "FileNameButtonPressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_action.png",
+            "FileNameButtonReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+            "ButtonX": 730,
             "State": "Collapsed",
             "ExpandDirection": "North",
             "Easing": "Cubic",
