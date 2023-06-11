@@ -29,10 +29,7 @@ void Model::tick()
     auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, &u32_adcPtr, 0);
     if (isRecieved == pdTRUE)
     {
-        adcValue.at(0) = u32_adcPtr[0];
-        adcValue.at(1) = u32_adcPtr[1];
-        adcValue.at(2) = u32_adcPtr[2];
-        adcValue.at(3) = u32_adcPtr[3];
+     
 
         analogIn.u32_10BitAnalogIn.at(0) = u32_adcPtr[0];
         analogIn.u32_10BitAnalogIn.at(1) = u32_adcPtr[1];

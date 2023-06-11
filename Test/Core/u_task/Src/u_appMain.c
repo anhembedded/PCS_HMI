@@ -13,6 +13,7 @@ TaskHandle_t mainApplicationHandle __attribute__((section(".touchgfxccmram")));
 
 static void mainApplication(void *param);
 static void blinkLed_Green(void *param);
+static void blinkLed_Orange(void *param);
 
 void u_appMainCreate()
 {
@@ -21,7 +22,7 @@ void u_appMainCreate()
     configASSERT(status == pdPASS);
     status = xTaskCreate(blinkLed_Green, "blinkLed_GreenTask", 200, NULL, 2, &blinkLed_GreenHandle);
     configASSERT(status == pdPASS);
-    status = xTaskCreate(blinkLed_Orange, "blinkLed_OrangeTask", 200, NULL, 2, &blinkLed_OrangeHandle);
+    status = xTaskCreate(blinkLed_Orange, "blinkLed_OrangeTask", 200, NULL, 2, &blinkOrange_OrangeHandle);
     configASSERT(status == pdPASS);
     u_appDigitalInputCreate();
     u_appDigitalOutputCreate();
@@ -51,7 +52,7 @@ static void blinkLed_Green(void *param)
     while (1)
     {
         u_gpio_togglePin(LED_GREEN_PORT, LED_GREEN_PIN);
-        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(u_pwm_dutyCycleValue.u32_Channle0));
+        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(1050 - u32_PwmCh0_10bit));
     }
 }
 static void blinkLed_Orange(void *param)
@@ -61,6 +62,6 @@ static void blinkLed_Orange(void *param)
     while (1)
     {
         u_gpio_togglePin(LED_ORANGE_PORT, LED_ORANGE_PIN);
-        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(u_pwm_dutyCycleValue.u32_Channle1));
+        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(1050 - u32_PwmCh1_10bit));
     }
 }
