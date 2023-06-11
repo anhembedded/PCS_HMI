@@ -6,7 +6,7 @@
 #include "queue.h"
 
 uint32_t updateDigitalValue;
-uint32_t u32_applicationOutputState[8] __attribute__((section(".touchgfxccmram")));
+uint32_t u32_applicationOutputState[8];
 TaskHandle_t updateDigitalOutputHandle __attribute__((section(".touchgfxccmram")));
 static void updateDigitalOutput(void *param);
 

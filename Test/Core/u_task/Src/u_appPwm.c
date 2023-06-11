@@ -1,15 +1,11 @@
 #include "u_appPwm.h"
 #include "u_pwm.h"
 
-
 uint32_t u32_PwmCh0_10bit = 0;
 uint32_t u32_PwmCh1_10bit = 0;
 
 uint32_t u32_enablePwmCh0;
 uint32_t u32_enablePwnCh1;
-
-
-
 
 TaskHandle_t controlPWMHandle __attribute__((section(".touchgfxccmram")));
 TaskHandle_t updatePwmCh0Handle __attribute__((section(".touchgfxccmram")));
@@ -65,14 +61,14 @@ static void updatePwmChange0(void *param)
         isReceive = xQueueReceive(queue_updatePwmCh0Handle, &u32_pwmChange0Value, portMAX_DELAY);
         if (isReceive == pdTRUE)
         {
-        	u32_PwmCh0_10bit = u32_pwmChange0Value;
-            u32_pwmChange0Value = (u32_pwmChange0Value << 4) | 0xf;
+            u32_PwmCh0_10bit = u32_pwmChange0Value;
+            u32_pwmChange0Value = ((u32_pwmChange0Value << 4) | 0xf) * 4;
 
             u_pwm_dutyCycleValue.u32_Channle0 = u32_pwmChange0Value;
         }
         else
         {
-        	u32_PwmCh0_10bit = 0u;
+            u32_PwmCh0_10bit = 0u;
             u_pwm_dutyCycleValue.u32_Channle0 = 0x00u;
         }
     }
@@ -87,13 +83,13 @@ static void updatePwmChange1(void *param)
         isReceive = xQueueReceive(queue_updatePwmCh1Handle, &u32_pwmChange1Value, portMAX_DELAY);
         if (isReceive == pdTRUE)
         {
-        	u32_PwmCh1_10bit = u32_pwmChange1Value;
-            u32_pwmChange1Value = (u32_pwmChange1Value << 4) | 0xf;
+            u32_PwmCh1_10bit = u32_pwmChange1Value;
+            u32_pwmChange1Value = ((u32_pwmChange1Value << 4) | 0xf) * 4;
             u_pwm_dutyCycleValue.u32_Channle1 = u32_pwmChange1Value;
         }
         else
         {
-        	u32_PwmCh1_10bit = 0u;
+            u32_PwmCh1_10bit = 0u;
             u_pwm_dutyCycleValue.u32_Channle1 = 0x00u;
         }
     }
