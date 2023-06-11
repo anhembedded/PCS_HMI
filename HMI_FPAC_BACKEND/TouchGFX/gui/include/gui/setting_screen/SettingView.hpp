@@ -110,6 +110,13 @@ public:
     void drawTextAdcIn3(float adcValue);
 
     void drawDigitalIn(uint8_t index, uint8_t state);
+    void drawDigitalIn(digitalIn_type par)
+    {
+        for (uint8_t i = 0; i <= 6; i++)
+        {
+            drawDigitalIn(i, par.u8_digiIn.at(i));
+         }
+    }
 
 protected:
 

@@ -8,6 +8,7 @@
 #include "u_appMain.h"
 #include "FreeRTOS.h"
 #include "queue.h"
+#include "u_appDigitalInput.h"
 #endif // !SIMULATOR
 
 #include <algorithm>
@@ -23,24 +24,36 @@ Model::Model() : modelListener(0)
 
 void Model::tick()
 {
-#ifdef SIMULATOR
     frameTickVal++;
+#ifdef SIMULATOR
+
 #else
     auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, &u32_adcPtr, 0);
     if (isRecieved == pdTRUE)
     {
-     
 
         analogIn.u32_10BitAnalogIn.at(0) = u32_adcPtr[0];
         analogIn.u32_10BitAnalogIn.at(1) = u32_adcPtr[1];
         analogIn.u32_10BitAnalogIn.at(2) = u32_adcPtr[2];
         analogIn.u32_10BitAnalogIn.at(3) = u32_adcPtr[3];
-        
 
         if (modelListener != 0)
         {
             modelListener->notifyADCChanged(adcValue);
         }
+    }
+
+    if (modelListener != 0)
+    {
+        digitalInput.u8_digiIn.at(0) = (bool) u32_applicationInputState[0];
+        digitalInput.u8_digiIn.at(1) = (bool)u32_applicationInputState[1];
+        digitalInput.u8_digiIn.at(2) = (bool)u32_applicationInputState[2];
+        digitalInput.u8_digiIn.at(3) = (bool)u32_applicationInputState[3];
+        digitalInput.u8_digiIn.at(4) = (bool)u32_applicationInputState[4];
+        digitalInput.u8_digiIn.at(5) = (bool)u32_applicationInputState[5];
+        digitalInput.u8_digiIn.at(6) = (bool)u32_applicationInputState[6];
+
+        modelListener->notifyDigitalInput(digitalInput);
     }
     /* DigitalInput */
     /*  isRecieved = xQueueReceive(digitalInputSendToFrontEndHandle, &u32_digitalInputVar, 0);
@@ -76,75 +89,73 @@ void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 void Model::sendDigitalOutputToBackEnd()
 {
 #ifdef SIMULATOR
-    touchgfx_printf("DigitalOutputSendToBackend: %d, %d, %d,%d  \n", 
-        digitalOutput.u8_digiOut.at(3),
-        digitalOutput.u8_digiOut.at(2),
-        digitalOutput.u8_digiOut.at(1),
-        digitalOutput.u8_digiOut.at(0));
+    touchgfx_printf("DigitalOutputSendToBackend: %d, %d, %d,%d  \n",
+                    digitalOutput.u8_digiOut.at(3),
+                    digitalOutput.u8_digiOut.at(2),
+                    digitalOutput.u8_digiOut.at(1),
+                    digitalOutput.u8_digiOut.at(0));
 #endif // SIMULATOR
-
 }
 
 // !SIMULATOR
 
- void Model::setPidParam(pidParam_type pidSet)  
+void Model::setPidParam(pidParam_type pidSet)
 {
     this->pidParam = pidSet;
-    
 }
 
- pidParam_type Model::getPidParam()
+pidParam_type Model::getPidParam()
 {
-    return   this->pidParam;
+    return this->pidParam;
 }
 
- void Model::setActualValue(actualValue_type view_actualValue)
+void Model::setActualValue(actualValue_type view_actualValue)
 {
     this->actualValue = view_actualValue;
     touchgfx_printf("actual! %d \n", actualValue);
 }
 
- actualValue_type Model::getActualValue()
+actualValue_type Model::getActualValue()
 {
-    return   this->actualValue;
+    return this->actualValue;
 }
 
-  void Model::setSettingVar(settingVar_type setVar)
- {
-     this->settingVar = setVar;
- }
+void Model::setSettingVar(settingVar_type setVar)
+{
+    this->settingVar = setVar;
+}
 
-   void Model::setDigitalOut(digitaOut_type setOutput)
-  {
+void Model::setDigitalOut(digitaOut_type setOutput)
+{
 
-      digitalOutput = setOutput;
-      this->sendDigitalOutputToBackEnd();
-  }
+    digitalOutput = setOutput;
+    this->sendDigitalOutputToBackEnd();
+}
 
-    void Model::setDigitalIn(digitalIn_type setInput)
-   {
-       digitalInput = setInput;
-   }
+void Model::setDigitalIn(digitalIn_type setInput)
+{
+    digitalInput = setInput;
+}
 
-  settingVar_type Model::getSettingVar()
- {
-     return this->settingVar;
- }
+settingVar_type Model::getSettingVar()
+{
+    return this->settingVar;
+}
 
-   analogIn_type Model::getAnalogIn()
-  {
-      return this->analogIn;
-  }
+analogIn_type Model::getAnalogIn()
+{
+    return this->analogIn;
+}
 
-    digitaOut_type Model::getDigitalOut()
-   {
-       return digitalOutput;
-   }
+digitaOut_type Model::getDigitalOut()
+{
+    return digitalOutput;
+}
 
-     digitalIn_type Model::getDigitalIn()
-    {
-        return digitalInput;
-    }
+digitalIn_type Model::getDigitalIn()
+{
+    return digitalInput;
+}
 
 #ifdef SIMULATOR
 

@@ -151,10 +151,10 @@ protected:
      * Pointer to the currently active presenter.
      */
     ModelListener *modelListener;
-#ifdef SIMULATOR
+
     uint32_t modelGetTick();
     uint32_t frameTickVal;
-#endif // SIMULATOR
+
 
 private:
 

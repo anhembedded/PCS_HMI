@@ -18,9 +18,9 @@ void SettingPresenter::notifyADCChanged(std::array<uint32_t, 4> arrayParameters)
 {
     view.setADC(arrayParameters);
 }
-void SettingPresenter::notifyDigitalInput(uint32_t registerVar)
+void SettingPresenter::notifyDigitalInput(digitalIn_type par)
 {
-  //  view.drawDigtalInputState(registerVar);
+    view.drawDigitalIn(par);
 }
 void SettingPresenter::notifyAnalogOutputChanged_1(uint32_t registerVar)
 {
