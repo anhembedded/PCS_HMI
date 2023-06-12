@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>STM32F469I-DISCO</name>
-	<comment></comment>
+	<comment/>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -255,49 +255,214 @@
 			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Middlewares/Third_Party/FreeRTOS/Source/timers.c</locationURI>
 		</link>
 		<link>
+			<name>Drivers/BSP/Components/ft6x06.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/BSP/Components/ft6x06/ft6x06.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/otm8009a.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/BSP/Components/otm8009a/otm8009a.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/STM32469I-Discovery/stm32469i_discovery.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_qspi.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_qspi.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_sdram.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_sdram.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_ts.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_ts.c</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/App/app_touchgfx.c</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/App/app_touchgfx.c</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/Buttons.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/Buttons.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/CortexMMCUInstrumentation.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/CortexMMCUInstrumentation.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/KeySampler.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/KeySampler.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/STM32TouchController.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/STM32TouchController.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/TouchGFXGPIO.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/TouchGFXGPIO.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/TouchGFXHAL.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/TouchGFXHAL.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/OSWrappers.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/OSWrappers.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/STM32DMA.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/STM32DMA.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/TouchGFXConfiguration.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/TouchGFXConfiguration.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</name>
+			<type>1</type>
+			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ClosedLoopGraphPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopgraph_screen/ClosedLoopGraphPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ClosedLoopGraphView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopgraph_screen/ClosedLoopGraphView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ClosedLoopSettingPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopsetting_screen/ClosedLoopSettingPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ClosedLoopSettingView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopsetting_screen/ClosedLoopSettingView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/FrontendApplication.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/ButtonDone.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/ButtonDone.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/CustomContainer1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/CustomContainer1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/DigitalInputIndicator.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DigitalInputIndicator.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/DigitalOutput.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DigitalOutput.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/GraphInf.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/GraphInf.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Keyboard.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Keyboard.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/SpOpFb.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SpOpFb.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/sliderWithText.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/sliderWithText.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/InformationPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/information_screen/InformationPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/InformationView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/information_screen/InformationView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/MainPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/main_screen/MainPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/MainView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/main_screen/MainView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/MesuaringPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/mesuaring_screen/MesuaringPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/MesuaringView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/mesuaring_screen/MesuaringView.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/Model.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/u_helpFunction.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/u_helpFunction.c</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/SettingPresenter.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/setting_screen/SettingPresenter.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/gui/SettingView.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/setting_screen/SettingView.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/ApplicationFontProvider.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/ApplicationFontProvider.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/BitmapDatabase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/BitmapDatabase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/ButtonDoneBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/ButtonDoneBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/CachedFont.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/CachedFont.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/ClosedLoopGraphViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/closedloopgraph_screen/ClosedLoopGraphViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/ClosedLoopSettingViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/closedloopsetting_screen/ClosedLoopSettingViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/CustomContainer1Base.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/CustomContainer1Base.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/DigitalInputIndicatorBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DigitalInputIndicatorBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/DigitalOutputBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DigitalOutputBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/FontCache.cpp</name>
@@ -340,24 +505,9 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Font_verdanab_28_4bpp_0.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/FrontendApplicationBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/GeneratedFont.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/GeneratedFont.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/GraphInfBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/GraphInfBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/InformationViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/information_screen/InformationViewBase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/Kerning_SegUIVar_20_4bpp.cpp</name>
@@ -395,41 +545,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Kerning_verdanab_28_4bpp.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/KeyboardBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/KeyboardBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/LanguageGb.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/LanguageGb.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/MainViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/main_screen/MainViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/MesuaringViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/mesuaring_screen/MesuaringViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/SVGDatabase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/SettingViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/setting_screen/SettingViewBase.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/SpOpFbBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SpOpFbBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/Table_SegUIVar_20_4bpp.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_SegUIVar_20_4bpp.cpp</locationURI>
@@ -465,29 +580,94 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/Table_verdanab_28_4bpp.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/Texts.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/Texts.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/TypedTextDatabase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/TypedTextDatabase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/UnmappedDataFont.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/fonts/src/UnmappedDataFont.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_alternate_off.cpp</name>
+			<name>Application/User/generated/ClosedLoopGraphViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alternate_off.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/closedloopgraph_screen/ClosedLoopGraphViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_alternate_on.cpp</name>
+			<name>Application/User/generated/ClosedLoopSettingViewBase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alternate_on.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/closedloopsetting_screen/ClosedLoopSettingViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/FrontendApplicationBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/ButtonDoneBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/ButtonDoneBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/CustomContainer1Base.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/CustomContainer1Base.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/DigitalInputIndicatorBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DigitalInputIndicatorBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/DigitalOutputBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/DigitalOutputBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/GraphInfBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/GraphInfBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/KeyboardBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/KeyboardBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/SpOpFbBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/SpOpFbBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/sliderWithTextBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/sliderWithTextBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/InformationViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/information_screen/InformationViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/MainViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/main_screen/MainViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/MesuaringViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/mesuaring_screen/MesuaringViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/SettingViewBase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/setting_screen/SettingViewBase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/BitmapDatabase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/BitmapDatabase.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/SVGDatabase.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/SVGDatabase.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_containers_large_wide_outlined_dark.cpp</name>
@@ -613,16 +793,6 @@
 			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_on_normal.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_on_normal.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_as1.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_as1.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_bg.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bg.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_clay_theme_images_backgrounds_272x480_meteor_rain.cpp</name>
@@ -855,6 +1025,26 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_icon_theme_images_hardware_keyboard_backspace_50_50_000000.svg.cpp</locationURI>
 		</link>
 		<link>
+			<name>Application/User/generated/image_alternate_off.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alternate_off.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_alternate_on.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_alternate_on.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_as1.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_as1.cpp</locationURI>
+		</link>
+		<link>
+			<name>Application/User/generated/image_bg.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_bg.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/generated/image_image00.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_image00.cpp</locationURI>
@@ -905,209 +1095,19 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/image_slider_knob_shape.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/sliderWithTextBase.cpp</name>
+			<name>Application/User/generated/LanguageGb.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/containers/sliderWithTextBase.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/LanguageGb.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/ButtonDone.cpp</name>
+			<name>Application/User/generated/Texts.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/ButtonDone.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/Texts.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/ClosedLoopGraphPresenter.cpp</name>
+			<name>Application/User/generated/TypedTextDatabase.cpp</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopgraph_screen/ClosedLoopGraphPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/ClosedLoopGraphView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopgraph_screen/ClosedLoopGraphView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/ClosedLoopSettingPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopsetting_screen/ClosedLoopSettingPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/ClosedLoopSettingView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/closedloopsetting_screen/ClosedLoopSettingView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/CustomContainer1.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/CustomContainer1.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/DigitalInputIndicator.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DigitalInputIndicator.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/DigitalOutput.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/DigitalOutput.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/FrontendApplication.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/common/FrontendApplication.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/GraphInf.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/GraphInf.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/InformationPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/information_screen/InformationPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/InformationView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/information_screen/InformationView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Keyboard.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/Keyboard.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/MainPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/main_screen/MainPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/MainView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/main_screen/MainView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/MesuaringPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/mesuaring_screen/MesuaringPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/MesuaringView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/mesuaring_screen/MesuaringView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/Model.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/SettingPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/setting_screen/SettingPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/SettingView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/setting_screen/SettingView.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/SpOpFb.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/SpOpFb.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/sliderWithText.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/containers/sliderWithText.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/u_helpFunction.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/u_helpFunction.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/ft6x06.c</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/BSP/Components/ft6x06/ft6x06.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/otm8009a.c</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/Drivers/BSP/Components/otm8009a/otm8009a.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/STM32469I-Discovery/stm32469i_discovery.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_qspi.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_qspi.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_sdram.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_sdram.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_ts.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Drivers/BSP/STM32469I-Discovery/stm32469i_discovery_ts.c</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/App/app_touchgfx.c</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/App/app_touchgfx.c</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/Buttons.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/Buttons.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/CortexMMCUInstrumentation.cpp</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/CortexMMCUInstrumentation.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/KeySampler.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/target/KeySampler.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/STM32TouchController.cpp</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/STM32TouchController.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/TouchGFXGPIO.cpp</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/TouchGFXGPIO.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/TouchGFXHAL.cpp</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/TouchGFXHAL.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/OSWrappers.cpp</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/OSWrappers.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/STM32DMA.cpp</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/STM32DMA.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/TouchGFXConfiguration.cpp</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/TouchGFXConfiguration.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</name>
-			<type>1</type>
-			<locationURI>$%7BPARENT-1-PROJECT_LOC%7D/TouchGFX/target/generated/TouchGFXGeneratedHAL.cpp</locationURI>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/texts/src/TypedTextDatabase.cpp</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
