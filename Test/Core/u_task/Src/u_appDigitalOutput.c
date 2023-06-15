@@ -11,7 +11,7 @@ uint32_t *u32_applicationAdcState_ptr;
 
 struct u_appDigitalOutputUpdate_type
 {
-    uint8_t u_appDigitalOutputIsUpdate = 0x00U;
+    uint8_t u_appDigitalOutputIsUpdate;
     uint8_t digitalState[8];
 };
 
@@ -58,6 +58,6 @@ static void updateDigitalOutputArray(void *param)
 {
     while (pdTRUE)
     {
-        if (u_appDigitalOutputIsUpdate ==)
+       // if (u_appDigitalOutputIsUpdate ==)
     }
 }
