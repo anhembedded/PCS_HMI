@@ -19,8 +19,8 @@
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef CORE_INC_MAIN
+#define CORE_INC_MAIN
 
 #ifdef __cplusplus
 extern "C" {
@@ -74,4 +74,4 @@ void Error_Handler(void);
 }
 #endif
 
-#endif /* __MAIN_H */
+#endif /* CORE_INC_MAIN */
