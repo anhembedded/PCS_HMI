@@ -45,7 +45,7 @@ void Model::tick()
 
     if (modelListener != 0)
     {
-        digitalInput.u8_digiIn.at(0) = (bool) u32_applicationInputState[0];
+        digitalInput.u8_digiIn.at(0) = (bool)u32_applicationInputState[0];
         digitalInput.u8_digiIn.at(1) = (bool)u32_applicationInputState[1];
         digitalInput.u8_digiIn.at(2) = (bool)u32_applicationInputState[2];
         digitalInput.u8_digiIn.at(3) = (bool)u32_applicationInputState[3];
@@ -95,6 +95,13 @@ void Model::sendDigitalOutputToBackEnd()
                     digitalOutput.u8_digiOut.at(1),
                     digitalOutput.u8_digiOut.at(0));
 #endif // SIMULATOR
+
+    u_appDigitalVar.digitalState[0] = digitalOutput.u8_digiOut.at(0);
+    u_appDigitalVar.digitalState[1] = digitalOutput.u8_digiOut.at(1);
+    u_appDigitalVar.digitalState[2] = digitalOutput.u8_digiOut.at(2);
+    u_appDigitalVar.digitalState[3] = digitalOutput.u8_digiOut.at(3);
+    u_appDigitalVar.digitalState[4] = digitalOutput.u8_digiOut.at(4);
+    u_appDigitalVar.isUpdate = 1;
 }
 
 // !SIMULATOR
