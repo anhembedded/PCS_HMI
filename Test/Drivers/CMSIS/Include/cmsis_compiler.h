@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-#ifndef __CMSIS_COMPILER_H
-#define __CMSIS_COMPILER_H
+#ifndef DRIVERS_CMSIS_INCLUDE_CMSIS_COMPILER
+#define DRIVERS_CMSIS_INCLUDE_CMSIS_COMPILER
 
 #include <stdint.h>
 
@@ -262,5 +262,5 @@
 #endif
 
 
-#endif /* __CMSIS_COMPILER_H */
+#endif /* DRIVERS_CMSIS_INCLUDE_CMSIS_COMPILER */
 

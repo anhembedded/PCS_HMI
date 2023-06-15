@@ -7,13 +7,26 @@
 
 uint32_t updateDigitalValue;
 uint32_t u32_applicationOutputState[8];
+uint32_t *u32_applicationAdcState_ptr;
+
+struct u_appDigitalOutputUpdate_type
+{
+    uint8_t u_appDigitalOutputIsUpdate = 0x00U;
+    uint8_t digitalState[8];
+};
+
 TaskHandle_t updateDigitalOutputHandle __attribute__((section(".touchgfxccmram")));
+TaskHandle_t updateDigitalOutputArrayHandle __attribute__((section(".touchgfxccmram")));
+
 static void updateDigitalOutput(void *param);
+static void updateDigitalOutputArray(void *param);
+
+QueueHandle_t queue_updateDigitalOutput __attribute__((section(".touchgfxccmram")));
 
 void u_appDigitalOutputCreate()
 {
     BaseType_t status;
-
+    queue_updateDigitalOutput = xQueueCreate(1, sizeof(uint32_t *));
     status = xTaskCreate(updateDigitalOutput, "updateDigitalOutputTask", 200, NULL, 2, &updateDigitalOutputHandle);
     configASSERT(status == pdPASS);
 }
@@ -38,5 +51,13 @@ static void updateDigitalOutput(void *param)
         {
             /* Time-out*/
         }
+    }
+}
+
+static void updateDigitalOutputArray(void *param)
+{
+    while (pdTRUE)
+    {
+        if (u_appDigitalOutputIsUpdate ==)
     }
 }

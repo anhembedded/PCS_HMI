@@ -18,13 +18,15 @@
                 "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/org/Source/portable/",
                 "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/org/Source/",
                 "${workspaceFolder}/Core/u_driver/Src/",
-                "${workspaceFolder}/Core/u_task/Src/"
+                "${workspaceFolder}/Core/u_task/Src/",
+                "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/arm-none-eabi/include"
             ],
             "defines": [
                 "USE_HAL_DRIVER",
                 "STM32F469xx",
                 "DEBUG",
-                "USE_FULL_LL_DRIVER"
+                "USE_FULL_LL_DRIVER",
+                "__GNUC__"
             ],
             "windowsSdkVersion": "10.0.22000.0",
             "intelliSenseMode": "windows-gcc-x64",
