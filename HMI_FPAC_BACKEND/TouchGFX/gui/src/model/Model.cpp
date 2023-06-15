@@ -12,6 +12,7 @@
 #endif // !SIMULATOR
 
 #include <algorithm>
+#include "Model.hpp"
 
 Model::Model() : modelListener(0)
 {
@@ -37,7 +38,7 @@ void Model::tick()
         analogIn.u32_10BitAnalogIn.at(2) = u32_adcPtr[2];
         analogIn.u32_10BitAnalogIn.at(3) = u32_adcPtr[3];
 
-        if (modelListener != 0)
+        if (modelListener != nullptr)
         {
             modelListener->notifyADCChanged(adcValue);
         }
@@ -142,6 +143,12 @@ void Model::setDigitalOut(digitaOut_type setOutput)
 void Model::setDigitalIn(digitalIn_type setInput)
 {
     digitalInput = setInput;
+}
+
+void Model::setActiveScreen(activeScreen_type activeScreenParam)
+{
+    // todo: get screen form View.
+    this->activeScreenVar = activeScreenParam;
 }
 
 settingVar_type Model::getSettingVar()

@@ -46,8 +46,6 @@ void SettingView::handleTickEvent()
         drawTextAreaOffset1();
         drawTextAreaOffset2();
         drawTextAreaOffset3();
-
-       
     }
     if (!(this->tick % 10))
     {
@@ -58,10 +56,6 @@ void SettingView::handleTickEvent()
     }
 
 #ifdef SIMULATOR
-
-   
-
-  
 
 #endif // ! SIMULATOR
 }
