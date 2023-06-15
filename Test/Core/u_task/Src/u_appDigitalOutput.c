@@ -10,7 +10,6 @@ uint32_t u32_applicationOutputState[8];
 TaskHandle_t updateDigitalOutputHandle __attribute__((section(".touchgfxccmram")));
 static void updateDigitalOutput(void *param);
 
-
 void u_appDigitalOutputCreate()
 {
     BaseType_t status;
