@@ -1,16 +1,7 @@
 #include "u_appDigitalOutput.h"
 
 
-enum
-{
-    numberOfDigitalOuput = 8
-};
 
-struct u_appDigitalOutputUpdate_type
-{
-    uint8_t isUpdate;
-    uint8_t digitalState[8];
-};
 
 struct u_appDigitalOutputUpdate_type u_appDigitalVar;
 

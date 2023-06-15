@@ -7,7 +7,16 @@
 #include "u_pwm.h"
 #include "queue.h"
 
+enum
+{
+    numberOfDigitalOuput = 8
+};
 
+struct u_appDigitalOutputUpdate_type
+{
+    uint8_t isUpdate;
+    uint8_t digitalState[8];
+};
 
 void u_appDigitalOutputCreate();
 
