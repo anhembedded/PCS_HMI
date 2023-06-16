@@ -291,4 +291,5 @@ inline void SettingView::setDigitalOut(digitaOut_type digiOut)
 inline digitaOut_type SettingView::getDigitalOut()
 {
     return presenter->getDigitalOut();
+    // Just add comment
 }
