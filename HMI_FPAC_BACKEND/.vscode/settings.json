@@ -7,5 +7,6 @@
         "freertos.h": "c"
     },
     "cmake.sourceDirectory": "${workspaceFolder}/STM32CubeIDE",
-    "C_Cpp.dimInactiveRegions": false
+    "C_Cpp.dimInactiveRegions": false,
+    "cmake.configureOnOpen": false
 }
