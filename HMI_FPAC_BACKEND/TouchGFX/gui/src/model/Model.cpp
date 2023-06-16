@@ -12,7 +12,7 @@
 #endif // !SIMULATOR
 
 #include <algorithm>
-#include "Model.hpp"
+
 
 Model::Model() : modelListener(0)
 {
@@ -30,16 +30,15 @@ void Model::tick()
 
 #else
     auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, &u32_adcPtr, 0);
-    if (isRecieved == pdTRUE)
+    if (modelListener != nullptr)
     {
-
-        analogIn.u32_10BitAnalogIn.at(0) = u32_adcPtr[0];
-        analogIn.u32_10BitAnalogIn.at(1) = u32_adcPtr[1];
-        analogIn.u32_10BitAnalogIn.at(2) = u32_adcPtr[2];
-        analogIn.u32_10BitAnalogIn.at(3) = u32_adcPtr[3];
-
-        if (modelListener != nullptr)
+        if (isRecieved == pdTRUE)
         {
+            analogIn.u32_10BitAnalogIn.at(0) = u32_adcPtr[0];
+            analogIn.u32_10BitAnalogIn.at(1) = u32_adcPtr[1];
+            analogIn.u32_10BitAnalogIn.at(2) = u32_adcPtr[2];
+            analogIn.u32_10BitAnalogIn.at(3) = u32_adcPtr[3];    
+
             modelListener->notifyADCChanged(adcValue);
         }
     }
@@ -95,14 +94,15 @@ void Model::sendDigitalOutputToBackEnd()
                     digitalOutput.u8_digiOut.at(2),
                     digitalOutput.u8_digiOut.at(1),
                     digitalOutput.u8_digiOut.at(0));
-#endif // SIMULATOR
-
+#else
     u_appDigitalVar.digitalState[0] = digitalOutput.u8_digiOut.at(0);
     u_appDigitalVar.digitalState[1] = digitalOutput.u8_digiOut.at(1);
     u_appDigitalVar.digitalState[2] = digitalOutput.u8_digiOut.at(2);
     u_appDigitalVar.digitalState[3] = digitalOutput.u8_digiOut.at(3);
     u_appDigitalVar.digitalState[4] = digitalOutput.u8_digiOut.at(4);
     u_appDigitalVar.isUpdate = 1;
+
+#endif // SIMULATOR
 }
 
 // !SIMULATOR

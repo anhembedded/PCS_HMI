@@ -2,7 +2,6 @@
 
 struct u_appDigitalOutputUpdate_type u_appDigitalVar;
 
-TaskHandle_t updateDigitalOutputHandle __attribute__((section(".touchgfxccmram")));
 TaskHandle_t updateDigitalOutputArrayHandle __attribute__((section(".touchgfxccmram")));
 
 
@@ -11,7 +10,6 @@ static void updateDigitalOutputArray(void *param);
 void u_appDigitalOutputCreate()
 {
     BaseType_t status;
-
 
     status = xTaskCreate(updateDigitalOutputArray, "updateDigitalOutputArrayTask", 200, NULL, 2, &updateDigitalOutputArrayHandle);
     configASSERT(status == pdPASS);

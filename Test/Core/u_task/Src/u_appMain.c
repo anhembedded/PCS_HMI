@@ -25,7 +25,7 @@ void u_appMainCreate()
     status = xTaskCreate(blinkLed_Orange, "blinkLed_OrangeTask", 200, NULL, 2, &blinkOrange_OrangeHandle);
     configASSERT(status == pdPASS);
     u_appDigitalInputCreate();
-    u_appDigitalOutputCreate();
+   // u_appDigitalOutputCreate();
     u_appPwmCreate();
     u_appAdcCreate();
     u_appPidCreate();
@@ -33,12 +33,12 @@ void u_appMainCreate()
 
 static void mainApplication(void *param)
 {
-    uint32_t updateDigitalValue = 0;
+
 
     while (1)
     {
-        xTaskNotify(updateDigitalOutputHandle, updateDigitalValue, eSetValueWithOverwrite);
-        updateDigitalValue++;
+
+
 
         vTaskDelay(pdMS_TO_TICKS(500));
         vTaskDelay(pdMS_TO_TICKS(500));

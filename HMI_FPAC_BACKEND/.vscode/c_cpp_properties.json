@@ -37,11 +37,14 @@
                 "__GNUC__"
             ],
             "windowsSdkVersion": "10.0.22000.0",
-            "intelliSenseMode": "windows-gcc-x64",
+            "intelliSenseMode": "windows-gcc-arm",
             "configurationProvider": "ms-vscode.makefile-tools",
             "compilerPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/bin/arm-none-eabi-g++.exe",
             "cStandard": "c11",
-            "cppStandard": "c++11"
+            "cppStandard": "c++11",
+            "compilerArgs": [
+                "-mcpu=cortex-m4, -g3, -DDEBUG,-c,-x ,assembler-with-cpp, --specs=nano.specs,-mfpu=fpv4-sp-d16,-mfloat-abi=hard, -mthumb,-std=c++11"
+            ]
         }
     ],
     "version": 4

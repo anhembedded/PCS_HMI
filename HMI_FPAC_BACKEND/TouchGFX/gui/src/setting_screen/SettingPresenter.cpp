@@ -1,5 +1,6 @@
 #include <gui/setting_screen/SettingView.hpp>
 #include <gui/setting_screen/SettingPresenter.hpp>
+#include <array>
 
 SettingPresenter::SettingPresenter(SettingView &v)
     : view(v)

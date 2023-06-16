@@ -21,16 +21,14 @@ void SettingView::tearDownScreen()
 
 void SettingView::handleTickEvent()
 {
+
+
     this->tick++;
 
     if (!(this->tick % 50))
     {
         this->analogIn = getAnalogIn();
         this->digitalInput = getDigitalIn();
-        drawTextAdcIn0(analogIn.getAnalogValueFloat(0));
-        drawTextAdcIn1(analogIn.getAnalogValueFloat(1));
-        drawTextAdcIn2(analogIn.getAnalogValueFloat(2));
-        drawTextAdcIn3(analogIn.getAnalogValueFloat(3));
 
         drawTextProcessVar0();
         drawTextProcessVar1();
@@ -47,15 +45,10 @@ void SettingView::handleTickEvent()
         drawTextAreaOffset2();
         drawTextAreaOffset3();
     }
-    if (!(this->tick % 10))
-    {
-        for (uint8_t i = 0; i <= 6; i++)
-        {
-            drawDigitalIn(i, digitalInput.u8_digiIn.at(i));
-        }
-    }
-
+  
 #ifdef SIMULATOR
+
+#else
 
 #endif // ! SIMULATOR
 }

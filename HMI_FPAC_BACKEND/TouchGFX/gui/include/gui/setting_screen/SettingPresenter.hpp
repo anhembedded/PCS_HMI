@@ -29,6 +29,7 @@ public:
 
     virtual void notifyADCChanged(std::array<uint32_t, 4> arrayParameters);
     virtual void notifyDigitalInput(digitalIn_type par);
+
     virtual void notifyAnalogOutputChanged_0(uint32_t registerVar);
     virtual void notifyAnalogOutputChanged_1(uint32_t registerVar);
 
