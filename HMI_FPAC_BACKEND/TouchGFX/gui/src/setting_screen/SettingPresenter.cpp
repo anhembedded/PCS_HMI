@@ -38,4 +38,5 @@ void SettingPresenter::notifyAnalogOutputChanged_0(uint32_t registerVar)
 {
     model->sendAdcOuputToBackEnd_0(registerVar);
     // View action
+    /* Hello add this line*/
 }
