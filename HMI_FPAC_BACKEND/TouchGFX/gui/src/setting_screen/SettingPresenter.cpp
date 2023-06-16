@@ -8,6 +8,7 @@ SettingPresenter::SettingPresenter(SettingView &v)
 
 void SettingPresenter::activate()
 {
+ 
 }
 
 void SettingPresenter::deactivate()
@@ -26,6 +27,13 @@ void SettingPresenter::notifyAnalogOutputChanged_1(uint32_t registerVar)
 {
     model->sendAdcOuputToBackEnd_1(registerVar);
 }
+
+ void SettingPresenter::notifyActiveScreen()
+{
+    model->updateActiveScreen(activeScreen_type::settingScreen);
+}
+
+
 void SettingPresenter::notifyAnalogOutputChanged_0(uint32_t registerVar)
 {
     model->sendAdcOuputToBackEnd_0(registerVar);

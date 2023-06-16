@@ -11,6 +11,11 @@ public:
     virtual ~MainView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    activeScreen_type notifyActiveScreen()
+    {
+        return activeScreen_type::mainScreen;
+    }
 protected:
 };
 

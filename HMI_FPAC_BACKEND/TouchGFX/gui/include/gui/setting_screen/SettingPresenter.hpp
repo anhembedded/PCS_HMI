@@ -32,6 +32,8 @@ public:
     virtual void notifyAnalogOutputChanged_0(uint32_t registerVar);
     virtual void notifyAnalogOutputChanged_1(uint32_t registerVar);
 
+   
+    void notifyActiveScreen();
     void setSettingVar(settingVar_type setVar)
     {
         model->setSettingVar(setVar);

@@ -13,7 +13,7 @@ public:
     const float maxVoltage = 10.0f;
     SettingView();
     virtual ~SettingView() {}
-    virtual void setupScreen() ;
+    virtual void setupScreen();
     virtual void tearDownScreen();
     void handleTickEvent() override;
 
@@ -28,7 +28,7 @@ public:
     virtual void sliderAnalogOutHandle0(int value) final;
     virtual void sliderAnalogOutHandle1(int value) final;
     virtual void button_confirm_ClickHandle() final;
-    virtual void buttonDigital0Handle()    final
+    virtual void buttonDigital0Handle() final
     {
         if (buttonDigital0.getState() == ClickEvent::RELEASED)
         {
@@ -40,7 +40,7 @@ public:
         }
         setDigitalOut(this->digitalOutput);
     }
-    virtual void buttonDigital1Handle()  final
+    virtual void buttonDigital1Handle() final
     {
         if (buttonDigital1.getState() == ClickEvent::RELEASED)
         {
@@ -52,7 +52,7 @@ public:
         }
         setDigitalOut(this->digitalOutput);
     }
-    virtual void buttonDigital2Handle()    final
+    virtual void buttonDigital2Handle() final
     {
         if (buttonDigital2.getState() == ClickEvent::RELEASED)
         {
@@ -64,7 +64,7 @@ public:
         }
         setDigitalOut(this->digitalOutput);
     }
-    virtual void buttonDigital3Handle()    final
+    virtual void buttonDigital3Handle() final
     {
         if (buttonDigital3.getState() == ClickEvent::RELEASED)
         {
@@ -76,7 +76,7 @@ public:
         }
         setDigitalOut(this->digitalOutput);
     }
-    virtual void buttonDigital4Handle()  final
+    virtual void buttonDigital4Handle() final
     {
         if (buttonDigital4.getState() == ClickEvent::RELEASED)
         {
@@ -115,11 +115,14 @@ public:
         for (uint8_t i = 0; i <= 6; i++)
         {
             drawDigitalIn(i, par.u8_digiIn.at(i));
-         }
+        }
+    }
+    void notifyActiveScreen()
+    {
+        presenter->notifyActiveScreen();
     }
 
 protected:
-
     uint32_t u32_channelAnalogOut0;
     uint32_t u32_channelAnalogOut1;
 

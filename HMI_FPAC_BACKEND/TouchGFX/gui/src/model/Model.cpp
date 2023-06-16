@@ -105,6 +105,13 @@ void Model::sendDigitalOutputToBackEnd()
 #endif
 }
 
+void Model::updateActiveScreen(activeScreen_type param)
+{
+    this->activeScreenVar = param;
+
+    touchgfx_printf("actual! %d \n", this->activeScreenVar);
+}
+
 // !SIMULATOR
 
 void Model::setPidParam(pidParam_type pidSet)

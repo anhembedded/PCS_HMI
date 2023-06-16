@@ -10,6 +10,7 @@ SettingView::SettingView() : u32_channelAnalogOut0(0u),
 
 void SettingView::setupScreen()
 {
+    notifyActiveScreen();
     SettingViewBase::setupScreen();
     settingVar = presenter->getSettingVar();
 }
@@ -51,7 +52,6 @@ void SettingView::handleTickEvent()
 
 inline void SettingView::buttonTextFactor0ClickHandle()
 {
-
     keyboard1.callKeyboard(&settingVar.f_factor[0], TEXTAREAFACTOR0_SIZE);
 }
 

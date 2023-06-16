@@ -31,11 +31,12 @@ enum class actualValue_type
 };
 enum class activeScreen_type
 {
-    main,
-    setting,
-    mesuaring,
-    closedLoopSetting,
-    closedLoopGraph
+    nonScreen,
+    mainScreen,
+    settingScreen,
+    mesuaringScreen,
+    closedLoopSettingScreen,
+    closedLoopGraphScreen
 };
 
 struct analogIn_type
@@ -123,6 +124,7 @@ public:
     void sendAdcOuputToBackEnd_1(uint32_t registerVar);
     void sendAdcOuputToBackEnd_0(uint32_t registerVar);
     void sendDigitalOutputToBackEnd();
+    void updateActiveScreen(activeScreen_type param);
 
 #ifndef SIMULATOR
 
