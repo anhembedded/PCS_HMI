@@ -29,6 +29,8 @@ public:
 
     virtual void notifyADCChanged(std::array<uint32_t, 4> arrayParameters);
 
+    void notifyActiveScreen() override;
+
 
 private:
     MesuaringPresenter();

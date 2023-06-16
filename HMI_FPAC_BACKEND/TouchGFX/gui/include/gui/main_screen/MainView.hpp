@@ -1,5 +1,5 @@
-#ifndef MAIN_VIEW_HPP
-#define MAIN_VIEW_HPP
+#ifndef INCLUDE_GUI_MAIN_SCREEN_MAINVIEW
+#define INCLUDE_GUI_MAIN_SCREEN_MAINVIEW
 
 #include <gui_generated/main_screen/MainViewBase.hpp>
 #include <gui/main_screen/MainPresenter.hpp>
@@ -12,11 +12,11 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    activeScreen_type notifyActiveScreen()
+       void notifyActiveScreen()
     {
-        return activeScreen_type::mainScreen;
+        presenter->notifyActiveScreen();
     }
 protected:
 };
 
-#endif // MAIN_VIEW_HPP
+#endif /* INCLUDE_GUI_MAIN_SCREEN_MAINVIEW */

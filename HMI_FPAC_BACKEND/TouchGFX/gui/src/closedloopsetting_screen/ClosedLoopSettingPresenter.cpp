@@ -37,3 +37,8 @@ void ClosedLoopSettingPresenter::deactivate()
     return model->getActualValue();
 }
 
+  void ClosedLoopSettingPresenter::notifyActiveScreen()
+ {
+     model->updateActiveScreen(view.getActiveScreen());
+ }
+

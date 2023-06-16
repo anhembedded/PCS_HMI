@@ -19,6 +19,8 @@ void ClosedLoopGraphView::setupScreen()
     this->drawTextAreaKd();
     spOpFb1.drawtextAreaFeedback(pidParam.f_setPoint);
     spOpFb1.drawtextAreaSetpoint(pidParam.f_setPoint);
+
+    notifyActiveScreen();
    
 }
 

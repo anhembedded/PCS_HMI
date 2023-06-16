@@ -22,3 +22,8 @@ pidParam_type ClosedLoopGraphPresenter::getPidParam()
     return model->pidParam;
 }
 
+ void ClosedLoopGraphPresenter::notifyActiveScreen()
+{
+    model->updateActiveScreen(view.getActiveScreen());
+}
+

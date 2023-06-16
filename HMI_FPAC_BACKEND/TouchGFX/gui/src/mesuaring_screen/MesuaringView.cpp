@@ -9,6 +9,7 @@ void MesuaringView::setupScreen()
 {
     MesuaringViewBase::setupScreen();
     graphBackgroud.setGraphRange(0, 600, 0, 10);
+     notifyActiveScreen();
 }
 
 void MesuaringView::tearDownScreen()

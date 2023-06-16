@@ -6,6 +6,7 @@ MainView::MainView()
 
 void MainView::setupScreen()
 {
+    notifyActiveScreen();
 }
 
 void MainView::tearDownScreen()

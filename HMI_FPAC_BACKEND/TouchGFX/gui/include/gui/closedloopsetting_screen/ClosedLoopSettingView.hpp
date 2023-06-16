@@ -67,6 +67,16 @@ public:
     void drawTextAreaKi();
     void drawTextAreaKd();
     void drawTextAreaSetPoint();
+
+   
+    void notifyActiveScreen()
+    {
+        presenter->notifyActiveScreen();
+    }
+    activeScreen_type getActiveScreen() const
+    {
+        return activeScreen_type::closedLoopSettingScreen;
+    }
 protected:
 private:
     void textFrequencyUpdate();

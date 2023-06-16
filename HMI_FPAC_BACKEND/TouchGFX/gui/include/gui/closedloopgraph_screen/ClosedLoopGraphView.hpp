@@ -18,6 +18,16 @@ public:
     virtual void tearDownScreen();
 
     virtual void handleTickEvent();
+
+   
+    void notifyActiveScreen()
+    {
+        presenter->notifyActiveScreen();
+    }
+    activeScreen_type getActiveScreen() const
+    {
+        return activeScreen_type::closedLoopGraphScreen;
+    }
 protected:
 private:
 

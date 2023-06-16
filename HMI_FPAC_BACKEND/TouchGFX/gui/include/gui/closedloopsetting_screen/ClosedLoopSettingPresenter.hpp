@@ -30,7 +30,7 @@ public:
     void setActualValue(actualValue_type view_actualValue);
     actualValue_type getActualValue();
 
-    
+    void notifyActiveScreen() override;
 
     virtual ~ClosedLoopSettingPresenter() {};
 

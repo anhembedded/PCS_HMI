@@ -30,7 +30,8 @@ public:
 
     virtual void notifyADCChanged(std::array<uint32_t, 4> newTemperature) {}
     virtual void notifyDigitalInputChanged(digitalIn_type par) {}
-    virtual activeScreen_type getActiveScreen() { return activeScreen_type::nonScreen; }
+    virtual void notifyActiveScreen() {}
+   
 
 protected:
     Model *model;

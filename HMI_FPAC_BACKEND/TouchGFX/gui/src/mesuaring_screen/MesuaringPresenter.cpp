@@ -23,3 +23,8 @@ void MesuaringPresenter::notifyADCChanged(std::array<uint32_t, 4> arrayParameter
 {
     view.setADC(arrayParameters);
 }
+
+ void MesuaringPresenter::notifyActiveScreen()
+{
+    model->updateActiveScreen(view.getActiveScreen());
+}

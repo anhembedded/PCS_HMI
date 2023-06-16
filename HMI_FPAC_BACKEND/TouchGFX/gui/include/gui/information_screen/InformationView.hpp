@@ -11,6 +11,15 @@ public:
     virtual ~InformationView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    void notifyActiveScreen()
+    {
+        presenter->notifyActiveScreen();
+    }
+    activeScreen_type getActiveScreen() const
+    {
+        return activeScreen_type::inforScreen;
+    }
 protected:
 };
 

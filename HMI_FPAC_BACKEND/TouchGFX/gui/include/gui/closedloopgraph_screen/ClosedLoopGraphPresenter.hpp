@@ -29,6 +29,8 @@ public:
 
     virtual pidParam_type getPidParam();
 
+    void notifyActiveScreen() override;
+
 private:
     ClosedLoopGraphPresenter();
 
