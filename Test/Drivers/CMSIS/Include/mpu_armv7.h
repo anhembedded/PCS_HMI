@@ -28,8 +28,8 @@
   #pragma clang system_header    /* treat file as system include file */
 #endif
  
-#ifndef ARM_MPU_ARMV7_H
-#define ARM_MPU_ARMV7_H
+#ifndef DRIVERS_CMSIS_INCLUDE_MPU_ARMV7
+#define DRIVERS_CMSIS_INCLUDE_MPU_ARMV7
 
 #define ARM_MPU_REGION_SIZE_32B      ((uint8_t)0x04U) ///!< MPU Region Size 32 Bytes
 #define ARM_MPU_REGION_SIZE_64B      ((uint8_t)0x05U) ///!< MPU Region Size 64 Bytes
@@ -267,4 +267,4 @@ __STATIC_INLINE void ARM_MPU_Load(ARM_MPU_Region_t const* table, uint32_t cnt)
   orderedCpy(&(MPU->RBAR), &(table->RBAR), cnt*rowWordSize);
 }
 
-#endif
+#endif /* DRIVERS_CMSIS_INCLUDE_MPU_ARMV7 */

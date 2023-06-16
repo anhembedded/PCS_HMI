@@ -29,13 +29,14 @@ enum class actualValue_type
     pressure,
     temperature
 };
-enum class activeScreen
+enum class activeScreen_type
 {
-    main,
-    setting,
-    mesuaring,
-    closedLoopSetting,
-    closedLoopGraph
+    nonScreen,
+    mainScreen,
+    settingScreen,
+    mesuaringScreen,
+    closedLoopSettingScreen,
+    closedLoopGraphScreen
 };
 
 struct analogIn_type
@@ -45,7 +46,7 @@ struct analogIn_type
     std::array<uint32_t, 4> u32_10BitAnalogIn;
 
     float getAnalogValueFloat(uint32_t indexChannel);
-    analogIn_type& operator=(analogIn_type other) noexcept
+    analogIn_type &operator=(analogIn_type other) noexcept
     {
         u32_10BitAnalogIn = other.u32_10BitAnalogIn;
         return *this;
@@ -63,7 +64,7 @@ struct settingVar_type
     {
         f_factor = other.f_factor;
         f_offset = other.f_offset;
-      
+
         return *this;
     }
 
@@ -73,7 +74,6 @@ struct settingVar_type
 struct digitaOut_type
 {
     std::array<uint8_t, 5> u8_digiOut;
-
 };
 struct digitalIn_type
 {
@@ -102,6 +102,7 @@ public:
     analogIn_type analogIn;
     digitaOut_type digitalOutput;
     digitalIn_type digitalInput;
+    activeScreen_type activeScreenVar;
     Model();
 
     /**
@@ -122,7 +123,8 @@ public:
 
     void sendAdcOuputToBackEnd_1(uint32_t registerVar);
     void sendAdcOuputToBackEnd_0(uint32_t registerVar);
-    void sendDigitalOutputToBackEnd( );
+    void sendDigitalOutputToBackEnd();
+    void updateActiveScreen(activeScreen_type param);
 
 #ifndef SIMULATOR
 
@@ -131,20 +133,19 @@ public:
         return adcValue;
     };
 #endif // !SIMULATOR
-    pidParam_type       getPidParam();
-    actualValue_type    getActualValue();
-    settingVar_type     getSettingVar();
-    analogIn_type       getAnalogIn();
-    digitaOut_type      getDigitalOut();
-    digitalIn_type      getDigitalIn();
-
+    pidParam_type getPidParam();
+    actualValue_type getActualValue();
+    settingVar_type getSettingVar();
+    analogIn_type getAnalogIn();
+    digitaOut_type getDigitalOut();
+    digitalIn_type getDigitalIn();
 
     void setPidParam(pidParam_type pidSet);
     void setActualValue(actualValue_type view_actualValue);
     void setSettingVar(settingVar_type setVar);
     void setDigitalOut(digitaOut_type setOutput);
     void setDigitalIn(digitalIn_type setInput);
-
+    void setActiveScreen(activeScreen_type activeScreenParam);
 
 protected:
     /**
@@ -155,14 +156,9 @@ protected:
     uint32_t modelGetTick();
     uint32_t frameTickVal;
 
-
 private:
-
     uint32_t *u32_adcPtr;
     std::array<uint32_t, 4> adcValue;
-
 };
-
-
 
 #endif /* INCLUDE_GUI_MODEL_MODEL */

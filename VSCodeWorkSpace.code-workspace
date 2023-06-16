@@ -72,7 +72,9 @@
 			"math.h": "c",
 			"u_lfc_firmware.h": "c",
 			"u_lfc_appmain.h": "c",
-			"u_helpfunction.h": "c"
+			"u_helpfunction.h": "c",
+			"cmsis_gcc.h": "c",
+			"stm32f4xx_ll_adc.h": "c"
 		},
 		"cSpell.enabled": false
 	}

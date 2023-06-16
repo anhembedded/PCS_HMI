@@ -13,6 +13,7 @@
 
 #include <algorithm>
 
+
 Model::Model() : modelListener(0)
 {
 #ifdef SIMULATOR
@@ -37,7 +38,7 @@ void Model::tick()
         analogIn.u32_10BitAnalogIn.at(2) = u32_adcPtr[2];
         analogIn.u32_10BitAnalogIn.at(3) = u32_adcPtr[3];
 
-        if (modelListener != 0)
+        if (modelListener != nullptr)
         {
             modelListener->notifyADCChanged(adcValue);
         }
@@ -45,7 +46,7 @@ void Model::tick()
 
     if (modelListener != 0)
     {
-        digitalInput.u8_digiIn.at(0) = (bool) u32_applicationInputState[0];
+        digitalInput.u8_digiIn.at(0) = (bool)u32_applicationInputState[0];
         digitalInput.u8_digiIn.at(1) = (bool)u32_applicationInputState[1];
         digitalInput.u8_digiIn.at(2) = (bool)u32_applicationInputState[2];
         digitalInput.u8_digiIn.at(3) = (bool)u32_applicationInputState[3];
@@ -53,7 +54,7 @@ void Model::tick()
         digitalInput.u8_digiIn.at(5) = (bool)u32_applicationInputState[5];
         digitalInput.u8_digiIn.at(6) = (bool)u32_applicationInputState[6];
 
-        modelListener->notifyDigitalInput(digitalInput);
+        modelListener->notifyDigitalInputChanged(digitalInput);
     }
     /* DigitalInput */
     /*  isRecieved = xQueueReceive(digitalInputSendToFrontEndHandle, &u32_digitalInputVar, 0);
@@ -94,7 +95,21 @@ void Model::sendDigitalOutputToBackEnd()
                     digitalOutput.u8_digiOut.at(2),
                     digitalOutput.u8_digiOut.at(1),
                     digitalOutput.u8_digiOut.at(0));
-#endif // SIMULATOR
+#else
+    u_appDigitalVar.digitalState[0] = digitalOutput.u8_digiOut.at(0);
+    u_appDigitalVar.digitalState[1] = digitalOutput.u8_digiOut.at(1);
+    u_appDigitalVar.digitalState[2] = digitalOutput.u8_digiOut.at(2);
+    u_appDigitalVar.digitalState[3] = digitalOutput.u8_digiOut.at(3);
+    u_appDigitalVar.digitalState[4] = digitalOutput.u8_digiOut.at(4);
+    u_appDigitalVar.isUpdate = 1;
+#endif
+}
+
+void Model::updateActiveScreen(activeScreen_type param)
+{
+    this->activeScreenVar = param;
+
+    touchgfx_printf("actual! %d \n", this->activeScreenVar);
 }
 
 // !SIMULATOR
@@ -135,6 +150,12 @@ void Model::setDigitalOut(digitaOut_type setOutput)
 void Model::setDigitalIn(digitalIn_type setInput)
 {
     digitalInput = setInput;
+}
+
+void Model::setActiveScreen(activeScreen_type activeScreenParam)
+{
+    // todo: get screen form View.
+    this->activeScreenVar = activeScreenParam;
 }
 
 settingVar_type Model::getSettingVar()
