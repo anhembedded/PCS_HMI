@@ -12,7 +12,7 @@
 #endif // !SIMULATOR
 
 #include <algorithm>
-#include "Model.hpp"
+
 
 Model::Model() : modelListener(0)
 {
@@ -54,7 +54,7 @@ void Model::tick()
         digitalInput.u8_digiIn.at(5) = (bool)u32_applicationInputState[5];
         digitalInput.u8_digiIn.at(6) = (bool)u32_applicationInputState[6];
 
-        modelListener->notifyDigitalInput(digitalInput);
+        modelListener->notifyDigitalInputChanged(digitalInput);
     }
     /* DigitalInput */
     /*  isRecieved = xQueueReceive(digitalInputSendToFrontEndHandle, &u32_digitalInputVar, 0);
@@ -95,14 +95,14 @@ void Model::sendDigitalOutputToBackEnd()
                     digitalOutput.u8_digiOut.at(2),
                     digitalOutput.u8_digiOut.at(1),
                     digitalOutput.u8_digiOut.at(0));
-#endif // SIMULATOR
-
+#else
     u_appDigitalVar.digitalState[0] = digitalOutput.u8_digiOut.at(0);
     u_appDigitalVar.digitalState[1] = digitalOutput.u8_digiOut.at(1);
     u_appDigitalVar.digitalState[2] = digitalOutput.u8_digiOut.at(2);
     u_appDigitalVar.digitalState[3] = digitalOutput.u8_digiOut.at(3);
     u_appDigitalVar.digitalState[4] = digitalOutput.u8_digiOut.at(4);
     u_appDigitalVar.isUpdate = 1;
+#endif
 }
 
 // !SIMULATOR

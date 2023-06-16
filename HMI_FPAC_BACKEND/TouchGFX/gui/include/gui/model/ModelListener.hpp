@@ -29,15 +29,7 @@ public:
     }
 
     virtual void notifyADCChanged(std::array<uint32_t, 4> newTemperature) {}
-    virtual void notifyDigitalInput(digitalIn_type par) {}
-
-    virtual void notifyDigitalIntputChanged_0(uint32_t registerVar) {}
-    virtual void notifyDigitalIntputChanged_1(uint32_t registerVar) {}
-    virtual void notifyDigitalIntputChanged_2(uint32_t registerVar) {}
-    virtual void notifyDigitalIntputChanged_3(uint32_t registerVar) {}
-    virtual void notifyDigitalIntputChanged_4(uint32_t registerVar) {}
-    virtual void notifyDigitalIntputChanged_5(uint32_t registerVar) {}
-    virtual void notifyDigitalIntputChanged_6(uint32_t registerVar) {}
+    virtual void notifyDigitalInputChanged(digitalIn_type par) {}
 
 protected:
     Model *model;

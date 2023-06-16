@@ -18,7 +18,7 @@ void SettingPresenter::notifyADCChanged(std::array<uint32_t, 4> arrayParameters)
 {
     view.setADC(arrayParameters);
 }
-void SettingPresenter::notifyDigitalInput(digitalIn_type par)
+void SettingPresenter::notifyDigitalInputChanged(digitalIn_type par)
 {
     view.drawDigitalIn(par);
 }
