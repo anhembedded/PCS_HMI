@@ -37,6 +37,14 @@ public:
     virtual void graphLineControlPanelAEHandle();
     virtual void sliderGraphLineAEHandle();
 
+    void notifyActiveScreen()
+    {
+        presenter->notifyActiveScreen();
+    }
+activeScreen_type  getActiveScreen()
+{
+    return activeScreen_type::mesuaringScreen;
+}
 
 protected:
     void updateGraphInf(decltype(AbstractDataGraph::GraphClickEvent::index) var);
@@ -48,6 +56,7 @@ private:
     const float maxVoltage = 10.0F;
     void setGraphVisible(decltype(graphCH0) &graphParam, const decltype(butonGraphIn0) &buttonParm);
     float adcRawValueToVoltage(uint32_t adcVal) const;
+    
 };
 
 #endif /* INCLUDE_GUI_MESUARING_SCREEN_MESUARINGVIEW */

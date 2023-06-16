@@ -13,6 +13,8 @@ void ClosedLoopSettingView::setupScreen()
     this->drawTextAreaKi();
     this->drawTextAreaKd();
     this->drawTextAreaSetPoint();
+
+     notifyActiveScreen();
 }
 
 void ClosedLoopSettingView::tearDownScreen()

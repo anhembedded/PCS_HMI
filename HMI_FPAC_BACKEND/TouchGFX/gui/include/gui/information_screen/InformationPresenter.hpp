@@ -27,6 +27,8 @@ public:
 
     virtual ~InformationPresenter() {};
 
+    void notifyActiveScreen();
+
 private:
     InformationPresenter();
 

@@ -37,7 +37,7 @@ static void mainApplication(void *param)
 
     while (1)
     {
-        xTaskNotify(updateDigitalOutputHandle, updateDigitalValue, eSetValueWithOverwrite);
+
         updateDigitalValue++;
 
         vTaskDelay(pdMS_TO_TICKS(500));

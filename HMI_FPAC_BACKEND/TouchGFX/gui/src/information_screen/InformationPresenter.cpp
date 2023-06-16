@@ -16,3 +16,8 @@ void InformationPresenter::deactivate()
 {
 
 }
+
+ void InformationPresenter::notifyActiveScreen()
+{
+    model->updateActiveScreen(view.getActiveScreen());
+}

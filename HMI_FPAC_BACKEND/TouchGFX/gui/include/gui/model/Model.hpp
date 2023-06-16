@@ -32,6 +32,7 @@ enum class actualValue_type
 enum class activeScreen_type
 {
     nonScreen,
+    inforScreen,
     mainScreen,
     settingScreen,
     mesuaringScreen,
