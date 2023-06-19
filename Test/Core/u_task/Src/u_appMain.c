@@ -4,6 +4,11 @@
 #include "u_pwm.h"
 #include "queue.h"
 
+
+uint8_t u_appMain_tasksArray[NumbOfTasks];
+
+
+
 uint32_t u32_applicationSampleFrequency __attribute__((section(".touchgfxccmram")));
 
 TaskHandle_t blinkLed_GreenHandle __attribute__((section(".touchgfxccmram")));
@@ -18,12 +23,13 @@ static void blinkLed_Orange(void *param);
 void u_appMainCreate()
 {
     BaseType_t status;
-    status = xTaskCreate(mainApplication, "mainApplicationTask", 200, NULL, 2, &mainApplicationHandle);
+    status = xTaskCreate(mainApplication, "mainApplicationTask", 200, NULL, 1, &mainApplicationHandle);
     configASSERT(status == pdPASS);
     status = xTaskCreate(blinkLed_Green, "blinkLed_GreenTask", 200, NULL, 2, &blinkLed_GreenHandle);
     configASSERT(status == pdPASS);
     status = xTaskCreate(blinkLed_Orange, "blinkLed_OrangeTask", 200, NULL, 2, &blinkOrange_OrangeHandle);
     configASSERT(status == pdPASS);
+
     u_appDigitalInputCreate();
     u_appDigitalOutputCreate();
     u_appPwmCreate();
@@ -33,15 +39,9 @@ void u_appMainCreate()
 
 static void mainApplication(void *param)
 {
-    uint32_t updateDigitalValue = 0;
-
     while (1)
     {
-
-        updateDigitalValue++;
-
-        vTaskDelay(pdMS_TO_TICKS(500));
-        vTaskDelay(pdMS_TO_TICKS(500));
+        
     }
 }
 

@@ -74,7 +74,10 @@
 			"u_lfc_appmain.h": "c",
 			"u_helpfunction.h": "c",
 			"cmsis_gcc.h": "c",
-			"stm32f4xx_ll_adc.h": "c"
+			"stm32f4xx_ll_adc.h": "c",
+			"u_appadc.h": "c",
+			"queue.h": "c",
+			"u_appdigitalinput.h": "c"
 		},
 		"cSpell.enabled": false
 	}

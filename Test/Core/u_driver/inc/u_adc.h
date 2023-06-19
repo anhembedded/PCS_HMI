@@ -20,8 +20,8 @@ void u_adc_initSingleConversion(void);
 
 
 void u_adc_startConvention();
-void u_adc_stopConvention();
-void u_adc_isRunningConvention();
+void u_adc_stopConvention(); // ADC single mode, auto stop when complete conversion
+void u_adc_isRunningConvention(); 
 
 
 

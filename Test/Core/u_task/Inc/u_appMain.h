@@ -9,6 +9,21 @@
 #include "u_appDigitalOutput.h"
 #include "u_appPid.h"
 
+
+#define  NumbOfTasks 5
+enum task_index
+{
+    suppened,
+    run,
+    appADC,
+    appDigitalInput,
+    appDigitalOutput,
+    appPid,
+    appPwm
+};
+
+
+extern uint8_t u_appMain_tasksArray[NumbOfTasks];
 extern uint32_t u32_applicationAdc[4];
 extern uint32_t u32_applicationAdc_ptr;
 extern uint32_t u32_applicationInputState[8];

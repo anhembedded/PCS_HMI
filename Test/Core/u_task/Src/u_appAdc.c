@@ -3,6 +3,8 @@
 
 uint32_t u32_enableAdc;
 
+
+
 uint32_t u32_applicationAdc[4] __attribute__((section(".touchgfxccmram")));
 uint32_t u32_applicationAdc_ptr __attribute__((section(".touchgfxccmram")));
 
@@ -56,4 +58,19 @@ void u_appAdcCreate()
     adcSendToFrontEndHandle = xQueueCreate(1, sizeof(uint32_t *));
     status = xTaskCreate(updateAdcFrequence, "readAdcTask", 200, NULL, 2, &updateAdcFrequenceHandle);
     configASSERT(status == pdPASS);
+}
+
+void u_appAdc_TurnOff()
+{
+    NVIC_DisableIRQ(ADC_IRQn);
+    u32_applicationAdc[0] = 0;
+    u32_applicationAdc[1] = 0;
+    u32_applicationAdc[2] = 0;
+    u32_applicationAdc[3] = 0;
+    xQueueSend(adcSendToFrontEndHandle, &u32_applicationAdc_ptr, 0);
+}
+
+void u_appAdc_Statup()
+{
+    NVIC_EnableIRQ(ADC_IRQn);
 }
