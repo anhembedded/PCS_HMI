@@ -5,14 +5,15 @@ struct u_appDigitalOutputUpdate_type u_appDigitalVar;
 
 TaskHandle_t updateDigitalOutputArrayHandle __attribute__((section(".touchgfxccmram")));
 
+void u_appDigitalOutput_Statup();
+void u_appDigitalOutput_TurnOff();
+void u_appDigitalOutput_Main();
 
 static void updateDigitalOutputArray(void *param);
 
 void u_appDigitalOutputCreate()
 {
     BaseType_t status;
-
-
     status = xTaskCreate(updateDigitalOutputArray, "updateDigitalOutputArrayTask", 200, NULL, 2, &updateDigitalOutputArrayHandle);
     configASSERT(status == pdPASS);
 }
@@ -43,4 +44,14 @@ static void updateDigitalOutputArray(void *param)
             vTaskDelay(pdMS_TO_TICKS(100));
         }
     }
+}
+
+void u_appDigitalOutput_Statup()
+{
+
+}
+
+void u_appDigitalOutput_TurnOff()
+{
+	//Note: clear all digital Output
 }

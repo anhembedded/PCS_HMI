@@ -37,7 +37,7 @@
                 "__GNUC__"
             ],
             "windowsSdkVersion": "10.0.22000.0",
-            "intelliSenseMode": "windows-gcc-x64",
+            "intelliSenseMode": "windows-gcc-arm64",
             "configurationProvider": "ms-vscode.makefile-tools",
             "compilerPath": "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/bin/arm-none-eabi-g++.exe",
             "cStandard": "c11",

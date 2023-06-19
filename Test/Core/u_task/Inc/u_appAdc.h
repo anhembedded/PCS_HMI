@@ -14,5 +14,8 @@ extern TaskHandle_t readAdcTaskHandle;
 extern QueueHandle_t adcSendToFrontEndHandle;
 
 void u_appAdcCreate();
+void u_appAdc_Statup();
+void u_appAdc_TurnOff();
+void u_appAdc_Main();
 
 #endif /* CORE_U_TASK_INC_U_APPADC */
