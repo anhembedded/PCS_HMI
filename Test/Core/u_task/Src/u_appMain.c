@@ -6,7 +6,7 @@
 
 
 uint8_t u_appMain_tasksArray[NumbOfTasks];
-
+QueueHandle_t u_appMain_queue_taskState __attribute__((section(".touchgfxccmram")));
 
 
 uint32_t u32_applicationSampleFrequency __attribute__((section(".touchgfxccmram")));
@@ -29,6 +29,7 @@ void u_appMainCreate()
     configASSERT(status == pdPASS);
     status = xTaskCreate(blinkLed_Orange, "blinkLed_OrangeTask", 200, NULL, 2, &blinkOrange_OrangeHandle);
     configASSERT(status == pdPASS);
+    u_appMain_queue_taskState = xQueueCreate(sizeof(u_appMain_tasksArray)/sizeof(uint8_t), sizeof(uint8_t));
 
     u_appDigitalInputCreate();
     u_appDigitalOutputCreate();
@@ -41,7 +42,14 @@ static void mainApplication(void *param)
 {
     while (1)
     {
-        
+       /*  xQueueReceive(u_appMain_queue_taskState,u_appMain_tasksArray, portMAX_DELAY);
+        if(u_appMain_tasksArray[appADC] == 1)
+        {
+
+        }else
+        {
+            
+        } */ 
     }
 }
 
