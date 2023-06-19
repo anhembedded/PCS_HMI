@@ -3571,6 +3571,7 @@
           },
           {
             "InteractionName": "Interaction4",
+            "HasCompletedTrigger": true,
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_closeModelWindow"
@@ -3666,6 +3667,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "button_temperature_select_Handle"
+            }
+          },
+          {
+            "InteractionName": "Interaction10",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "Interaction4"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "confirmActuator"
             }
           }
         ]

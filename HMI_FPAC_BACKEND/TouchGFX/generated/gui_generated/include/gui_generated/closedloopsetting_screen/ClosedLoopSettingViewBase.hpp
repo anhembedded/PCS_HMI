@@ -66,6 +66,10 @@ public:
     {
         // Override and implement this function in ClosedLoopSetting
     }
+    virtual void confirmActuator()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
 
 protected:
     FrontendApplication& application() {

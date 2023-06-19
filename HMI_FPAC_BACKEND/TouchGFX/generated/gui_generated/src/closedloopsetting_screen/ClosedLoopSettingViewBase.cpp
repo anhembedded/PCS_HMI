@@ -260,6 +260,11 @@ void ClosedLoopSettingViewBase::buttonCallbackHandler(const touchgfx::AbstractBu
         //Hide modalWindow1
         modalWindow1.setVisible(false);
         modalWindow1.invalidate();
+    
+        //Interaction10
+        //When Interaction4 completed call virtual function
+        //Call confirmActuator
+        confirmActuator();
     }
 }
 

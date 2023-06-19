@@ -40,28 +40,33 @@ public:
     virtual void confirmUpdateParamter()
     {
         presenter->setPidParam(pidParam);
+        presenter->setActualValue(this->actualValue);
+       
     }
     virtual void button_level_select_Handle()
     {
+     
         this->actualValue = actualValue_type::level;
-        presenter->setActualValue(this->actualValue);
+      
     }
     virtual void button_flowRate_select_Handle()
     {
         this->actualValue = actualValue_type::flowRate;
-        presenter->setActualValue(this->actualValue);
+      
     }
     virtual void button_pressure_select_Handle()
     {
         this->actualValue = actualValue_type::pressure;
-        presenter->setActualValue(this->actualValue);
+        
     }
     virtual void button_temperature_select_Handle()
     {
         this->actualValue = actualValue_type::temperature;
-        presenter->setActualValue(this->actualValue);
+        
     }
-
+   
+             //Todo: update actual
+    
     
     void drawTextAreaKp();
     void drawTextAreaKi();
