@@ -41,6 +41,7 @@ public:
     {
         presenter->setPidParam(pidParam);
         presenter->setActualValue(this->actualValue);
+        presenter->notifyActualValueChanged(this->actualValue);
        
     }
     virtual void button_level_select_Handle()
@@ -64,9 +65,32 @@ public:
         this->actualValue = actualValue_type::temperature;
         
     }
+    virtual void openModelButton()
+    {
+        this->updateActualValue();
+        if (actualValue == actualValue_type::level)
+        {
+            radioButtonGroup1.setSelected(button_level);
+        }
+        else if (actualValue == actualValue_type::flowRate)
+        {
+            radioButtonGroup1.setSelected(button_flowRate);
+        }
+        else if (actualValue == actualValue_type::pressure)
+        {
+            radioButtonGroup1.setSelected(button_pressure);
+        }
+        else if (actualValue == actualValue_type::temperature)
+        {
+            radioButtonGroup1.setSelected(button_temperature);
+        }
+    }
    
              //Todo: update actual
-    
+    void updateActualValue()
+    {
+        this->actualValue = presenter->getActualValueFromModel();
+    }
     
     void drawTextAreaKp();
     void drawTextAreaKi();
@@ -81,6 +105,10 @@ public:
     activeScreen_type getActiveScreen() const
     {
         return activeScreen_type::closedLoopSettingScreen;
+    }
+    void notifyActualValueChanged()
+    {
+        presenter->notifyActualValueChanged(actualValue);
     }
 protected:
 private:

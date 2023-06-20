@@ -140,6 +140,14 @@ private:
     digitalIn_type getDigitalIn();
     void setDigitalOut(digitaOut_type digiOut);
     digitaOut_type getDigitalOut();
+    void screenTearDownHandle()
+    {
+        this->u32_channelAnalogOut0 = 0U;
+        this->u32_channelAnalogOut1 = 0U;
+        updateAnalogOut0();
+        updateAnalogOut1();
+    
+    }
 };
 
 #endif /* INCLUDE_GUI_SETTING_SCREEN_SETTINGVIEW */

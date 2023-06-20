@@ -10,6 +10,9 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_V6NC" Alignment="Center" TypographyId="KeyBoard">
+        <Translation Language="GB">Start</Translation>
+      </Text>
       <Text Id="__SingleUse_5Q9V" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">1</Translation>
       </Text>
@@ -110,13 +113,13 @@
         <Translation Language="GB">00.0</Translation>
       </Text>
       <Text Id="__SingleUse_5HQL" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">vT: &lt;value&gt;</Translation>
+        <Translation Language="GB">kD: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_NIL7" Alignment="Left" TypographyId="MainMenu">
         <Translation Language="GB">00.0</Translation>
       </Text>
       <Text Id="__SingleUse_66OT" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">tN: &lt;value&gt;</Translation>
+        <Translation Language="GB">kI: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_Z6EL" Alignment="Left" TypographyId="MainMenu">
         <Translation Language="GB">00.0</Translation>
@@ -146,7 +149,7 @@
         <Translation Language="GB">Set</Translation>
       </Text>
       <Text Id="__SingleUse_AZT2" Alignment="Center" TypographyId="KeyBoard">
-        <Translation Language="GB">Start</Translation>
+        <Translation Language="GB">Clear</Translation>
       </Text>
       <Text Id="__SingleUse_2CQX" Alignment="Center" TypographyId="KeyBoard">
         <Translation Language="GB">Stop</Translation>

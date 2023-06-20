@@ -27,6 +27,22 @@ public:
     virtual ~ClosedLoopGraphViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void startButton_Handle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+    virtual void stopButton_Handle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+    virtual void clearButton_Handle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());
@@ -40,6 +56,7 @@ protected:
     SpOpFb spOpFb1;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ButtonWithLabel buttonWithLabel_start;
+    touchgfx::ButtonWithLabel buttonWithLabel_clear;
     touchgfx::GraphWrapAndClear<600> graphBackgroud;
     touchgfx::GraphElementGridX graphBackgroudMajorXAxisGrid;
     touchgfx::GraphElementGridY graphBackgroudMajorYAxisGrid;
@@ -53,7 +70,6 @@ protected:
     touchgfx::PainterRGB565 graphSetpointLine1Painter;
     ButtonDone buttonDone1;
     DigitalInputIndicator digitalInputIndicator1;
-    touchgfx::Box box1;
     touchgfx::ButtonWithLabel buttonWithLabel_stop;
     touchgfx::ButtonWithLabel buttonWithLabel_set;
     touchgfx::BoxWithBorder boxWithBorder2;

@@ -148,7 +148,12 @@ public:
     void setDigitalOut(digitaOut_type setOutput);
     void setDigitalIn(digitalIn_type setInput);
     void setActiveScreen(activeScreen_type activeScreenParam);
-
+    void updateActualValue(actualValue_type actualValueParam)
+    {
+        this->actualValue = actualValueParam;
+        touchgfx_printf("actual: %d \n", actualValue);
+    }
+    
 protected:
     /**
      * Pointer to the currently active presenter.

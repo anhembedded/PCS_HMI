@@ -1086,16 +1086,6 @@
             ]
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "keyboard1",
-            "X": 93,
-            "Width": 343,
-            "Height": 480,
-            "Visible": false,
-            "CustomContainerDefinitionName": "Keyboard",
-            "Draggable": true
-          },
-          {
             "Type": "ButtonWithIcon",
             "Name": "button_Confirm",
             "X": 59,
@@ -1284,6 +1274,16 @@
                 "RelativeFilename": "__generated\\clay_theme_images_effects_800x480_shade_top_dark.png"
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "keyboard1",
+            "X": 93,
+            "Width": 343,
+            "Height": 480,
+            "Visible": false,
+            "CustomContainerDefinitionName": "Keyboard",
+            "Draggable": true
           }
         ],
         "Interactions": [
@@ -3343,7 +3343,7 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "button_openModelWindow",
-            "X": 22,
+            "X": 51,
             "Y": 400,
             "Width": 188,
             "Height": 80,
@@ -3559,7 +3559,8 @@
             }
           },
           {
-            "InteractionName": "Interaction3",
+            "InteractionName": "openModelWindow",
+            "HasCompletedTrigger": true,
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_openModelWindow"
@@ -3679,6 +3680,17 @@
               "Type": "ActionCustom",
               "FunctionName": "confirmActuator"
             }
+          },
+          {
+            "InteractionName": "openModelButton",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "openModelWindow"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "openModelButton"
+            }
           }
         ]
       },
@@ -3723,13 +3735,13 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel_start",
-            "X": 133,
-            "Y": 392,
+            "X": 132,
+            "Y": 387,
             "Width": 138,
             "Height": 36,
             "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_36_small_rounded_pressed.png",
             "Released": "__generated\\dark_theme_images_widgets_button_regular_height_36_small_rounded_active.png",
-            "TextId": "__SingleUse_AZT2",
+            "TextId": "__SingleUse_V6NC",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -3744,6 +3756,29 @@
             "Preset": "dark_theme\\presets\\button\\regular\\height_36\\small_rounded_active.json"
           },
           {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_clear",
+            "X": 283,
+            "Y": 428,
+            "Width": 138,
+            "Height": 36,
+            "Pressed": "__generated\\light_theme_images_widgets_button_regular_height_36_small_rounded_pressed.png",
+            "Released": "__generated\\light_theme_images_widgets_button_regular_height_36_small_rounded_normal.png",
+            "TextId": "__SingleUse_AZT2",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "light_theme\\presets\\button\\regular\\height_36\\small_rounded_normal.json"
+          },
+          {
             "Type": "DynamicGraph",
             "Name": "graphBackgroud",
             "X": 10,
@@ -3754,7 +3789,7 @@
             "DataSeed": -1305830385,
             "NumberOfValues": 600,
             "MaxY": 10.3,
-            "MinY": -10.0,
+            "MinY": -1.0,
             "Precision": "0.01",
             "LastIndex": 599,
             "XAxisScale": 1.0,
@@ -3823,7 +3858,7 @@
             "DataSeed": -1305830385,
             "NumberOfValues": 600,
             "MaxY": 10.3,
-            "MinY": -10.0,
+            "MinY": -1.0,
             "Precision": "0.01",
             "LastIndex": 599,
             "XAxisScale": 1.0,
@@ -3835,11 +3870,11 @@
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
-                "LineWidth": 1,
+                "LineWidth": 2,
                 "FileNameImage": "",
                 "Color": {
-                  "Red": 167,
-                  "Blue": 178
+                  "Red": 188,
+                  "Blue": 201
                 }
               }
             ]
@@ -3854,7 +3889,7 @@
             "DataSeed": 659641351,
             "NumberOfValues": 600,
             "MaxY": 10.3,
-            "MinY": -10.0,
+            "MinY": -1.0,
             "Precision": "0.01",
             "LastIndex": 599,
             "XAxisScale": 1.0,
@@ -3890,23 +3925,10 @@
             "CustomContainerDefinitionName": "DigitalInputIndicator"
           },
           {
-            "Type": "Box",
-            "Name": "box1",
-            "X": 286,
-            "Y": 397,
-            "Width": 141,
-            "Height": 37,
-            "Color": {
-              "Red": 89,
-              "Green": 89,
-              "Blue": 89
-            }
-          },
-          {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel_stop",
             "X": 283,
-            "Y": 393,
+            "Y": 386,
             "Width": 138,
             "Height": 36,
             "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_36_small_rounded_pressed.png",
@@ -3929,7 +3951,7 @@
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel_set",
             "X": 20,
-            "Y": 391,
+            "Y": 387,
             "Width": 100,
             "Height": 36,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.png",
@@ -3992,7 +4014,7 @@
             "Name": "text_analogVal_Ki",
             "X": 464,
             "Y": 405,
-            "Width": 74,
+            "Width": 68,
             "Height": 27,
             "TextId": "__SingleUse_66OT",
             "TextRotation": "0",
@@ -4008,7 +4030,7 @@
             "Name": "text_analogVal_Kd",
             "X": 465,
             "Y": 426,
-            "Width": 73,
+            "Width": 77,
             "Height": 27,
             "TextId": "__SingleUse_5HQL",
             "TextRotation": "0",
@@ -4032,6 +4054,39 @@
               "ScreenTransitionType": "ScreenTransitionCover",
               "ScreenTransitionDirection": "East",
               "ActionComponent": "ClosedLoopSetting"
+            }
+          },
+          {
+            "InteractionName": "startButton_Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_clear"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "startButton_Handle"
+            }
+          },
+          {
+            "InteractionName": "stopButton_Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_stop"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "stopButton_Handle"
+            }
+          },
+          {
+            "InteractionName": "clearButton_Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_clear"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "clearButton_Handle"
             }
           }
         ]

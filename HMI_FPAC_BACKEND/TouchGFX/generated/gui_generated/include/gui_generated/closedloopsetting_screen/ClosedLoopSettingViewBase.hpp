@@ -70,6 +70,10 @@ public:
     {
         // Override and implement this function in ClosedLoopSetting
     }
+    virtual void openModelButton()
+    {
+        // Override and implement this function in ClosedLoopSetting
+    }
 
 protected:
     FrontendApplication& application() {

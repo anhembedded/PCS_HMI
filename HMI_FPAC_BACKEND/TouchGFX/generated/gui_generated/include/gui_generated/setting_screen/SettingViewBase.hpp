@@ -18,11 +18,11 @@
 #include <touchgfx/containers/Slider.hpp>
 #include <gui/containers/DigitalInputIndicator.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
-#include <gui/containers/Keyboard.hpp>
-#include <touchgfx/mixins/Draggable.hpp>
 #include <touchgfx/containers/SlideMenu.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <gui/containers/Keyboard.hpp>
+#include <touchgfx/mixins/Draggable.hpp>
 
 class SettingViewBase : public touchgfx::View<SettingPresenter>
 {
@@ -162,7 +162,6 @@ protected:
     DigitalInputIndicator digitalInputIndicator1;
     touchgfx::ModalWindow modalWindow_inf;
     touchgfx::ButtonWithIcon buttonWithIcon2;
-    touchgfx::Draggable< Keyboard > keyboard1;
     touchgfx::ButtonWithIcon button_Confirm;
     touchgfx::SlideMenu binaryMenu;
     touchgfx::Container binaryButton;
@@ -177,6 +176,7 @@ protected:
     touchgfx::TextArea textArea4_2_1_1;
     touchgfx::TextArea textArea4_1;
     touchgfx::Image image1_1;
+    touchgfx::Draggable< Keyboard > keyboard1;
 
     /*
      * Wildcard Buffers

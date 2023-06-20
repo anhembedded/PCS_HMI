@@ -317,10 +317,6 @@ SettingViewBase::SettingViewBase() :
 
     add(modalWindow_inf);
 
-    keyboard1.setXY(93, 0);
-    keyboard1.setVisible(false);
-    add(keyboard1);
-
     button_Confirm.setXY(59, 372);
     button_Confirm.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
     button_Confirm.setIconXY(39, 33);
@@ -402,6 +398,10 @@ SettingViewBase::SettingViewBase() :
     binaryMenu.add(image1_1);
 
     add(binaryMenu);
+
+    keyboard1.setXY(93, 0);
+    keyboard1.setVisible(false);
+    add(keyboard1);
 }
 
 SettingViewBase::~SettingViewBase()

@@ -142,7 +142,7 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
 
     add(PidCon);
 
-    button_openModelWindow.setXY(22, 400);
+    button_openModelWindow.setXY(51, 400);
     button_openModelWindow.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
     button_openModelWindow.setLabelText(touchgfx::TypedText(T___SINGLEUSE_LG1U));
     button_openModelWindow.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -247,11 +247,16 @@ void ClosedLoopSettingViewBase::buttonCallbackHandler(const touchgfx::AbstractBu
     }
     if (&src == &button_openModelWindow)
     {
-        //Interaction3
+        //openModelWindow
         //When button_openModelWindow clicked show modalWindow1
         //Show modalWindow1
         modalWindow1.setVisible(true);
         modalWindow1.invalidate();
+    
+        //openModelButton
+        //When openModelWindow completed call virtual function
+        //Call openModelButton
+        openModelButton();
     }
     if (&src == &button_closeModelWindow)
     {
