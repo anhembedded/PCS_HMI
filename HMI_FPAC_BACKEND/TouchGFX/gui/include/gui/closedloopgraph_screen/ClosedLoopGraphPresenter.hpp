@@ -30,7 +30,19 @@ public:
     virtual pidParam_type getPidParam();
 
     void notifyActiveScreen() override;
-
+    float getFeedbackDataPointFormModel()
+    {
+        auto analogIn = model->getAnalogIn();
+        auto modelActual = model->getActualValue();
+        return analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));
+    }
+    void notifyADCChanged(analogIn_type analogParam)
+    {
+    	auto analogIn = model->getAnalogIn();
+    	auto modelActual = model->getActualValue();
+    	auto pidFeedBack = analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));
+    }
+   
 private:
     ClosedLoopGraphPresenter();
 

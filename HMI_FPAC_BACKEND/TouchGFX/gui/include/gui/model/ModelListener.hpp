@@ -28,7 +28,7 @@ public:
         model = m;
     }
 
-    virtual void notifyADCChanged(std::array<uint32_t, 4> newTemperature) {}
+    virtual void notifyADCChanged(analogIn_type analogInParam) {}
     virtual void notifyDigitalInputChanged(digitalIn_type par) {}
     virtual void notifyActiveScreen() {}
    

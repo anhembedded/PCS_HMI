@@ -72,5 +72,6 @@ void u_appAdc_TurnOff()
 
 void u_appAdc_Statup()
 {
+    xQueueReset(adcSendToFrontEndHandle);
     NVIC_EnableIRQ(ADC_IRQn);
 }

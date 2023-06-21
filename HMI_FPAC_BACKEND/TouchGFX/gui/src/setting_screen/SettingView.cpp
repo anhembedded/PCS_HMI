@@ -18,6 +18,7 @@ void SettingView::setupScreen()
 void SettingView::tearDownScreen()
 {
     SettingViewBase::tearDownScreen();
+    
 }
 
 void SettingView::handleTickEvent()
@@ -102,7 +103,7 @@ void SettingView::button_confirm_ClickHandle()
 {
     presenter->setSettingVar(this->settingVar);
 }
-void SettingView::setADC(std::array<uint32_t, 4> arrayParameters)
+void SettingView::setADC()
 {
     this->analogIn = getAnalogIn();
     drawTextAdcIn0(analogIn.getAnalogValueFloat(0));

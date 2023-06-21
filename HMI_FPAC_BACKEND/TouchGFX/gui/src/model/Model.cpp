@@ -40,7 +40,7 @@ void Model::tick()
 
         if (modelListener != nullptr)
         {
-            modelListener->notifyADCChanged(adcValue);
+            modelListener->notifyADCChanged(analogIn);
         }
     }
 

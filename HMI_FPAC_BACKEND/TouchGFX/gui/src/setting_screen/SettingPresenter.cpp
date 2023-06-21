@@ -15,9 +15,9 @@ void SettingPresenter::deactivate()
 {
 }
 
-void SettingPresenter::notifyADCChanged(std::array<uint32_t, 4> arrayParameters)
+void SettingPresenter::notifyADCChanged(analogIn_type analogInParam)
 {
-    view.setADC(arrayParameters);
+    view.setADC();
 }
 void SettingPresenter::notifyDigitalInputChanged(digitalIn_type par)
 {

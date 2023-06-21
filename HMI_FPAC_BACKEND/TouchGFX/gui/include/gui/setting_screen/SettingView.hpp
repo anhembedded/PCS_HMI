@@ -89,7 +89,7 @@ public:
         setDigitalOut(this->digitalOutput);
     }
 
-    void setADC(std::array<uint32_t, 4> arrayParameters);
+    void setADC();
 
     void drawTextAreaFactor0();
     void drawTextAreaFactor1();

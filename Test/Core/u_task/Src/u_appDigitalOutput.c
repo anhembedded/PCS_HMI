@@ -5,9 +5,7 @@ struct u_appDigitalOutputUpdate_type u_appDigitalVar;
 
 TaskHandle_t updateDigitalOutputArrayHandle __attribute__((section(".touchgfxccmram")));
 
-void u_appDigitalOutput_Statup();
-void u_appDigitalOutput_TurnOff();
-void u_appDigitalOutput_Main();
+
 
 static void updateDigitalOutputArray(void *param);
 

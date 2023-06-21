@@ -25,10 +25,10 @@ struct pidParam_type
 };
 enum class actualValue_type
 {
-    level,
-    flowRate,
-    pressure,
-    temperature
+    level = 0,
+    flowRate = 1,
+    pressure = 2,
+    temperature = 3
 };
 enum class activeScreen_type
 {
@@ -43,6 +43,7 @@ enum class activeScreen_type
 
 struct analogIn_type
 {
+    
     const float maxVolage = 10.0F;
     const uint32_t rawAnalogMax = 1024U;
     std::array<uint32_t, 4> u32_10BitAnalogIn;
