@@ -42,6 +42,10 @@ public:
     	auto modelActual = model->getActualValue();
     	auto pidFeedBack = analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));
     }
+    void addFeedbackDataPoint()
+    {
+        
+    }
    
 private:
     ClosedLoopGraphPresenter();
