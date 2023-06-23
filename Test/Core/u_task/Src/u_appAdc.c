@@ -22,7 +22,7 @@ static void updateAdcFrequence(void *param)
 
     while (1)
     {
-        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(10));
+        vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(100));
         /*Start*/
         LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_9);
         LL_ADC_REG_StartConversionSWStart(ADC1);

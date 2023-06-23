@@ -15,6 +15,16 @@
 #else
 
 #endif
+
+namespace pidRange
+{
+   constexpr auto KP_MAX = 10.0F; 
+   constexpr auto KI_MAX = 2.0F; 
+   constexpr auto KD_MAX = 10.0F; 
+   constexpr auto KP_MIN = 1.0F; 
+   constexpr auto KI_MIN = 0.0F; 
+   constexpr auto KD_MIN = 0.0F; 
+}
 struct pidParam_type
 {
     float f_kp;
@@ -41,6 +51,7 @@ enum class activeScreen_type
     closedLoopSettingScreen,
     closedLoopGraphScreen
 };
+
 
 struct analogIn_type
 {

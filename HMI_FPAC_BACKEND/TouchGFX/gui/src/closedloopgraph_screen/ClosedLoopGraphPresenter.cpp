@@ -46,7 +46,9 @@ pidParam_type ClosedLoopGraphPresenter::getPidParam()
     if(model->getActualValue() != actualValue_type::non)
     {
         auto feedbackValue = model->getFeedBackToPresentor();
+        auto setPointFormModel = model->getPidParam().f_setPoint;
         view.addFeedbackDataPoint(feedbackValue);
+        view.addSetPointDataPoint(setPointFormModel);
     }else
     {
         /* no actual be selected, so unnecessary to update feedbackValue*/

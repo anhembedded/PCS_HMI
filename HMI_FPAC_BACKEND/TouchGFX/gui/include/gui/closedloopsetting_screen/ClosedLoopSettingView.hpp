@@ -4,6 +4,7 @@
 #include <gui_generated/closedloopsetting_screen/ClosedLoopSettingViewBase.hpp>
 #include <gui/closedloopsetting_screen/ClosedLoopSettingPresenter.hpp>
 
+
 class ClosedLoopSettingView : public ClosedLoopSettingViewBase
 {
 public:
@@ -39,6 +40,7 @@ public:
 
     virtual void confirmUpdateParamter()
     {
+        pidParamCheckRange();
         presenter->setPidParam(pidParam);
         presenter->setActualValue(this->actualValue);
         presenter->notifyActualValueChanged(this->actualValue);
@@ -86,7 +88,7 @@ public:
         }
     }
    
-             //Todo: update actual
+        
     void updateActualValue()
     {
         this->actualValue = presenter->getActualValueFromModel();
@@ -110,9 +112,31 @@ public:
     {
         presenter->notifyActualValueChanged(actualValue);
     }
+    void pidParamCheckRange()
+    {
+        
+        pidParam.f_kp = constraint(pidParam.f_kp, pidRange::KP_MIN, pidRange::KP_MAX);
+        pidParam.f_ki = constraint(pidParam.f_ki, pidRange::KI_MIN, pidRange::KI_MAX);
+        pidParam.f_kd = constraint(pidParam.f_kd, pidRange::KD_MIN, pidRange::KD_MAX);
+
+    }
 protected:
 private:
     void textFrequencyUpdate();
+    float constraint(float number ,float min, float max)
+    {
+       if (number < min) 
+       {
+        number = min;
+       }else if (number > max)
+       {
+         number = max;
+       }else
+       {
+         // do not thing
+       }
+        return (number);
+    }
     uint32_t u32_tick;
     
 };

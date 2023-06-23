@@ -68,6 +68,16 @@ public:
             /*Do not add graph*/
         }
     }
+    void addSetPointDataPoint(float setPointData)
+    {
+        if(graphState == graphState_type::run)
+        {
+            graphSetpoint.addDataPoint(setPointData);
+        }else
+        {
+            /*Do not add graph*/
+        }
+    }
     void getFeedbackDataPoint()
     {
         auto dataPoint = presenter->getFeedbackDataPointFormModel();

@@ -25,6 +25,7 @@ void ClosedLoopSettingView::tearDownScreen()
 void ClosedLoopSettingView::handleTickEvent()
 {
     this->u32_tick++;
+
     this->textFrequencyUpdate();
 }
 
@@ -53,8 +54,9 @@ void ClosedLoopSettingView::drawTextAreaSetPoint()
 
 void ClosedLoopSettingView::textFrequencyUpdate()
 {
-    if (this->u32_tick % 10)
+    if (this->u32_tick % 50)
     {
+        this->pidParamCheckRange();
         this->drawTextAreaKp();
         this->drawTextAreaKi();
         this->drawTextAreaKd();

@@ -4,7 +4,7 @@
 #endif //  simulator
 
 
-ClosedLoopGraphView::ClosedLoopGraphView()
+ClosedLoopGraphView::ClosedLoopGraphView() : graphState(graphState_type::stop)
 {
   
     diff_constructor(&this->diffVar, 0, 0);
