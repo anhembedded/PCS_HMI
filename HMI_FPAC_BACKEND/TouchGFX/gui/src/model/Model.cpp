@@ -187,10 +187,7 @@ uint32_t Model::modelGetTick()
 }
 #endif // SIMULATOR
 
-float pidParam_type::getFloatSetpint()
-{
-    return 0.0f;
-}
+
 
 float analogIn_type::getAnalogValueFloat(uint32_t indexChannel)
 {

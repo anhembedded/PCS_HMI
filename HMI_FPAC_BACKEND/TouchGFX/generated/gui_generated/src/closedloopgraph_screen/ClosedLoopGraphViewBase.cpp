@@ -34,15 +34,8 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     buttonWithLabel_start.setLabelText(touchgfx::TypedText(T___SINGLEUSE_V6NC));
     buttonWithLabel_start.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel_start.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_start.setAction(buttonCallback);
     add(buttonWithLabel_start);
-
-    buttonWithLabel_clear.setXY(283, 428);
-    buttonWithLabel_clear.setBitmaps(touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
-    buttonWithLabel_clear.setLabelText(touchgfx::TypedText(T___SINGLEUSE_AZT2));
-    buttonWithLabel_clear.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel_clear.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel_clear.setAction(buttonCallback);
-    add(buttonWithLabel_clear);
 
     graphBackgroud.setPosition(10, 6, 780, 380);
     graphBackgroud.setScale(100);
@@ -717,6 +710,14 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     buttonWithLabel_stop.setAction(buttonCallback);
     add(buttonWithLabel_stop);
 
+    buttonWithLabel_clear.setXY(283, 428);
+    buttonWithLabel_clear.setBitmaps(touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
+    buttonWithLabel_clear.setLabelText(touchgfx::TypedText(T___SINGLEUSE_AZT2));
+    buttonWithLabel_clear.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_clear.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel_clear.setAction(buttonCallback);
+    add(buttonWithLabel_clear);
+
     buttonWithLabel_set.setXY(20, 387);
     buttonWithLabel_set.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_PRESSED_ID));
     buttonWithLabel_set.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6CM6));
@@ -730,9 +731,6 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     boxWithBorder2.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder2.setBorderSize(5);
     add(boxWithBorder2);
-
-    digitalOutput1.setXY(0, 358);
-    add(digitalOutput1);
 
     text_analogVal_Kp.setXY(464, 384);
     text_analogVal_Kp.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -760,6 +758,9 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     text_analogVal_Kd.resizeToCurrentText();
     text_analogVal_Kd.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5HQL));
     add(text_analogVal_Kd);
+
+    digitalOutput1.setXY(0, 358);
+    add(digitalOutput1);
 }
 
 ClosedLoopGraphViewBase::~ClosedLoopGraphViewBase()
@@ -784,16 +785,12 @@ void ClosedLoopGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //Go to ClosedLoopSetting with screen transition towards East
         application().gotoClosedLoopSettingScreenCoverTransitionEast();
     }
-    if (&src == &buttonWithLabel_clear)
+    if (&src == &buttonWithLabel_start)
     {
         //startButton_Handle
-        //When buttonWithLabel_clear clicked call virtual function
+        //When buttonWithLabel_start clicked call virtual function
         //Call startButton_Handle
-        startButton_Handle();
-        //clearButton_Handle
-        //When buttonWithLabel_clear clicked call virtual function
-        //Call clearButton_Handle
-        clearButton_Handle();
+        startButton_Handle();
     }
     if (&src == &buttonWithLabel_stop)
     {
@@ -801,5 +798,12 @@ void ClosedLoopGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //When buttonWithLabel_stop clicked call virtual function
         //Call stopButton_Handle
         stopButton_Handle();
+    }
+    if (&src == &buttonWithLabel_clear)
+    {
+        //clearButton_Handle
+        //When buttonWithLabel_clear clicked call virtual function
+        //Call clearButton_Handle
+        clearButton_Handle();
     }
 }

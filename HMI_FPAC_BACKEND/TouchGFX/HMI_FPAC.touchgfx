@@ -3756,29 +3756,6 @@
             "Preset": "dark_theme\\presets\\button\\regular\\height_36\\small_rounded_active.json"
           },
           {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel_clear",
-            "X": 283,
-            "Y": 428,
-            "Width": 138,
-            "Height": 36,
-            "Pressed": "__generated\\light_theme_images_widgets_button_regular_height_36_small_rounded_pressed.png",
-            "Released": "__generated\\light_theme_images_widgets_button_regular_height_36_small_rounded_normal.png",
-            "TextId": "__SingleUse_AZT2",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "light_theme\\presets\\button\\regular\\height_36\\small_rounded_normal.json"
-          },
-          {
             "Type": "DynamicGraph",
             "Name": "graphBackgroud",
             "X": 10,
@@ -3949,6 +3926,29 @@
           },
           {
             "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_clear",
+            "X": 283,
+            "Y": 428,
+            "Width": 138,
+            "Height": 36,
+            "Pressed": "__generated\\light_theme_images_widgets_button_regular_height_36_small_rounded_pressed.png",
+            "Released": "__generated\\light_theme_images_widgets_button_regular_height_36_small_rounded_normal.png",
+            "TextId": "__SingleUse_AZT2",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "light_theme\\presets\\button\\regular\\height_36\\small_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel_set",
             "X": 20,
             "Y": 387,
@@ -3983,15 +3983,6 @@
               "Blue": 255
             },
             "BorderSize": 5
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "digitalOutput1",
-            "Y": 358,
-            "Width": 800,
-            "Height": 121,
-            "LockPosition": true,
-            "CustomContainerDefinitionName": "DigitalOutput"
           },
           {
             "Type": "TextArea",
@@ -4040,6 +4031,15 @@
               "UseBuffer": true,
               "BufferSize": 10
             }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "digitalOutput1",
+            "Y": 358,
+            "Width": 800,
+            "Height": 121,
+            "LockPosition": true,
+            "CustomContainerDefinitionName": "DigitalOutput"
           }
         ],
         "Interactions": [
@@ -4060,7 +4060,7 @@
             "InteractionName": "startButton_Handle",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel_clear"
+              "TriggerComponent": "buttonWithLabel_start"
             },
             "Action": {
               "Type": "ActionCustom",

@@ -17,8 +17,8 @@
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <gui/containers/ButtonDone.hpp>
 #include <gui/containers/DigitalInputIndicator.hpp>
-#include <gui/containers/DigitalOutput.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <gui/containers/DigitalOutput.hpp>
 
 class ClosedLoopGraphViewBase : public touchgfx::View<ClosedLoopGraphPresenter>
 {
@@ -56,7 +56,6 @@ protected:
     SpOpFb spOpFb1;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ButtonWithLabel buttonWithLabel_start;
-    touchgfx::ButtonWithLabel buttonWithLabel_clear;
     touchgfx::GraphWrapAndClear<600> graphBackgroud;
     touchgfx::GraphElementGridX graphBackgroudMajorXAxisGrid;
     touchgfx::GraphElementGridY graphBackgroudMajorYAxisGrid;
@@ -71,12 +70,13 @@ protected:
     ButtonDone buttonDone1;
     DigitalInputIndicator digitalInputIndicator1;
     touchgfx::ButtonWithLabel buttonWithLabel_stop;
+    touchgfx::ButtonWithLabel buttonWithLabel_clear;
     touchgfx::ButtonWithLabel buttonWithLabel_set;
     touchgfx::BoxWithBorder boxWithBorder2;
-    DigitalOutput digitalOutput1;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kp;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Ki;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kd;
+    DigitalOutput digitalOutput1;
 
     /*
      * Wildcard Buffers

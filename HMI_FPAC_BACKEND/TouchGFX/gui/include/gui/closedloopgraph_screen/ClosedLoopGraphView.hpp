@@ -23,6 +23,15 @@ public:
     virtual void tearDownScreen();
 
     virtual void handleTickEvent();
+    virtual void	afterTransition()
+    {
+    	this->graphFeadback.setVisible(true);
+        this->graphFeadback.setVisible(true);
+        this->graphFeadback.setVisible(true);
+    }
+    
+    
+    
      virtual void startButton_Handle()
     {
        this->graphState = graphState_type::run;
@@ -58,6 +67,8 @@ public:
     void getFeedbackDataPoint()
     {
         auto dataPoint = presenter->getFeedbackDataPointFormModel();
+        auto setPointFromModel = presenter->getPidParam().f_setPoint;
+        graphSetpoint.addDataPoint(setPointFromModel);
         graphFeadback.addDataPoint(dataPoint);
     }
 protected:
