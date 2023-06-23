@@ -25,9 +25,13 @@ public:
     virtual void handleTickEvent();
     virtual void	afterTransition()
     {
-    	this->graphFeadback.setVisible(true);
         this->graphFeadback.setVisible(true);
-        this->graphFeadback.setVisible(true);
+        this->graphBackgroud.setVisible(true);
+        this->graphSetpoint.setVisible(true);
+        this->graphBackgroud.invalidate();
+        this->graphFeadback.invalidate();
+        this->graphSetpoint.invalidate();
+        
     }
     
     

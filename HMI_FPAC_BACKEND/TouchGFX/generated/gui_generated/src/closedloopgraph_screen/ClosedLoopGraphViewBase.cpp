@@ -42,6 +42,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     graphBackgroud.setGraphAreaMargin(17, 24, 0, 29);
     graphBackgroud.setGraphAreaPadding(0, 0, 10, 0);
     graphBackgroud.setGraphRangeY(-1.0f, 10.3f);
+    graphBackgroud.setVisible(false);
     graphBackgroudMajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
     graphBackgroudMajorXAxisGrid.setInterval(30);
     graphBackgroudMajorXAxisGrid.setLineWidth(1);
@@ -76,6 +77,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     graphFeadback.setGraphAreaMargin(17, 24, 0, 29);
     graphFeadback.setGraphAreaPadding(0, 0, 10, 0);
     graphFeadback.setGraphRangeY(-1.0f, 10.3f);
+    graphFeadback.setVisible(false);
     graphFeadbackLine1Painter.setColor(touchgfx::Color::getColorFromRGB(188, 0, 201));
     graphFeadbackLine1.setPainter(graphFeadbackLine1Painter);
     graphFeadbackLine1.setLineWidth(2);
@@ -88,6 +90,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     graphSetpoint.setGraphAreaMargin(17, 24, 0, 29);
     graphSetpoint.setGraphAreaPadding(0, 0, 10, 0);
     graphSetpoint.setGraphRangeY(-1.0f, 10.3f);
+    graphSetpoint.setVisible(false);
     graphSetpointLine1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     graphSetpointLine1.setPainter(graphSetpointLine1Painter);
     graphSetpointLine1.setLineWidth(1);
