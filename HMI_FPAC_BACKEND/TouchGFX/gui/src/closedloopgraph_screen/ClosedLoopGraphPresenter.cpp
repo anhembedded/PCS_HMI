@@ -26,3 +26,30 @@ pidParam_type ClosedLoopGraphPresenter::getPidParam()
 {
     model->updateActiveScreen(view.getActiveScreen());
 }
+
+  float ClosedLoopGraphPresenter::getFeedbackDataPointFormModel()
+ {
+     auto analogIn = model->getAnalogIn();
+     auto modelActual = model->getActualValue();
+     return analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));
+ }
+
+  void ClosedLoopGraphPresenter::notifyADCChanged(analogIn_type analogParam)
+ {
+     auto analogIn = model->getAnalogIn();
+     auto modelActual = model->getActualValue();
+     auto pidFeedBack = analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));
+ }
+
+   void ClosedLoopGraphPresenter::sendFeedbackToView()
+  {
+    if(model->getActualValue() != actualValue_type::non)
+    {
+        auto feedbackValue = model->getFeedBackToPresentor();
+        view.addFeedbackDataPoint(feedbackValue);
+    }else
+    {
+        /* no actual be selected, so unnecessary to update feedbackValue*/
+    }
+      
+  }

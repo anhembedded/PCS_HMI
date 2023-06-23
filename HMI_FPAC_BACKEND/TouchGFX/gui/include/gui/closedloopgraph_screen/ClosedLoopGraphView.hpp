@@ -9,7 +9,7 @@ extern "C"
 #include <gui_generated/closedloopgraph_screen/ClosedLoopGraphViewBase.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 
-enum class graphState {
+enum class graphState_type {
     stop,
     run,
     clear
@@ -23,7 +23,19 @@ public:
     virtual void tearDownScreen();
 
     virtual void handleTickEvent();
-
+     virtual void startButton_Handle()
+    {
+       this->graphState = graphState_type::run;
+    }
+    virtual void stopButton_Handle()
+    {
+        this->graphState = graphState_type::stop;
+    }
+    virtual void clearButton_Handle()
+    {
+        this->graphState = graphState_type::clear;
+        graphFeadback.clear();
+    }
    
     void notifyActiveScreen()
     {
@@ -35,7 +47,13 @@ public:
     }
     void addFeedbackDataPoint(float dataPoint)
     {
-        graphFeadback.addDataPoint(dataPoint);
+        if(graphState == graphState_type::run)
+        {
+            graphFeadback.addDataPoint(dataPoint);
+        }else
+        {
+            /*Do not add graph*/
+        }
     }
     void getFeedbackDataPoint()
     {
@@ -49,11 +67,11 @@ private:
     uint32_t viewTick;
     pidParam_type pidParam;
     float mathTick;
+    graphState_type graphState; 
 
     void drawTextAreaKp();
     void drawTextAreaKi();
     void drawTextAreaKd();
-    
     struct diff_type diffVar;
 
 

@@ -41,6 +41,7 @@ void Model::tick()
         if (modelListener != nullptr)
         {
             modelListener->notifyADCChanged(analogIn);
+            modelListener->sendFeedbackToView();
         }
     }
 

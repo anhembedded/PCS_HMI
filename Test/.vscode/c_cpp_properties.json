@@ -19,7 +19,8 @@
                 "${workspaceFolder}/Middlewares/Third_Party/FreeRTOS/org/Source/",
                 "${workspaceFolder}/Core/u_driver/Src/",
                 "${workspaceFolder}/Core/u_task/Src/",
-                "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/arm-none-eabi/include"
+                "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/arm-none-eabi/include",
+                "${workspaceFolder}/Core/Inc"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

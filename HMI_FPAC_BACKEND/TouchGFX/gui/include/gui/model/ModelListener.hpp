@@ -31,6 +31,7 @@ public:
     virtual void notifyADCChanged(analogIn_type analogInParam) {}
     virtual void notifyDigitalInputChanged(digitalIn_type par) {}
     virtual void notifyActiveScreen() {}
+    virtual void sendFeedbackToView(){}
    
 
 protected:

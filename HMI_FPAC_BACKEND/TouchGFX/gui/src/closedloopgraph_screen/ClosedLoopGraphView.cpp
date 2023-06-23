@@ -40,8 +40,6 @@ void ClosedLoopGraphView::handleTickEvent()
     graphSetpoint.addDataPoint(diff_var);
     spOpFb1.drawLineProgressOutput((int)viewTick % 1023u);
 #endif // SIMULATOR
-
-   
 }
 
 void ClosedLoopGraphView::updateScreenParam()

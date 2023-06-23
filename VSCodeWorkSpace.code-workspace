@@ -79,7 +79,8 @@
 			"queue.h": "c",
 			"u_appdigitalinput.h": "c",
 			"cstring": "cpp",
-			"cinttypes": "cpp"
+			"cinttypes": "cpp",
+			"main.h": "c"
 		},
 		"cSpell.enabled": false
 	}

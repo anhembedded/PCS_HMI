@@ -28,7 +28,8 @@ enum class actualValue_type
     level = 0,
     flowRate = 1,
     pressure = 2,
-    temperature = 3
+    temperature = 3,
+    non
 };
 enum class activeScreen_type
 {
@@ -153,6 +154,10 @@ public:
     {
         this->actualValue = actualValueParam;
         touchgfx_printf("actual: %d \n", actualValue);
+    }
+    float getFeedBackToPresentor()
+    {
+        return analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
     }
     
 protected:
