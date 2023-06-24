@@ -11,6 +11,7 @@ uint32_t u32_applicationAdc_ptr __attribute__((section(".touchgfxccmram")));
 TaskHandle_t updateAdcFrequenceHandle __attribute__((section(".touchgfxccmram")));
 QueueHandle_t adcSendToFrontEndHandle __attribute__((section(".touchgfxccmram")));
 
+
 extern uint32_t adcVar;
 static void updateAdcFrequence(void *param);
 
@@ -26,29 +27,30 @@ static void updateAdcFrequence(void *param)
         /*Start*/
         LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_9);
         LL_ADC_REG_StartConversionSWStart(ADC1);
-        /*Wait for end of conversion*/
+        /*Wait for end of conversion, Interrupt give Notify when compleet*/
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         /*TransferData*/
         u32_applicationAdc[0] = adcVar;
         LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_12);
         LL_ADC_REG_StartConversionSWStart(ADC1);
-        /*Wait for end of conversion*/
+        /*Wait for end of conversion, Interrupt give Notify when compleet*/
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         /*TransferData*/
         u32_applicationAdc[1] = adcVar;
         LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_13);
         LL_ADC_REG_StartConversionSWStart(ADC1);
-        /*Wait for end of conversion*/
+        /*Wait for end of conversion, Interrupt give Notify when compleet*/
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         /*TransferData*/
         u32_applicationAdc[2] = adcVar;
         LL_ADC_REG_SetSequencerRanks(ADC1, LL_ADC_REG_RANK_1, LL_ADC_CHANNEL_14);
         LL_ADC_REG_StartConversionSWStart(ADC1);
-        /*Wait for end of conversion*/
+        /*Wait for end of conversion, Interrupt give Notify when compleet*/
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
         /*TransferData*/
         u32_applicationAdc[3] = adcVar;
         xQueueSend(adcSendToFrontEndHandle, &u32_applicationAdc_ptr, 0);
+        
     }
 }
 void u_appAdcCreate()
