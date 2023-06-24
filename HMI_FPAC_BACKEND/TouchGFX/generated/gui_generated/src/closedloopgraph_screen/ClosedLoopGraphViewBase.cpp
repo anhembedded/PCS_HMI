@@ -44,7 +44,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     graphBackgroud.setGraphAreaPadding(0, 0, 10, 0);
     graphBackgroud.setGraphRangeY(-1.0f, 11.3f);
     graphBackgroudMajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
-    graphBackgroudMajorXAxisGrid.setInterval(100);
+    graphBackgroudMajorXAxisGrid.setInterval(250);
     graphBackgroudMajorXAxisGrid.setLineWidth(1);
     graphBackgroudMajorXAxisGrid.setAlpha(64);
     graphBackgroudMajorXAxisGrid.setScale(100);
@@ -57,7 +57,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     graphBackgroudMajorYAxisGrid.setScale(100);
     graphBackgroud.addGraphElement(graphBackgroudMajorYAxisGrid);
 
-    graphBackgroudMajorXAxisLabel.setInterval(100);
+    graphBackgroudMajorXAxisLabel.setInterval(500);
     graphBackgroudMajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_8LM6));
     graphBackgroudMajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(74, 74, 74));
     graphBackgroudMajorXAxisLabel.setScale(100);

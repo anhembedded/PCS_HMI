@@ -56,15 +56,15 @@ protected:
     SpOpFb spOpFb1;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ButtonWithLabel buttonWithLabel_start;
-    touchgfx::GraphWrapAndClear<7000> graphBackgroud;
+    touchgfx::GraphWrapAndClear<700> graphBackgroud;
     touchgfx::GraphElementGridX graphBackgroudMajorXAxisGrid;
     touchgfx::GraphElementGridY graphBackgroudMajorYAxisGrid;
     touchgfx::GraphLabelsX graphBackgroudMajorXAxisLabel;
     touchgfx::GraphLabelsY graphBackgroudMajorYAxisLabel;
-    touchgfx::GraphWrapAndClear<7000> graphFeadback;
+    touchgfx::GraphWrapAndClear<700> graphFeadback;
     touchgfx::GraphElementLine graphFeadbackLine1;
     touchgfx::PainterRGB565 graphFeadbackLine1Painter;
-    touchgfx::GraphWrapAndClear<7000> graphSetpoint;
+    touchgfx::GraphWrapAndClear<700> graphSetpoint;
     touchgfx::GraphElementLine graphSetpointLine1;
     touchgfx::PainterRGB565 graphSetpointLine1Painter;
     ButtonDone buttonDone1;
