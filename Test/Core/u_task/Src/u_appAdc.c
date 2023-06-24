@@ -1,4 +1,5 @@
 #include "u_appAdc.h"
+#include "u_appPid.h"
 #include "stm32f4xx_ll_adc.h"
 
 uint32_t u32_enableAdc;
@@ -50,7 +51,7 @@ static void updateAdcFrequence(void *param)
         /*TransferData*/
         u32_applicationAdc[3] = adcVar;
         xQueueSend(adcSendToFrontEndHandle, &u32_applicationAdc_ptr, 0);
-        
+        xQueueSend(u_pid_queue_feedbackHandle,&u32_applicationAdc_ptr, 0);
     }
 }
 void u_appAdcCreate()

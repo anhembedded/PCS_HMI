@@ -80,7 +80,8 @@
 			"u_appdigitalinput.h": "c",
 			"cstring": "cpp",
 			"cinttypes": "cpp",
-			"main.h": "c"
+			"main.h": "c",
+			"u_apppid.h": "c"
 		},
 		"cSpell.enabled": false
 	}
