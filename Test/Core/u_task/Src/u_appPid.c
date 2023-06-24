@@ -69,10 +69,10 @@ static void pidInit();
 
 uint32_t u_appPid_GetFeedBack();
 
-TaskHandle_t u_pidSim_task_PidSimHandle;
-TaskHandle_t u_pidSim_task_PidSimSetupHandle;
-TaskHandle_t u_pidSim_task_PidSimControlHandle;
-TaskHandle_t u_pidSim_task_UpdateOutputHandle;
+TaskHandle_t u_task_PidHandle;
+TaskHandle_t u_task_PidSimSetupHandle;
+TaskHandle_t u_task_PidSimControlHandle;
+TaskHandle_t u_task_UpdateOutputHandle;
 
 QueueHandle_t u_pid_queue_feedbackHandle;
 QueueHandle_t u_pidSim_queue_messageControl;
@@ -83,9 +83,9 @@ void u_appPidCreate()
     BaseType_t status;
     pidInit();
     u_pid_queue_feedbackHandle = xQueueCreate(1, sizeof(uint32_t *));
-    status = xTaskCreate(u_appPid_pdiCompute, "PidSimTask", 200, NULL, 5, &u_pidSim_task_PidSimHandle);
+    status = xTaskCreate(u_appPid_pdiCompute, "PidSimTask", 200, NULL, 5, &u_task_PidHandle);
     configASSERT(status == pdPASS);
-    status = xTaskCreate(u_appPid_updateOutput, "UpdateOutputTask", 200, NULL, 5, &u_pidSim_task_UpdateOutputHandle);
+    status = xTaskCreate(u_appPid_updateOutput, "UpdateOutputTask", 200, NULL, 5, &u_task_UpdateOutputHandle);
     configASSERT(status == pdPASS);
 }
 void u_pidSimUpdateOutput(void *param);
@@ -117,7 +117,7 @@ void u_appPid_pdiCompute(void *param)
         vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(pidParam.sampleTime));
         u_appPid_feedback = u_appPid_GetFeedBack();
         PID_Compute(&PID_Oject);
-        xTaskNotifyGive(u_pidSim_task_UpdateOutputHandle); // Unblock for Task::u_appPid_updateOutput
+      //  xTaskNotifyGive(u_task_UpdateOutputHandle); // Unblock for Task::u_appPid_updateOutput
     }
 }
 
