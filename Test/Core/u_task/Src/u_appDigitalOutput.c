@@ -12,7 +12,7 @@ static void updateDigitalOutputArray(void *param);
 void u_appDigitalOutputCreate()
 {
     BaseType_t status;
-    status = xTaskCreate(updateDigitalOutputArray, "updateDigitalOutputArrayTask", 200, NULL, 2, &updateDigitalOutputArrayHandle);
+    status = xTaskCreate(updateDigitalOutputArray, "uDdigitalOut", 200, NULL, 2, &updateDigitalOutputArrayHandle);
     configASSERT(status == pdPASS);
 }
 

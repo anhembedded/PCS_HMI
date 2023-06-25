@@ -21,7 +21,7 @@ void u_appDigitalInputCreate()
     u32_applicationInputState_ptr = (uint32_t)&u32_applicationInputState[0];
     queue_digitalInputHandler = xQueueCreate(1, sizeof(uint32_t *));
 
-    status = xTaskCreate(updateDigitalInput, "task_updateDigitalInputTask", 200, NULL, 2, &task_updateDigitalInputHandle);
+    status = xTaskCreate(updateDigitalInput, "uDdigitalIn", 200, NULL, 2, &task_updateDigitalInputHandle);
     configASSERT(status == pdPASS);
 }
 

@@ -1,0 +1,46 @@
+
+
+OpenDocument="main.c", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/Core/Src/main.c", Line=128
+OpenDocument="SEGGER_SYSVIEW.c", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/Middlewares/SEGGER/SEGGER/SEGGER_SYSVIEW.c", Line=2766
+OpenDocument="stm32f4xx_hal.c", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c", Line=317
+OpenDocument="stm32f4xx_hal_qspi.c", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c", Line=2701
+OpenDocument="startup_stm32f469nihx.s", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/STM32CubeIDE/Application/Startup/startup_stm32f469nihx.s", Line=70
+OpenDocument="u_appPid.c", FilePath="C:/Project/PCS_HMI/Test/Core/u_task/Src/u_appPid.c", Line=74
+OpenDocument="SEGGER_RTT_ASM_ARMv7M.S", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/Middlewares/SEGGER/SEGGER/SEGGER_RTT_ASM_ARMv7M.S", Line=215
+OpenToolbar="Debug", Floating=0, x=0, y=0
+OpenToolbar="Breakpoints", Floating=0, x=1, y=0
+OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=1, w=621, h=120, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=621, h=183, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=621, h=164, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=0, w=639, h=142, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=254
+OpenWindow="Functions", DockArea=LEFT, x=0, y=1, w=639, h=86, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Call Graph", DockArea=LEFT, x=0, y=2, w=639, h=86, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Memory Usage", DockArea=BOTTOM, x=0, y=0, w=323, h=473, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Code Profile", DockArea=LEFT, x=0, y=3, w=639, h=152, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, GroupByFiles=0, SortRespectsFilters=0, ParentRelativeLoad=0
+OpenWindow="Data Sampling", DockArea=BOTTOM, x=2, y=0, w=463, h=473, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=0, UniformSampleSpacing=0
+OpenWindow="Timeline", DockArea=BOTTOM, x=3, y=0, w=676, h=473, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=1, CodePaneShown=1, PinCursor="Cursor Movable", TimePerDiv="1 ns / Div", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="512;56", DataGraphShowNamesAtCursor=0, PowerGraphDrawAsPoints=0, PowerGraphLegendShown=1, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="515;0", CodeGraphLegendShown=1, CodeGraphLegendPosition="515;0"
+OpenWindow="Console", DockArea=BOTTOM, x=1, y=0, w=455, h=473, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
+TableHeader="Vector Catches", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Vector Catch";"Description"], ColWidths=[50;300;500]
+TableHeader="Break & Tracepoints", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Type";"Location";"Extras"], ColWidths=[100;100;100;339]
+TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Class";"Source"], ColWidths=[1236;100;100;100;242;242]
+TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source";"PC";"Return Address";"Stack Used"], ColWidths=[209;112;100;100;168;100]
+TableHeader="Call Graph", SortCol="Stack Total", SortOrder="ASCENDING", VisibleCols=["Name";"Stack Total";"Stack Local";"Code Total";"Code Local";"Depth";"Called From"], ColWidths=[240;100;100;100;100;100;100]
+TableHeader="Code Profile", SortCol="Inst. Coverage", SortOrder="DESCENDING", VisibleCols=["File / Function";"Source Coverage";"Inst. Coverage";"Run Count";"Fetch Count";"Load"], ColWidths=[407;112;125;100;100;100]
+TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time"], ColWidths=[100;457]
+TableHeader="Data Sampling Setup", SortCol="Expression", SortOrder="DESCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[100;100;100;100;100;100;100;100;100]
+TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="System Information", SortCol="None", SortOrder="ASCENDING", VisibleCols=["System Information";"Value"], ColWidths=[110;110]
+TableHeader="Readers-Writer Lock", SortCol="None", SortOrder="ASCENDING", VisibleCols=["RW Lock";"Name";"Status";"Max. number of tokens";"Tokens left"], ColWidths=[110;110;110;110;110]
+TableHeader="Watchdogs", SortCol="None", SortOrder="ASCENDING", VisibleCols=["WatchDogs";"Name";"Timeout";"Period"], ColWidths=[110;110;110;110]
+TableHeader="Event Objects", SortCol="None", SortOrder="ASCENDING", VisibleCols=["EventObjects";"Name";"Signaled";"Reset Mode";"Mask Mode";"Waiting Tasks"], ColWidths=[110;110;110;110;110;110]
+TableHeader="Memory Pools", SortCol="None", SortOrder="ASCENDING", VisibleCols=["MemoryPools";"Name";"Total Blocks";"Block Size";"Max. Usage";"Buffer Address";"Waiting Tasks"], ColWidths=[110;110;110;110;110;110;110]
+TableHeader="Semaphores", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Semaphores";"Name";"Count";"Waiting Tasks"], ColWidths=[110;110;110;110]
+TableHeader="Mutexes", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Mutexes";"Name";"Owner";"Use Counter";"Waiting Tasks"], ColWidths=[110;110;110;110;110]
+TableHeader="Queues", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Queues";"Name";"Messages";"Buffer Address";"Buffer Size";"Waiting Tasks"], ColWidths=[110;110;110;110;110;110]
+TableHeader="Mailboxes", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Mailboxes";"Name";"Messages";"Message Size";"Buffer Address";"Waiting Tasks";"In Use"], ColWidths=[110;110;110;110;110;110;110]
+TableHeader="Timers", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Timers";"Name";"Hook";"Timeout";"Period"], ColWidths=[110;110;110;110;110]
+TableHeader="Task List", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Name";"Run Count";"Priority";"Status";"Timeout";"Stack Info";"ID";"Mutex Count";"Notified Value";"Notify State"], ColWidths=[110;110;110;110;110;110;110;110;110;110]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[169;105;330]
+TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[26;26;26;31]

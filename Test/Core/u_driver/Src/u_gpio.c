@@ -12,6 +12,7 @@
 #include <u_gpio.h>
 #include <u_pwm.h>
 #include <u_rcc.h>
+#include "SEGGER_SYSVIEW.h"
 
 /*
 LED1 PG6 Non GPIOG Green
@@ -359,7 +360,7 @@ void digitalInputChangedHandler_6() {
  */
 void EXTI9_5_IRQHandler(void) {
   /* USER CODE BEGIN EXTI9_5_IRQn 0 */
-
+   SEGGER_SYSVIEW_RecordEnterISR();
   /* USER CODE END EXTI9_5_IRQn 0 */
 
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_6) != RESET) {
@@ -377,7 +378,7 @@ void EXTI9_5_IRQHandler(void) {
     /* USER CODE END LL_EXTI_LINE_7 */
   }
   /* USER CODE BEGIN EXTI9_5_IRQn 1 */
-
+SEGGER_SYSVIEW_RecordExitISR();
   /* USER CODE END EXTI9_5_IRQn 1 */
 }
 
@@ -386,7 +387,7 @@ void EXTI9_5_IRQHandler(void) {
  */
 void EXTI15_10_IRQHandler(void) {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-
+   SEGGER_SYSVIEW_RecordEnterISR();
   /* USER CODE END EXTI15_10_IRQn 0 */
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_10) != RESET) {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_10);
@@ -417,13 +418,13 @@ void EXTI15_10_IRQHandler(void) {
     /* USER CODE END LL_EXTI_LINE_15 */
   }
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-
+SEGGER_SYSVIEW_RecordExitISR();
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 
 void EXTI3_IRQHandler(void) {
   /* USER CODE BEGIN EXTI3_IRQn 0 */
-
+   SEGGER_SYSVIEW_RecordEnterISR();
   /* USER CODE END EXTI3_IRQn 0 */
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_3) != RESET) {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_3);
@@ -433,6 +434,6 @@ void EXTI3_IRQHandler(void) {
     /* USER CODE END LL_EXTI_LINE_3 */
   }
   /* USER CODE BEGIN EXTI3_IRQn 1 */
-
+SEGGER_SYSVIEW_RecordExitISR();
   /* USER CODE END EXTI3_IRQn 1 */
 }

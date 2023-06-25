@@ -6,6 +6,7 @@
 #include "stm32f4xx.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "SEGGER_SYSVIEW.h"
 
 
 uint32_t adcVar;
@@ -171,6 +172,7 @@ void u_adc_initSingleConversion(void)
 
 void ADC_IRQHandler()
 {
+    SEGGER_SYSVIEW_RecordEnterISR();
 	BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 	if(LL_ADC_IsActiveFlag_EOCS(ADC1))
 	{
@@ -186,7 +188,9 @@ void ADC_IRQHandler()
 		LL_ADC_ClearFlag_OVR(ADC1);
 	}
     __NVIC_ClearPendingIRQ(ADC_IRQn);
+    
     portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+    SEGGER_SYSVIEW_RecordExitISRToScheduler();
 }
 
 

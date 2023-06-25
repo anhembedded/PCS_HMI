@@ -74,9 +74,9 @@ void u_appPidCreate()
     BaseType_t status;
     pidInit();
     u_pid_queue_feedbackHandle = xQueueCreate(1, sizeof(uint32_t *));
-    status = xTaskCreate(u_appPid_pdiCompute, "PidTask", 200, NULL, 2, &u_task_PidHandle);
+    status = xTaskCreate(u_appPid_pdiCompute, "Pid", 200, NULL, 2, &u_task_PidHandle);
     configASSERT(status == pdPASS);
-    status = xTaskCreate(u_appid_updateOutput, "UpdateOutputTask", 200, NULL, 2, &u_task_UpdateOutputHandle);
+    status = xTaskCreate(u_appid_updateOutput, "PidOut", 200, NULL, 2, &u_task_UpdateOutputHandle);
     configASSERT(status == pdPASS);
 }
 
@@ -93,13 +93,11 @@ void u_appPid_pdiCompute(void *param)
 {
     TickType_t xLastWakeTime;
     xLastWakeTime = xTaskGetTickCount();
-  
-
     while (1)
     {
         vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(pidParam.sampleTime));
-        u_appPid_updateFeedback();
         PID_Compute(&PID_Oject);
+        u_appPid_updateFeedback();
         xTaskNotifyGive(u_task_UpdateOutputHandle); // Unblock for Task::u_appPid_updateOutput
     }
 }
@@ -125,11 +123,8 @@ void u_appid_updateOutput(void *param)
 	while(1)
 	{
 		// ulTaskNotifyTake(pdTRUE, portMAX_DELAY);// Notify pid::output had beed computed here
-		BaseType_t isRecieved = xQueueReceive(u_pid_queue_feedbackHandle, &u32_feedback_ptr, 0);
-		 if(isRecieved == 1U)
-		  {
-			 //Send output to driver
-		  }
+		vTaskDelay(pdMS_TO_TICKS(30000));
+		 
 	}
 }
 

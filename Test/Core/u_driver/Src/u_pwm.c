@@ -2,6 +2,7 @@
 #include <u_gpio.h>
 #include <u_pwm.h>
 #include <u_rcc.h>
+#include "SEGGER_SYSVIEW.h"
 
 #define CH2_PIN AO_0_PIN
 #define CH2_PORT AO_0_PORT
@@ -179,6 +180,8 @@ static void u_pwm_clearUpdateFlag()
 
 void TIM5_IRQHandler()
 {
+	 SEGGER_SYSVIEW_RecordEnterISR();
     u_pwm_setDutyCycleISR(u_pwm_dutyCycleValue);
     __NVIC_ClearPendingIRQ(TIM5_IRQn);
+    SEGGER_SYSVIEW_RecordExitISR();
 }

@@ -133,8 +133,7 @@ void initCcmRam()
  */
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
-  initCcmRam();
+  /* USER CODE BEGIN 1 */  initCcmRam();
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -153,6 +152,7 @@ int main(void)
   NVIC_SetPriorityGrouping( 0 );
   SEGGER_SYSVIEW_Conf();
   SEGGER_SYSVIEW_Start();
+
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -170,7 +170,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   u_gpio_OnboardInit_LED();
   u_pwm_init();
-  // u_adc_Init();
+   u_adc_Init();
   u_adc_initSingleConversion();
   LL_ADC_Enable(ADC1);
   HAL_Delay(10);
