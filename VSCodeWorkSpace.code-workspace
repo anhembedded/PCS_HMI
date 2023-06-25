@@ -81,7 +81,8 @@
 			"cstring": "cpp",
 			"cinttypes": "cpp",
 			"main.h": "c",
-			"u_apppid.h": "c"
+			"u_apppid.h": "c",
+			"segger_sysview.h": "c"
 		},
 		"cSpell.enabled": false
 	}

@@ -32,6 +32,8 @@
 #define USE_FULL_LL_DRIVER
 #endif
 
+#include "SEGGER_SYSVIEW.h"
+
 #include "u_adc.h"
 #include "u_gpio.h"
 #include "u_pwm.h"
@@ -148,7 +150,8 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  SEGGER_SYSVIEW_Conf();
+  SEGGER_SYSVIEW_Start();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
