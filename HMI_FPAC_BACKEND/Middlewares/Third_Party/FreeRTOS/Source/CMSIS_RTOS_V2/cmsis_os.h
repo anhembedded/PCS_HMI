@@ -120,8 +120,8 @@
  *    - changed flags parameter and return type from int32_t to uint32_t
  *---------------------------------------------------------------------------*/
  
-#ifndef FREERTOS_SOURCE_CMSIS_RTOS_V2_CMSIS_OS
-#define FREERTOS_SOURCE_CMSIS_RTOS_V2_CMSIS_OS
+#ifndef CMSIS_OS_H_
+#define CMSIS_OS_H_
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -843,4 +843,4 @@ osStatus osMailFree (osMailQId queue_id, void *mail);
 }
 #endif
  
-#endif /* FREERTOS_SOURCE_CMSIS_RTOS_V2_CMSIS_OS */
+#endif  // CMSIS_OS_H_
