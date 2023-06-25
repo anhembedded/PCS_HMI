@@ -169,7 +169,9 @@ standard names. */
 #define traceTASK_SWITCHED_OUT() xTaskCallApplicationTaskHook( pxCurrentTCB, (void*)1 )
 #define traceTASK_SWITCHED_IN() xTaskCallApplicationTaskHook( pxCurrentTCB, (void*)0 )
 
+#ifdef USE_SEGGER_SYSVIEW
 #include "SEGGER_SYSVIEW_FreeRTOS.h"
+#endif
 /* USER CODE END Defines */
 
 #endif /* FREERTOS_CONFIG_H */
