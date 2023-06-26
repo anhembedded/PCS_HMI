@@ -55,7 +55,7 @@
 #define CMSIS_device_header "stm32f4xx.h"
 #endif /* CMSIS_device_header */
 
-#define configENABLE_FPU                         0
+#define configENABLE_FPU                         1
 #define configENABLE_MPU                         0
 
 #define configUSE_PREEMPTION                     1
@@ -172,6 +172,7 @@ standard names. */
 #ifdef USE_SEGGER_SYSVIEW
 #include "SEGGER_SYSVIEW_FreeRTOS.h"
 #endif
+ 
 /* USER CODE END Defines */
 
 #endif /* FREERTOS_CONFIG_H */
