@@ -23,6 +23,10 @@ PID_TypeDef PID_Oject;
 #define U_APP_PID_MESSAGE_CONTROL_ON 0b01
 #define U_APP_PID_MESSAGE_CONTROL_UPDATE_PID 0b10
 
+#define U_APP_PID_ACTUAL_LEVEL 0b
+#define U_APP_PID_ACTUAL_PRESSURE 1u
+
+
 /*
  * MessControl:
  *

@@ -9,14 +9,14 @@ OpenDocument="u_appPid.c", FilePath="C:/Project/PCS_HMI/Test/Core/u_task/Src/u_a
 OpenDocument="SEGGER_RTT_ASM_ARMv7M.S", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/Middlewares/SEGGER/SEGGER/SEGGER_RTT_ASM_ARMv7M.S", Line=215
 OpenToolbar="Debug", Floating=0, x=0, y=0
 OpenToolbar="Breakpoints", Floating=0, x=1, y=0
-OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=1, w=621, h=124, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=621, h=180, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
-OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=621, h=163, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=0, w=639, h=139, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=254
-OpenWindow="Functions", DockArea=LEFT, x=0, y=1, w=639, h=90, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Call Graph", DockArea=LEFT, x=0, y=2, w=639, h=90, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=1, w=621, h=127, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=621, h=178, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=0, w=621, h=162, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=0, w=639, h=136, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=254
+OpenWindow="Functions", DockArea=LEFT, x=0, y=1, w=639, h=94, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Call Graph", DockArea=LEFT, x=0, y=2, w=639, h=93, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Memory Usage", DockArea=BOTTOM, x=0, y=0, w=323, h=473, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Code Profile", DockArea=LEFT, x=0, y=3, w=639, h=147, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, GroupByFiles=0, SortRespectsFilters=0, ParentRelativeLoad=0
+OpenWindow="Code Profile", DockArea=LEFT, x=0, y=3, w=639, h=143, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, GroupByFiles=0, SortRespectsFilters=0, ParentRelativeLoad=0
 OpenWindow="Data Sampling", DockArea=BOTTOM, x=2, y=0, w=463, h=473, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=0, UniformSampleSpacing=0
 OpenWindow="Timeline", DockArea=BOTTOM, x=3, y=0, w=676, h=473, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=1, DataPaneShown=1, PowerPaneShown=1, CodePaneShown=1, PinCursor="Cursor Movable", TimePerDiv="1 ns / Div", TimeStampFormat="Time", DataGraphDrawAsPoints=0, DataGraphLegendShown=1, DataGraphUniformSampleSpacing=0, DataGraphLegendPosition="513;57", DataGraphShowNamesAtCursor=0, PowerGraphDrawAsPoints=0, PowerGraphLegendShown=1, PowerGraphAvgFilterTime=Off, PowerGraphAvgFilterLen=Off, PowerGraphUniformSampleSpacing=0, PowerGraphLegendPosition="516;0", CodeGraphLegendShown=1, CodeGraphLegendPosition="516;0"
 OpenWindow="Console", DockArea=BOTTOM, x=1, y=0, w=455, h=473, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
