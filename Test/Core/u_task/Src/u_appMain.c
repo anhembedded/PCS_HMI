@@ -44,14 +44,15 @@ void u_appMainCreate() {
 
 static void mainApplication(void *param) {
   while (1) {
-    /*  xQueueReceive(u_appMain_queue_taskState,u_appMain_tasksArray,
-     portMAX_DELAY); if(u_appMain_tasksArray[appADC] == 1)
+      xQueueReceive(u_appMain_queue_taskState,u_appMain_tasksArray,
+     portMAX_DELAY); 
+     if(u_appMain_tasksArray[appADC] == 1)
      {
 
      }else
      {
 
-     } */
+     } 
 	  vTaskDelay(pdMS_TO_TICKS(30000));
   }
 }
