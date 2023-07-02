@@ -21,10 +21,7 @@ enum task_index
     appPid,
     appPwm
 };
-enum system_State
-{
-    
-}
+
 
 
 extern uint8_t u_appMain_tasksArray[NumbOfTasks];
@@ -43,7 +40,7 @@ extern TaskHandle_t updateDigitalInputHandle;
 extern QueueHandle_t adcSendToFrontEndHandle;
 extern QueueHandle_t queue_updatePwmCh0Handle;
 extern QueueHandle_t queue_updatePwmCh1Handle;
-
+extern QueueHandle_t u_appMain_queue_taskState;
 void u_appMainCreate();
 
 #endif /* CORE_U_TASK_INC_U_APPMAIN */

@@ -12,6 +12,8 @@
 #endif // !SIMULATOR
 
 #include <algorithm>
+#include <string>
+#include "gui/model/u_touchGfxUtilities.hpp"
 
 
 Model::Model() : modelListener(0)
@@ -72,20 +74,24 @@ void Model::tick()
 
 void Model::sendAdcOuputToBackEnd_1(uint32_t registerVar)
 {
-#ifdef SIMULATOR
-    touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
-#else
-    xQueueSend(queue_updatePwmCh0Handle, &registerVar, 0);
-#endif // !SIMULATOR
+
+   // touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
+    debugPrint<decltype(registerVar)>("sendAdcOuputToBackEnd_1", registerVar);
+
+#ifdef  BACKEND
+    xQueueSend(queue_updatePwmCh1Handle, &registerVar, 0);
+#endif
+
+    
 }
 
 void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 {
-#ifdef SIMULATOR
-    touchgfx_printf("sendAdcOuputToBackEnd_0! %d \n", registerVar);
-#else
-    xQueueSend(queue_updatePwmCh1Handle, &registerVar, 0);
-#endif // SIMULATOR
+    debugPrint<decltype(registerVar)>("sendAdcOuputToBackEnd_0", registerVar);
+
+#ifdef  BACKEND
+    xQueueSend(queue_updatePwmCh0Handle, &registerVar, 0);
+#endif
 }
 
 void Model::sendDigitalOutputToBackEnd()
@@ -109,8 +115,7 @@ void Model::sendDigitalOutputToBackEnd()
 void Model::updateActiveScreen(activeScreen_type param)
 {
     this->activeScreenVar = param;
-
-    touchgfx_printf("actual! %d \n", this->activeScreenVar);
+    debugPrint<decltype(param)>("debugPrint::ActiveScreen", param);
 }
 
 // !SIMULATOR
@@ -128,7 +133,7 @@ pidParam_type Model::getPidParam()
 void Model::setActualValue(actualValue_type view_actualValue)
 {
     this->actualValue = view_actualValue;
-    touchgfx_printf("actual! %d \n", actualValue);
+    debugPrint<actualValue_type>("debugPrint::actual", this->actualValue);
 }
 
 actualValue_type Model::getActualValue()
@@ -158,6 +163,25 @@ void Model::setActiveScreen(activeScreen_type activeScreenParam)
     // todo: get screen form View.
     this->activeScreenVar = activeScreenParam;
 }
+
+ void Model::setState(systemState_type sysState)
+{
+    this->systemState = sysState;
+    debugPrint<decltype(this->systemState)>("debugPrint::sysState", this->systemState);
+
+}
+
+ void Model::updateActualValue(actualValue_type actualValueParam)
+ {
+     this->actualValue = actualValueParam;
+     debugPrint<actualValue_type>("debugPrint::actualValueParam", this->actualValue);
+   
+ }
+
+  float Model::getFeedBackToPresentor()
+ {
+     return analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
+ }
 
 settingVar_type Model::getSettingVar()
 {

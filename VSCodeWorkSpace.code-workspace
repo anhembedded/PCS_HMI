@@ -83,7 +83,8 @@
 			"main.h": "c",
 			"u_apppid.h": "c",
 			"segger_sysview.h": "c",
-			"u_apputilities.h": "c"
+			"u_apputilities.h": "c",
+			"set": "cpp"
 		},
 		"cSpell.enabled": false
 	}

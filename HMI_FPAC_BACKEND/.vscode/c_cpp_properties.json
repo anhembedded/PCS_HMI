@@ -34,7 +34,8 @@
                 "STM32F469xx",
                 "DEBUG",
                 "USE_FULL_LL_DRIVER",
-                "__GNUC__"
+                "__GNUC__",
+                "systemState"
             ],
             "windowsSdkVersion": "10.0.22000.0",
             "intelliSenseMode": "windows-gcc-arm64",

@@ -15,6 +15,7 @@
 #else
 
 #endif
+#include "u_type.h"
 
 namespace pidRange
 {
@@ -118,6 +119,8 @@ public:
     digitaOut_type digitalOutput;
     digitalIn_type digitalInput;
     activeScreen_type activeScreenVar;
+    systemState_type systemState; 
+  
     Model();
 
     /**
@@ -161,15 +164,9 @@ public:
     void setDigitalOut(digitaOut_type setOutput);
     void setDigitalIn(digitalIn_type setInput);
     void setActiveScreen(activeScreen_type activeScreenParam);
-    void updateActualValue(actualValue_type actualValueParam)
-    {
-        this->actualValue = actualValueParam;
-        touchgfx_printf("actual: %d \n", actualValue);
-    }
-    float getFeedBackToPresentor()
-    {
-        return analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
-    }
+    void setState(systemState_type sysState);
+    void updateActualValue(actualValue_type actualValueParam);
+    float getFeedBackToPresentor();
     
 protected:
     /**

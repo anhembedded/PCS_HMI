@@ -71,7 +71,7 @@ void u_appPidCreate()
     pidInit();
     u_pid_queue_feedbackHandle = xQueueCreate(1, sizeof(uint32_t *));
     u_pid_queue_output = xQueueCreate(1, sizeof(uint32_t));
-    status = xTaskCreate(u_appPid_pdiCompute, "Pid", 200, NULL, 2, &u_task_PidHandle);
+    status = xTaskCreate(u_appPid_pdiCompute, "pidCompute", 200, NULL, 2, &u_task_PidHandle);
     configASSERT(status == pdPASS);
 }
 

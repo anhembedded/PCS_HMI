@@ -1,0 +1,17 @@
+#ifndef B643C8FE_D8FC_45EE_AA0A_B790CF25052C
+#define B643C8FE_D8FC_45EE_AA0A_B790CF25052C
+
+#include <stdint.h>
+
+
+enum systemState_type
+{
+    eSETTING_VAR,
+    eMENU,
+    ePID_GRAPH_RUN,
+    ePID_GRAPH,
+    ePID_SET
+};
+
+
+#endif /* B643C8FE_D8FC_45EE_AA0A_B790CF25052C */
