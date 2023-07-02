@@ -22,12 +22,12 @@ template<typename T>
 #ifdef SIMULATOR
 
 	 touchgfx_printf(strMessage);
-	 touchgfx_printf(" :%d \n", var);
+	 touchgfx_printf(var);
 
 #endif // SIMULATOR //  
 }
 
 
-void sendToBackEnd(QueueHandle_t *queueHandle, void *data, TickType_t timeToWait);
+
 
 

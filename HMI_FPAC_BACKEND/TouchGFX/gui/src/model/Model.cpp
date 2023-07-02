@@ -78,11 +78,11 @@ void Model::tick()
 
 void Model::sendAdcOuputToBackEnd_1(uint32_t registerVar)
 {
-    // touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
+   // touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
     debugPrint<decltype(registerVar)>("sendAdcOuputToBackEnd_1", registerVar);
 #ifdef BACKEND
     xQueueSend(queue_updatePwmCh1Handle, &registerVar, 0);
-#endif
+#endif 
 }
 
 void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
@@ -173,20 +173,20 @@ void Model::setActiveScreen(activeScreen_type activeScreenParam)
     this->activeScreenVar = activeScreenParam;
 }
 
-void Model::setState(systemState_type sysState)
+ void Model::setState(systemState_type sysState)
 {
 }
 
-void Model::updateActualValue(actualValue_type actualValueParam)
-{
-    this->actualValue = actualValueParam;
-    debugPrint<actualValue_type>("debugPrint::actualValueParam", this->actualValue);
-}
+ void Model::updateActualValue(actualValue_type actualValueParam)
+ {
+     this->actualValue = actualValueParam;
+     debugPrint<actualValue_type>("debugPrint::actualValueParam", this->actualValue);
+ }
 
-float Model::getFeedBackToPresentor()
-{
-    return analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
-}
+  float Model::getFeedBackToPresentor()
+ {
+     return analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
+ }
 
 settingVar_type Model::getSettingVar()
 {

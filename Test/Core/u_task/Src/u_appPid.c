@@ -37,6 +37,7 @@ PID_TypeDef PID_Oject;
 #define U_APP_PID_OUTPUT_MIN 0U
 
 struct u_appPid_updateParam_type pidParam;
+struct u_appPid_updateParam_type pidFormForntEnd;
 uint32_t actuatorVar = 0;
 uint32_t *u32_feedback_ptr = NULL;
  
@@ -110,7 +111,14 @@ void u_appPid_pdiCompute(void *param)
     const uint32_t NO_WAITTING = 0;
     while (1)
     {
-        
+        isRec = xQueueReceive(u_pid_queue_pidParam, (void*)&pidFormForntEnd, NO_WAITTING);
+        if(isRec == pdTRUE)
+        {
+           pidParam.setPoint =  pidFormForntEnd.setPoint;
+           PID_Oject.Kp = pidFormForntEnd.Kp;
+           PID_Oject.Ki = pidFormForntEnd.Ki;
+           PID_Oject.Kd = pidFormForntEnd.Kd;
+        }
         xQueueReceive(u_pid_queue_actuator,(void *) &actuatorVar, NO_WAITTING);
         vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(pidParam.sampleTime));
         u_appPid_updateFeedback(actuatorVar);

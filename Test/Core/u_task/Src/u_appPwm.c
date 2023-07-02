@@ -11,6 +11,7 @@ uint32_t u32_enablePwnCh1;
 
 TaskHandle_t updatePwmCh0Handle __attribute__((section(".touchgfxccmram")));
 TaskHandle_t updatePwmCh1Handle __attribute__((section(".touchgfxccmram")));
+TaskHandle_t updatePwmFromPidHandle __attribute__((section(".touchgfxccmram")));
 
 QueueHandle_t queue_updatePwmCh0Handle
     __attribute__((section(".touchgfxccmram")));
@@ -21,6 +22,7 @@ static void controlPWM(void *param);
 static void updatePwmChange0(void *param);
 static void updatePwmChange1(void *param);
 static void updatePwm(void *param);
+static void updatePwmForPid(void *param);
 
 void u_appPwmCreate() {
   BaseType_t status;
@@ -33,8 +35,28 @@ void u_appPwmCreate() {
   status = xTaskCreate(updatePwmChange1, "pwmUpdateCH1", 200, NULL, 2,
                        &updatePwmCh1Handle);
   configASSERT(status == pdPASS);
+   status = xTaskCreate(updatePwmForPid, "updatePwmFromPid", 200, NULL, 2,
+                       &updatePwmFromPidHandle);
 
   
+}
+void u_appPwm_updatePwmFromPid_resume()
+{
+    if(isTaskSuspended(updatePwmFromPidHandle))
+    {
+        vTaskResume(updatePwmFromPidHandle);
+    }
+    u_pwm_startCounter();
+}
+void u_appPwm_updatePwmFromPid_suspend()
+{
+    if(isTaskRunOrReady(updatePwmFromPidHandle))
+    {
+        vTaskSuspend(updatePwmFromPidHandle);
+    }
+    u_pwm_stopCounter();
+    u_pwm_dutyCycleValue.u32_Channle0 = 0x00U;
+    u_pwm_setDutyCycleISR(u_pwm_dutyCycleValue);
 }
 
 void u_appPWM_updatePwmCh_resume()

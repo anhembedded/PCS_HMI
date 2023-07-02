@@ -7,6 +7,8 @@
 extern QueueHandle_t u_pid_queue_feedbackHandle;
 extern struct u_appPid_updateParam_type pidParam;
 extern QueueHandle_t u_pid_queue_output;
+extern QueueHandle_t u_pid_queue_actuator;
+extern QueueHandle_t u_pid_queue_pidParam;
 void u_appPidCreate();
 
 void u_appPidComputing_resume();

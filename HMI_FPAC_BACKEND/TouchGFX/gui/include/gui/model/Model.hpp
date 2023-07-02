@@ -171,15 +171,9 @@ public:
     void updateActualValue(actualValue_type actualValueParam);
     float getFeedBackToPresentor();
 
-
-    void stateSettingVar_entry()
-    {
-        u_app_settingVarState_entry();
-    }
-    void stateSettingVar_exit()
-    {
-        u_app_settingVarState_exit();
-    }
+    void statePidGraphRun_entry();
+    void stateSettingVar_entry();
+    void stateSettingVar_exit();
     
     
 protected:

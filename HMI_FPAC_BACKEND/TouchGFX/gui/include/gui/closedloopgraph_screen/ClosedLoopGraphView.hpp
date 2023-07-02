@@ -8,7 +8,6 @@ extern "C" {
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 #include <gui_generated/closedloopgraph_screen/ClosedLoopGraphViewBase.hpp>
 
-
 enum class graphState_type { stop, run, clear };
 class ClosedLoopGraphView : public ClosedLoopGraphViewBase {
 public:
@@ -27,7 +26,11 @@ public:
     this->graphSetpoint.invalidate();
   }
 
-  virtual void startButton_Handle() { this->graphState = graphState_type::run; }
+  virtual void startButton_Handle() 
+  { 
+    this->graphState = graphState_type::run; 
+    presenter->statePidGraphRun_entry();
+  }
   virtual void stopButton_Handle() { this->graphState = graphState_type::stop; }
   virtual void clearButton_Handle() {
     this->graphState = graphState_type::clear;
