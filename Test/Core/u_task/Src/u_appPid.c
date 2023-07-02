@@ -48,28 +48,20 @@ struct u_appPid_updateParam_type pidParam;
 uint32_t *u32_feedback_ptr = NULL;
  
 double u_appPid_getPidOutput();
-
-
-
-void messageControl_setUpdatePidParameter(struct u_appPid_updateParam_type *pidMess);
-void messageControl_clearUpdatePidParameter(struct u_appPid_updateParam_type *pidMess);
 void u_appPid_updateParameters();
-
 void u_appPid_pdiCompute(void *param);
 void u_appPid_updateOutput();
-void u_appPid_controlTask(void *param);
 void u_appPid_setSetPoint(double setpoint_parm);
-static void pidInit();
-
-
-void u_appPid_updateFeedback();
 void u_appid_updateOutput(void *param);
+
+static void pidInit();
+static void u_appPid_updateFeedback();
 
 TaskHandle_t u_task_PidHandle;
 TaskHandle_t u_task_UpdateOutputHandle;
 
 QueueHandle_t u_pid_queue_feedbackHandle;
-QueueHandle_t u_pid_queue_outputHandle;
+QueueHandle_t u_pid_queue_output;
 
 
 void u_appPidCreate()
@@ -78,7 +70,7 @@ void u_appPidCreate()
     BaseType_t status;
     pidInit();
     u_pid_queue_feedbackHandle = xQueueCreate(1, sizeof(uint32_t *));
-    u_pid_queue_outputHandle = xQueueCreate(1, sizeof(uint32_t));
+    u_pid_queue_output = xQueueCreate(1, sizeof(uint32_t));
     status = xTaskCreate(u_appPid_pdiCompute, "Pid", 200, NULL, 2, &u_task_PidHandle);
     configASSERT(status == pdPASS);
 }
@@ -99,27 +91,20 @@ void u_appPid_pdiCompute(void *param)
     while (1)
     {
         vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(pidParam.sampleTime));
-        PID_Compute(&PID_Oject);
         u_appPid_updateFeedback();
-        xQueueSend(u_pid_queue_outputHandle,&pidParam.pidOutput, pdMS_TO_TICKS(0));
+        PID_Compute(&PID_Oject);
+        xQueueSend(u_pid_queue_output,&pidParam.pidOutput, pdMS_TO_TICKS(0)); /*send to pwm output*/
     }
 }
 
-void u_appPid_updateFeedback()
+static void u_appPid_updateFeedback()
 {
-
-    while (1)
-    {
     BaseType_t isRecieved = xQueueReceive(u_pid_queue_feedbackHandle, &u32_feedback_ptr, 0);
     if(isRecieved == 1U)
      {
         pidParam.feedback = u32_feedback_ptr[0];
      }
-     
-    }
 }
-
-
 
 void u_appPid_setSetPoint(double setpoint_parm)
 {

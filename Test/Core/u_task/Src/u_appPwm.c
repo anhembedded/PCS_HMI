@@ -1,5 +1,6 @@
 #include "u_appPwm.h"
 #include "u_pwm.h"
+#include "u_appPid.h"
 
 uint32_t u32_PwmCh0_10bit = 0;
 uint32_t u32_PwmCh1_10bit = 0;
@@ -69,7 +70,14 @@ static void updatePwmChange1(void *param) {
 }
 static void updatePwmForPid(void *param) {
   uint32_t u32_isReceive = 0;
+  uint32_t u32_pwmValue;
   while (1) {
-    /* code */
+    u32_isReceive = xQueueReceive(u_pid_queue_output,&u32_pwmValue,portMAX_DELAY);
+    
+    if(u32_isReceive == pdTRUE)
+    {
+       u_pwm_dutyCycleValue.u32_Channle0 = ((u32_pwmValue << 4) | 0xf) * 4;
+
+    }
   }
 }
