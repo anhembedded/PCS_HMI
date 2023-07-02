@@ -3937,6 +3937,38 @@
             ]
           },
           {
+            "Type": "DynamicGraph",
+            "Name": "graphOutput",
+            "X": 10,
+            "Y": 6,
+            "Width": 780,
+            "Height": 101,
+            "DataSeed": 659641351,
+            "NumberOfValues": 700,
+            "MaxY": 11.3,
+            "MinY": -1.0,
+            "Precision": "0.1",
+            "UseCustomVisibleDataPointRange": true,
+            "LastIndex": 600,
+            "XAxisScale": 1.0,
+            "LabelSizeTop": 17,
+            "LabelSizeBottom": 29,
+            "LabelSizeLeft": 24,
+            "PaddingRight": 10,
+            "GraphType": "GraphWrapClear",
+            "GraphDrawers": [
+              {
+                "Type": "LineDrawer",
+                "LineWidth": 2,
+                "FileNameImage": "",
+                "Color": {
+                  "Red": 230,
+                  "Blue": 126
+                }
+              }
+            ]
+          },
+          {
             "Type": "CustomContainerInstance",
             "Name": "buttonDone1",
             "X": 725,

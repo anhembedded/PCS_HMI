@@ -29,12 +29,19 @@ public:
   virtual void startButton_Handle() 
   { 
     this->graphState = graphState_type::run; 
-    presenter->statePidGraphRun_entry();
+    presenter->statePidGraphRunP_entry();
   }
-  virtual void stopButton_Handle() { this->graphState = graphState_type::stop; }
+  virtual void stopButton_Handle() 
+  { 
+      this->graphState = graphState_type::stop; 
+      presenter->statePidGraphRunP_exit();
+
+  }
   virtual void clearButton_Handle() {
     this->graphState = graphState_type::clear;
     graphFeadback.clear();
+    graphSetpoint.clear();
+    presenter->statePidGraphRunP_exit();
   }
 
   void notifyActiveScreen() { presenter->notifyActiveScreen(); }

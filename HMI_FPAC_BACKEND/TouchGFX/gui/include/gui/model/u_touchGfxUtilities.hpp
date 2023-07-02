@@ -22,7 +22,7 @@ template<typename T>
 #ifdef SIMULATOR
 
 	 touchgfx_printf(strMessage);
-	 touchgfx_printf(var);
+	 touchgfx_printf(" :%d \n", var);
 
 #endif // SIMULATOR //  
 }

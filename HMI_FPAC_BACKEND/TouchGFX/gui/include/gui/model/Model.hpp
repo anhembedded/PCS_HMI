@@ -174,6 +174,7 @@ public:
     void statePidGraphRun_entry();
     void stateSettingVar_entry();
     void stateSettingVar_exit();
+    void statePidGraphRun_exit();
     
     
 protected:

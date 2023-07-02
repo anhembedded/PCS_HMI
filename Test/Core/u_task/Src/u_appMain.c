@@ -32,14 +32,18 @@ void u_app_pidGraphRun_entry()
   u_appAdc_resume();
   u_appDdigitalIn_resume();
   u_appDigitalOut_resume();
+  u_appPidComputing_resume();
   u_appPwm_updatePwmFromPid_resume();
+  
 }
 void u_app_pidGraphRun_exit()
 {
   u_appAdc_suspend();
   u_appDdigitalIn_suspend();
   u_appDigitalOut_suspend();
+  u_appPidComputing_suspend();
   u_appPwm_updatePwmFromPid_suspend();
+  
 }
  void u_app_systemStartup_entry()
 {
@@ -47,6 +51,7 @@ void u_app_pidGraphRun_exit()
   u_appDdigitalIn_suspend();
   u_appDigitalOut_suspend();
   u_appPWM_updatePwmCh_suspend();
+  u_appPidComputing_suspend();
 }
  void u_app_settingVarState_entry()
 {

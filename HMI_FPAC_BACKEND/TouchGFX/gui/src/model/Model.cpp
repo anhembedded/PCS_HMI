@@ -63,15 +63,7 @@ void Model::tick()
 
         modelListener->notifyDigitalInputChanged(digitalInput);
     }
-    /* DigitalInput */
-    /*  isRecieved = xQueueReceive(digitalInputSendToFrontEndHandle, &u32_digitalInputVar, 0);
-     if (isRecieved == pdTRUE)
-     {
-         if (modelListener != 0)
-         {
-             modelListener->notifyDigitalInput(u32_digitalInputVar);
-         }
-     } */
+ 
 
 #endif // SIMULATOR
 }
@@ -132,6 +124,9 @@ void Model::setPidParam(pidParam_type pidSet)
     debugPrint<decltype(pidSet.f_ki)>("debugPrint::pidSet.f_ki", pidSet.f_ki);
     debugPrint<decltype(pidSet.f_kd)>("debugPrint::pidSet.f_kd", pidSet.f_kd);
     debugPrint<decltype(pidSet.f_setPoint)>("debugPrint::pidSet.setPoint", pidSet.f_setPoint);
+    #ifdef BACKEND
+    xQueueSend(u_pid_queue_pidParam, (void*)& backendPid, 0);
+    #endif
 }
 
 pidParam_type Model::getPidParam()
@@ -143,6 +138,10 @@ void Model::setActualValue(actualValue_type view_actualValue)
 {
     this->actualValue = view_actualValue;
     debugPrint<actualValue_type>("debugPrint::actual", this->actualValue);
+    #ifdef BACKEND
+    xQueueSend(u_pid_queue_actuator, (void*)&view_actualValue, portMAX_DELAY);
+    #endif
+    
 }
 
 actualValue_type Model::getActualValue()
@@ -187,6 +186,41 @@ void Model::setActiveScreen(activeScreen_type activeScreenParam)
  {
      return analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
  }
+
+  void Model::statePidGraphRun_entry()
+  {
+#ifdef BACKEND
+
+      u_app_pidGraphRun_entry();
+
+#endif // BACKEND
+
+  }
+
+  void Model::statePidGraphRun_exit()
+  {
+#ifdef BACKEND
+      u_app_pidGraphRun_exit();
+#endif // BACKEND
+
+      
+  }
+
+  void Model::stateSettingVar_entry()
+  {
+#ifdef BACKEND
+      u_app_settingVarState_entry();
+#endif // BACKEND
+
+  }
+
+  void Model::stateSettingVar_exit()
+  {
+#ifdef BACKEND
+      u_app_settingVarState_exit();
+#endif // BACKEND
+
+  }
 
 settingVar_type Model::getSettingVar()
 {
