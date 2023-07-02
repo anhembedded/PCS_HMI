@@ -75,6 +75,26 @@ void u_appPidCreate()
     configASSERT(status == pdPASS);
 }
 
+void u_appPidComputing_resume()
+{
+    portBASE_TYPE isSuspend = isTaskSuspended(u_task_PidHandle);
+    if (isSuspend == pdTRUE)
+    {
+        vTaskResume(u_task_PidHandle);
+    }
+}
+
+void u_appPidComputing_suspend()
+{
+    portBASE_TYPE isRunOrReady = isTaskRunOrReady(u_task_PidHandle);
+    if (isRunOrReady == pdTRUE)
+    {
+        vTaskSuspend(u_task_PidHandle);
+    }
+    pidParam.pidOutput = 0;
+   xQueueSend(u_pid_queue_output,&pidParam.pidOutput, pdMS_TO_TICKS(0)); /*send to pwm output*/
+
+}
 
 static void pidInit()
 {

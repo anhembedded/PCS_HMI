@@ -19,6 +19,18 @@ public:
     virtual ~MainViewBase();
     virtual void setupScreen();
 
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void buttonSettingHandle()
+    {
+        // Override and implement this function in Main
+    }
+    virtual void buttonClosedLoop()
+    {
+        // Override and implement this function in Main
+    }
+
 protected:
     FrontendApplication& application() {
         return *static_cast<FrontendApplication*>(touchgfx::Application::getInstance());

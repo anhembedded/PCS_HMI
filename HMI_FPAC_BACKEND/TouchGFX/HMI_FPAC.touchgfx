@@ -124,7 +124,8 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "buttonSetting",
+            "HasCompletedTrigger": true,
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonSetting"
@@ -137,7 +138,7 @@
             }
           },
           {
-            "InteractionName": "Interaction2",
+            "InteractionName": "buttonMesuaring",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonMesuaring"
@@ -150,16 +151,8 @@
             }
           },
           {
-            "InteractionName": "Interaction3",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionNone"
-            }
-          },
-          {
-            "InteractionName": "Interaction4",
+            "InteractionName": "buttonClosedLoop",
+            "HasCompletedTrigger": true,
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "clickButton_closedloopControlContinuous"
@@ -172,7 +165,7 @@
             }
           },
           {
-            "InteractionName": "Interaction5",
+            "InteractionName": "buttonInfor",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_information"
@@ -181,6 +174,28 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionBlock",
               "ActionComponent": "Information"
+            }
+          },
+          {
+            "InteractionName": "buttonSettingHandle",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "buttonSetting"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonSettingHandle"
+            }
+          },
+          {
+            "InteractionName": "buttonClosedLoopHandle",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "buttonClosedLoop"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonClosedLoop"
             }
           }
         ]

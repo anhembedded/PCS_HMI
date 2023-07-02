@@ -70,28 +70,38 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
     if (&src == &buttonSetting)
     {
-        //Interaction1
+        //buttonSetting
         //When buttonSetting clicked change screen to Setting
         //Go to Setting with screen transition towards East
         application().gotoSettingScreenCoverTransitionEast();
+    
+        //buttonSettingHandle
+        //When buttonSetting completed call virtual function
+        //Call buttonSettingHandle
+        buttonSettingHandle();
     }
     if (&src == &buttonMesuaring)
     {
-        //Interaction2
+        //buttonMesuaring
         //When buttonMesuaring clicked change screen to Mesuaring
         //Go to Mesuaring with screen transition towards East
         application().gotoMesuaringScreenCoverTransitionEast();
     }
     if (&src == &clickButton_closedloopControlContinuous)
     {
-        //Interaction4
+        //buttonClosedLoop
         //When clickButton_closedloopControlContinuous clicked change screen to ClosedLoopGraph
         //Go to ClosedLoopGraph with screen transition towards East
         application().gotoClosedLoopGraphScreenCoverTransitionEast();
+    
+        //buttonClosedLoopHandle
+        //When buttonClosedLoop completed call virtual function
+        //Call buttonClosedLoop
+        buttonClosedLoop();
     }
     if (&src == &button_information)
     {
-        //Interaction5
+        //buttonInfor
         //When button_information clicked change screen to Information
         //Go to Information with block transition
         application().gotoInformationScreenBlockTransition();

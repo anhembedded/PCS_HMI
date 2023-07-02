@@ -74,15 +74,11 @@ void Model::tick()
 
 void Model::sendAdcOuputToBackEnd_1(uint32_t registerVar)
 {
-
    // touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
     debugPrint<decltype(registerVar)>("sendAdcOuputToBackEnd_1", registerVar);
-
 #ifdef  BACKEND
     xQueueSend(queue_updatePwmCh1Handle, &registerVar, 0);
-#endif
-
-    
+#endif 
 }
 
 void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
@@ -169,7 +165,7 @@ void Model::setActiveScreen(activeScreen_type activeScreenParam)
     this->systemState = sysState;
     debugPrint<decltype(this->systemState)>("debugPrint::sysState", this->systemState);
 #ifdef BACKEND
-
+    xQueueSend(u_appMain_queue_systemState, (void*)&sysState, portMAX_DELAY);
 #endif // BACKEND
 
 }

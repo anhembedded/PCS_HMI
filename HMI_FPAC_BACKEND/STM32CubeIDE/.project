@@ -450,6 +450,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/u_helpFunction.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/gui/u_touchGfxUtilities.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/u_touchGfxUtilities.cpp</locationURI>
+		</link>
+		<link>
 			<name>Application/User/gui/SettingPresenter.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/setting_screen/SettingPresenter.cpp</locationURI>

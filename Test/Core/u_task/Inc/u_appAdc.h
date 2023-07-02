@@ -15,6 +15,7 @@ extern QueueHandle_t adcSendToFrontEndHandle;
 
 void u_appAdcCreate();
 void u_appAdc_statup();
+void u_appAdc_resume();
 void u_appAdc_suspend();
 void u_appAdc_main();
 

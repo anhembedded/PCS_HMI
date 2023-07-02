@@ -1,6 +1,7 @@
 #include "u_appAdc.h"
 #include "u_appPid.h"
 #include "stm32f4xx_ll_adc.h"
+#include "u_appUtilities.h"
 
 uint32_t u32_enableAdc;
 
@@ -12,7 +13,7 @@ uint32_t u32_applicationAdc_ptr __attribute__((section(".touchgfxccmram")));
 TaskHandle_t updateAdcFrequenceHandle __attribute__((section(".touchgfxccmram")));
 QueueHandle_t adcSendToFrontEndHandle __attribute__((section(".touchgfxccmram")));
 
-
+static void u_appAdc_TurnOff();
 extern uint32_t adcVar;
 static void updateAdcFrequence(void *param);
 
@@ -63,7 +64,27 @@ void u_appAdcCreate()
     configASSERT(status == pdPASS);
 }
 
-void u_appAdc_TurnOff()
+void u_appAdc_resume()
+{
+   portBASE_TYPE isSuspend = isTaskSuspended(updateAdcFrequenceHandle);
+   u_appAdc_Statup();
+   if(isSuspend == pdTRUE)
+   {
+       vTaskResume(updateAdcFrequenceHandle);
+   }
+}
+
+void u_appAdc_suspend()
+{
+    portBASE_TYPE taskStatus = isTaskRunOrReady(updateAdcFrequenceHandle);
+    if(taskStatus == pdTRUE)
+    {
+        vTaskSuspend(updateAdcFrequenceHandle);
+    }
+    u_appAdc_TurnOff();
+}
+
+static void u_appAdc_TurnOff()
 {
     NVIC_DisableIRQ(ADC_IRQn);
     u32_applicationAdc[0] = 0;

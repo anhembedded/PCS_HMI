@@ -41,6 +41,7 @@ extern QueueHandle_t adcSendToFrontEndHandle;
 extern QueueHandle_t queue_updatePwmCh0Handle;
 extern QueueHandle_t queue_updatePwmCh1Handle;
 extern QueueHandle_t u_appMain_queue_taskState;
+extern QueueHandle_t u_appMain_queue_systemState;
 void u_appMainCreate();
 
 #endif /* CORE_U_TASK_INC_U_APPMAIN */

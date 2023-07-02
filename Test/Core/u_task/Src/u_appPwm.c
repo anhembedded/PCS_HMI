@@ -43,7 +43,7 @@ void u_appPWM_resumeUpdatePwmCh()
     {
         vTaskResume(updatePwmCh0Handle);
     }
-    if(isTaskSuspended(updatePwmCh0Handle))
+    if(isTaskSuspended(updatePwmCh1Handle))
     {
         vTaskResume(updatePwmCh1Handle);
     }

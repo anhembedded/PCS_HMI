@@ -16,6 +16,14 @@ public:
     {
         presenter->notifyActiveScreen();
     }
+     virtual void buttonSettingHandle()
+    {
+       presenter->sendSystemStateToModel(eSETTING_VAR);
+    }
+    virtual void buttonClosedLoop()
+    {
+        // Override and implement this function in Main
+    }
 protected:
 };
 
