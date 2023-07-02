@@ -1,6 +1,7 @@
 #include "u_appPwm.h"
 #include "u_pwm.h"
 #include "u_appPid.h"
+#include "u_appUtilities.h"
 
 uint32_t u32_PwmCh0_10bit = 0;
 uint32_t u32_PwmCh1_10bit = 0;
@@ -32,6 +33,35 @@ void u_appPwmCreate() {
   status = xTaskCreate(updatePwmChange1, "PWMCH1", 200, NULL, 2,
                        &updatePwmCh1Handle);
   configASSERT(status == pdPASS);
+}
+
+void u_appPWM_resumeUpdatePwmCh()
+{
+    if(isTaskSuspended(updatePwmCh0Handle))
+    {
+        vTaskResume(updatePwmCh0Handle);
+    }
+    if(isTaskSuspended(updatePwmCh0Handle))
+    {
+        vTaskResume(updatePwmCh1Handle);
+    }
+    u_pwm_startCounter();
+}
+
+void u_appPWM_suspendUpdatePwmCh() 
+{
+    if(isTaskRunOrReady(updatePwmCh0Handle))
+    {
+        vTaskSuspend(updatePwmCh0Handle);
+    }
+    if(isTaskRunOrReady(updatePwmCh1Handle))
+    {
+        vTaskSuspend(updatePwmCh1Handle);
+    }
+    u_pwm_stopCounter();
+    u_pwm_dutyCycleValue.u32_Channle0 = 0x00U;
+    u_pwm_dutyCycleValue.u32_Channle1 = 0x00U;
+    u_pwm_setDutyCycleISR(u_pwm_dutyCycleValue);
 }
 
 static void updatePwmChange0(void *param) {
@@ -73,11 +103,9 @@ static void updatePwmForPid(void *param) {
   uint32_t u32_pwmValue;
   while (1) {
     u32_isReceive = xQueueReceive(u_pid_queue_output,&u32_pwmValue,portMAX_DELAY);
-    
     if(u32_isReceive == pdTRUE)
     {
        u_pwm_dutyCycleValue.u32_Channle0 = ((u32_pwmValue << 4) | 0xf) * 4;
-
     }
   }
 }

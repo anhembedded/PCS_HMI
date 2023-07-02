@@ -31,8 +31,8 @@ PID_TypeDef PID_Oject;
  *
  *
  */
-#define U_APP_PID_OUTPUT_MAX 0U
-#define U_APP_PID_OUTPUT_MIN 1023U
+#define U_APP_PID_OUTPUT_MAX 1023U
+#define U_APP_PID_OUTPUT_MIN 0U
 struct u_appPid_updateParam_type
 {
     uint32_t messControl;
@@ -78,6 +78,7 @@ void u_appPidCreate()
 
 static void pidInit()
 {
+	PID_Oject.Kp =1;
     PID(&PID_Oject, &pidParam.feedback, &pidParam.pidOutput, &pidParam.setPoint, pidParam.Kp, pidParam.Ki, pidParam.Kd, _PID_P_ON_E, _PID_CD_DIRECT);
     PID_SetMode(&PID_Oject, _PID_MODE_AUTOMATIC);
     PID_SetSampleTime(&PID_Oject, pidParam.sampleTime);

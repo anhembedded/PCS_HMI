@@ -21,6 +21,10 @@ enum task_index
     appPid,
     appPwm
 };
+enum system_State
+{
+    
+}
 
 
 extern uint8_t u_appMain_tasksArray[NumbOfTasks];
