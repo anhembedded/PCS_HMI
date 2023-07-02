@@ -84,7 +84,8 @@
 			"u_apppid.h": "c",
 			"segger_sysview.h": "c",
 			"u_apputilities.h": "c",
-			"set": "cpp"
+			"set": "cpp",
+			"u_touchgfxutilities.hpp": "c"
 		},
 		"cSpell.enabled": false
 	}

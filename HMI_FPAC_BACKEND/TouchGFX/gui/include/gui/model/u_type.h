@@ -6,11 +6,15 @@
 
 enum systemState_type
 {
+    eSYSTEM_STARTUP,
     eSETTING_VAR,
     eMENU,
     ePID_GRAPH_RUN,
     ePID_GRAPH,
-    ePID_SET
+    ePID_SET,
+    eUPDATE_VAR,
+    eSET_ACTUATOR,
+    eUPDATE_ACTUATOR_PID_PARAMETER
 };
 
 

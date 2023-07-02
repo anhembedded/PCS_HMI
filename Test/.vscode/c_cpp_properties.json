@@ -20,7 +20,8 @@
                 "${workspaceFolder}/Core/u_driver/Src/",
                 "${workspaceFolder}/Core/u_task/Src/",
                 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/arm-none-eabi/include",
-                "${workspaceFolder}/Core/Inc"
+                "${workspaceFolder}/Core/Inc",
+                "C:/Project/PCS_HMI/HMI_FPAC_BACKEND/TouchGFX/gui/include"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

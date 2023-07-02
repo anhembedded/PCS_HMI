@@ -3,8 +3,11 @@
 #include "u_firmwareDefination.h"
 #include "u_gpio.h"
 #include "u_pwm.h"
+#include "u_appPwm.h"
+#include "gui/model/u_type.h"
 
 uint8_t u_appMain_tasksArray[NumbOfTasks];
+enum systemState_type u_appMain_systemState;
 QueueHandle_t u_appMain_queue_taskState
     __attribute__((section(".touchgfxccmram")));
 QueueHandle_t u_appMain_queue_systemState
@@ -23,9 +26,18 @@ static void mainApplication(void *param);
 static void blinkLed_Green(void *param);
 static void blinkLed_Orange(void *param);
 
+static void systemStartup_entry()
+{
+  u_appPWM_suspendUpdatePwmCh();
+}
+static void settingVarState_entry()
+{
+  u_appPWM_resumeUpdatePwmCh();
+}
+
 void u_appMainCreate() {
   BaseType_t status;
-  status = xTaskCreate(mainApplication, "mainApplication", 200, NULL, 1,
+  status = xTaskCreate(mainApplication, "mainApp", 200, NULL, 1,
                        &mainApplicationHandle);
   configASSERT(status == pdPASS);
   status = xTaskCreate(blinkLed_Green, "blinkGreen", 200, NULL, 2,
@@ -43,17 +55,24 @@ void u_appMainCreate() {
   u_appPwmCreate();
   u_appAdcCreate();
   u_appPidCreate();
+  /* SystemState::SystemStartup  */
+  systemStartup_entry();
+
 }
 
 static void mainApplication(void *param) {
+  portBASE_TYPE isRec = 0;
   while (1) {
-    xQueueReceive(u_appMain_queue_taskState, u_appMain_tasksArray,
+    isRec = xQueueReceive(u_appMain_queue_systemState, (void *)&u_appMain_systemState,
                   portMAX_DELAY);
-    if (u_appMain_tasksArray[appADC] == 1) {
-
-    } else {
+    if(isRec == pdTRUE)
+    {
+      if(u_appMain_systemState == eSETTING_VAR)
+      {
+        settingVarState_entry();
+      }
     }
-    vTaskDelay(pdMS_TO_TICKS(30000));
+
   }
 }
 

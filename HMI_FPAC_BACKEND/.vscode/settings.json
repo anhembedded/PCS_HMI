@@ -8,5 +8,6 @@
     },
     "cmake.sourceDirectory": "${workspaceFolder}/STM32CubeIDE",
     "C_Cpp.dimInactiveRegions": false,
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "C_Cpp.errorSquiggles": "disabled"
 }

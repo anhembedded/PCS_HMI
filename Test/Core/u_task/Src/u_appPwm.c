@@ -27,12 +27,14 @@ void u_appPwmCreate() {
   queue_updatePwmCh0Handle = xQueueCreate(1, sizeof(uint32_t));
   queue_updatePwmCh1Handle = xQueueCreate(1, sizeof(uint32_t));
 
-  status = xTaskCreate(updatePwmChange0, "PWMCH0", 200, NULL, 2,
+  status = xTaskCreate(updatePwmChange0, "pwmUpdateCH0", 200, NULL, 2,
                        &updatePwmCh0Handle);
   configASSERT(status == pdPASS);
-  status = xTaskCreate(updatePwmChange1, "PWMCH1", 200, NULL, 2,
+  status = xTaskCreate(updatePwmChange1, "pwmUpdateCH1", 200, NULL, 2,
                        &updatePwmCh1Handle);
   configASSERT(status == pdPASS);
+
+  
 }
 
 void u_appPWM_resumeUpdatePwmCh()
