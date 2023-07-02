@@ -5,6 +5,8 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "u_appUtilities.h"
+#include "gui/model/u_type.h"
 /*
  *  each transfer function we have 2 PID function:
  *  The first one is: open loop transfer function, which is the PID control theory without feedback
@@ -33,18 +35,9 @@ PID_TypeDef PID_Oject;
  */
 #define U_APP_PID_OUTPUT_MAX 1023U
 #define U_APP_PID_OUTPUT_MIN 0U
-struct u_appPid_updateParam_type
-{
-    uint32_t messControl;
-    double Kp;
-    double Ki;
-    double Kd;
-    double feedback;
-    double setPoint;
-    double pidOutput;
-    uint32_t sampleTime;
-};
+
 struct u_appPid_updateParam_type pidParam;
+uint32_t actuatorVar = 0;
 uint32_t *u32_feedback_ptr = NULL;
  
 double u_appPid_getPidOutput();
@@ -55,13 +48,15 @@ void u_appPid_setSetPoint(double setpoint_parm);
 void u_appid_updateOutput(void *param);
 
 static void pidInit();
-static void u_appPid_updateFeedback();
+static void u_appPid_updateFeedback(uint32_t actIndex);
 
 TaskHandle_t u_task_PidHandle;
 TaskHandle_t u_task_UpdateOutputHandle;
 
 QueueHandle_t u_pid_queue_feedbackHandle;
 QueueHandle_t u_pid_queue_output;
+QueueHandle_t u_pid_queue_actuator;
+QueueHandle_t u_pid_queue_pidParam;
 
 
 void u_appPidCreate()
@@ -71,6 +66,8 @@ void u_appPidCreate()
     pidInit();
     u_pid_queue_feedbackHandle = xQueueCreate(1, sizeof(uint32_t *));
     u_pid_queue_output = xQueueCreate(1, sizeof(uint32_t));
+    u_pid_queue_actuator = xQueueCreate(1, sizeof(uint32_t));
+    u_pid_queue_pidParam = xQueueCreate(1, sizeof(struct u_appPid_updateParam_type));
     status = xTaskCreate(u_appPid_pdiCompute, "pidComputing", 200, NULL, 2, &u_task_PidHandle);
     configASSERT(status == pdPASS);
 }
@@ -108,22 +105,27 @@ static void pidInit()
 void u_appPid_pdiCompute(void *param)
 {
     TickType_t xLastWakeTime;
+    portBASE_TYPE isRec = 0;
     xLastWakeTime = xTaskGetTickCount();
+    const uint32_t NO_WAITTING = 0;
     while (1)
     {
+        
+        xQueueReceive(u_pid_queue_actuator,(void *) &actuatorVar, NO_WAITTING);
         vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(pidParam.sampleTime));
-        u_appPid_updateFeedback();
+        u_appPid_updateFeedback(actuatorVar);
         PID_Compute(&PID_Oject);
         xQueueSend(u_pid_queue_output,&pidParam.pidOutput, pdMS_TO_TICKS(0)); /*send to pwm output*/
     }
 }
 
-static void u_appPid_updateFeedback()
+static void u_appPid_updateFeedback(uint32_t actIndex)
 {
     BaseType_t isRecieved = xQueueReceive(u_pid_queue_feedbackHandle, &u32_feedback_ptr, 0);
     if(isRecieved == 1U)
      {
-        pidParam.feedback = u32_feedback_ptr[0];
+
+        pidParam.feedback = u32_feedback_ptr[actIndex];
      }
 }
 

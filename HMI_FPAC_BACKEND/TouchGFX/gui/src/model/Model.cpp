@@ -15,6 +15,10 @@
 #include <string>
 #include "gui/model/u_touchGfxUtilities.hpp"
 
+extern "C"
+{
+#include "gui/model/u_type.h"
+}
 
 Model::Model() : modelListener(0)
 {
@@ -74,18 +78,18 @@ void Model::tick()
 
 void Model::sendAdcOuputToBackEnd_1(uint32_t registerVar)
 {
-   // touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
+    // touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
     debugPrint<decltype(registerVar)>("sendAdcOuputToBackEnd_1", registerVar);
-#ifdef  BACKEND
+#ifdef BACKEND
     xQueueSend(queue_updatePwmCh1Handle, &registerVar, 0);
-#endif 
+#endif
 }
 
 void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
 {
     debugPrint<decltype(registerVar)>("sendAdcOuputToBackEnd_0", registerVar);
 
-#ifdef  BACKEND
+#ifdef BACKEND
     xQueueSend(queue_updatePwmCh0Handle, &registerVar, 0);
 #endif
 }
@@ -118,7 +122,16 @@ void Model::updateActiveScreen(activeScreen_type param)
 
 void Model::setPidParam(pidParam_type pidSet)
 {
+    u_appPid_updateParam_type backendPid;
     this->pidParam = pidSet;
+    backendPid.Kp = pidSet.f_kp;
+    backendPid.Ki = pidSet.f_ki;
+    backendPid.Kd = pidSet.f_kd;
+    backendPid.setPoint = pidSet.f_setPoint;
+    debugPrint<decltype(pidSet.f_kp)>("debugPrint::pidSet.f_kp", pidSet.f_kp);
+    debugPrint<decltype(pidSet.f_ki)>("debugPrint::pidSet.f_ki", pidSet.f_ki);
+    debugPrint<decltype(pidSet.f_kd)>("debugPrint::pidSet.f_kd", pidSet.f_kd);
+    debugPrint<decltype(pidSet.f_setPoint)>("debugPrint::pidSet.setPoint", pidSet.f_setPoint);
 }
 
 pidParam_type Model::getPidParam()
@@ -160,27 +173,20 @@ void Model::setActiveScreen(activeScreen_type activeScreenParam)
     this->activeScreenVar = activeScreenParam;
 }
 
- void Model::setState(systemState_type sysState)
+void Model::setState(systemState_type sysState)
 {
-    this->systemState = sysState;
-    debugPrint<decltype(this->systemState)>("debugPrint::sysState", this->systemState);
-#ifdef BACKEND
-    xQueueSend(u_appMain_queue_systemState, (void*)&sysState, portMAX_DELAY);
-#endif // BACKEND
-
 }
 
- void Model::updateActualValue(actualValue_type actualValueParam)
- {
-     this->actualValue = actualValueParam;
-     debugPrint<actualValue_type>("debugPrint::actualValueParam", this->actualValue);
-   
- }
+void Model::updateActualValue(actualValue_type actualValueParam)
+{
+    this->actualValue = actualValueParam;
+    debugPrint<actualValue_type>("debugPrint::actualValueParam", this->actualValue);
+}
 
-  float Model::getFeedBackToPresentor()
- {
-     return analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
- }
+float Model::getFeedBackToPresentor()
+{
+    return analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
+}
 
 settingVar_type Model::getSettingVar()
 {
@@ -209,8 +215,6 @@ uint32_t Model::modelGetTick()
     return this->frameTickVal;
 }
 #endif // SIMULATOR
-
-
 
 float analogIn_type::getAnalogValueFloat(uint32_t indexChannel)
 {

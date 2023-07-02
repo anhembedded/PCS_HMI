@@ -5,6 +5,11 @@
 #include <gui/model/ModelListener.hpp>
 #include <string>
 
+#ifdef BACKEND
+#include "FreeRTOS.h"
+#include "queue.h"
+#endif
+
 template<typename T>
 void debugPrint(const char * strMessage, T var);
 
@@ -21,3 +26,8 @@ template<typename T>
 
 #endif // SIMULATOR //  
 }
+
+
+void sendToBackEnd(QueueHandle_t *queueHandle, void *data, TickType_t timeToWait);
+
+

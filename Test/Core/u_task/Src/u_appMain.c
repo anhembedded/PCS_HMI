@@ -26,13 +26,29 @@ static void mainApplication(void *param);
 static void blinkLed_Green(void *param);
 static void blinkLed_Orange(void *param);
 
-static void systemStartup_entry()
+
+
+ void u_app_systemStartup_entry()
 {
-  u_appPWM_suspendUpdatePwmCh();
+  u_appAdc_suspend();
+  u_appDdigitalIn_suspend();
+  u_appDigitalOut_suspend();
+  u_appPWM_updatePwmCh_suspend();
 }
-static void settingVarState_entry()
+ void u_app_settingVarState_entry()
 {
-  u_appPWM_resumeUpdatePwmCh();
+  u_appAdc_resume();
+  u_appDdigitalIn_resume();
+  u_appDigitalOut_resume();
+  u_appPWM_updatePwmCh_resume();
+}
+
+void u_app_settingVarState_exit()
+{
+  u_appAdc_suspend();
+  u_appDdigitalIn_suspend();
+  u_appDigitalOut_suspend();
+  u_appPWM_updatePwmCh_suspend();
 }
 
 void u_appMainCreate() {
@@ -56,7 +72,7 @@ void u_appMainCreate() {
   u_appAdcCreate();
   u_appPidCreate();
   /* SystemState::SystemStartup  */
-  systemStartup_entry();
+  u_app_systemStartup_entry();
 
 }
 
@@ -65,13 +81,15 @@ static void mainApplication(void *param) {
   while (1) {
     isRec = xQueueReceive(u_appMain_queue_systemState, (void *)&u_appMain_systemState,
                   portMAX_DELAY);
-    if(isRec == pdTRUE)
-    {
-      if(u_appMain_systemState == eSETTING_VAR)
-      {
-        settingVarState_entry();
-      }
-    }
+    
+      // if(u_appMain_systemState == eSETTING_VAR)
+      // {
+      //   settingVarState_entry();
+      // }else if ()
+      // {
+        
+      // }
+
 
   }
 }

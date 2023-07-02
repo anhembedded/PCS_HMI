@@ -234,14 +234,6 @@
             "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\tiny_fill_disabled.json"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "buttonDone1",
-            "X": 725,
-            "Width": 68,
-            "Height": 70,
-            "CustomContainerDefinitionName": "ButtonDone"
-          },
-          {
             "Type": "Container",
             "Name": "containerParameter",
             "X": 77,
@@ -1291,6 +1283,23 @@
             ]
           },
           {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonDone",
+            "X": 690,
+            "Y": -23,
+            "Width": 128,
+            "Height": 116,
+            "Pressed": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+            "Released": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_action.png",
+            "IconPressed": "__generated\\icon_theme_images_file_download_done_50_50_5777F3.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_backspace_50_50_000000.svg.png",
+            "IconX": 39,
+            "IconY": 33,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "clay_theme\\presets\\button\\icon\\rounded\\tiny_fill_action.json"
+          },
+          {
             "Type": "CustomContainerInstance",
             "Name": "keyboard1",
             "X": 93,
@@ -1476,6 +1485,30 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "buttonDigital4Handle"
+            }
+          },
+          {
+            "InteractionName": "buttonDone",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main"
+            }
+          },
+          {
+            "InteractionName": "buttonReturnHandle",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "buttonDone"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonReturnHandle"
             }
           }
         ],

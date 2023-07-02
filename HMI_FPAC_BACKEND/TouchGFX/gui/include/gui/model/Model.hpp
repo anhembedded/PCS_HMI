@@ -8,10 +8,13 @@
 #include <array>
 
 #ifndef SIMULATOR
+extern "C"
+{
 #include "u_appMain.h"
 #include "u_pwm.h"
 #include "array"
 #include "u_appMain.h"
+}
 #else
 
 #endif
@@ -119,7 +122,7 @@ public:
     digitaOut_type digitalOutput;
     digitalIn_type digitalInput;
     activeScreen_type activeScreenVar;
-    systemState_type systemState; 
+    systemState_type systemEntryState; 
   
     Model();
 
@@ -167,6 +170,17 @@ public:
     void setState(systemState_type sysState);
     void updateActualValue(actualValue_type actualValueParam);
     float getFeedBackToPresentor();
+
+
+    void stateSettingVar_entry()
+    {
+        u_app_settingVarState_entry();
+    }
+    void stateSettingVar_exit()
+    {
+        u_app_settingVarState_exit();
+    }
+    
     
 protected:
     /**

@@ -64,7 +64,10 @@ public:
     {
         model->setDigitalIn(setInput);
     }
-
+    void stateSettingVar_exit()
+    {
+        model->stateSettingVar_exit();
+    }
 private:
     SettingPresenter();
 

@@ -37,7 +37,7 @@ void u_appPwmCreate() {
   
 }
 
-void u_appPWM_resumeUpdatePwmCh()
+void u_appPWM_updatePwmCh_resume()
 {
     if(isTaskSuspended(updatePwmCh0Handle))
     {
@@ -50,7 +50,7 @@ void u_appPWM_resumeUpdatePwmCh()
     u_pwm_startCounter();
 }
 
-void u_appPWM_suspendUpdatePwmCh() 
+void u_appPWM_updatePwmCh_suspend() 
 {
     if(isTaskRunOrReady(updatePwmCh0Handle))
     {

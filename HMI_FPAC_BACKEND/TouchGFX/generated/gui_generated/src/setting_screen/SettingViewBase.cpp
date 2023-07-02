@@ -24,9 +24,6 @@ SettingViewBase::SettingViewBase() :
     buttonWithIcon1.setIconXY(5, 5);
     add(buttonWithIcon1);
 
-    buttonDone1.setXY(725, 0);
-    add(buttonDone1);
-
     containerParameter.setPosition(77, -16, 618, 305);
     boxWithBorder3.setPosition(0, 22, 618, 283);
     boxWithBorder3.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -399,6 +396,12 @@ SettingViewBase::SettingViewBase() :
 
     add(binaryMenu);
 
+    buttonDone.setXY(690, -23);
+    buttonDone.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_BACKSPACE_50_50_000000_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_FILE_DOWNLOAD_DONE_50_50_5777F3_SVG_ID));
+    buttonDone.setIconXY(39, 33);
+    buttonDone.setAction(buttonCallback);
+    add(buttonDone);
+
     keyboard1.setXY(93, 0);
     keyboard1.setVisible(false);
     add(keyboard1);
@@ -411,7 +414,6 @@ SettingViewBase::~SettingViewBase()
 
 void SettingViewBase::setupScreen()
 {
-    buttonDone1.initialize();
     digitalInputIndicator1.initialize();
     keyboard1.initialize();
 }
@@ -537,5 +539,17 @@ void SettingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonDigital4 clicked call virtual function
         //Call buttonDigital4Handle
         buttonDigital4Handle();
+    }
+    if (&src == &buttonDone)
+    {
+        //buttonDone
+        //When buttonDone clicked change screen to Main
+        //Go to Main with no screen transition
+        application().gotoMainScreenNoTransition();
+    
+        //buttonReturnHandle
+        //When buttonDone completed call virtual function
+        //Call buttonReturnHandle
+        buttonReturnHandle();
     }
 }

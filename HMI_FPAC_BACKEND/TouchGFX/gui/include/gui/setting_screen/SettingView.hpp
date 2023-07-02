@@ -88,6 +88,10 @@ public:
         }
         setDigitalOut(this->digitalOutput);
     }
+    virtual void buttonReturnHandle()
+    {
+        presenter->stateSettingVar_exit();
+    }
 
     void setADC();
 

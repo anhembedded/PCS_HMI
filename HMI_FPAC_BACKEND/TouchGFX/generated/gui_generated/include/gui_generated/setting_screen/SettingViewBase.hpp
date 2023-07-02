@@ -9,7 +9,6 @@
 #include <gui/setting_screen/SettingPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
-#include <gui/containers/ButtonDone.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
@@ -107,6 +106,10 @@ public:
     {
         // Override and implement this function in Setting
     }
+    virtual void buttonReturnHandle()
+    {
+        // Override and implement this function in Setting
+    }
 
 protected:
     FrontendApplication& application() {
@@ -119,7 +122,6 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box Background;
     touchgfx::ButtonWithIcon buttonWithIcon1;
-    ButtonDone buttonDone1;
     touchgfx::Container containerParameter;
     touchgfx::BoxWithBorder boxWithBorder3;
     touchgfx::BoxWithBorder boxWithBorder1_1;
@@ -176,6 +178,7 @@ protected:
     touchgfx::TextArea textArea4_2_1_1;
     touchgfx::TextArea textArea4_1;
     touchgfx::Image image1_1;
+    touchgfx::ButtonWithIcon buttonDone;
     touchgfx::Draggable< Keyboard > keyboard1;
 
     /*

@@ -11,8 +11,8 @@ extern uint32_t u32_PwmCh0_10bit;
 extern uint32_t u32_PwmCh1_10bit;
 
 void u_appPwmCreate();
-void u_appPWM_resumeUpdatePwmCh();
-void u_appPWM_suspendUpdatePwmCh();
+void u_appPWM_updatePwmCh_resume();
+void u_appPWM_updatePwmCh_suspend();
 void u_appPWM_Main();
 
 #endif /* CORE_U_TASK_INC_U_APPPWM */

@@ -29,10 +29,10 @@ public:
 
 
     void notifyActiveScreen();
-    void sendSystemStateToModel(systemState_type sysState)
-    {
-        model->setState(sysState);
-    }
+  void stateSettingVar_entry()
+  {
+    model->stateSettingVar_entry();
+  }
 private:
     MainPresenter();
 

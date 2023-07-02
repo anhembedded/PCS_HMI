@@ -18,7 +18,7 @@ public:
     }
      virtual void buttonSettingHandle()
     {
-       presenter->sendSystemStateToModel(eSETTING_VAR);
+        presenter->stateSettingVar_entry();
     }
     virtual void buttonClosedLoop()
     {

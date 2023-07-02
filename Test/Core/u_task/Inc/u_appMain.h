@@ -43,5 +43,14 @@ extern QueueHandle_t queue_updatePwmCh1Handle;
 extern QueueHandle_t u_appMain_queue_taskState;
 extern QueueHandle_t u_appMain_queue_systemState;
 void u_appMainCreate();
+void u_app_systemStartup_entry();
+void u_app_settingVarState_entry();
+void u_app_pidGraphRun_entry();
+
+void u_app_settingVarState_exit();
+void u_app_pidGraphRun_exit();
+
+
+
 
 #endif /* CORE_U_TASK_INC_U_APPMAIN */
