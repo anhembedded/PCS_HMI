@@ -11,12 +11,12 @@
 #include <gui/containers/SpOpFb.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <gui/containers/DigitalInputIndicator.hpp>
 #include <touchgfx/widgets/graph/GraphWrapAndClear.hpp>
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <gui/containers/ButtonDone.hpp>
-#include <gui/containers/DigitalInputIndicator.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <gui/containers/DigitalOutput.hpp>
 
@@ -56,6 +56,7 @@ protected:
     SpOpFb spOpFb1;
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ButtonWithLabel buttonWithLabel_start;
+    DigitalInputIndicator digitalInputIndicator1;
     touchgfx::GraphWrapAndClear<700> graphBackgroud;
     touchgfx::GraphElementGridX graphBackgroudMajorXAxisGrid;
     touchgfx::GraphElementGridY graphBackgroudMajorYAxisGrid;
@@ -73,7 +74,6 @@ protected:
     touchgfx::GraphElementLine graphOutputLine1;
     touchgfx::PainterRGB565 graphOutputLine1Painter;
     ButtonDone buttonDone1;
-    DigitalInputIndicator digitalInputIndicator1;
     touchgfx::ButtonWithLabel buttonWithLabel_stop;
     touchgfx::ButtonWithLabel buttonWithLabel_clear;
     touchgfx::ButtonWithLabel buttonWithLabel_set;

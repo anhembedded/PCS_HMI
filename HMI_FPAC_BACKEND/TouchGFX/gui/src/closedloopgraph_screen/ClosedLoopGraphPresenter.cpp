@@ -66,7 +66,7 @@ pidParam_type ClosedLoopGraphPresenter::getPidParam()
        model->statePidGraphRun_exit();
    }
 
-   void ClosedLoopGraphPresenter::notifyUpdatePidOutput(float pidOutput)
+   void ClosedLoopGraphPresenter::notifyUpdatePidOutput(uint32_t pidOutput)
    {
        view.updatePidOutput(pidOutput);
    }

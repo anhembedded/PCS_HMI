@@ -54,7 +54,7 @@ void ClosedLoopSettingView::drawTextAreaSetPoint()
 
  void ClosedLoopSettingView::updatePidOutput(float pidOutput)
 {
-    auto pidOut10Float = cov1024to10Float(pidOutput);
+    auto pidOut10Float = cov1024to10Float((uint32_t)pidOutput);
 
 }
 

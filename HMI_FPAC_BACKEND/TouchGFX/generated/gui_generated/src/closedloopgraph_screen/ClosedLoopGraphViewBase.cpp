@@ -23,7 +23,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     spOpFb1.setXY(590, 381);
     add(spOpFb1);
 
-    boxWithBorder1.setPosition(10, 380, 431, 96);
+    boxWithBorder1.setPosition(10, 375, 431, 101);
     boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder1.setBorderSize(5);
@@ -36,6 +36,9 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     buttonWithLabel_start.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel_start.setAction(buttonCallback);
     add(buttonWithLabel_start);
+
+    digitalInputIndicator1.setXY(20, 428);
+    add(digitalInputIndicator1);
 
     graphBackgroud.setPosition(10, 6, 780, 380);
     graphBackgroud.setScale(100);
@@ -106,30 +109,27 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     graphOutput.setGraphAreaMargin(17, 24, 0, 29);
     graphOutput.setGraphAreaPadding(2, 0, 10, 0);
     graphOutput.setGraphRangeY(-1.0f, 11.3f);
-    graphOutputMajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
+    graphOutputMajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(51, 22, 196));
     graphOutputMajorXAxisGrid.setInterval(60);
-    graphOutputMajorXAxisGrid.setLineWidth(1);
+    graphOutputMajorXAxisGrid.setLineWidth(2);
     graphOutputMajorXAxisGrid.setScale(10);
     graphOutput.addGraphElement(graphOutputMajorXAxisGrid);
 
-    graphOutputMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    graphOutputMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(40, 155, 209));
     graphOutputMajorYAxisGrid.setInterval(5);
-    graphOutputMajorYAxisGrid.setLineWidth(1);
+    graphOutputMajorYAxisGrid.setLineWidth(3);
     graphOutputMajorYAxisGrid.setScale(10);
     graphOutput.addGraphElement(graphOutputMajorYAxisGrid);
 
-    graphOutputLine1Painter.setColor(touchgfx::Color::getColorFromRGB(214, 0, 0));
+    graphOutputLine1Painter.setColor(touchgfx::Color::getColorFromRGB(140, 3, 3));
     graphOutputLine1.setPainter(graphOutputLine1Painter);
-    graphOutputLine1.setLineWidth(1);
+    graphOutputLine1.setLineWidth(2);
     graphOutput.addGraphElement(graphOutputLine1);
 
     add(graphOutput);
 
     buttonDone1.setXY(725, 0);
     add(buttonDone1);
-
-    digitalInputIndicator1.setXY(20, 434);
-    add(digitalInputIndicator1);
 
     buttonWithLabel_stop.setXY(283, 386);
     buttonWithLabel_stop.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
@@ -139,7 +139,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     buttonWithLabel_stop.setAction(buttonCallback);
     add(buttonWithLabel_stop);
 
-    buttonWithLabel_clear.setXY(283, 428);
+    buttonWithLabel_clear.setXY(283, 430);
     buttonWithLabel_clear.setBitmaps(touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_LIGHT_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
     buttonWithLabel_clear.setLabelText(touchgfx::TypedText(T___SINGLEUSE_AZT2));
     buttonWithLabel_clear.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -188,7 +188,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     text_analogVal_Kd.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5HQL));
     add(text_analogVal_Kd);
 
-    digitalOutput1.setXY(0, 358);
+    digitalOutput1.setXY(-102, 358);
     add(digitalOutput1);
 }
 
@@ -200,8 +200,8 @@ ClosedLoopGraphViewBase::~ClosedLoopGraphViewBase()
 void ClosedLoopGraphViewBase::setupScreen()
 {
     spOpFb1.initialize();
-    buttonDone1.initialize();
     digitalInputIndicator1.initialize();
+    buttonDone1.initialize();
     digitalOutput1.initialize();
 }
 

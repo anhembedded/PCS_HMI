@@ -25,8 +25,8 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     textArea2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DV10));
     add(textArea2_1);
 
-    buttonWithLabel_Confirm.setXY(612, 400);
-    buttonWithLabel_Confirm.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUND_PRESSED_ID));
+    buttonWithLabel_Confirm.setXY(597, 367);
+    buttonWithLabel_Confirm.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_TINY_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_TINY_ROUNDED_PRESSED_ID));
     buttonWithLabel_Confirm.setLabelText(touchgfx::TypedText(T___SINGLEUSE_2OQ6));
     buttonWithLabel_Confirm.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel_Confirm.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -40,38 +40,38 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     boxWithBorder1.setBorderSize(5);
     PidCon.add(boxWithBorder1);
 
-    textArea1_1_1.setXY(28, 98);
+    textArea1_1_1.setXY(35, 93);
     textArea1_1_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1_1_1.setLinespacing(0);
     textArea1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WWI1));
     PidCon.add(textArea1_1_1);
 
-    buttonText_Kd.setBoxWithBorderPosition(0, 0, 102, 32);
+    buttonText_Kd.setBoxWithBorderPosition(0, 0, 173, 47);
     buttonText_Kd.setBorderSize(5);
     buttonText_Kd.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(87, 119, 243), touchgfx::Color::getColorFromRGB(51, 102, 153));
     buttonText_Kd.setAction(flexButtonCallback);
-    buttonText_Kd.setPosition(79, 157, 102, 32);
+    buttonText_Kd.setPosition(87, 150, 173, 47);
     PidCon.add(buttonText_Kd);
 
-    buttonText_setPoint.setBoxWithBorderPosition(0, 0, 102, 32);
+    buttonText_setPoint.setBoxWithBorderPosition(0, 0, 141, 56);
     buttonText_setPoint.setBorderSize(5);
     buttonText_setPoint.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(217, 4, 192), touchgfx::Color::getColorFromRGB(51, 102, 153));
     buttonText_setPoint.setAction(flexButtonCallback);
-    buttonText_setPoint.setPosition(309, 158, 102, 32);
+    buttonText_setPoint.setPosition(487, 145, 141, 56);
     PidCon.add(buttonText_setPoint);
 
-    buttonText_Ki.setBoxWithBorderPosition(0, 0, 102, 32);
+    buttonText_Ki.setBoxWithBorderPosition(0, 0, 173, 51);
     buttonText_Ki.setBorderSize(5);
     buttonText_Ki.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(87, 119, 243), touchgfx::Color::getColorFromRGB(51, 102, 153));
     buttonText_Ki.setAction(flexButtonCallback);
-    buttonText_Ki.setPosition(79, 92, 102, 32);
+    buttonText_Ki.setPosition(87, 85, 173, 51);
     PidCon.add(buttonText_Ki);
 
-    buttonText_Kp.setBoxWithBorderPosition(0, 0, 102, 32);
+    buttonText_Kp.setBoxWithBorderPosition(0, 0, 173, 51);
     buttonText_Kp.setBorderSize(5);
     buttonText_Kp.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(87, 119, 243), touchgfx::Color::getColorFromRGB(51, 102, 153));
     buttonText_Kp.setAction(flexButtonCallback);
-    buttonText_Kp.setPosition(79, 24, 102, 32);
+    buttonText_Kp.setPosition(87, 24, 173, 51);
     PidCon.add(buttonText_Kp);
 
     text_analogVal_Kd.setXY(104, 158);
@@ -83,7 +83,7 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     text_analogVal_Kd.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YH98));
     PidCon.add(text_analogVal_Kd);
 
-    text_setPoint.setXY(329, 161);
+    text_setPoint.setXY(502, 158);
     text_setPoint.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     text_setPoint.setLinespacing(0);
     Unicode::snprintf(text_setPointBuffer, TEXT_SETPOINT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_RKRI).getText());
@@ -92,7 +92,7 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     text_setPoint.setTypedText(touchgfx::TypedText(T___SINGLEUSE_C405));
     PidCon.add(text_setPoint);
 
-    text_analogVal_Ki.setXY(104, 93);
+    text_analogVal_Ki.setXY(103, 94);
     text_analogVal_Ki.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     text_analogVal_Ki.setLinespacing(0);
     Unicode::snprintf(text_analogVal_KiBuffer, TEXT_ANALOGVAL_KI_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_OE6Z).getText());
@@ -101,7 +101,7 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     text_analogVal_Ki.setTypedText(touchgfx::TypedText(T___SINGLEUSE_9BL3));
     PidCon.add(text_analogVal_Ki);
 
-    text_analogVal_Kp.setXY(104, 25);
+    text_analogVal_Kp.setXY(104, 30);
     text_analogVal_Kp.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     text_analogVal_Kp.setLinespacing(0);
     Unicode::snprintf(text_analogVal_KpBuffer, TEXT_ANALOGVAL_KP_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_VXIL).getText());
@@ -110,31 +110,31 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     text_analogVal_Kp.setTypedText(touchgfx::TypedText(T___SINGLEUSE_YYC4));
     PidCon.add(text_analogVal_Kp);
 
-    textArea1.setXY(25, 30);
+    textArea1.setXY(35, 30);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DZ4N));
     PidCon.add(textArea1);
 
-    textArea1_2.setXY(221, 165);
+    textArea1_2.setXY(347, 156);
     textArea1_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1_2.setLinespacing(0);
     textArea1_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_UCX8));
     PidCon.add(textArea1_2);
 
-    textArea1_1.setXY(28, 163);
+    textArea1_1.setXY(35, 163);
     textArea1_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1_1.setLinespacing(0);
     textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NU1K));
     PidCon.add(textArea1_1);
 
-    textArea2.setXY(464, 30);
+    textArea2.setXY(297, 24);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea2.setLinespacing(0);
     textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RCEA));
     PidCon.add(textArea2);
 
-    textArea2_2.setXY(464, 65);
+    textArea2_2.setXY(347, 64);
     textArea2_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea2_2.setLinespacing(0);
     textArea2_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LHG6));
@@ -142,8 +142,8 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
 
     add(PidCon);
 
-    button_openModelWindow.setXY(51, 400);
-    button_openModelWindow.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
+    button_openModelWindow.setXY(56, 367);
+    button_openModelWindow.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_TINY_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_TINY_ROUNDED_PRESSED_ID));
     button_openModelWindow.setLabelText(touchgfx::TypedText(T___SINGLEUSE_LG1U));
     button_openModelWindow.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     button_openModelWindow.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));

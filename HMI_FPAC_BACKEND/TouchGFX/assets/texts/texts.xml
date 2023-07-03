@@ -46,28 +46,28 @@
       <Text Id="__SingleUse_RKRI" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">000.00</Translation>
       </Text>
-      <Text Id="__SingleUse_C405" Alignment="Left" TypographyId="WildcardB">
+      <Text Id="__SingleUse_C405" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_UCX8" Alignment="Left" TypographyId="MainMenu">
+      <Text Id="__SingleUse_UCX8" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">SetPoint</Translation>
       </Text>
-      <Text Id="__SingleUse_LHG6" Alignment="Left" TypographyId="MainMenu">
+      <Text Id="__SingleUse_LHG6" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">Tracing Time: 60s</Translation>
       </Text>
       <Text Id="__SingleUse_DV10" Alignment="Left" TypographyId="MainMenu">
         <Translation Language="GB">Sampler Time: 0.1</Translation>
       </Text>
-      <Text Id="__SingleUse_RCEA" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">Sampler Time: 0.1</Translation>
+      <Text Id="__SingleUse_RCEA" Alignment="Left" TypographyId="KeyBoard">
+        <Translation Language="GB">Sampler Time: 0.1s</Translation>
       </Text>
-      <Text Id="__SingleUse_WWI1" Alignment="Left" TypographyId="MainMenu">
+      <Text Id="__SingleUse_WWI1" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">Ki</Translation>
       </Text>
-      <Text Id="__SingleUse_NU1K" Alignment="Left" TypographyId="MainMenu">
+      <Text Id="__SingleUse_NU1K" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">Kd</Translation>
       </Text>
-      <Text Id="__SingleUse_DZ4N" Alignment="Left" TypographyId="MainMenu">
+      <Text Id="__SingleUse_DZ4N" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">Kp</Translation>
       </Text>
       <Text Id="__SingleUse_CMEB" Alignment="Left" TypographyId="Small">
@@ -85,19 +85,19 @@
       <Text Id="__SingleUse_VXIL" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">00.00</Translation>
       </Text>
-      <Text Id="__SingleUse_YYC4" Alignment="Left" TypographyId="WildcardB">
+      <Text Id="__SingleUse_YYC4" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_OE6Z" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">00.00</Translation>
       </Text>
-      <Text Id="__SingleUse_9BL3" Alignment="Left" TypographyId="WildcardB">
+      <Text Id="__SingleUse_9BL3" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_3N9N" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">00.00</Translation>
       </Text>
-      <Text Id="__SingleUse_YH98" Alignment="Left" TypographyId="WildcardB">
+      <Text Id="__SingleUse_YH98" Alignment="Left" TypographyId="KeyBoard">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_IWZ6" Alignment="Left" TypographyId="WildcardB">
@@ -106,8 +106,8 @@
       <Text Id="__SingleUse_L00Q" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_LG1U" Alignment="Center" TypographyId="MainMenu">
-        <Translation Language="GB">actuator</Translation>
+      <Text Id="__SingleUse_LG1U" Alignment="Center" TypographyId="KeyBoard">
+        <Translation Language="GB">Actuator</Translation>
       </Text>
       <Text Id="__SingleUse_ABRK" Alignment="Left" TypographyId="MainMenu">
         <Translation Language="GB">00.0</Translation>
@@ -127,7 +127,7 @@
       <Text Id="__SingleUse_21S9" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">kP: &lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_2OQ6" Alignment="Center" TypographyId="MainMenu">
+      <Text Id="__SingleUse_2OQ6" Alignment="Center" TypographyId="KeyBoard">
         <Translation Language="GB">Confirm</Translation>
       </Text>
       <Text Id="__SingleUse_IYGT" Alignment="Left" TypographyId="WildcardB">

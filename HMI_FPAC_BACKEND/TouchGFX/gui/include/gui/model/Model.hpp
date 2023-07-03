@@ -122,7 +122,7 @@ public:
     digitalIn_type digitalInput;
     activeScreen_type activeScreenVar;
     systemState_type systemEntryState; 
-    float pidOutFromBackend;
+    uint32_t pidOutFromBackend;
   
     Model();
 

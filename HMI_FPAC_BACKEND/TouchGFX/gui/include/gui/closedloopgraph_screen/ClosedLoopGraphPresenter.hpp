@@ -35,7 +35,7 @@ public:
     void  sendFeedbackToView();
     void statePidGraphRunP_entry();
     void statePidGraphRunP_exit();
-     void notifyUpdatePidOutput(float pidOutput);
+     void notifyUpdatePidOutput(uint32_t pidOutput);
    
 private:
     ClosedLoopGraphPresenter();

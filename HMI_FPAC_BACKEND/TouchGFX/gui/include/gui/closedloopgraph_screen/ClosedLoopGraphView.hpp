@@ -69,11 +69,12 @@ public:
     graphSetpoint.addDataPoint(setPointFromModel);
     graphFeadback.addDataPoint(dataPoint);
   }
-  void updatePidOutput(float pidOutput)
+  void updatePidOutput(uint32_t pidOutput)
   {
       auto pidOut10Float = cov1024to10Float(pidOutput);
       graphOutput.addDataPoint(pidOut10Float);
       spOpFb1.drawLineProgressOutput((int)pidOutput);
+      spOpFb1.drawtextAreaFeedback(pidOut10Float);
   }
 protected:
 private:

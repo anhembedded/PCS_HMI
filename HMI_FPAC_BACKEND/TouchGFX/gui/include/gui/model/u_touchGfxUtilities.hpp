@@ -21,7 +21,7 @@ void debugPrint(const char* strMessage, T var)
 #endif // SIMULATOR //  
 }
 
-float cov1024to10Float(float _1024floatVar);
+float cov1024to10Float(uint32_t _1024Var);
 
 
 #endif /* EC38B401_F98D_4D5F_BA4F_A085A6C4056F */
