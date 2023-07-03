@@ -22,11 +22,7 @@ extern "C"
 
 Model::Model() : modelListener(0)
 {
-#ifdef SIMULATOR
 
-#else
-
-#endif // SIMULATOR
 }
 
 void Model::tick()
@@ -35,7 +31,15 @@ void Model::tick()
 #ifdef SIMULATOR
 
 #else
-    auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, &u32_adcPtr, 0);
+    auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, (void*)&u32_adcPtr, 0);
+    auto isReciOuputBackEnd = xQueueReceive(u_pid_queue_sendOutPutToFrontEnd, (void*)&pidOutFromBackend, 0);
+    if(isReciOuputBackEnd == pdTRUE)
+    {
+         if (modelListener != nullptr)
+        {
+            modelListener->notifyUpdatePidOutput(pidOutFromBackend);
+        }
+    }
     if (isRecieved == pdTRUE)
     {
 
@@ -114,12 +118,13 @@ void Model::updateActiveScreen(activeScreen_type param)
 
 void Model::setPidParam(pidParam_type pidSet)
 {
+    float const1023Div10 = 1023.0F/10.0F;
     u_appPid_updateParam_type backendPid;
     this->pidParam = pidSet;
     backendPid.Kp = pidSet.f_kp;
     backendPid.Ki = pidSet.f_ki;
     backendPid.Kd = pidSet.f_kd;
-    backendPid.setPoint = pidSet.f_setPoint;
+    backendPid.setPoint = pidSet.f_setPoint * const1023Div10;
     debugPrint<decltype(pidSet.f_kp)>("debugPrint::pidSet.f_kp", pidSet.f_kp);
     debugPrint<decltype(pidSet.f_ki)>("debugPrint::pidSet.f_ki", pidSet.f_ki);
     debugPrint<decltype(pidSet.f_kd)>("debugPrint::pidSet.f_kd", pidSet.f_kd);
@@ -184,17 +189,18 @@ void Model::setActiveScreen(activeScreen_type activeScreenParam)
 
   float Model::getFeedBackToPresentor()
  {
-     return analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
+    auto factorVal = this->settingVar.f_factor.at(static_cast<uint32_t>(actualValue));
+    auto offsetVal = this->settingVar.f_offset.at(static_cast<uint32_t>(actualValue));
+    auto feedback = analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
+    auto feedBackFactorAndOffset = (feedback * factorVal) + offsetVal;
+    return feedBackFactorAndOffset;
  }
 
   void Model::statePidGraphRun_entry()
   {
 #ifdef BACKEND
-
       u_app_pidGraphRun_entry();
-
 #endif // BACKEND
-
   }
 
   void Model::statePidGraphRun_exit()
@@ -202,8 +208,6 @@ void Model::setActiveScreen(activeScreen_type activeScreenParam)
 #ifdef BACKEND
       u_app_pidGraphRun_exit();
 #endif // BACKEND
-
-      
   }
 
   void Model::stateSettingVar_entry()

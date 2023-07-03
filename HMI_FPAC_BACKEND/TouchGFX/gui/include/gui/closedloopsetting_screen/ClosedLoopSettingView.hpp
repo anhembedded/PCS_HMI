@@ -3,6 +3,7 @@
 
 #include <gui_generated/closedloopsetting_screen/ClosedLoopSettingViewBase.hpp>
 #include <gui/closedloopsetting_screen/ClosedLoopSettingPresenter.hpp>
+#include "gui/model/u_touchGfxUtilities.hpp"
 
 
 class ClosedLoopSettingView : public ClosedLoopSettingViewBase
@@ -120,6 +121,7 @@ public:
         pidParam.f_kd = constraint(pidParam.f_kd, pidRange::KD_MIN, pidRange::KD_MAX);
 
     }
+    void updatePidOutput(float pidOutput);
 protected:
 private:
     void textFrequencyUpdate();

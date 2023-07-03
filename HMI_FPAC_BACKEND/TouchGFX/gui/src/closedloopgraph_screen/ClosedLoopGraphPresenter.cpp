@@ -55,3 +55,18 @@ pidParam_type ClosedLoopGraphPresenter::getPidParam()
     }
       
   }
+
+   void ClosedLoopGraphPresenter::statePidGraphRunP_entry()
+   {
+       model->statePidGraphRun_entry();
+   }
+
+    void ClosedLoopGraphPresenter::statePidGraphRunP_exit()
+   {
+       model->statePidGraphRun_exit();
+   }
+
+   void ClosedLoopGraphPresenter::notifyUpdatePidOutput(float pidOutput)
+   {
+       view.updatePidOutput(pidOutput);
+   }

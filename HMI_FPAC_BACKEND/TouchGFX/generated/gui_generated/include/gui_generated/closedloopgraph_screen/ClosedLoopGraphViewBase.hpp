@@ -67,6 +67,11 @@ protected:
     touchgfx::GraphWrapAndClear<700> graphSetpoint;
     touchgfx::GraphElementLine graphSetpointLine1;
     touchgfx::PainterRGB565 graphSetpointLine1Painter;
+    touchgfx::GraphWrapAndClear<700> graphOutput;
+    touchgfx::GraphElementGridX graphOutputMajorXAxisGrid;
+    touchgfx::GraphElementGridY graphOutputMajorYAxisGrid;
+    touchgfx::GraphElementLine graphOutputLine1;
+    touchgfx::PainterRGB565 graphOutputLine1Painter;
     ButtonDone buttonDone1;
     DigitalInputIndicator digitalInputIndicator1;
     touchgfx::ButtonWithLabel buttonWithLabel_stop;

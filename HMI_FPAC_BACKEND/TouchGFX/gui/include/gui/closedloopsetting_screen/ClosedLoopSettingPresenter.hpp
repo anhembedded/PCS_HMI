@@ -31,15 +31,9 @@ public:
     actualValue_type getActualValue();
 
     void notifyActiveScreen() override;
-    void notifyActualValueChanged(actualValue_type actualValueParam)
-    {
-        model->updateActualValue(actualValueParam);
-    }
-    actualValue_type getActualValueFromModel()
-    {
-       return model->getActualValue();
-    }
-
+    void notifyActualValueChanged(actualValue_type actualValueParam);
+    actualValue_type getActualValueFromModel();
+  void notifyUpdatePidOutput(float pidOutput);
     virtual ~ClosedLoopSettingPresenter() {};
 
 private:

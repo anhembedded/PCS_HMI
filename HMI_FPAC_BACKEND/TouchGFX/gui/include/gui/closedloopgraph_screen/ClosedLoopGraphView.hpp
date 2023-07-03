@@ -7,7 +7,7 @@ extern "C" {
 
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 #include <gui_generated/closedloopgraph_screen/ClosedLoopGraphViewBase.hpp>
-
+#include "gui/model/u_touchGfxUtilities.hpp"
 enum class graphState_type { stop, run, clear };
 class ClosedLoopGraphView : public ClosedLoopGraphViewBase {
 public:
@@ -41,6 +41,7 @@ public:
     this->graphState = graphState_type::clear;
     graphFeadback.clear();
     graphSetpoint.clear();
+    graphOutput.clear();
     presenter->statePidGraphRunP_exit();
   }
 
@@ -68,7 +69,12 @@ public:
     graphSetpoint.addDataPoint(setPointFromModel);
     graphFeadback.addDataPoint(dataPoint);
   }
-
+  void updatePidOutput(float pidOutput)
+  {
+      auto pidOut10Float = cov1024to10Float(pidOutput);
+      graphOutput.addDataPoint(pidOut10Float);
+      spOpFb1.drawLineProgressOutput((int)pidOutput);
+  }
 protected:
 private:
   void updateScreenParam();

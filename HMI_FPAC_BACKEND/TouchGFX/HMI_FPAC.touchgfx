@@ -3849,7 +3849,7 @@
             },
             "XAxisLabel": {
               "Type": "GraphLabel",
-              "Interval": 500.0,
+              "Interval": 50.0,
               "DecimalSeparator": "Point",
               "TextColor": {
                 "Red": 74,
@@ -3882,6 +3882,7 @@
             "Width": 780,
             "Height": 380,
             "Visible": false,
+            "LockPosition": true,
             "DataSeed": -1305830385,
             "NumberOfValues": 700,
             "MaxY": 11.3,
@@ -3915,6 +3916,7 @@
             "Width": 780,
             "Height": 380,
             "Visible": false,
+            "LockPosition": true,
             "DataSeed": 659641351,
             "NumberOfValues": 700,
             "MaxY": 11.3,
@@ -3940,9 +3942,10 @@
             "Type": "DynamicGraph",
             "Name": "graphOutput",
             "X": 10,
-            "Y": 6,
+            "Y": -6,
             "Width": 780,
             "Height": 101,
+            "LockPosition": true,
             "DataSeed": 659641351,
             "NumberOfValues": 700,
             "MaxY": 11.3,
@@ -3954,6 +3957,7 @@
             "LabelSizeTop": 17,
             "LabelSizeBottom": 29,
             "LabelSizeLeft": 24,
+            "PaddingTop": 2,
             "PaddingRight": 10,
             "GraphType": "GraphWrapClear",
             "GraphDrawers": [
@@ -3962,11 +3966,30 @@
                 "LineWidth": 2,
                 "FileNameImage": "",
                 "Color": {
-                  "Red": 230,
-                  "Blue": 126
+                  "Red": 214
                 }
               }
-            ]
+            ],
+            "XAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 20,
+                "Green": 151,
+                "Blue": 197
+              },
+              "Interval": 60.0,
+              "LineWidth": 2
+            },
+            "YAxisGrid": {
+              "Type": "GraphGrid",
+              "Color": {
+                "Red": 50,
+                "Green": 151,
+                "Blue": 200
+              },
+              "Interval": 5.0,
+              "LineWidth": 1
+            }
           },
           {
             "Type": "CustomContainerInstance",

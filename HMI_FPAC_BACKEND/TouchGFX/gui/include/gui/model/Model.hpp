@@ -83,7 +83,6 @@ struct settingVar_type
     {
         f_factor = other.f_factor;
         f_offset = other.f_offset;
-
         return *this;
     }
 
@@ -123,6 +122,7 @@ public:
     digitalIn_type digitalInput;
     activeScreen_type activeScreenVar;
     systemState_type systemEntryState; 
+    float pidOutFromBackend;
   
     Model();
 

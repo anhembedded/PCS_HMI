@@ -33,14 +33,9 @@ public:
     float getFeedbackDataPointFormModel();
     void notifyADCChanged(analogIn_type analogParam);
     void  sendFeedbackToView();
-    void statePidGraphRunP_entry()
-    {
-        model->statePidGraphRun_entry();
-    }
-    void statePidGraphRunP_exit()
-    {
-        model->statePidGraphRun_exit();
-    }
+    void statePidGraphRunP_entry();
+    void statePidGraphRunP_exit();
+     void notifyUpdatePidOutput(float pidOutput);
    
 private:
     ClosedLoopGraphPresenter();

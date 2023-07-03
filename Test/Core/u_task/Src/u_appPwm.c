@@ -40,6 +40,7 @@ void u_appPwmCreate() {
 
   
 }
+
 void u_appPwm_updatePwmFromPid_resume()
 {
     if(isTaskSuspended(updatePwmFromPidHandle))

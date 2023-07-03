@@ -58,6 +58,7 @@ QueueHandle_t u_pid_queue_feedbackHandle;
 QueueHandle_t u_pid_queue_output;
 QueueHandle_t u_pid_queue_actuator;
 QueueHandle_t u_pid_queue_pidParam;
+QueueHandle_t u_pid_queue_sendOutPutToFrontEnd;
 
 
 void u_appPidCreate()
@@ -67,8 +68,10 @@ void u_appPidCreate()
     pidInit();
     u_pid_queue_feedbackHandle = xQueueCreate(1, sizeof(uint32_t *));
     u_pid_queue_output = xQueueCreate(1, sizeof(uint32_t));
+    u_pid_queue_sendOutPutToFrontEnd = xQueueCreate(1, sizeof(float));
     u_pid_queue_actuator = xQueueCreate(1, sizeof(uint32_t));
     u_pid_queue_pidParam = xQueueCreate(1, sizeof(struct u_appPid_updateParam_type));
+
     status = xTaskCreate(u_appPid_pdiCompute, "pidComputing", 200, NULL, 2, &u_task_PidHandle);
     configASSERT(status == pdPASS);
 }
@@ -123,7 +126,8 @@ void u_appPid_pdiCompute(void *param)
         vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(pidParam.sampleTime));
         u_appPid_updateFeedback(actuatorVar);
         PID_Compute(&PID_Oject);
-        xQueueSend(u_pid_queue_output,&pidParam.pidOutput, pdMS_TO_TICKS(0)); /*send to pwm output*/
+        xQueueSend(u_pid_queue_output,(void*)&pidParam.pidOutput, pdMS_TO_TICKS(0)); /*send to pwm output*/
+        xQueueSend(u_pid_queue_sendOutPutToFrontEnd,(void*)&pidParam.pidOutput,pdMS_TO_TICKS(0));/*send to backEnd*/
     }
 }
 

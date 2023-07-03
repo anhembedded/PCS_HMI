@@ -47,6 +47,7 @@ void u_app_systemStartup_entry();
 void u_app_settingVarState_entry();
 void u_app_pidGraphRun_entry();
 
+
 void u_app_settingVarState_exit();
 void u_app_pidGraphRun_exit();
 

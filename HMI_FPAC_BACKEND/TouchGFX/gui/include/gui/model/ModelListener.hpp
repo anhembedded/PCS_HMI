@@ -32,6 +32,7 @@ public:
     virtual void notifyDigitalInputChanged(digitalIn_type par) {}
     virtual void notifyActiveScreen() {}
     virtual void sendFeedbackToView(){}
+    virtual void notifyUpdatePidOutput(float pidOutput){}
    
 
 protected:

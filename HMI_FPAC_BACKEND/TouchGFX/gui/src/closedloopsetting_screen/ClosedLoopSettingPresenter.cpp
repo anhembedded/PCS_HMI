@@ -42,3 +42,18 @@ void ClosedLoopSettingPresenter::deactivate()
      model->updateActiveScreen(view.getActiveScreen());
  }
 
+   void ClosedLoopSettingPresenter::notifyActualValueChanged(actualValue_type actualValueParam)
+  {
+      model->updateActualValue(actualValueParam);
+  }
+
+   actualValue_type ClosedLoopSettingPresenter::getActualValueFromModel()
+  {
+      return model->getActualValue();
+  }
+
+  void ClosedLoopSettingPresenter::notifyUpdatePidOutput(float pidOutput)
+  {
+      view.updatePidOutput(pidOutput);
+  }
+
