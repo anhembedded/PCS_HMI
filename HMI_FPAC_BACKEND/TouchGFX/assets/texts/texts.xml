@@ -10,6 +10,21 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_QN5K" Alignment="Center" TypographyId="WildcardB">
+        <Translation Language="GB">Done</Translation>
+      </Text>
+      <Text Id="__SingleUse_PC1L" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">D.In.0:&#10;D.In.1:&#10;D.In.2:&#10;D.In.3:&#10;D.In.4:&#10;D.In.5:&#10;D.In.6:</Translation>
+      </Text>
+      <Text Id="__SingleUse_98JF" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Analog.0: Pump&#10;Analog.0: Linear valve</Translation>
+      </Text>
+      <Text Id="__SingleUse_CQMT" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">D.In.0:&#10;D.In.1:&#10;D.In.2:&#10;D.In.3:&#10;D.In.4:</Translation>
+      </Text>
+      <Text Id="__SingleUse_CHPN" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Ch.0 : Level&#10;Ch.1: Flow rate&#10;Ch.2: Pressure&#10;Ch.3: Temperature</Translation>
+      </Text>
       <Text Id="__SingleUse_V6NC" Alignment="Center" TypographyId="KeyBoard">
         <Translation Language="GB">Start</Translation>
       </Text>

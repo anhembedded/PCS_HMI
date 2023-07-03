@@ -28,11 +28,10 @@ MainViewBase::MainViewBase() :
     buttonMesuaring.setLabelText(touchgfx::TypedText(T___SINGLEUSE_JGV0));
     buttonMesuaring.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonMesuaring.setLabelColorPressed(touchgfx::Color::getColorFromRGB(87, 119, 243));
-    buttonMesuaring.setVisible(false);
     buttonMesuaring.setAction(buttonCallback);
     add(buttonMesuaring);
 
-    clickButton_closedloopControlContinuous.setXY(190, 145);
+    clickButton_closedloopControlContinuous.setXY(190, 165);
     clickButton_closedloopControlContinuous.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_PRESSED_ID));
     clickButton_closedloopControlContinuous.setLabelText(touchgfx::TypedText(T___SINGLEUSE_KZ50));
     clickButton_closedloopControlContinuous.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));

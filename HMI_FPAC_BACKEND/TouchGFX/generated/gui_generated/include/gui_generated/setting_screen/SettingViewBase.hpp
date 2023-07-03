@@ -8,9 +8,9 @@
 #include <mvp/View.hpp>
 #include <gui/setting_screen/SettingPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
@@ -22,6 +22,7 @@
 #include <touchgfx/widgets/Image.hpp>
 #include <gui/containers/Keyboard.hpp>
 #include <touchgfx/mixins/Draggable.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class SettingViewBase : public touchgfx::View<SettingPresenter>
 {
@@ -121,7 +122,8 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box Background;
-    touchgfx::ButtonWithIcon buttonWithIcon1;
+    touchgfx::BoxWithBorder boxWithBorder5;
+    touchgfx::ButtonWithIcon buttonQuestion;
     touchgfx::Container containerParameter;
     touchgfx::BoxWithBorder boxWithBorder3;
     touchgfx::BoxWithBorder boxWithBorder1_1;
@@ -166,6 +168,7 @@ protected:
     touchgfx::ButtonWithIcon buttonWithIcon2;
     touchgfx::ButtonWithIcon button_Confirm;
     touchgfx::SlideMenu binaryMenu;
+    touchgfx::BoxWithBorder boxWithBorder6;
     touchgfx::Container binaryButton;
     touchgfx::ToggleButton buttonDigital4;
     touchgfx::ToggleButton buttonDigital3;
@@ -180,6 +183,16 @@ protected:
     touchgfx::Image image1_1;
     touchgfx::ButtonWithIcon buttonDone;
     touchgfx::Draggable< Keyboard > keyboard1;
+    touchgfx::ModalWindow modalQuestion;
+    touchgfx::Box box1_1;
+    touchgfx::Box box1;
+    touchgfx::BoxWithBorder boxWithBorder4_1;
+    touchgfx::BoxWithBorder boxWithBorder4;
+    touchgfx::TextArea textArea5_1_2;
+    touchgfx::TextArea textArea5_1_1;
+    touchgfx::TextArea textArea5;
+    touchgfx::TextArea textArea5_1;
+    touchgfx::ButtonWithLabel buttonModalDone;
 
     /*
      * Wildcard Buffers

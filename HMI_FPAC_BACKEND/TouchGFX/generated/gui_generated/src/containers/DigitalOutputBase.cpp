@@ -3,8 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/containers/DigitalOutputBase.hpp>
 #include <images/BitmapDatabase.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Color.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 DigitalOutputBase::DigitalOutputBase() :
     buttonCallback(this, &DigitalOutputBase::buttonCallbackHandler)
@@ -23,6 +23,12 @@ DigitalOutputBase::DigitalOutputBase() :
     binaryMenu.setAnimationEasingEquation(touchgfx::EasingEquations::cubicEaseInOut);
     binaryMenu.setAnimationDuration(18);
     binaryMenu.setExpandedStateTimeout(0);
+    boxWithBorder6.setPosition(600, 43, 288, 94);
+    boxWithBorder6.setColor(touchgfx::Color::getColorFromRGB(105, 119, 144));
+    boxWithBorder6.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder6.setBorderSize(5);
+    binaryMenu.add(boxWithBorder6);
+
     binaryButton.setPosition(391, 38, 495, 126);
     buttonDigital4.setXY(232, 19);
     buttonDigital4.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));

@@ -7,6 +7,7 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/containers/SlideMenu.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/Image.hpp>
@@ -51,6 +52,7 @@ protected:
      * Member Declarations
      */
     touchgfx::SlideMenu binaryMenu;
+    touchgfx::BoxWithBorder boxWithBorder6;
     touchgfx::Container binaryButton;
     touchgfx::ToggleButton buttonDigital4;
     touchgfx::ToggleButton buttonDigital3;

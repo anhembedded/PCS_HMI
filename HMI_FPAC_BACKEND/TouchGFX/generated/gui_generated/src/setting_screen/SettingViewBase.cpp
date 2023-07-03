@@ -19,10 +19,17 @@ SettingViewBase::SettingViewBase() :
     Background.setColor(touchgfx::Color::getColorFromRGB(214, 236, 255));
     add(Background);
 
-    buttonWithIcon1.setXY(17, 400);
-    buttonWithIcon1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_HELP_OUTLINE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
-    buttonWithIcon1.setIconXY(5, 5);
-    add(buttonWithIcon1);
+    boxWithBorder5.setPosition(0, 0, 800, 480);
+    boxWithBorder5.setColor(touchgfx::Color::getColorFromRGB(214, 236, 255));
+    boxWithBorder5.setBorderColor(touchgfx::Color::getColorFromRGB(81, 90, 166));
+    boxWithBorder5.setBorderSize(5);
+    add(boxWithBorder5);
+
+    buttonQuestion.setXY(17, 400);
+    buttonQuestion.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_HELP_OUTLINE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARTICLE_50_50_E8F6FB_SVG_ID));
+    buttonQuestion.setIconXY(5, 5);
+    buttonQuestion.setAction(buttonCallback);
+    add(buttonQuestion);
 
     containerParameter.setPosition(77, -16, 618, 305);
     boxWithBorder3.setPosition(0, 22, 618, 283);
@@ -320,7 +327,7 @@ SettingViewBase::SettingViewBase() :
     button_Confirm.setAction(buttonCallback);
     add(button_Confirm);
 
-    binaryMenu.setXY(-86, 339);
+    binaryMenu.setXY(-87, 340);
     binaryMenu.setup(touchgfx::SlideMenu::NORTH,
         touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_BARS_1024X600_BOTTOM_DIM_DARK_ID),
         touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID),
@@ -332,6 +339,12 @@ SettingViewBase::SettingViewBase() :
     binaryMenu.setAnimationEasingEquation(touchgfx::EasingEquations::cubicEaseInOut);
     binaryMenu.setAnimationDuration(18);
     binaryMenu.setExpandedStateTimeout(0);
+    boxWithBorder6.setPosition(601, 44, 288, 94);
+    boxWithBorder6.setColor(touchgfx::Color::getColorFromRGB(105, 119, 144));
+    boxWithBorder6.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder6.setBorderSize(5);
+    binaryMenu.add(boxWithBorder6);
+
     binaryButton.setPosition(391, 38, 495, 126);
     buttonDigital4.setXY(232, 19);
     buttonDigital4.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
@@ -405,6 +418,65 @@ SettingViewBase::SettingViewBase() :
     keyboard1.setXY(93, 0);
     keyboard1.setVisible(false);
     add(keyboard1);
+
+    modalQuestion.setBackground(touchgfx::BitmapId(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_GRADIENT_DARK_ID), 160, 104);
+    modalQuestion.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    modalQuestion.setShadeAlpha(160);
+    modalQuestion.hide();
+    box1_1.setPosition(-8, -8, 496, 287);
+    box1_1.setColor(touchgfx::Color::getColorFromRGB(255, 0, 225));
+    box1_1.setAlpha(189);
+    modalQuestion.add(box1_1);
+
+    box1.setPosition(7, 13, 465, 247);
+    box1.setColor(touchgfx::Color::getColorFromRGB(181, 213, 245));
+    modalQuestion.add(box1);
+
+    boxWithBorder4_1.setPosition(274, 19, 193, 147);
+    boxWithBorder4_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorder4_1.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder4_1.setBorderSize(5);
+    modalQuestion.add(boxWithBorder4_1);
+
+    boxWithBorder4.setPosition(12, 18, 247, 193);
+    boxWithBorder4.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    boxWithBorder4.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    boxWithBorder4.setBorderSize(5);
+    modalQuestion.add(boxWithBorder4);
+
+    textArea5_1_2.setXY(20, 22);
+    textArea5_1_2.setColor(touchgfx::Color::getColorFromRGB(10, 0, 117));
+    textArea5_1_2.setLinespacing(0);
+    textArea5_1_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PC1L));
+    modalQuestion.add(textArea5_1_2);
+
+    textArea5_1_1.setXY(262, 198);
+    textArea5_1_1.setColor(touchgfx::Color::getColorFromRGB(10, 0, 117));
+    textArea5_1_1.setLinespacing(0);
+    textArea5_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_98JF));
+    modalQuestion.add(textArea5_1_1);
+
+    textArea5.setXY(283, 25);
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(10, 0, 117));
+    textArea5.setLinespacing(0);
+    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CHPN));
+    modalQuestion.add(textArea5);
+
+    textArea5_1.setXY(147, 24);
+    textArea5_1.setColor(touchgfx::Color::getColorFromRGB(15, 9, 79));
+    textArea5_1.setLinespacing(0);
+    textArea5_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_CQMT));
+    modalQuestion.add(textArea5_1);
+
+    buttonModalDone.setXY(-13, 195);
+    buttonModalDone.setBitmaps(touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_GLASS_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUND_PRESSED_ID));
+    buttonModalDone.setLabelText(touchgfx::TypedText(T___SINGLEUSE_QN5K));
+    buttonModalDone.setLabelColor(touchgfx::Color::getColorFromRGB(0, 34, 184));
+    buttonModalDone.setLabelColorPressed(touchgfx::Color::getColorFromRGB(197, 15, 188));
+    buttonModalDone.setAction(buttonCallback);
+    modalQuestion.add(buttonModalDone);
+
+    add(modalQuestion);
 }
 
 SettingViewBase::~SettingViewBase()
@@ -551,5 +623,21 @@ void SettingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonDone completed call virtual function
         //Call buttonReturnHandle
         buttonReturnHandle();
+    }
+    if (&src == &buttonModalDone)
+    {
+        //Interaction3
+        //When buttonModalDone clicked hide modalQuestion
+        //Hide modalQuestion
+        modalQuestion.setVisible(false);
+        modalQuestion.invalidate();
+    }
+    if (&src == &buttonQuestion)
+    {
+        //Interaction4
+        //When buttonQuestion clicked show modalQuestion
+        //Show modalQuestion
+        modalQuestion.setVisible(true);
+        modalQuestion.invalidate();
     }
 }
