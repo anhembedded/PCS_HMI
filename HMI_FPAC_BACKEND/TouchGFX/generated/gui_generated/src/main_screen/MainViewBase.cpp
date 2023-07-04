@@ -42,6 +42,7 @@ MainViewBase::MainViewBase() :
     buttonLang.setXY(569, 352);
     buttonLang.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LANGUAGE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_LANGUAGE_50_50_5777F3_SVG_ID));
     buttonLang.setIconXY(87, 22);
+    buttonLang.setAction(buttonCallback);
     add(buttonLang);
 
     image1.setXY(0, -1);
@@ -104,5 +105,13 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When button_information clicked change screen to Information
         //Go to Information with block transition
         application().gotoInformationScreenBlockTransition();
+    }
+    if (&src == &buttonLang)
+    {
+        //Interaction1
+        //When buttonLang clicked set language Vietnamese
+        //Change language to Vietnamese
+        Texts::setLanguage(VIETNAMESE);
+        invalidate();
     }
 }

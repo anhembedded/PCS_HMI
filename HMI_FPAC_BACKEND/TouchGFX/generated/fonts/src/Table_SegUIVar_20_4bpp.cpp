@@ -19,8 +19,11 @@ KEEP extern const touchgfx::GlyphNode glyphs_SegUIVar_20_4bpp[] FONT_TABLE_LOCAT
     {   692, 0x003A,   3,  10,  10,   1,   4,   0,   0, 0x00 }, // colon
     {   712, 0x003F,   8,  14,  14,   0,   9,   0,   0, 0x00 }, // question
     {   768, 0x0043,  12,  14,  14,   0,  12,   0,   0, 0x00 }, // C
-    {   852, 0x0056,  13,  14,  14,   0,  12,   0,   0, 0x00 }, // V
-    {   950, 0x0068,   9,  14,  14,   1,  11,   0,   0, 0x00 }  // h
+    {   852, 0x004B,  11,  14,  14,   1,  12,   0,   0, 0x00 }, // K
+    {   936, 0x0056,  13,  14,  14,   0,  12,   0,   0, 0x00 }, // V
+    {  1034, 0x0068,   9,  14,  14,   1,  11,   0,   0, 0x00 }, // h
+    {  1104, 0x006E,   9,  10,  10,   1,  11,   0,   0, 0x00 }, // n
+    {  1154, 0x00EA,   9,  14,  14,   1,  10,   0,   0, 0x00 }  // ecircumflex
 };
 
 // SegUIVar_20_4bpp
@@ -38,6 +41,6 @@ touchgfx::GeneratedFont& getFont_SegUIVar_20_4bpp();
 
 touchgfx::GeneratedFont& getFont_SegUIVar_20_4bpp()
 {
-    static touchgfx::GeneratedFont SegUIVar_20_4bpp(glyphs_SegUIVar_20_4bpp, 17, 20, 20, 0, 0, 4, 1, 0, 1, unicodes_SegUIVar_20_4bpp, kerning_SegUIVar_20_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont SegUIVar_20_4bpp(glyphs_SegUIVar_20_4bpp, 20, 20, 20, 0, 0, 4, 1, 0, 1, unicodes_SegUIVar_20_4bpp, kerning_SegUIVar_20_4bpp, 63, 0, 0, 0);
     return SegUIVar_20_4bpp;
 }

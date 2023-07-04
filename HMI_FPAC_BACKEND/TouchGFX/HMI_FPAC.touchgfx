@@ -196,6 +196,17 @@
               "Type": "ActionCustom",
               "FunctionName": "buttonClosedLoop"
             }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonLang"
+            },
+            "Action": {
+              "Type": "ActionSetLanguage",
+              "Language": "Vietnamese"
+            }
           }
         ]
       },
