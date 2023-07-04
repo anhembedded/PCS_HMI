@@ -209,10 +209,15 @@ void ClosedLoopGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
 {
     if (&src == &buttonWithLabel_set)
     {
-        //setButton
+        //setButtonHandle
         //When buttonWithLabel_set clicked change screen to ClosedLoopSetting
         //Go to ClosedLoopSetting with screen transition towards East
         application().gotoClosedLoopSettingScreenCoverTransitionEast();
+    
+        //a
+        //When setButtonHandle completed call virtual function
+        //Call setButtonHandle
+        setButtonHandle();
     }
     if (&src == &buttonWithLabel_start)
     {

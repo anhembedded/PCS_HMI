@@ -25,7 +25,10 @@ public:
     this->graphFeadback.invalidate();
     this->graphSetpoint.invalidate();
   }
-
+  virtual void setButtonHandle()
+  {
+    presenter->statePidGraphRunP_exit();
+  }
   virtual void startButton_Handle() 
   { 
     this->graphState = graphState_type::run; 
@@ -52,6 +55,7 @@ public:
   void addFeedbackDataPoint(float dataPoint) {
     if (graphState == graphState_type::run) {
       graphFeadback.addDataPoint(dataPoint);
+        spOpFb1.drawtextAreaFeedback(dataPoint);
     } else {
       /*Do not add graph*/
     }
@@ -74,7 +78,6 @@ public:
       auto pidOut10Float = cov1024to10Float(pidOutput);
       graphOutput.addDataPoint(pidOut10Float);
       spOpFb1.drawLineProgressOutput((int)pidOutput);
-      spOpFb1.drawtextAreaFeedback(pidOut10Float);
   }
 protected:
 private:

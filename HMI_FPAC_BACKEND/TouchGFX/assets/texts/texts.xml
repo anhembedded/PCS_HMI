@@ -92,7 +92,7 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_2BAG" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">1.00</Translation>
+        <Translation Language="GB">0.00</Translation>
       </Text>
       <Text Id="__SingleUse_7ZAQ" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -440,7 +440,7 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_2333" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">1.00</Translation>
+        <Translation Language="GB">0.00</Translation>
       </Text>
       <Text Id="__SingleUse_9C92" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -452,13 +452,13 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_P5M1" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">1.00</Translation>
+        <Translation Language="GB">0.00</Translation>
       </Text>
       <Text Id="__SingleUse_FRC2" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_AN3X" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">1.00</Translation>
+        <Translation Language="GB">0.00</Translation>
       </Text>
       <Text Id="__SingleUse_WSAG" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">&lt;value&gt;</Translation>

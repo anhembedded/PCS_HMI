@@ -38,6 +38,8 @@ static void u_pwm_timerUpdateInterruptEnable();
 static void u_pwm_enableInterruptHandler(void);
 static void u_pwm_chosingPwmModeCH2(uint32_t mode);
 static void u_pwm_chosingPwmModeCH3(uint32_t mode);
+static void u_pwm_disableOutputCH2();
+static void u_pwm_disableOutputCH3();
 static void u_pwm_enablePreloadOC2(void);
 static void u_pwm_enablePreloadOC3(void);
 static void u_pwm_initGPIO();
@@ -47,6 +49,30 @@ static void u_pwm_enableOutputCH3();
 static void u_pwm_updateGenerate();
 static void u_pwm_clearUpdateFlag();
 
+void u_pwm_turnOnPwmOutputCH2()
+{
+    u_pwm_enableOutputCH2();
+}
+void u_pwm_turnOnPwmOutputCH3()
+{
+    u_pwm_enableOutputCH3();
+}
+void u_pwm_turnOffPwmOutputCH2()
+{
+    u_pwm_disableOutputCH2();
+}
+void u_pwm_turnOffPwmOutputCH3()
+{
+    u_pwm_disableOutputCH3();
+}
+void u_pwm_disableInterruptHandle()
+{
+    NVIC_DisableIRQ(TIM5_IRQn);
+}
+void u_pwm_enableInterruptHandle()
+{
+    NVIC_EnableIRQ(TIM5_IRQn);
+}
 void u_pwm_setDutyCycleCH2(uint32_t dutyCycle)
 {
     TIM5->CCR2 = dutyCycle;
@@ -164,9 +190,17 @@ static void u_pwm_enableOutputCH2()
 {
     SET_BIT(TIM5->CCER, TIM_CCER_CC2E);
 }
+static void u_pwm_disableOutputCH2()
+{
+    CLEAR_BIT(TIM5->CCER, TIM_CCER_CC2E);
+}
 static void u_pwm_enableOutputCH3()
 {
     SET_BIT(TIM5->CCER, TIM_CCER_CC3E);
+}
+static void u_pwm_disableOutputCH3()
+{
+    CLEAR_BIT(TIM5->CCER, TIM_CCER_CC3E);
 }
 
 static void u_pwm_updateGenerate()

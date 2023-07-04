@@ -30,6 +30,10 @@ DigitalOutputBase::DigitalOutputBase() :
     binaryMenu.add(boxWithBorder6);
 
     binaryButton.setPosition(391, 38, 495, 126);
+    image1_1.setXY(-306, 19);
+    image1_1.setBitmap(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_EFFECTS_800X480_SHADE_TOP_DARK_ID));
+    binaryButton.add(image1_1);
+
     buttonDigital4.setXY(232, 19);
     buttonDigital4.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
     buttonDigital4.setAction(buttonCallback);
@@ -86,10 +90,6 @@ DigitalOutputBase::DigitalOutputBase() :
     binaryButton.add(textArea4_1);
 
     binaryMenu.add(binaryButton);
-
-    image1_1.setXY(85, 57);
-    image1_1.setBitmap(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_EFFECTS_800X480_SHADE_TOP_DARK_ID));
-    binaryMenu.add(image1_1);
 
     add(binaryMenu);
 }

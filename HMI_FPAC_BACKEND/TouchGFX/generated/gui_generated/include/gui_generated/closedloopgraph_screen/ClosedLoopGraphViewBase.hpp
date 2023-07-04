@@ -42,6 +42,10 @@ public:
     {
         // Override and implement this function in ClosedLoopGraph
     }
+    virtual void setButtonHandle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
 
 protected:
     FrontendApplication& application() {

@@ -23,6 +23,13 @@ void u_pwm_setDutyCycleCH2(uint32_t dutyCycle);
 void u_pwm_setDutyCycleCH3(uint32_t dutyCycle);
 void u_pwm_startCounter();
 void u_pwm_stopCounter();
+void u_pwm_turnOffPwmOutputCH2();
+void u_pwm_turnOffPwmOutputCH3();
+void u_pwm_turnOnPwmOutputCH2();
+void u_pwm_turnOnPwmOutputCH3();
+void u_pwm_disableInterruptHandle();
+void u_pwm_enableInterruptHandle();
+
 
 void u_pwm_setDutyCycleISR(struct u_pwm_dutyCycle_type var);
 

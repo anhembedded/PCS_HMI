@@ -18,6 +18,7 @@
 extern "C"
 {
 #include "gui/model/u_type.h"
+
 }
 
 Model::Model() : modelListener(0)

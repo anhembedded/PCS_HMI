@@ -4357,7 +4357,8 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "setButton",
+            "InteractionName": "setButtonHandle",
+            "HasCompletedTrigger": true,
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonWithLabel_set"
@@ -4400,6 +4401,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "clearButton_Handle"
+            }
+          },
+          {
+            "InteractionName": "a",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "setButtonHandle"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "setButtonHandle"
             }
           }
         ]
@@ -5390,6 +5402,16 @@
                 "Height": 126,
                 "Components": [
                   {
+                    "Type": "Image",
+                    "Name": "image1_1",
+                    "X": -306,
+                    "Y": 19,
+                    "Width": 800,
+                    "Height": 150,
+                    "LockPosition": true,
+                    "RelativeFilename": "__generated\\clay_theme_images_effects_800x480_shade_top_dark.png"
+                  },
+                  {
                     "Type": "ToggleButton",
                     "Name": "buttonDigital4",
                     "X": 232,
@@ -5520,16 +5542,6 @@
                     "AutoSize": true
                   }
                 ]
-              },
-              {
-                "Type": "Image",
-                "Name": "image1_1",
-                "X": 85,
-                "Y": 57,
-                "Width": 800,
-                "Height": 150,
-                "LockPosition": true,
-                "RelativeFilename": "__generated\\clay_theme_images_effects_800x480_shade_top_dark.png"
               }
             ]
           }

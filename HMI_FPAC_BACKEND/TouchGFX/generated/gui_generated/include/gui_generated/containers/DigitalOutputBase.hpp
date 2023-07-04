@@ -8,9 +8,9 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/containers/SlideMenu.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/Image.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/Image.hpp>
 
 class DigitalOutputBase : public touchgfx::Container
 {
@@ -54,6 +54,7 @@ protected:
     touchgfx::SlideMenu binaryMenu;
     touchgfx::BoxWithBorder boxWithBorder6;
     touchgfx::Container binaryButton;
+    touchgfx::Image image1_1;
     touchgfx::ToggleButton buttonDigital4;
     touchgfx::ToggleButton buttonDigital3;
     touchgfx::ToggleButton buttonDigital2;
@@ -64,7 +65,6 @@ protected:
     touchgfx::TextArea textArea4_2_1;
     touchgfx::TextArea textArea4_2_1_1;
     touchgfx::TextArea textArea4_1;
-    touchgfx::Image image1_1;
 
 private:
 

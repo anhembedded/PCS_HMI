@@ -23,9 +23,11 @@ extern "C"
 namespace pidRange
 {
    constexpr auto KP_MAX = 10.0F; 
-   constexpr auto KI_MAX = 2.0F; 
+   constexpr auto KI_MAX = 10.0F; 
    constexpr auto KD_MAX = 10.0F; 
-   constexpr auto KP_MIN = 1.0F; 
+   constexpr auto SET_POINT_MAX = 10.0F;
+   constexpr auto SET_POINT_MIN = 10.0F;
+   constexpr auto KP_MIN = 0.0F; 
    constexpr auto KI_MIN = 0.0F; 
    constexpr auto KD_MIN = 0.0F; 
 }
@@ -65,6 +67,7 @@ struct analogIn_type
     std::array<uint32_t, 4> u32_10BitAnalogIn;
 
     float getAnalogValueFloat(uint32_t indexChannel);
+    float getAnalogProcessFloat(uint32_t indexChannel);
     analogIn_type &operator=(analogIn_type other) noexcept
     {
         u32_10BitAnalogIn = other.u32_10BitAnalogIn;
