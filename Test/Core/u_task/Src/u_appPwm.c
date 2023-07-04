@@ -47,7 +47,10 @@ void u_appPwm_updatePwmFromPid_resume()
     {
         vTaskResume(updatePwmFromPidHandle);
     }
+    u_pwm_dutyCycleValue.u32_Channle0 = 0x00U;
+    u_pwm_dutyCycleValue.u32_Channle0 = 0x00U;
     u_pwm_startCounter();
+    u_pwm_setDutyCycleISR(u_pwm_dutyCycleValue);
 }
 void u_appPwm_updatePwmFromPid_suspend()
 {
@@ -55,8 +58,9 @@ void u_appPwm_updatePwmFromPid_suspend()
     {
         vTaskSuspend(updatePwmFromPidHandle);
     }
-    u_pwm_stopCounter();
     u_pwm_dutyCycleValue.u32_Channle0 = 0x00U;
+    u_pwm_dutyCycleValue.u32_Channle0 = 0x00U;
+    u_pwm_stopCounter();
     u_pwm_setDutyCycleISR(u_pwm_dutyCycleValue);
 }
 
@@ -70,7 +74,11 @@ void u_appPWM_updatePwmCh_resume()
     {
         vTaskResume(updatePwmCh1Handle);
     }
+    u_pwm_dutyCycleValue.u32_Channle0 = 0x00U;
+    u_pwm_dutyCycleValue.u32_Channle0 = 0x00U;
     u_pwm_startCounter();
+    u_pwm_setDutyCycleISR(u_pwm_dutyCycleValue);
+   
 }
 
 void u_appPWM_updatePwmCh_suspend() 
@@ -83,9 +91,9 @@ void u_appPWM_updatePwmCh_suspend()
     {
         vTaskSuspend(updatePwmCh1Handle);
     }
-    u_pwm_stopCounter();
     u_pwm_dutyCycleValue.u32_Channle0 = 0x00U;
     u_pwm_dutyCycleValue.u32_Channle1 = 0x00U;
+    u_pwm_stopCounter();
     u_pwm_setDutyCycleISR(u_pwm_dutyCycleValue);
 }
 

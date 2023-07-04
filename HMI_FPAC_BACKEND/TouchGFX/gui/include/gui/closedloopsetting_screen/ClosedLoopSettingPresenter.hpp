@@ -33,7 +33,7 @@ public:
     void notifyActiveScreen() override;
     void notifyActualValueChanged(actualValue_type actualValueParam);
     actualValue_type getActualValueFromModel();
-  void notifyUpdatePidOutput(float pidOutput);
+    void notifyUpdatePidOutput(float pidOutput);
     virtual ~ClosedLoopSettingPresenter() {};
 
 private:
