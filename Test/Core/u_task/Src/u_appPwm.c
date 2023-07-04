@@ -130,7 +130,7 @@ static void updatePwmForPid(void *param) {
     u32_isReceive = xQueueReceive(u_pid_queue_output,&u32_pwmValue,portMAX_DELAY);
     if(u32_isReceive == pdTRUE)
     {
-       u_pwm_dutyCycleValue.u32_Channle0 = ((u32_pwmValue << 4) | 0xf) * 4;
+       u_pwm_dutyCycleValue.u32_Channle1 = ((u32_pwmValue << 4) | 0xf) * 4;
     }
   }
 }
