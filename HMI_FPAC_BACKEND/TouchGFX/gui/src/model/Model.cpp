@@ -145,7 +145,7 @@ void Model::setActualValue(actualValue_type view_actualValue)
     this->actualValue = view_actualValue;
     debugPrint<actualValue_type>("debugPrint::actual", this->actualValue);
     #ifdef BACKEND
-    xQueueSend(u_pid_queue_actuator, (void*)&view_actualValue, portMAX_DELAY);
+    xQueueSend(u_pid_queue_actuator, (void*)&view_actualValue, 0);
     #endif
     
 }
