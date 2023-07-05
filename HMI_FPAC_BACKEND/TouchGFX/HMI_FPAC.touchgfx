@@ -1006,20 +1006,30 @@
             ]
           },
           {
+            "Type": "CustomContainerInstance",
+            "Name": "digitalInputIndicator1",
+            "X": 282,
+            "Y": 286,
+            "Width": 194,
+            "Height": 41,
+            "CustomContainerDefinitionName": "DigitalInputIndicator"
+          },
+          {
             "Type": "Container",
             "Name": "analogContainer",
-            "X": 223,
-            "Y": 336,
-            "Width": 527,
-            "Height": 94,
+            "X": 174,
+            "Y": 316,
+            "Width": 525,
+            "Height": 114,
             "Components": [
               {
                 "Type": "Slider",
                 "Name": "sliderAnalogOut0",
-                "X": 7,
-                "Y": 4,
+                "X": 8,
+                "Y": 2,
                 "Width": 432,
                 "Height": 32,
+                "Visible": false,
                 "IsHorizontalSlider": true,
                 "BackgroundUnselected": "__generated\\clay_theme_images_widgets_slider_horizontal_thick_track_large.png",
                 "BackgroundSelected": "__generated\\clay_theme_images_widgets_slider_horizontal_thick_filler_large.png",
@@ -1033,8 +1043,8 @@
               {
                 "Type": "Slider",
                 "Name": "sliderAnalogOut1",
-                "X": 10,
-                "Y": 62,
+                "X": 5,
+                "Y": 44,
                 "Width": 432,
                 "Height": 32,
                 "IsHorizontalSlider": true,
@@ -1050,8 +1060,8 @@
               {
                 "Type": "TextArea",
                 "Name": "textAreaAnalogOut1",
-                "X": 458,
-                "Y": 64,
+                "X": 459,
+                "Y": 46,
                 "Width": 67,
                 "Height": 28,
                 "TextId": "__SingleUse_QCVD",
@@ -1069,6 +1079,7 @@
                 "Y": 7,
                 "Width": 67,
                 "Height": 27,
+                "Visible": false,
                 "TextId": "__SingleUse_K41B",
                 "TextRotation": "0",
                 "Wildcard1": {
@@ -1078,15 +1089,6 @@
                 }
               }
             ]
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "digitalInputIndicator1",
-            "X": 282,
-            "Y": 295,
-            "Width": 194,
-            "Height": 41,
-            "CustomContainerDefinitionName": "DigitalInputIndicator"
           },
           {
             "Type": "ModalWindow",
@@ -1144,6 +1146,7 @@
             "Y": 340,
             "Width": 1625,
             "Height": 143,
+            "LockPosition": true,
             "FileNameBackground": "__generated\\clay_theme_images_bars_1024x600_bottom_dim_dark.png",
             "BackgroundX": 601,
             "BackgroundY": 43,
@@ -1151,7 +1154,7 @@
             "FileNameButtonPressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_action.png",
             "FileNameButtonReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
             "ButtonX": 730,
-            "State": "Collapsed",
+            "State": "Expanded",
             "ExpandDirection": "North",
             "Easing": "Cubic",
             "EasingOption": "InOut",
@@ -1182,19 +1185,9 @@
                 "Components": [
                   {
                     "Type": "ToggleButton",
-                    "Name": "buttonDigital4",
-                    "X": 232,
-                    "Y": 19,
-                    "Width": 34,
-                    "Height": 62,
-                    "Pressed": "on.png",
-                    "Released": "off.png"
-                  },
-                  {
-                    "Type": "ToggleButton",
                     "Name": "buttonDigital3",
-                    "X": 284,
-                    "Y": 19,
+                    "X": 226,
+                    "Y": 15,
                     "Width": 34,
                     "Height": 62,
                     "Pressed": "on.png",
@@ -1203,8 +1196,8 @@
                   {
                     "Type": "ToggleButton",
                     "Name": "buttonDigital2",
-                    "X": 339,
-                    "Y": 19,
+                    "X": 295,
+                    "Y": 15,
                     "Width": 34,
                     "Height": 62,
                     "Pressed": "on.png",
@@ -1213,8 +1206,8 @@
                   {
                     "Type": "ToggleButton",
                     "Name": "buttonDigital1",
-                    "X": 395,
-                    "Y": 19,
+                    "X": 369,
+                    "Y": 15,
                     "Width": 34,
                     "Height": 62,
                     "Pressed": "on.png",
@@ -1223,8 +1216,8 @@
                   {
                     "Type": "ToggleButton",
                     "Name": "buttonDigital0",
-                    "X": 450,
-                    "Y": 19,
+                    "X": 443,
+                    "Y": 15,
                     "Width": 34,
                     "Height": 62,
                     "Pressed": "on.png",
@@ -1233,8 +1226,8 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea4",
-                    "X": 461,
-                    "Y": 49,
+                    "X": 454,
+                    "Y": 45,
                     "Width": 12,
                     "Height": 27,
                     "TextId": "__SingleUse_ASIA",
@@ -1249,8 +1242,8 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea4_2",
-                    "X": 350,
-                    "Y": 50,
+                    "X": 306,
+                    "Y": 46,
                     "Width": 12,
                     "Height": 27,
                     "TextId": "__SingleUse_40OR",
@@ -1265,8 +1258,8 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea4_2_1",
-                    "X": 295,
-                    "Y": 50,
+                    "X": 237,
+                    "Y": 46,
                     "Width": 12,
                     "Height": 27,
                     "TextId": "__SingleUse_QZC5",
@@ -1280,25 +1273,9 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea4_2_1_1",
-                    "X": 243,
-                    "Y": 50,
-                    "Width": 12,
-                    "Height": 27,
-                    "TextId": "__SingleUse_LR6J",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 34,
-                      "Green": 42,
-                      "Blue": 56
-                    },
-                    "AutoSize": true
-                  },
-                  {
-                    "Type": "TextArea",
                     "Name": "textArea4_1",
-                    "X": 405,
-                    "Y": 50,
+                    "X": 379,
+                    "Y": 46,
                     "Width": 12,
                     "Height": 27,
                     "TextId": "__SingleUse_5Q9V",

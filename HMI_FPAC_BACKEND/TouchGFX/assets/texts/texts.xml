@@ -40,10 +40,6 @@
         <Translation Language="GB">1</Translation>
         <Translation Language="Vietnamese">1</Translation>
       </Text>
-      <Text Id="__SingleUse_LR6J" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">4</Translation>
-        <Translation Language="Vietnamese">4</Translation>
-      </Text>
       <Text Id="__SingleUse_QZC5" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">3</Translation>
         <Translation Language="Vietnamese">3</Translation>

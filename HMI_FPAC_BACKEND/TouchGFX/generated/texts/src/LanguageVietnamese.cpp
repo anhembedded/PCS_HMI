@@ -18,7 +18,6 @@ KEEP extern const uint32_t indicesVietnamese[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     118, // T___SINGLEUSE_CHPN: "D.In.0:\nD.In.1:\nD.In.2:\nD.In.3:\nD.In.4:"
     857, // T___SINGLEUSE_V6NC: "Ch?y"
     406, // T___SINGLEUSE_5Q9V: "1"
-    553, // T___SINGLEUSE_LR6J: "4"
     536, // T___SINGLEUSE_QZC5: "3"
     519, // T___SINGLEUSE_40OR: "2"
     485, // T___SINGLEUSE_ASIA: "0"
