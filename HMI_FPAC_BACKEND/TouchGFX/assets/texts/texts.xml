@@ -284,118 +284,6 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="Vietnamese">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_DM5T" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Digital Output 4</Translation>
-        <Translation Language="Vietnamese">Digital Output 4</Translation>
-      </Text>
-      <Text Id="__SingleUse_TJ55" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Digital Output 3</Translation>
-        <Translation Language="Vietnamese">Digital Output 3</Translation>
-      </Text>
-      <Text Id="__SingleUse_TYA6" Alignment="Right" TypographyId="GraphText">
-        <Translation Language="GB">&lt;&gt;</Translation>
-        <Translation Language="Vietnamese">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_CRX9" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">&lt;&gt;</Translation>
-        <Translation Language="Vietnamese">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_RRWL" Alignment="Left" TypographyId="Wildcard">
-        <Translation Language="GB">0</Translation>
-        <Translation Language="Vietnamese">0</Translation>
-      </Text>
-      <Text Id="__SingleUse_0X6C" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB"> &lt;value&gt; %</Translation>
-        <Translation Language="Vietnamese"> &lt;value&gt; %</Translation>
-      </Text>
-      <Text Id="__SingleUse_2B6D" Alignment="Left" TypographyId="Wildcard">
-        <Translation Language="GB">0</Translation>
-        <Translation Language="Vietnamese">0</Translation>
-      </Text>
-      <Text Id="__SingleUse_KWB3" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB"> &lt;value&gt; V</Translation>
-        <Translation Language="Vietnamese"> &lt;value&gt; V</Translation>
-      </Text>
-      <Text Id="__SingleUse_I5AO" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">Select manip. Value</Translation>
-        <Translation Language="Vietnamese">Select manip. Value</Translation>
-      </Text>
-      <Text Id="__SingleUse_4014" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Analog Output 2</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_PXFY" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Analog Output 1</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_71XP" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Digital Output 2</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_EWF4" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Digital Output 1</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_Q4X0" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Digital Output 0</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_HQ52" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">000</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_UMBS" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">&lt;value&gt; S</Translation>
-        <Translation Language="Vietnamese">&lt;value&gt; S</Translation>
-      </Text>
-      <Text Id="__SingleUse_7EH0" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">ClearGraph</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_UWQN" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Run</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_F3UE" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Recording</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_VOBV" Alignment="Left" TypographyId="GraphText">
-        <Translation Language="GB">Recording</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_2CRY" Alignment="Left" TypographyId="MainMenu">
-        <Translation Language="GB">Control Panel</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_N6WJ" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">Out</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_VZF7" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">AO1</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_LVP4" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">AO0</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_DXPG" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">AI3</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_6FSA" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">AI2</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_JTNM" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">AI1</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_40T4" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">AI0</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
       <Text Id="__SingleUse_U6O5" Alignment="Left" TypographyId="WildcardB">
         <Translation Language="GB">10</Translation>
         <Translation Language="Vietnamese" />
@@ -454,46 +342,6 @@
       </Text>
       <Text Id="__SingleUse_Q510" Alignment="Center" TypographyId="KeyBoard">
         <Translation Language="GB">1</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_IM23" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">000</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_YIFT" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="Vietnamese">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_0LDS" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">1</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_JHP6" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">7</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_3K64" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">6</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_URXP" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">5</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_MICD" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">4</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_JKMF" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">3</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_WD6R" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">2</Translation>
-        <Translation Language="Vietnamese" />
-      </Text>
-      <Text Id="__SingleUse_V9CU" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">0</Translation>
         <Translation Language="Vietnamese" />
       </Text>
       <Text Id="__SingleUse_MKAC" Alignment="Left" TypographyId="WildcardB">
@@ -671,10 +519,6 @@
       <Text Id="__SingleUse_KZ50" Alignment="Center" TypographyId="MainMenu">
         <Translation Language="GB">Closed-loop Control Continuous</Translation>
         <Translation Language="Vietnamese">Điều Khiển vòng kín PID</Translation>
-      </Text>
-      <Text Id="__SingleUse_JGV0" Alignment="Center" TypographyId="MainMenu">
-        <Translation Language="GB">Mesuaring and Control</Translation>
-        <Translation Language="Vietnamese">Mesuaring and Control</Translation>
       </Text>
       <Text Id="__SingleUse_6R6O" Alignment="Center" TypographyId="KeyBoard">
         <Translation Language="GB">Enter</Translation>

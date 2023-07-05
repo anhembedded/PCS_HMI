@@ -28,9 +28,6 @@ public:
     // Setting
     void gotoSettingScreenCoverTransitionEast();
 
-    // Mesuaring
-    void gotoMesuaringScreenCoverTransitionEast();
-
     // ClosedLoopSetting
     void gotoClosedLoopSettingScreenCoverTransitionEast();
 
@@ -52,9 +49,6 @@ protected:
 
     // Setting
     void gotoSettingScreenCoverTransitionEastImpl();
-
-    // Mesuaring
-    void gotoMesuaringScreenCoverTransitionEastImpl();
 
     // ClosedLoopSetting
     void gotoClosedLoopSettingScreenCoverTransitionEastImpl();

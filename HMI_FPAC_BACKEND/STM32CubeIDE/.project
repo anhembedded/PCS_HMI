@@ -430,16 +430,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/main_screen/MainView.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/gui/MesuaringPresenter.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/mesuaring_screen/MesuaringPresenter.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/gui/MesuaringView.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/mesuaring_screen/MesuaringView.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/gui/Model.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/gui/src/model/Model.cpp</locationURI>
@@ -670,11 +660,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/main_screen/MainViewBase.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/MesuaringViewBase.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/mesuaring_screen/MesuaringViewBase.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/SettingViewBase.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/gui_generated/src/setting_screen/SettingViewBase.cpp</locationURI>
@@ -708,16 +693,6 @@
 			<name>Application/User/generated/image_alternate_theme_images_effects_800x480_shade_right_light.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_effects_800x480_shade_right_light.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_micro_fill_active.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_rounded_micro_fill_active.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_micro_fill_normal.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_button_icon_rounded_micro_fill_normal.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_button_icon_rounded_tiny_fill_action.cpp</name>
@@ -775,26 +750,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_medium_round_on_pressed.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_off.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_off.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_off_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_off_pressed.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_on_action.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_on_action.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_on_pressed.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_radiobutton_radio_small_round_on_pressed.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_horizontal_thick_filler_large.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_filler_large.cpp</locationURI>
@@ -808,26 +763,6 @@
 			<name>Application/User/generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_large.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_slider_horizontal_thick_track_large.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_off_light.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_off_light.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_on_normal.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_alternate_theme_images_widgets_togglebutton_small_rounded_small_on_normal.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_clay_theme_images_backgrounds_272x480_meteor_rain.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_backgrounds_272x480_meteor_rain.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_clay_theme_images_backgrounds_800x480_gradient_light.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_backgrounds_800x480_gradient_light.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_clay_theme_images_backgrounds_800x480_puzzle.cpp</name>
@@ -875,16 +810,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_regular_height_36_tiny_rounded_action.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_clay_theme_images_widgets_button_regular_height_36_tiny_rounded_disabled.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_regular_height_36_tiny_rounded_disabled.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_clay_theme_images_widgets_button_regular_height_36_tiny_rounded_normal.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_regular_height_36_tiny_rounded_normal.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_clay_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_regular_height_36_tiny_rounded_pressed.cpp</locationURI>
@@ -930,16 +855,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_button_regular_height_60_tiny_rounded_pressed.cpp</locationURI>
 		</link>
 		<link>
-			<name>Application/User/generated/image_clay_theme_images_widgets_radiobutton_check_large_rounded_on_action.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_radiobutton_check_large_rounded_on_action.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_clay_theme_images_widgets_radiobutton_check_large_rounded_on_dark.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_radiobutton_check_large_rounded_on_dark.cpp</locationURI>
-		</link>
-		<link>
 			<name>Application/User/generated/image_clay_theme_images_widgets_slider_horizontal_thick_filler_large.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_clay_theme_images_widgets_slider_horizontal_thick_filler_large.cpp</locationURI>
@@ -978,21 +893,6 @@
 			<name>Application/User/generated/image_glass_theme_images_widgets_button_regular_height_36_small_round_pressed.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_button_regular_height_36_small_round_pressed.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_glass_theme_images_widgets_slider_horizontal_thick_filler_small.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_slider_horizontal_thick_filler_small.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_glass_theme_images_widgets_slider_horizontal_thick_round_light.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_slider_horizontal_thick_round_light.cpp</locationURI>
-		</link>
-		<link>
-			<name>Application/User/generated/image_glass_theme_images_widgets_slider_horizontal_thick_track_small.cpp</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/TouchGFX/generated/images/src/__generated/image_glass_theme_images_widgets_slider_horizontal_thick_track_small.cpp</locationURI>
 		</link>
 		<link>
 			<name>Application/User/generated/image_icon_theme_images_action_article_50_50_E8F6FB.svg.cpp</name>

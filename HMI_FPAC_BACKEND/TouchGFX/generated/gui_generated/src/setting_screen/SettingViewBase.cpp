@@ -335,7 +335,7 @@ SettingViewBase::SettingViewBase() :
         touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID),
         touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID),
         601, 43, 730, 0);
-    binaryMenu.setState(touchgfx::SlideMenu::EXPANDED);
+    binaryMenu.setState(touchgfx::SlideMenu::COLLAPSED);
     binaryMenu.setVisiblePixelsWhenCollapsed(39);
     binaryMenu.setHiddenPixelsWhenExpanded(0);
     binaryMenu.setAnimationEasingEquation(touchgfx::EasingEquations::cubicEaseInOut);
@@ -595,13 +595,6 @@ void SettingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonDigital3 clicked call virtual function
         //Call buttonDigital3Handle
         buttonDigital3Handle();
-    }
-    if (&src == &buttonDigital4)
-    {
-        //buttonDigital4Handle
-        //When buttonDigital4 clicked call virtual function
-        //Call buttonDigital4Handle
-        buttonDigital4Handle();
     }
     if (&src == &buttonDone)
     {

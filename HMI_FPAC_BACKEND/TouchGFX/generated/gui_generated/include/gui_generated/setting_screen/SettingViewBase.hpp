@@ -103,10 +103,6 @@ public:
     {
         // Override and implement this function in Setting
     }
-    virtual void buttonDigital4Handle()
-    {
-        // Override and implement this function in Setting
-    }
     virtual void buttonReturnHandle()
     {
         // Override and implement this function in Setting

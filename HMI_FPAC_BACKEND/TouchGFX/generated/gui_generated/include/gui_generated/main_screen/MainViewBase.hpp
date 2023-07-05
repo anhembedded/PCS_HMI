@@ -42,7 +42,6 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box Background;
     touchgfx::ButtonWithIcon buttonSetting;
-    touchgfx::ButtonWithLabel buttonMesuaring;
     touchgfx::ButtonWithLabel clickButton_closedloopControlContinuous;
     touchgfx::ButtonWithIcon buttonLang;
     touchgfx::Image image1;
