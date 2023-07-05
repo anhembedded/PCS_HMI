@@ -29,6 +29,8 @@ void u_appDigitalOut_suspend()
     {
         vTaskSuspend(updateDigitalOutputArrayHandle);
     }
+    u_gpio_writePin(DO_2_PORT, DO_2_PIN, 1);
+
 }
 
 static void updateDigitalOutputArray(void *param)
