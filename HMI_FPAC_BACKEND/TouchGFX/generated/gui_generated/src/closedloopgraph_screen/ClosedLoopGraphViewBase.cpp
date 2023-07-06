@@ -128,9 +128,6 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
 
     add(graphOutput);
 
-    buttonDone1.setXY(725, 0);
-    add(buttonDone1);
-
     buttonWithLabel_stop.setXY(283, 386);
     buttonWithLabel_stop.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_SMALL_ROUNDED_PRESSED_ID));
     buttonWithLabel_stop.setLabelText(touchgfx::TypedText(T___SINGLEUSE_2CQX));
@@ -258,6 +255,12 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     binaryMenu.add(image1_1);
 
     add(binaryMenu);
+
+    buttonDone.setXY(690, -23);
+    buttonDone.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_BACKSPACE_50_50_000000_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_FILE_DOWNLOAD_DONE_50_50_5777F3_SVG_ID));
+    buttonDone.setIconXY(39, 33);
+    buttonDone.setAction(buttonCallback);
+    add(buttonDone);
 }
 
 ClosedLoopGraphViewBase::~ClosedLoopGraphViewBase()
@@ -269,7 +272,6 @@ void ClosedLoopGraphViewBase::setupScreen()
 {
     spOpFb1.initialize();
     digitalInputIndicator1.initialize();
-    buttonDone1.initialize();
 }
 
 void ClosedLoopGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -334,5 +336,17 @@ void ClosedLoopGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //When buttonDigital3 clicked call virtual function
         //Call buttonDigital3Handle
         buttonDigital3Handle();
+    }
+    if (&src == &buttonDone)
+    {
+        //buttonDoneHandle
+        //When buttonDone clicked change screen to Main
+        //Go to Main with no screen transition
+        application().gotoMainScreenNoTransition();
+    
+        //Interaction1
+        //When buttonDoneHandle completed call virtual function
+        //Call buttonDoneHandle
+        buttonDoneHandle();
     }
 }

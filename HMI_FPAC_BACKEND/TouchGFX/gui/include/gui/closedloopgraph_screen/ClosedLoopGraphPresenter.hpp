@@ -37,8 +37,9 @@ public:
     void statePidGraphRunP_exit();
     void statePidGraph_entry();
     void statePidGrap_exit();
-     void notifyUpdatePidOutput(uint32_t pidOutput);
-     void setDigitalOut(digitaOut_type setOutput);
+    void notifyUpdatePidOutput(uint32_t pidOutput);
+    void setDigitalOut(digitaOut_type setOutput);
+    digitaOut_type getDigitalOutFormModel();
    
 private:
     ClosedLoopGraphPresenter();

@@ -111,9 +111,7 @@ void Model::updateActiveScreen(activeScreen_type param)
     this->activeScreenVar = param;
     debugPrint<decltype(param)>("debugPrint::ActiveScreen", param);
 }
-
 // !SIMULATOR
-
 void Model::setPidParam(pidParam_type pidSet)
 {
     float const1023Div10 = 1023.0F / 10.0F;
@@ -245,6 +243,10 @@ analogIn_type Model::getAnalogIn()
 
 digitaOut_type Model::getDigitalOut()
 {
+    digitalOutput.u8_digiOut.at(0) = u_appDigitalVar.digitalState[0];
+    digitalOutput.u8_digiOut.at(1) = u_appDigitalVar.digitalState[1];
+    digitalOutput.u8_digiOut.at(2) = u_appDigitalVar.digitalState[2];
+    digitalOutput.u8_digiOut.at(3) = u_appDigitalVar.digitalState[3];
     return digitalOutput;
 }
 

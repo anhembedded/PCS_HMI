@@ -16,13 +16,13 @@
 #include <touchgfx/widgets/graph/GraphElements.hpp>
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <gui/containers/ButtonDone.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/SlideMenu.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
 
 class ClosedLoopGraphViewBase : public touchgfx::View<ClosedLoopGraphPresenter>
 {
@@ -66,6 +66,10 @@ public:
     {
         // Override and implement this function in ClosedLoopGraph
     }
+    virtual void buttonDoneHandle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
 
 protected:
     FrontendApplication& application() {
@@ -97,7 +101,6 @@ protected:
     touchgfx::GraphElementGridY graphOutputMajorYAxisGrid;
     touchgfx::GraphElementLine graphOutputLine1;
     touchgfx::PainterRGB565 graphOutputLine1Painter;
-    ButtonDone buttonDone1;
     touchgfx::ButtonWithLabel buttonWithLabel_stop;
     touchgfx::ButtonWithLabel buttonWithLabel_clear;
     touchgfx::ButtonWithLabel buttonWithLabel_set;
@@ -117,6 +120,7 @@ protected:
     touchgfx::TextArea textArea4_2_1;
     touchgfx::TextArea textArea4_1;
     touchgfx::Image image1_1;
+    touchgfx::ButtonWithIcon buttonDone;
 
     /*
      * Wildcard Buffers

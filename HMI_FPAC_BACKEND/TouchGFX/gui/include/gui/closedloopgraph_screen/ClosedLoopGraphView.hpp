@@ -29,6 +29,7 @@ public:
   {
     presenter->statePidGraphRunP_exit();
     presenter->statePidGrap_exit();
+    
   }
   virtual void startButton_Handle() 
   { 
@@ -40,6 +41,7 @@ public:
   { 
       this->graphState = graphState_type::stop; 
       presenter->statePidGraphRunP_exit();
+      presenter->statePidGraph_entry();
 
   }
   virtual void clearButton_Handle() {
@@ -48,7 +50,16 @@ public:
     graphSetpoint.clear();
     graphOutput.clear();
     presenter->statePidGraphRunP_exit();
+    presenter->statePidGraph_entry();
   }
+   virtual void buttonDoneHandle()
+    {
+         this->graphState = graphState_type::clear;
+    graphFeadback.clear();
+    graphSetpoint.clear();
+    graphOutput.clear();
+    presenter->statePidGraphRunP_exit();
+    }
    virtual void buttonDigital0Handle() final
     {
         if (buttonDigital0.getState() == ClickEvent::RELEASED)
@@ -145,6 +156,10 @@ private:
   graphState_type graphState;
   digitaOut_type digitalOutput;
 
+void updateDigitalOut(digitaOut_type digitalout)
+{
+  this->digitalOutput = digitalout;
+}
   void drawTextAreaKp();
   void drawTextAreaKi();
   void drawTextAreaKd();
