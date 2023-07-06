@@ -138,7 +138,7 @@ public:
     auto dataPoint = presenter->getFeedbackDataPointFormModel();
     auto setPointFromModel = presenter->getPidParam().f_setPoint;
     graphSetpoint.addDataPoint(setPointFromModel);
-    graphFeadback.addDataPoint(dataPoint);
+   // graphFeadback.addDataPoint(dataPoint);
   }
   void updatePidOutput(uint32_t pidOutput)
   {

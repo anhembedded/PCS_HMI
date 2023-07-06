@@ -40,12 +40,7 @@ pidParam_type ClosedLoopGraphPresenter::getPidParam()
      return analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));
  }
 
-  void ClosedLoopGraphPresenter::notifyADCChanged(analogIn_type analogParam)
- {
-     auto analogIn = model->getAnalogIn();
-     auto modelActual = model->getActualValue();
-     auto pidFeedBack = analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));
- }
+
 
    void ClosedLoopGraphPresenter::sendFeedbackToView()
   {

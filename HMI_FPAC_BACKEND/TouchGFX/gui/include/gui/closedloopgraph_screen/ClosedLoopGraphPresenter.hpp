@@ -31,7 +31,7 @@ public:
 
     void notifyActiveScreen() override;
     float getFeedbackDataPointFormModel();
-    void notifyADCChanged(analogIn_type analogParam);
+   
     void  sendFeedbackToView();
     void statePidGraphRunP_entry();
     void statePidGraphRunP_exit();
