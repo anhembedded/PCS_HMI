@@ -5,9 +5,10 @@ extern "C" {
 #include "gui/model/u_helpFunction.h"
 }
 
+#include "gui/model/u_touchGfxUtilities.hpp"
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 #include <gui_generated/closedloopgraph_screen/ClosedLoopGraphViewBase.hpp>
-#include "gui/model/u_touchGfxUtilities.hpp"
+
 enum class graphState_type { stop, run, clear };
 class ClosedLoopGraphView : public ClosedLoopGraphViewBase {
 public:
@@ -17,136 +18,27 @@ public:
   virtual void tearDownScreen();
 
   virtual void handleTickEvent();
-  virtual void afterTransition() {
-    this->graphFeadback.setVisible(true);
-    this->graphBackgroud.setVisible(true);
-    this->graphSetpoint.setVisible(true);
-    this->graphBackgroud.invalidate();
-    this->graphFeadback.invalidate();
-    this->graphSetpoint.invalidate();
-  }
-  virtual void setButtonHandle()
-  {
-    presenter->statePidGraphRunP_exit();
-    presenter->statePidGrap_exit();
-    
-  }
-  virtual void startButton_Handle() 
-  { 
-    this->graphState = graphState_type::run; 
-    presenter->statePidGrap_exit();
-    presenter->statePidGraphRunP_entry();
-  }
-  virtual void stopButton_Handle() 
-  { 
-      this->graphState = graphState_type::stop; 
-      presenter->statePidGraphRunP_exit();
-      presenter->statePidGraph_entry();
+  virtual void afterTransition();
+  virtual void setButtonHandle();
+  virtual void startButton_Handle();
+  virtual void stopButton_Handle();
+  virtual void clearButton_Handle();
+  virtual void buttonDoneHandle();
+  virtual void buttonDigital0Handle() final;
+  virtual void buttonDigital1Handle() final;
+  virtual void buttonDigital2Handle() final;
+  virtual void buttonDigital3Handle() final;
 
-  }
-  virtual void clearButton_Handle() {
-    this->graphState = graphState_type::clear;
-    graphFeadback.clear();
-    graphSetpoint.clear();
-    graphOutput.clear();
-    presenter->statePidGraphRunP_exit();
-    presenter->statePidGraph_entry();
-  }
-   virtual void buttonDoneHandle()
-    {
-         this->graphState = graphState_type::clear;
-    graphFeadback.clear();
-    graphSetpoint.clear();
-    graphOutput.clear();
-    presenter->statePidGraphRunP_exit();
-    }
-   virtual void buttonDigital0Handle() final
-    {
-        if (buttonDigital0.getState() == ClickEvent::RELEASED)
-        {
-            digitalOutput.u8_digiOut.at(0) = 1U;
-        }
-        else
-        {
-            digitalOutput.u8_digiOut.at(0) = 0U;
-        }
-        setDigitalOut(this->digitalOutput);
-    }
-    virtual void buttonDigital1Handle() final
-    {
-        if (buttonDigital1.getState() == ClickEvent::RELEASED)
-        {
-            digitalOutput.u8_digiOut.at(1) = 1U;
-            digitalOutput.u8_digiOut.at(2) = 0U;
-            buttonDigital2.forceState(ClickEvent::PRESSED);
-            buttonDigital2.invalidate();
-        }
-        else
-        {
-            digitalOutput.u8_digiOut.at(1) = 0U;
-        }
-        setDigitalOut(this->digitalOutput);
-    }
-    virtual void buttonDigital2Handle() final
-    {
-        if (buttonDigital2.getState() == ClickEvent::RELEASED)
-        {
-            digitalOutput.u8_digiOut.at(2) = 1U;
-            digitalOutput.u8_digiOut.at(1) = 0U;
-            buttonDigital1.forceState(ClickEvent::PRESSED);
-            buttonDigital1.invalidate();
-        }
-        else
-        {
-            digitalOutput.u8_digiOut.at(2) = 0U;
-        }
-        setDigitalOut(this->digitalOutput);
-    }
-    virtual void buttonDigital3Handle() final
-    {
-        if (buttonDigital3.getState() == ClickEvent::RELEASED)
-        {
-            digitalOutput.u8_digiOut.at(3) = 1U;
-        }
-        else
-        {
-            digitalOutput.u8_digiOut.at(3) = 0U;
-        }
-        setDigitalOut(this->digitalOutput);
-    }
-
-  void notifyActiveScreen() { presenter->notifyActiveScreen(); }
-  activeScreen_type getActiveScreen() const {
-    return activeScreen_type::closedLoopGraphScreen;
-  }
-  void addFeedbackDataPoint(float dataPoint) {
-    if (graphState == graphState_type::run) {
-      graphFeadback.addDataPoint(dataPoint);
-        spOpFb1.drawtextAreaFeedback(dataPoint);
-    } else {
-      /*Do not add graph*/
-    }
-  }
-  void addSetPointDataPoint(float setPointData) {
-    if (graphState == graphState_type::run) {
-      graphSetpoint.addDataPoint(setPointData);
-    } else {
-      /*Do not add graph*/
-    }
-  }
-  void getFeedbackDataPoint() {
-    auto dataPoint = presenter->getFeedbackDataPointFormModel();
-    auto setPointFromModel = presenter->getPidParam().f_setPoint;
-    graphSetpoint.addDataPoint(setPointFromModel);
-   // graphFeadback.addDataPoint(dataPoint);
-  }
-  void updatePidOutput(uint32_t pidOutput)
-  {
-      auto pidOut10Float = cov1024to10Float(pidOutput);
-      graphOutput.addDataPoint(pidOut10Float);
-      spOpFb1.drawLineProgressOutput((int)pidOutput);
-  }
+  void notifyActiveScreen();
+  activeScreen_type getActiveScreen() const;
+  void addFeedbackDataPoint(float dataPoint);
+  void addSetPointDataPoint(float setPointData);
+  void getFeedbackDataPoint();
+  void updatePidOutput(uint32_t pidOutput);
   void setDigitalOut(digitaOut_type digiOut);
+    
+  void updateGraphYRange();
+
 protected:
 private:
   void updateScreenParam();
@@ -156,10 +48,9 @@ private:
   graphState_type graphState;
   digitaOut_type digitalOutput;
 
-void updateDigitalOut(digitaOut_type digitalout)
-{
-  this->digitalOutput = digitalout;
-}
+  void updateDigitalOut(digitaOut_type digitalout) {
+    this->digitalOutput = digitalout;
+  }
   void drawTextAreaKp();
   void drawTextAreaKi();
   void drawTextAreaKd();

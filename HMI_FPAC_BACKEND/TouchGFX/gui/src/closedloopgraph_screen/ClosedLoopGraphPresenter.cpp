@@ -1,6 +1,10 @@
 #include <gui/closedloopgraph_screen/ClosedLoopGraphView.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
+#ifdef BACKEND
 #include "SEGGER_SYSVIEW_FreeRTOS.h"
+#endif // BACKEND
+
+
 
 
 ClosedLoopGraphPresenter::ClosedLoopGraphPresenter(ClosedLoopGraphView& v)
@@ -79,6 +83,10 @@ void ClosedLoopGraphPresenter::setDigitalOut(digitaOut_type setOutput)
     digitaOut_type ClosedLoopGraphPresenter::getDigitalOutFormModel()
     {
         return model->getDigitalOut();
+    }
+    actualValue_type ClosedLoopGraphPresenter::getActualValue()
+    {
+        return model->getActualValue();
     }
     void ClosedLoopGraphPresenter::statePidGraph_entry()
     {

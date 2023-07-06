@@ -29,8 +29,21 @@ namespace pidRange
    constexpr auto SET_POINT_MIN = 10.0F;
    constexpr auto KP_MIN = 0.0F; 
    constexpr auto KI_MIN = 0.0F; 
-   constexpr auto KD_MIN = 0.0F; 
+   constexpr auto KD_MIN = 0.0F;
+
 }
+
+namespace graphRange
+{
+    constexpr auto LEVEL_MAX = 1000.F;
+    constexpr auto FLOW_RATE_MAX = 500.0F;
+    constexpr auto PRESSURE_MAX = 300.0F;
+
+    constexpr auto LEVEL_MIN = -1.0F;
+    constexpr auto FLOW_RATE_MIN = -1.0F;
+    constexpr auto PRESSURE_MIN = -1.0F;
+}
+
 struct pidParam_type
 {
     float f_kp;

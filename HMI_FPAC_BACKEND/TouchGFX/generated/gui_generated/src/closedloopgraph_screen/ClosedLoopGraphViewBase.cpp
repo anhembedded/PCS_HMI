@@ -40,10 +40,10 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     digitalInputIndicator1.setXY(20, 428);
     add(digitalInputIndicator1);
 
-    graphBackgroud.setPosition(10, 6, 780, 380);
+    graphBackgroud.setPosition(0, 6, 790, 380);
     graphBackgroud.setScale(100);
     graphBackgroud.setGraphRangeX(0, 600);
-    graphBackgroud.setGraphAreaMargin(17, 24, 0, 29);
+    graphBackgroud.setGraphAreaMargin(17, 40, 0, 29);
     graphBackgroud.setGraphAreaPadding(0, 0, 10, 0);
     graphBackgroud.setGraphRangeY(-1.0f, 11.3f);
     graphBackgroudMajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
@@ -75,10 +75,10 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
 
     add(graphBackgroud);
 
-    graphFeadback.setPosition(10, 6, 780, 380);
+    graphFeadback.setPosition(0, 6, 780, 380);
     graphFeadback.setScale(100);
     graphFeadback.setGraphRangeX(0, 600);
-    graphFeadback.setGraphAreaMargin(17, 24, 0, 29);
+    graphFeadback.setGraphAreaMargin(17, 40, 0, 29);
     graphFeadback.setGraphAreaPadding(0, 0, 10, 0);
     graphFeadback.setGraphRangeY(-1.0f, 11.3f);
     graphFeadback.setVisible(false);
@@ -89,10 +89,10 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
 
     add(graphFeadback);
 
-    graphSetpoint.setPosition(10, 6, 780, 380);
+    graphSetpoint.setPosition(0, 6, 780, 380);
     graphSetpoint.setScale(100);
     graphSetpoint.setGraphRangeX(0, 600);
-    graphSetpoint.setGraphAreaMargin(17, 24, 0, 29);
+    graphSetpoint.setGraphAreaMargin(17, 40, 0, 29);
     graphSetpoint.setGraphAreaPadding(0, 0, 10, 0);
     graphSetpoint.setGraphRangeY(-1.0f, 11.3f);
     graphSetpoint.setVisible(false);
@@ -103,10 +103,10 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
 
     add(graphSetpoint);
 
-    graphOutput.setPosition(10, -6, 780, 101);
+    graphOutput.setPosition(0, -6, 780, 101);
     graphOutput.setScale(10);
     graphOutput.setGraphRangeX(0, 600);
-    graphOutput.setGraphAreaMargin(17, 24, 0, 29);
+    graphOutput.setGraphAreaMargin(17, 40, 0, 29);
     graphOutput.setGraphAreaPadding(2, 0, 10, 0);
     graphOutput.setGraphRangeY(-1.0f, 11.3f);
     graphOutputMajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(51, 22, 196));

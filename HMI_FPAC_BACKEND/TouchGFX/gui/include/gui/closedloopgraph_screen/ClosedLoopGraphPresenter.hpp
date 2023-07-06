@@ -32,7 +32,7 @@ public:
     void notifyActiveScreen() override;
     float getFeedbackDataPointFormModel();
    
-    void  sendFeedbackToView();
+    void sendFeedbackToView();
     void statePidGraphRunP_entry();
     void statePidGraphRunP_exit();
     void statePidGraph_entry();
@@ -40,6 +40,7 @@ public:
     void notifyUpdatePidOutput(uint32_t pidOutput);
     void setDigitalOut(digitaOut_type setOutput);
     digitaOut_type getDigitalOutFormModel();
+    actualValue_type getActualValue();
    
 private:
     ClosedLoopGraphPresenter();
