@@ -139,9 +139,13 @@ void u_gpio_Init_DigitalOutput() {
   u_gpio_setPinMode(DO_2_PORT, DO_2_PIN, SET_PIN_MODE_OUTPUT_MODE);
   u_gpio_setPinMode(DO_3_PORT, DO_3_PIN, SET_PIN_MODE_OUTPUT_MODE);
   u_gpio_setPinMode(DO_4_PORT, DO_4_PIN, SET_PIN_MODE_OUTPUT_MODE);
+  u_gpio_setPinMode(GPIOA, 6, SET_PIN_MODE_OUTPUT_MODE);
+  u_gpio_setPinMode(GPIOG, 12, SET_PIN_MODE_OUTPUT_MODE);
   /* Output push-pull (reset state) */
   /* Output speed low(reset state) */
   /* Output No pull-up, pull-down(reset state) */
+   u_gpio_writePin(GPIOA, 6, 1);
+   u_gpio_writePin(GPIOG, 12, 0);
 }
 
 /*

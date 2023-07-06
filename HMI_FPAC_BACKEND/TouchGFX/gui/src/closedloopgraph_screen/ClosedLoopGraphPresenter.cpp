@@ -75,3 +75,17 @@ pidParam_type ClosedLoopGraphPresenter::getPidParam()
    {
        view.updatePidOutput(pidOutput);
    }
+void ClosedLoopGraphPresenter::setDigitalOut(digitaOut_type setOutput)
+    {
+        model->setDigitalOut(setOutput);
+    }
+
+     void ClosedLoopGraphPresenter::statePidGraph_entry()
+     {
+        model->statePidGraph_entry();
+     }
+    void ClosedLoopGraphPresenter::statePidGrap_exit()
+    {
+        model->statePidGraph_exit();
+
+    }

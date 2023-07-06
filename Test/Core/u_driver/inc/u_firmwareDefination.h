@@ -9,7 +9,7 @@
 #define AI_3_PIN 4
 #define DO_0_PIN 5
 #define DO_1_PIN 4
-#define DO_2_PIN 79
+#define DO_2_PIN 9
 #define DO_3_PIN 14
 #define DO_4_PIN 13
 #define AO_0_PIN 1

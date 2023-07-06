@@ -14,8 +14,8 @@
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/containers/Slider.hpp>
 #include <gui/containers/DigitalInputIndicator.hpp>
+#include <touchgfx/containers/Slider.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <touchgfx/containers/SlideMenu.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
@@ -103,10 +103,6 @@ public:
     {
         // Override and implement this function in Setting
     }
-    virtual void buttonDigital4Handle()
-    {
-        // Override and implement this function in Setting
-    }
     virtual void buttonReturnHandle()
     {
         // Override and implement this function in Setting
@@ -158,19 +154,18 @@ protected:
     touchgfx::TextArea textArea3_2;
     touchgfx::TextArea textArea3_1;
     touchgfx::TextArea textArea3;
+    DigitalInputIndicator digitalInputIndicator1;
     touchgfx::Container analogContainer;
     touchgfx::Slider sliderAnalogOut0;
     touchgfx::Slider sliderAnalogOut1;
     touchgfx::TextAreaWithOneWildcard textAreaAnalogOut1;
     touchgfx::TextAreaWithOneWildcard textAreaAnalogOut0;
-    DigitalInputIndicator digitalInputIndicator1;
     touchgfx::ModalWindow modalWindow_inf;
     touchgfx::ButtonWithIcon buttonWithIcon2;
     touchgfx::ButtonWithIcon button_Confirm;
     touchgfx::SlideMenu binaryMenu;
     touchgfx::BoxWithBorder boxWithBorder6;
     touchgfx::Container binaryButton;
-    touchgfx::ToggleButton buttonDigital4;
     touchgfx::ToggleButton buttonDigital3;
     touchgfx::ToggleButton buttonDigital2;
     touchgfx::ToggleButton buttonDigital1;
@@ -178,7 +173,6 @@ protected:
     touchgfx::TextArea textArea4;
     touchgfx::TextArea textArea4_2;
     touchgfx::TextArea textArea4_2_1;
-    touchgfx::TextArea textArea4_2_1_1;
     touchgfx::TextArea textArea4_1;
     touchgfx::Image image1_1;
     touchgfx::ButtonWithIcon buttonDone;

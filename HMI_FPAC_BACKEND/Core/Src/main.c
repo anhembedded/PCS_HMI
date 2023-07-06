@@ -171,6 +171,7 @@ int main(void)
   u_gpio_OnboardInit_LED();
   u_pwm_init();
    u_adc_Init();
+   u_gpio_Init_DigitalOutput();
   u_adc_initSingleConversion();
   LL_ADC_Enable(ADC1);
   HAL_Delay(10);

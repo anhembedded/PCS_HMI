@@ -26,7 +26,18 @@ static void mainApplication(void *param);
 static void blinkLed_Green(void *param);
 static void blinkLed_Orange(void *param);
 
-
+void u_app_pidGraph_entry()
+{
+  u_appAdc_resume();
+  u_appDigitalOut_resume();
+  u_appDdigitalIn_resume();
+}
+void u_app_pidGraph_exit()
+{
+  u_appAdc_suspend();
+  u_appDigitalOut_suspend();
+  u_appDdigitalIn_suspend();
+}
 void u_app_pidGraphRun_entry()
 {
   u_appAdc_resume();
@@ -34,7 +45,6 @@ void u_app_pidGraphRun_entry()
   u_appDigitalOut_resume();
   u_appPidComputing_resume();
   u_appPwm_updatePwmFromPid_resume();
-  
 }
 void u_app_pidGraphRun_exit()
 {
@@ -43,9 +53,8 @@ void u_app_pidGraphRun_exit()
   u_appDigitalOut_suspend();
   u_appPidComputing_suspend();
   u_appPwm_updatePwmFromPid_suspend();
-  
 }
- void u_app_systemStartup_entry()
+void u_app_systemStartup_entry()
 {
   u_appAdc_suspend();
   u_appDdigitalIn_suspend();
@@ -53,7 +62,7 @@ void u_app_pidGraphRun_exit()
   u_appPWM_updatePwmCh_suspend();
   u_appPidComputing_suspend();
 }
- void u_app_settingVarState_entry()
+void u_app_settingVarState_entry()
 {
   u_appAdc_resume();
   u_appDdigitalIn_resume();
@@ -69,7 +78,8 @@ void u_app_settingVarState_exit()
   u_appPWM_updatePwmCh_suspend();
 }
 
-void u_appMainCreate() {
+void u_appMainCreate()
+{
   BaseType_t status;
   status = xTaskCreate(mainApplication, "mainApp", 200, NULL, 1,
                        &mainApplicationHandle);
@@ -91,39 +101,42 @@ void u_appMainCreate() {
   u_appPidCreate();
   /* SystemState::SystemStartup  */
   u_app_systemStartup_entry();
-
 }
 
-static void mainApplication(void *param) {
+static void mainApplication(void *param)
+{
   portBASE_TYPE isRec = 0;
-  while (1) {
+  while (1)
+  {
     isRec = xQueueReceive(u_appMain_queue_systemState, (void *)&u_appMain_systemState,
-                  portMAX_DELAY);
-    
-      // if(u_appMain_systemState == eSETTING_VAR)
-      // {
-      //   settingVarState_entry();
-      // }else if ()
-      // {
-        
-      // }
+                          portMAX_DELAY);
 
+    // if(u_appMain_systemState == eSETTING_VAR)
+    // {
+    //   settingVarState_entry();
+    // }else if ()
+    // {
 
+    // }
   }
 }
 
-static void blinkLed_Green(void *param) {
+static void blinkLed_Green(void *param)
+{
   TickType_t xLastWakeTime;
   xLastWakeTime = xTaskGetTickCount();
-  while (1) {
+  while (1)
+  {
     u_gpio_togglePin(LED_GREEN_PORT, LED_GREEN_PIN);
     vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(1050 - u32_PwmCh0_10bit));
   }
 }
-static void blinkLed_Orange(void *param) {
+static void blinkLed_Orange(void *param)
+{
   TickType_t xLastWakeTime;
   xLastWakeTime = xTaskGetTickCount();
-  while (1) {
+  while (1)
+  {
     u_gpio_togglePin(LED_ORANGE_PORT, LED_ORANGE_PIN);
     vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(1050 - u32_PwmCh1_10bit));
   }

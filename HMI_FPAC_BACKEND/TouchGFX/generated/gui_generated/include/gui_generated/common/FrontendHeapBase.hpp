@@ -19,8 +19,6 @@
 #include <gui/main_screen/MainPresenter.hpp>
 #include <gui/setting_screen/SettingView.hpp>
 #include <gui/setting_screen/SettingPresenter.hpp>
-#include <gui/mesuaring_screen/MesuaringView.hpp>
-#include <gui/mesuaring_screen/MesuaringPresenter.hpp>
 #include <gui/closedloopsetting_screen/ClosedLoopSettingView.hpp>
 #include <gui/closedloopsetting_screen/ClosedLoopSettingPresenter.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphView.hpp>
@@ -51,11 +49,10 @@ public:
      */
     typedef touchgfx::meta::TypeList< MainView,
             touchgfx::meta::TypeList< SettingView,
-            touchgfx::meta::TypeList< MesuaringView,
             touchgfx::meta::TypeList< ClosedLoopSettingView,
             touchgfx::meta::TypeList< ClosedLoopGraphView,
             touchgfx::meta::TypeList< InformationView,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::Nil > > > >
             > GeneratedViewTypes;
 
     /**
@@ -69,11 +66,10 @@ public:
      */
     typedef touchgfx::meta::TypeList< MainPresenter,
             touchgfx::meta::TypeList< SettingPresenter,
-            touchgfx::meta::TypeList< MesuaringPresenter,
             touchgfx::meta::TypeList< ClosedLoopSettingPresenter,
             touchgfx::meta::TypeList< ClosedLoopGraphPresenter,
             touchgfx::meta::TypeList< InformationPresenter,
-            touchgfx::meta::Nil > > > > >
+            touchgfx::meta::Nil > > > >
             > GeneratedPresenterTypes;
 
     /**

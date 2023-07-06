@@ -18,27 +18,7 @@ KEEP extern const touchgfx::GlyphNode glyphs_tahomabd_15_4bpp[] FONT_TABLE_LOCAT
     {   437, 0x0037,   9,  12,  12,   0,  10,   0,   0, 0x00 },
     {   497, 0x0038,  10,  12,  12,   0,  10,   0,   0, 0x00 },
     {   557, 0x0039,   9,  12,  12,   0,  10,   0,   0, 0x00 },
-    {   617, 0x003F,   8,  12,  12,   0,   9,   0,   0, 0x00 },
-    {   665, 0x0041,  11,  12,  12,   0,  10,   0,   0, 0x00 },
-    {   737, 0x0043,  10,  12,  12,   0,  10,   0,   0, 0x00 },
-    {   797, 0x0044,  10,  12,  12,   1,  11,   0,   0, 0x00 },
-    {   857, 0x0047,  11,  12,  12,   0,  11,   0,   0, 0x00 },
-    {   929, 0x004F,  11,  12,  12,   0,  12,   0,   0, 0x00 },
-    {  1001, 0x0052,  10,  12,  12,   1,  11,   0,   0, 0x00 },
-    {  1061, 0x0061,   9,   9,   9,   0,   9,   0,   0, 0x00 },
-    {  1106, 0x0063,   8,   9,   9,   0,   8,   0,   0, 0x00 },
-    {  1142, 0x0064,   9,  12,  12,   0,   9,   0,   0, 0x00 },
-    {  1202, 0x0065,   9,   9,   9,   0,   9,   0,   0, 0x00 },
-    {  1247, 0x0067,   9,  12,   9,   0,   9,   0,   0, 0x00 },
-    {  1307, 0x0068,   8,  12,  12,   1,  10,   0,   0, 0x00 },
-    {  1355, 0x0069,   4,  12,  12,   0,   5,   0,   0, 0x00 },
-    {  1379, 0x006C,   3,  12,  12,   1,   5,   0,   0, 0x00 },
-    {  1403, 0x006E,   8,   9,   9,   1,  10,   0,   0, 0x00 },
-    {  1439, 0x006F,   9,   9,   9,   0,   9,   0,   0, 0x00 },
-    {  1484, 0x0070,   8,  12,   9,   1,   9,   0,   0, 0x00 },
-    {  1532, 0x0072,   6,   9,   9,   1,   7,   0,   0, 0x00 },
-    {  1559, 0x0074,   7,  12,  12,   0,   6,   0,   0, 0x00 },
-    {  1607, 0x0075,   9,   9,   9,   0,  10,   0,   0, 0x00 }
+    {   617, 0x003F,   8,  12,  12,   0,   9,   0,   0, 0x00 }
 };
 
 // tahomabd_15_4bpp
@@ -212,6 +192,6 @@ touchgfx::GeneratedFont& getFont_tahomabd_15_4bpp();
 
 touchgfx::GeneratedFont& getFont_tahomabd_15_4bpp()
 {
-    static touchgfx::GeneratedFont tahomabd_15_4bpp(glyphs_tahomabd_15_4bpp, 35, 18, 15, 0, 0, 4, 1, 0, 1, unicodes_tahomabd_15_4bpp, kerning_tahomabd_15_4bpp, 63, 0, 0, &tahomabd_contextualFormsTable);
+    static touchgfx::GeneratedFont tahomabd_15_4bpp(glyphs_tahomabd_15_4bpp, 15, 18, 15, 0, 0, 4, 1, 0, 0, unicodes_tahomabd_15_4bpp, kerning_tahomabd_15_4bpp, 63, 0, 0, &tahomabd_contextualFormsTable);
     return tahomabd_15_4bpp;
 }

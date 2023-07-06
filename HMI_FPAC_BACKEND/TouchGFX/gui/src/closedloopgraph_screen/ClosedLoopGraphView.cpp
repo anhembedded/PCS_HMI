@@ -4,7 +4,7 @@
 #endif //  simulator
 
 
-ClosedLoopGraphView::ClosedLoopGraphView() : graphState(graphState_type::stop)
+ClosedLoopGraphView::ClosedLoopGraphView()
 {
   
     diff_constructor(&this->diffVar, 0, 0);
@@ -20,6 +20,7 @@ void ClosedLoopGraphView::setupScreen()
     spOpFb1.drawtextAreaFeedback(pidParam.f_setPoint);
     spOpFb1.drawtextAreaSetpoint(pidParam.f_setPoint);
     notifyActiveScreen();
+   
 }
 
 void ClosedLoopGraphView::tearDownScreen()
@@ -62,4 +63,9 @@ void ClosedLoopGraphView::drawTextAreaKd()
 {
     Unicode::snprintfFloat(text_analogVal_KdBuffer, TEXT_ANALOGVAL_KD_SIZE, "%2.2f", static_cast<float>(this->pidParam.f_kd));
     text_analogVal_Kd.invalidate();
+}
+
+ void ClosedLoopGraphView::setDigitalOut(digitaOut_type digiOut)
+{
+    presenter->setDigitalOut(digiOut);
 }

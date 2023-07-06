@@ -23,15 +23,7 @@ MainViewBase::MainViewBase() :
     buttonSetting.setAction(buttonCallback);
     add(buttonSetting);
 
-    buttonMesuaring.setXY(190, 106);
-    buttonMesuaring.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_PRESSED_ID));
-    buttonMesuaring.setLabelText(touchgfx::TypedText(T___SINGLEUSE_JGV0));
-    buttonMesuaring.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonMesuaring.setLabelColorPressed(touchgfx::Color::getColorFromRGB(87, 119, 243));
-    buttonMesuaring.setAction(buttonCallback);
-    add(buttonMesuaring);
-
-    clickButton_closedloopControlContinuous.setXY(190, 165);
+    clickButton_closedloopControlContinuous.setXY(190, 136);
     clickButton_closedloopControlContinuous.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_LARGE_ROUND_PRESSED_ID));
     clickButton_closedloopControlContinuous.setLabelText(touchgfx::TypedText(T___SINGLEUSE_KZ50));
     clickButton_closedloopControlContinuous.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -79,13 +71,6 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonSetting completed call virtual function
         //Call buttonSettingHandle
         buttonSettingHandle();
-    }
-    if (&src == &buttonMesuaring)
-    {
-        //buttonMesuaring
-        //When buttonMesuaring clicked change screen to Mesuaring
-        //Go to Mesuaring with screen transition towards East
-        application().gotoMesuaringScreenCoverTransitionEast();
     }
     if (&src == &clickButton_closedloopControlContinuous)
     {

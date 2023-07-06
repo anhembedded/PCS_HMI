@@ -22,8 +22,9 @@ public:
     }
     virtual void buttonClosedLoop()
     {
-        // Override and implement this function in Main
+        presenter->statePidGraph_entry();
     }
+   
 protected:
 };
 

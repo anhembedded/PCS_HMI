@@ -13,8 +13,6 @@
 #include <gui/main_screen/MainPresenter.hpp>
 #include <gui/setting_screen/SettingView.hpp>
 #include <gui/setting_screen/SettingPresenter.hpp>
-#include <gui/mesuaring_screen/MesuaringView.hpp>
-#include <gui/mesuaring_screen/MesuaringPresenter.hpp>
 #include <gui/closedloopsetting_screen/ClosedLoopSettingView.hpp>
 #include <gui/closedloopsetting_screen/ClosedLoopSettingPresenter.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphView.hpp>
@@ -74,19 +72,6 @@ void FrontendApplicationBase::gotoSettingScreenCoverTransitionEast()
 void FrontendApplicationBase::gotoSettingScreenCoverTransitionEastImpl()
 {
     touchgfx::makeTransition<SettingView, SettingPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}
-
-// Mesuaring
-
-void FrontendApplicationBase::gotoMesuaringScreenCoverTransitionEast()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoMesuaringScreenCoverTransitionEastImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotoMesuaringScreenCoverTransitionEastImpl()
-{
-    touchgfx::makeTransition<MesuaringView, MesuaringPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // ClosedLoopSetting

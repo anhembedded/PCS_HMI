@@ -18,12 +18,10 @@
 extern "C"
 {
 #include "gui/model/u_type.h"
-
 }
 
 Model::Model() : modelListener(0)
 {
-
 }
 
 void Model::tick()
@@ -32,11 +30,11 @@ void Model::tick()
 #ifdef SIMULATOR
 
 #else
-    auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, (void*)&u32_adcPtr, 0);
-    auto isReciOuputBackEnd = xQueueReceive(u_pid_queue_sendOutPutToFrontEnd, (void*)&pidOutFromBackend, 0);
-    if(isReciOuputBackEnd == pdTRUE)
+    auto isRecieved = xQueueReceive(adcSendToFrontEndHandle, (void *)&u32_adcPtr, 0);
+    auto isReciOuputBackEnd = xQueueReceive(u_pid_queue_sendOutPutToFrontEnd, (void *)&pidOutFromBackend, 0);
+    if (isReciOuputBackEnd == pdTRUE)
     {
-         if (modelListener != nullptr)
+        if (modelListener != nullptr)
         {
             modelListener->notifyUpdatePidOutput(pidOutFromBackend);
         }
@@ -68,18 +66,17 @@ void Model::tick()
 
         modelListener->notifyDigitalInputChanged(digitalInput);
     }
- 
 
 #endif // SIMULATOR
 }
 
 void Model::sendAdcOuputToBackEnd_1(uint32_t registerVar)
 {
-   // touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
+    // touchgfx_printf("sendAdcOuputToBackEnd_1! %d \n", registerVar);
     debugPrint<decltype(registerVar)>("sendAdcOuputToBackEnd_1", registerVar);
 #ifdef BACKEND
     xQueueSend(queue_updatePwmCh1Handle, &registerVar, 0);
-#endif 
+#endif
 }
 
 void Model::sendAdcOuputToBackEnd_0(uint32_t registerVar)
@@ -119,7 +116,7 @@ void Model::updateActiveScreen(activeScreen_type param)
 
 void Model::setPidParam(pidParam_type pidSet)
 {
-    float const1023Div10 = 1023.0F/10.0F;
+    float const1023Div10 = 1023.0F / 10.0F;
     u_appPid_updateParam_type backendPid;
     this->pidParam = pidSet;
     backendPid.Kp = pidSet.f_kp;
@@ -130,9 +127,9 @@ void Model::setPidParam(pidParam_type pidSet)
     debugPrint<decltype(pidSet.f_ki)>("debugPrint::pidSet.f_ki", pidSet.f_ki);
     debugPrint<decltype(pidSet.f_kd)>("debugPrint::pidSet.f_kd", pidSet.f_kd);
     debugPrint<decltype(pidSet.f_setPoint)>("debugPrint::pidSet.setPoint", pidSet.f_setPoint);
-    #ifdef BACKEND
-    xQueueSend(u_pid_queue_pidParam, (void*)& backendPid, 0);
-    #endif
+#ifdef BACKEND
+    xQueueSend(u_pid_queue_pidParam, (void *)&backendPid, 0);
+#endif
 }
 
 pidParam_type Model::getPidParam()
@@ -144,10 +141,9 @@ void Model::setActualValue(actualValue_type view_actualValue)
 {
     this->actualValue = view_actualValue;
     debugPrint<actualValue_type>("debugPrint::actual", this->actualValue);
-    #ifdef BACKEND
-    xQueueSend(u_pid_queue_actuator, (void*)&view_actualValue, portMAX_DELAY);
-    #endif
-    
+#ifdef BACKEND
+    xQueueSend(u_pid_queue_actuator, (void *)&view_actualValue, 0);
+#endif
 }
 
 actualValue_type Model::getActualValue()
@@ -178,54 +174,64 @@ void Model::setActiveScreen(activeScreen_type activeScreenParam)
     this->activeScreenVar = activeScreenParam;
 }
 
- void Model::setState(systemState_type sysState)
+void Model::setState(systemState_type sysState)
 {
 }
 
- void Model::updateActualValue(actualValue_type actualValueParam)
- {
-     this->actualValue = actualValueParam;
-     debugPrint<actualValue_type>("debugPrint::actualValueParam", this->actualValue);
- }
+void Model::updateActualValue(actualValue_type actualValueParam)
+{
+    this->actualValue = actualValueParam;
+    debugPrint<actualValue_type>("debugPrint::actualValueParam", this->actualValue);
+}
 
-  float Model::getFeedBackToPresentor()
- {
+float Model::getFeedBackToPresentor()
+{
     auto factorVal = this->settingVar.f_factor.at(static_cast<uint32_t>(actualValue));
     auto offsetVal = this->settingVar.f_offset.at(static_cast<uint32_t>(actualValue));
     auto feedback = analogIn.getAnalogValueFloat(static_cast<uint32_t>(actualValue));
     auto feedBackFactorAndOffset = (feedback * factorVal) + offsetVal;
     return feedBackFactorAndOffset;
- }
+}
 
-  void Model::statePidGraphRun_entry()
-  {
+void Model::statePidGraphRun_entry()
+{
 #ifdef BACKEND
-      u_app_pidGraphRun_entry();
+    u_app_pidGraphRun_entry();
 #endif // BACKEND
-  }
+}
 
-  void Model::statePidGraphRun_exit()
-  {
+void Model::statePidGraphRun_exit()
+{
 #ifdef BACKEND
-      u_app_pidGraphRun_exit();
+    u_app_pidGraphRun_exit();
 #endif // BACKEND
-  }
+}
 
-  void Model::stateSettingVar_entry()
-  {
+void Model::stateSettingVar_entry()
+{
 #ifdef BACKEND
-      u_app_settingVarState_entry();
+    u_app_settingVarState_entry();
 #endif // BACKEND
+}
 
-  }
-
-  void Model::stateSettingVar_exit()
-  {
+void Model::stateSettingVar_exit()
+{
 #ifdef BACKEND
-      u_app_settingVarState_exit();
+    u_app_settingVarState_exit();
 #endif // BACKEND
-
- }
+}
+void Model::statePidGraph_exit()
+{
+#ifdef BACKEND
+    u_app_pidGraph_exit();
+#endif // BACKEND
+}
+void Model::statePidGraph_entry()
+{
+#ifdef BACKEND
+    u_app_pidGraph_entry();
+#endif // BACKEND
+}
 
 settingVar_type Model::getSettingVar()
 {

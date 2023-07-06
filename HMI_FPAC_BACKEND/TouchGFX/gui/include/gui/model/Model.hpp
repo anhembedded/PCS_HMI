@@ -86,6 +86,7 @@ struct settingVar_type
     {
         f_factor = other.f_factor;
         f_offset = other.f_offset;
+
         return *this;
     }
 
@@ -178,6 +179,8 @@ public:
     void stateSettingVar_entry();
     void stateSettingVar_exit();
     void statePidGraphRun_exit();
+    void statePidGraph_entry();
+    void statePidGraph_exit();
     
     
 protected:
