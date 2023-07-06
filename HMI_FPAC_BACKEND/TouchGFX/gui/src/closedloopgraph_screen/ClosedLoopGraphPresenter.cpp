@@ -11,7 +11,7 @@ ClosedLoopGraphPresenter::ClosedLoopGraphPresenter(ClosedLoopGraphView& v)
 
 void ClosedLoopGraphPresenter::activate()
 {
-    
+
 }
 
 void ClosedLoopGraphPresenter::deactivate()
