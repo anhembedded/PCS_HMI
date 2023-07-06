@@ -45,6 +45,9 @@ public:
         if (buttonDigital1.getState() == ClickEvent::RELEASED)
         {
             digitalOutput.u8_digiOut.at(1) = 1U;
+            digitalOutput.u8_digiOut.at(2) = 0U;
+            buttonDigital2.forceState(ClickEvent::PRESSED);
+            buttonDigital2.invalidate();
         }
         else
         {
@@ -57,9 +60,9 @@ public:
         if (buttonDigital2.getState() == ClickEvent::RELEASED)
         {
             digitalOutput.u8_digiOut.at(2) = 1U;
-            digitalOutput.u8_digiOut.at(3) = 0U;
-            buttonDigital3.forceState(ClickEvent::PRESSED);
-            buttonDigital3.invalidate();
+            digitalOutput.u8_digiOut.at(1) = 0U;
+            buttonDigital1.forceState(ClickEvent::PRESSED);
+            buttonDigital1.invalidate();
         }
         else
         {
@@ -72,9 +75,6 @@ public:
         if (buttonDigital3.getState() == ClickEvent::RELEASED)
         {
             digitalOutput.u8_digiOut.at(3) = 1U;
-            digitalOutput.u8_digiOut.at(2) = 0U;
-            buttonDigital2.forceState(ClickEvent::PRESSED);
-            buttonDigital2.invalidate();
         }
         else
         {
@@ -82,7 +82,7 @@ public:
         }
         setDigitalOut(this->digitalOutput);
     }
-    
+
     virtual void buttonReturnHandle()
     {
         presenter->stateSettingVar_exit();
@@ -145,7 +145,6 @@ private:
         this->u32_channelAnalogOut1 = 0U;
         updateAnalogOut0();
         updateAnalogOut1();
-    
     }
 };
 

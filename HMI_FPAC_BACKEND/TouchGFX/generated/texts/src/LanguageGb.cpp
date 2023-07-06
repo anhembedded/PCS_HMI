@@ -11,6 +11,10 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     455, // T_KEYBOARDBUFFER: "00000000.00"
+    364, // T___SINGLEUSE_RSAD: "1"
+    704, // T___SINGLEUSE_FOWU: "3"
+    702, // T___SINGLEUSE_GD5M: "2"
+    465, // T___SINGLEUSE_6VYA: "0"
     659, // T___SINGLEUSE_QN5K: "Done"
     62,  // T___SINGLEUSE_PC1L: "D.In.0:\nD.In.1:\nD.In.2:\nD.In.3:\nD.In.4:\nD.In.5:\nD.In.6:"
     158, // T___SINGLEUSE_98JF: "Analog.0: Pump\nAnalog.0: Linear valve"

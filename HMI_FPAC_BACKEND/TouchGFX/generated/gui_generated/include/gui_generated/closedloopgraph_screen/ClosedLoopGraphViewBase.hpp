@@ -18,7 +18,11 @@
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <gui/containers/ButtonDone.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <gui/containers/DigitalOutput.hpp>
+#include <touchgfx/containers/SlideMenu.hpp>
+#include <touchgfx/containers/Container.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class ClosedLoopGraphViewBase : public touchgfx::View<ClosedLoopGraphPresenter>
 {
@@ -43,6 +47,22 @@ public:
         // Override and implement this function in ClosedLoopGraph
     }
     virtual void setButtonHandle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+    virtual void buttonDigital0Handle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+    virtual void buttonDigital1Handle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+    virtual void buttonDigital2Handle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+    virtual void buttonDigital3Handle()
     {
         // Override and implement this function in ClosedLoopGraph
     }
@@ -85,7 +105,18 @@ protected:
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kp;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Ki;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kd;
-    DigitalOutput digitalOutput1;
+    touchgfx::SlideMenu binaryMenu;
+    touchgfx::BoxWithBorder boxWithBorder6;
+    touchgfx::Container binaryButton;
+    touchgfx::ToggleButton buttonDigital3;
+    touchgfx::ToggleButton buttonDigital2;
+    touchgfx::ToggleButton buttonDigital1;
+    touchgfx::ToggleButton buttonDigital0;
+    touchgfx::TextArea textArea4;
+    touchgfx::TextArea textArea4_2;
+    touchgfx::TextArea textArea4_2_1;
+    touchgfx::TextArea textArea4_1;
+    touchgfx::Image image1_1;
 
     /*
      * Wildcard Buffers

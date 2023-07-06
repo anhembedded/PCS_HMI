@@ -2771,13 +2771,166 @@
             }
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "digitalOutput1",
-            "X": -102,
-            "Y": 358,
-            "Width": 800,
-            "Height": 121,
-            "CustomContainerDefinitionName": "DigitalOutput"
+            "Type": "SlideMenu",
+            "Name": "binaryMenu",
+            "X": -87,
+            "Y": 340,
+            "Width": 1625,
+            "Height": 143,
+            "LockPosition": true,
+            "FileNameBackground": "__generated\\clay_theme_images_bars_1024x600_bottom_dim_dark.png",
+            "BackgroundX": 601,
+            "BackgroundY": 43,
+            "UseButton": true,
+            "FileNameButtonPressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_action.png",
+            "FileNameButtonReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+            "ButtonX": 730,
+            "State": "Collapsed",
+            "ExpandDirection": "North",
+            "Easing": "Cubic",
+            "EasingOption": "InOut",
+            "AnimationDuration": 300,
+            "VisiblePixelsWhenCollapsed": 39,
+            "Components": [
+              {
+                "Type": "BoxWithBorder",
+                "Name": "boxWithBorder6",
+                "X": 601,
+                "Y": 44,
+                "Width": 288,
+                "Height": 94,
+                "Color": {
+                  "Red": 105,
+                  "Green": 119,
+                  "Blue": 144
+                },
+                "BorderSize": 5
+              },
+              {
+                "Type": "Container",
+                "Name": "binaryButton",
+                "X": 391,
+                "Y": 38,
+                "Width": 495,
+                "Height": 126,
+                "Components": [
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "buttonDigital3",
+                    "X": 226,
+                    "Y": 15,
+                    "Width": 34,
+                    "Height": 62,
+                    "Pressed": "on.png",
+                    "Released": "off.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "buttonDigital2",
+                    "X": 295,
+                    "Y": 15,
+                    "Width": 34,
+                    "Height": 62,
+                    "Pressed": "on.png",
+                    "Released": "off.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "buttonDigital1",
+                    "X": 369,
+                    "Y": 15,
+                    "Width": 34,
+                    "Height": 62,
+                    "Pressed": "on.png",
+                    "Released": "off.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "buttonDigital0",
+                    "X": 443,
+                    "Y": 15,
+                    "Width": 34,
+                    "Height": 62,
+                    "Pressed": "on.png",
+                    "Released": "off.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea4",
+                    "X": 454,
+                    "Y": 45,
+                    "Width": 12,
+                    "Height": 27,
+                    "TextId": "__SingleUse_6VYA",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 34,
+                      "Green": 42,
+                      "Blue": 56
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea4_2",
+                    "X": 306,
+                    "Y": 46,
+                    "Width": 12,
+                    "Height": 27,
+                    "TextId": "__SingleUse_GD5M",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 34,
+                      "Green": 42,
+                      "Blue": 56
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea4_2_1",
+                    "X": 237,
+                    "Y": 46,
+                    "Width": 12,
+                    "Height": 27,
+                    "TextId": "__SingleUse_FOWU",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 34,
+                      "Green": 42,
+                      "Blue": 56
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea4_1",
+                    "X": 379,
+                    "Y": 46,
+                    "Width": 12,
+                    "Height": 27,
+                    "TextId": "__SingleUse_RSAD",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 34,
+                      "Green": 42,
+                      "Blue": 56
+                    },
+                    "AutoSize": true
+                  }
+                ]
+              },
+              {
+                "Type": "Image",
+                "Name": "image1_1",
+                "X": 85,
+                "Y": 57,
+                "Width": 800,
+                "Height": 150,
+                "LockPosition": true,
+                "RelativeFilename": "__generated\\clay_theme_images_effects_800x480_shade_top_dark.png"
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -2837,6 +2990,50 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "setButtonHandle"
+            }
+          },
+          {
+            "InteractionName": "buttonDigital0Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDigital0"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDigital0Handle"
+            }
+          },
+          {
+            "InteractionName": "buttonDigital1Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDigital1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDigital1Handle"
+            }
+          },
+          {
+            "InteractionName": "buttonDigital2Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDigital2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDigital2Handle"
+            }
+          },
+          {
+            "InteractionName": "buttonDigital3Handle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonDigital3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonDigital3Handle"
             }
           }
         ]

@@ -18,3 +18,12 @@ void MainPresenter::notifyActiveScreen()
 {
     model->updateActiveScreen(activeScreen_type::mainScreen);
 }
+
+    void MainPresenter::statePidGraph_entry()
+       {
+        model->statePidGraph_entry();
+       }
+    void MainPresenter::statePidGrap_exit()
+    {
+model->statePidGraph_exit();
+    }

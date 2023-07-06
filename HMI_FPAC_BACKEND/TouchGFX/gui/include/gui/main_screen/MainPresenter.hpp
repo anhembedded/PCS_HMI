@@ -33,6 +33,8 @@ public:
   {
     model->stateSettingVar_entry();
   }
+   void statePidGraph_entry();
+    void statePidGrap_exit();
 private:
     MainPresenter();
 

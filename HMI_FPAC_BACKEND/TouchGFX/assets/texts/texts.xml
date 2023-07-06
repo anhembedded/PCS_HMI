@@ -12,6 +12,22 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_RSAD" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">1</Translation>
+        <Translation Language="Vietnamese">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_FOWU" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">3</Translation>
+        <Translation Language="Vietnamese">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_GD5M" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">2</Translation>
+        <Translation Language="Vietnamese">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_6VYA" Alignment="Left" TypographyId="WildcardB">
+        <Translation Language="GB">0</Translation>
+        <Translation Language="Vietnamese">0</Translation>
+      </Text>
       <Text Id="__SingleUse_QN5K" Alignment="Center" TypographyId="WildcardB">
         <Translation Language="GB">Done</Translation>
         <Translation Language="Vietnamese">OK</Translation>

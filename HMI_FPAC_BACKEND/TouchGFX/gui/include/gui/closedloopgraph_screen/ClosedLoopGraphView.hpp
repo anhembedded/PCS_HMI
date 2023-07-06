@@ -28,10 +28,12 @@ public:
   virtual void setButtonHandle()
   {
     presenter->statePidGraphRunP_exit();
+    presenter->statePidGrap_exit();
   }
   virtual void startButton_Handle() 
   { 
     this->graphState = graphState_type::run; 
+    presenter->statePidGrap_exit();
     presenter->statePidGraphRunP_entry();
   }
   virtual void stopButton_Handle() 
@@ -47,6 +49,60 @@ public:
     graphOutput.clear();
     presenter->statePidGraphRunP_exit();
   }
+   virtual void buttonDigital0Handle() final
+    {
+        if (buttonDigital0.getState() == ClickEvent::RELEASED)
+        {
+            digitalOutput.u8_digiOut.at(0) = 1U;
+        }
+        else
+        {
+            digitalOutput.u8_digiOut.at(0) = 0U;
+        }
+        setDigitalOut(this->digitalOutput);
+    }
+    virtual void buttonDigital1Handle() final
+    {
+        if (buttonDigital1.getState() == ClickEvent::RELEASED)
+        {
+            digitalOutput.u8_digiOut.at(1) = 1U;
+            digitalOutput.u8_digiOut.at(2) = 0U;
+            buttonDigital2.forceState(ClickEvent::PRESSED);
+            buttonDigital2.invalidate();
+        }
+        else
+        {
+            digitalOutput.u8_digiOut.at(1) = 0U;
+        }
+        setDigitalOut(this->digitalOutput);
+    }
+    virtual void buttonDigital2Handle() final
+    {
+        if (buttonDigital2.getState() == ClickEvent::RELEASED)
+        {
+            digitalOutput.u8_digiOut.at(2) = 1U;
+            digitalOutput.u8_digiOut.at(1) = 0U;
+            buttonDigital1.forceState(ClickEvent::PRESSED);
+            buttonDigital1.invalidate();
+        }
+        else
+        {
+            digitalOutput.u8_digiOut.at(2) = 0U;
+        }
+        setDigitalOut(this->digitalOutput);
+    }
+    virtual void buttonDigital3Handle() final
+    {
+        if (buttonDigital3.getState() == ClickEvent::RELEASED)
+        {
+            digitalOutput.u8_digiOut.at(3) = 1U;
+        }
+        else
+        {
+            digitalOutput.u8_digiOut.at(3) = 0U;
+        }
+        setDigitalOut(this->digitalOutput);
+    }
 
   void notifyActiveScreen() { presenter->notifyActiveScreen(); }
   activeScreen_type getActiveScreen() const {
@@ -79,6 +135,7 @@ public:
       graphOutput.addDataPoint(pidOut10Float);
       spOpFb1.drawLineProgressOutput((int)pidOutput);
   }
+  void setDigitalOut(digitaOut_type digiOut);
 protected:
 private:
   void updateScreenParam();
@@ -86,6 +143,7 @@ private:
   pidParam_type pidParam;
   float mathTick;
   graphState_type graphState;
+  digitaOut_type digitalOutput;
 
   void drawTextAreaKp();
   void drawTextAreaKi();
