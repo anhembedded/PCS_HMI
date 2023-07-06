@@ -1,5 +1,6 @@
 #include <gui/closedloopgraph_screen/ClosedLoopGraphView.hpp>
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
+#include "SEGGER_SYSVIEW_FreeRTOS.h"
 
 ClosedLoopGraphPresenter::ClosedLoopGraphPresenter(ClosedLoopGraphView& v)
     : view(v)
@@ -29,6 +30,10 @@ pidParam_type ClosedLoopGraphPresenter::getPidParam()
 
   float ClosedLoopGraphPresenter::getFeedbackDataPointFormModel()
  {
+    #ifdef SEGGER_DEBUG
+    SEGGER_SYSVIEW_OnTaskStartExec(10);
+    #endif // SEGGER
+
      auto analogIn = model->getAnalogIn();
      auto modelActual = model->getActualValue();
      return analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));

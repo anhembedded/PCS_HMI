@@ -225,7 +225,7 @@ void Model::setActiveScreen(activeScreen_type activeScreenParam)
       u_app_settingVarState_exit();
 #endif // BACKEND
 
-  }
+ }
 
 settingVar_type Model::getSettingVar()
 {

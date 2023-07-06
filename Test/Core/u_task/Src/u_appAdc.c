@@ -86,7 +86,7 @@ void u_appAdc_suspend()
 
 static void u_appAdc_TurnOff()
 {
-    NVIC_DisableIRQ(ADC_IRQn);
+   // NVIC_DisableIRQ(ADC_IRQn);
     u32_applicationAdc[0] = 0;
     u32_applicationAdc[1] = 0;
     u32_applicationAdc[2] = 0;
@@ -97,5 +97,5 @@ static void u_appAdc_TurnOff()
 void u_appAdc_Statup()
 {
     xQueueReset(adcSendToFrontEndHandle);
-    NVIC_EnableIRQ(ADC_IRQn);
+    //NVIC_EnableIRQ(ADC_IRQn);
 }

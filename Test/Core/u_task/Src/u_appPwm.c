@@ -64,9 +64,9 @@ void u_appPwm_updatePwmFromPid_suspend()
     u_pwm_dutyCycleValue.u32_Channle0 = setPwmDutyCycle_0_to_1023(0x00U);;
     u_pwm_dutyCycleValue.u32_Channle0 = setPwmDutyCycle_0_to_1023(0x00U);;
    // u_pwm_stopCounter();
-   u_pwm_turnOffPwmOutputCH2();
-    u_pwm_turnOffPwmOutputCH3();
-    u_pwm_setDutyCycleISR(u_pwm_dutyCycleValue);
+  u_pwm_turnOffPwmOutputCH2();
+  u_pwm_turnOffPwmOutputCH3();
+  u_pwm_setDutyCycleISR(u_pwm_dutyCycleValue);
 }
 
 void u_appPWM_updatePwmCh_resume()

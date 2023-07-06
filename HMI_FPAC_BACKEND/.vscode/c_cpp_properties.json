@@ -36,7 +36,8 @@
                 "USE_FULL_LL_DRIVER",
                 "__GNUC__",
                 "systemState",
-                "BACKEND"
+                "BACKEND",
+                "SEGGER_DEBUG"
             ],
             "windowsSdkVersion": "10.0.22000.0",
             "intelliSenseMode": "windows-gcc-arm64",
