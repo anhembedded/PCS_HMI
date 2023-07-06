@@ -19,6 +19,27 @@ void ClosedLoopGraphView::setupScreen()
     this->drawTextAreaKd();
     spOpFb1.drawtextAreaFeedback(pidParam.f_setPoint);
     spOpFb1.drawtextAreaSetpoint(pidParam.f_setPoint);
+    digitalOutput = presenter->getDigitalOutFormModel();
+    if (digitalOutput.u8_digiOut.at(0))
+        {
+            buttonDigital0.forceState(ClickEvent::RELEASED);
+            buttonDigital0.invalidate();
+        }
+        if (digitalOutput.u8_digiOut.at(1))
+        {
+            buttonDigital1.forceState(ClickEvent::RELEASED);
+            buttonDigital1.invalidate();
+        }
+        if (digitalOutput.u8_digiOut.at(2))
+        {
+            buttonDigital2.forceState(ClickEvent::RELEASED);
+            buttonDigital2.invalidate();
+        }
+        if (digitalOutput.u8_digiOut.at(3))
+        {
+            buttonDigital3.forceState(ClickEvent::RELEASED);
+            buttonDigital3.invalidate();
+        }
     notifyActiveScreen();
    
 }

@@ -72,6 +72,7 @@ void u_appAdc_resume()
    {
        vTaskResume(updateAdcFrequenceHandle);
    }
+   u_appAdc_Statup();
 }
 
 void u_appAdc_suspend()
@@ -96,6 +97,6 @@ static void u_appAdc_TurnOff()
 
 void u_appAdc_Statup()
 {
-    xQueueReset(adcSendToFrontEndHandle);
+    //xQueueReset(adcSendToFrontEndHandle);
     //NVIC_EnableIRQ(ADC_IRQn);
 }

@@ -2,6 +2,7 @@
 #include <gui/closedloopgraph_screen/ClosedLoopGraphPresenter.hpp>
 #include "SEGGER_SYSVIEW_FreeRTOS.h"
 
+
 ClosedLoopGraphPresenter::ClosedLoopGraphPresenter(ClosedLoopGraphView& v)
     : view(v)
 {
@@ -10,7 +11,7 @@ ClosedLoopGraphPresenter::ClosedLoopGraphPresenter(ClosedLoopGraphView& v)
 
 void ClosedLoopGraphPresenter::activate()
 {
-
+    
 }
 
 void ClosedLoopGraphPresenter::deactivate()
@@ -39,12 +40,7 @@ pidParam_type ClosedLoopGraphPresenter::getPidParam()
      return analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));
  }
 
-  void ClosedLoopGraphPresenter::notifyADCChanged(analogIn_type analogParam)
- {
-     auto analogIn = model->getAnalogIn();
-     auto modelActual = model->getActualValue();
-     auto pidFeedBack = analogIn.getAnalogValueFloat(static_cast<uint32_t>(modelActual));
- }
+
 
    void ClosedLoopGraphPresenter::sendFeedbackToView()
   {
@@ -80,8 +76,12 @@ void ClosedLoopGraphPresenter::setDigitalOut(digitaOut_type setOutput)
         model->setDigitalOut(setOutput);
     }
 
-     void ClosedLoopGraphPresenter::statePidGraph_entry()
-     {
+    digitaOut_type ClosedLoopGraphPresenter::getDigitalOutFormModel()
+    {
+        return model->getDigitalOut();
+    }
+    void ClosedLoopGraphPresenter::statePidGraph_entry()
+    {
         model->statePidGraph_entry();
      }
     void ClosedLoopGraphPresenter::statePidGrap_exit()
