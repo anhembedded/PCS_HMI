@@ -17,8 +17,8 @@ void u_appDigitalOutputCreate()
 {
     BaseType_t status;
     u_app_queue_digitalOutput = xQueueCreate(1, sizeof(uint32_t *));
-    status = xTaskCreate(updateDigitalOutputArray, "DdigitalOut", 200, NULL, 2, &updateDigitalOutputArrayHandle);
-    configASSERT(status == pdPASS);
+   // status = xTaskCreate(updateDigitalOutputArray, "DdigitalOut", 200, NULL, 2, &updateDigitalOutputArrayHandle);
+   // configASSERT(status == pdPASS);
     status = xTaskCreate(u_appDigitalOutput_main, "DdigitalOutMain", 200, NULL, 2, &u_appDigitalOutput_mainHandle);
     configASSERT(status == pdPASS);
 
@@ -26,19 +26,19 @@ void u_appDigitalOutputCreate()
 
 void u_appDigitalOut_resume()
 {
-    portBASE_TYPE isSuspend = isTaskSuspended(updateDigitalOutputArrayHandle);
+    portBASE_TYPE isSuspend = isTaskSuspended(u_appDigitalOutput_mainHandle);
     if (isSuspend == pdTRUE)
     {
-        vTaskResume(updateDigitalOutputArrayHandle);
+        vTaskResume(u_appDigitalOutput_mainHandle);
     }
 }
 
 void u_appDigitalOut_suspend()
 {
-    portBASE_TYPE isRunOrReady = isTaskRunOrReady(updateDigitalOutputArrayHandle);
+    portBASE_TYPE isRunOrReady = isTaskRunOrReady(u_appDigitalOutput_mainHandle);
     if (isRunOrReady == pdTRUE)
     {
-        vTaskSuspend(updateDigitalOutputArrayHandle);
+        vTaskSuspend(u_appDigitalOutput_mainHandle);
     }
     
 }

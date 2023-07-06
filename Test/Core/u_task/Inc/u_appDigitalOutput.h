@@ -22,6 +22,7 @@ struct u_appDigitalOutputUpdate_type
 extern uint32_t u_appDigitalOut_array[4];
 
 extern struct u_appDigitalOutputUpdate_type u_appDigitalVar;
+extern QueueHandle_t u_app_queue_digitalOutput;
 
 void u_appDigitalOutputCreate();
 

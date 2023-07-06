@@ -18,7 +18,7 @@ void ClosedLoopGraphView::setupScreen() {
   spOpFb1.drawtextAreaSetpoint(pidParam.f_setPoint);
   digitalOutput = presenter->getDigitalOutFormModel();
   updateGraphYRange();
-
+  
   notifyActiveScreen();
 }
 

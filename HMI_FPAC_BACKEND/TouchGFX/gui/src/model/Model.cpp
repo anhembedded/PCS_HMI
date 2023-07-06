@@ -104,6 +104,16 @@ void Model::sendDigitalOutputToBackEnd()
     u_appDigitalVar.digitalState[4] = digitalOutput.u8_digiOut.at(4);
     u_appDigitalVar.isUpdate = 1;
 #endif
+  
+#ifdef BACKEND
+    u_appDigitalOut_array[0] = digitalOutput.u8_digiOut.at(0);
+    u_appDigitalOut_array[1] = digitalOutput.u8_digiOut.at(1);
+    u_appDigitalOut_array[2] = digitalOutput.u8_digiOut.at(2);
+    u_appDigitalOut_array[3] = digitalOutput.u8_digiOut.at(3);
+    
+    xQueueSend(u_app_queue_digitalOutput, u_appDigitalOut_array, 0);
+#endif // BACKEND
+
 }
 
 void Model::updateActiveScreen(activeScreen_type param)
