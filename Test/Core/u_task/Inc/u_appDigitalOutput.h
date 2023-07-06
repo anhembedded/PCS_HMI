@@ -19,6 +19,7 @@ struct u_appDigitalOutputUpdate_type
     uint8_t digitalState[8];
 };
 
+extern uint32_t u_appDigitalOut_array[4];
 
 extern struct u_appDigitalOutputUpdate_type u_appDigitalVar;
 
@@ -26,6 +27,6 @@ void u_appDigitalOutputCreate();
 
 void u_appDigitalOut_resume();
 void u_appDigitalOut_suspend();
-void u_appDigitalOutput_Main();
+void u_appDigitalOutput_main();
 
 #endif /* CORE_U_TASK_INC_U_APPDIGITALOUTPUT */
