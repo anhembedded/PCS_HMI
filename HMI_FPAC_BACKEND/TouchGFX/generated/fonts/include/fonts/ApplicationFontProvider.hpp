@@ -20,18 +20,20 @@ struct Typography
     static const touchgfx::FontId WILDCARD = 4;
     static const touchgfx::FontId WILDCARDB = 5;
     static const touchgfx::FontId GRAPHTEXT = 6;
+    static const touchgfx::FontId TYPOGRAPHY_00 = 7;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId KEYBOARD = 0;  // verdanab_28_4bpp
-    static const touchgfx::FontId LARGE = 1;     // verdana_40_4bpp
-    static const touchgfx::FontId SMALL = 2;     // verdana_10_4bpp
-    static const touchgfx::FontId MAINMENU = 3;  // verdanab_16_4bpp
-    static const touchgfx::FontId WILDCARD = 4;  // SegUIVar_20_4bpp
-    static const touchgfx::FontId WILDCARDB = 5; // segoeuib_20_4bpp
-    static const touchgfx::FontId GRAPHTEXT = 6; // tahomabd_15_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 7;
+    static const touchgfx::FontId KEYBOARD = 0;      // verdanab_28_4bpp
+    static const touchgfx::FontId LARGE = 1;         // verdana_40_4bpp
+    static const touchgfx::FontId SMALL = 2;         // verdana_10_4bpp
+    static const touchgfx::FontId MAINMENU = 3;      // verdanab_16_4bpp
+    static const touchgfx::FontId WILDCARD = 4;      // SegUIVar_20_4bpp
+    static const touchgfx::FontId WILDCARDB = 5;     // segoeuib_20_4bpp
+    static const touchgfx::FontId GRAPHTEXT = 6;     // tahomabd_15_4bpp
+    static const touchgfx::FontId TYPOGRAPHY_00 = 7; // verdana_20_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 8;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

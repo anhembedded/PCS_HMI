@@ -242,8 +242,8 @@ void ClosedLoopSettingViewBase::buttonCallbackHandler(const touchgfx::AbstractBu
     
         //Interaction1
         //When confirmInteraction completed change screen to ClosedLoopGraph
-        //Go to ClosedLoopGraph with screen transition towards East
-        application().gotoClosedLoopGraphScreenCoverTransitionEast();
+        //Go to ClosedLoopGraph with no screen transition
+        application().gotoClosedLoopGraphScreenNoTransition();
     }
     if (&src == &button_openModelWindow)
     {

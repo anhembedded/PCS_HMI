@@ -63,52 +63,52 @@ void FrontendApplicationBase::gotoMainScreenCoverTransitionEastImpl()
 
 // Setting
 
-void FrontendApplicationBase::gotoSettingScreenCoverTransitionEast()
+void FrontendApplicationBase::gotoSettingScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSettingScreenCoverTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoSettingScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoSettingScreenCoverTransitionEastImpl()
+void FrontendApplicationBase::gotoSettingScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<SettingView, SettingPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<SettingView, SettingPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // ClosedLoopSetting
 
-void FrontendApplicationBase::gotoClosedLoopSettingScreenCoverTransitionEast()
+void FrontendApplicationBase::gotoClosedLoopSettingScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoClosedLoopSettingScreenCoverTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoClosedLoopSettingScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoClosedLoopSettingScreenCoverTransitionEastImpl()
+void FrontendApplicationBase::gotoClosedLoopSettingScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<ClosedLoopSettingView, ClosedLoopSettingPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<ClosedLoopSettingView, ClosedLoopSettingPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // ClosedLoopGraph
 
-void FrontendApplicationBase::gotoClosedLoopGraphScreenCoverTransitionEast()
+void FrontendApplicationBase::gotoClosedLoopGraphScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoClosedLoopGraphScreenCoverTransitionEastImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoClosedLoopGraphScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoClosedLoopGraphScreenCoverTransitionEastImpl()
+void FrontendApplicationBase::gotoClosedLoopGraphScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<ClosedLoopGraphView, ClosedLoopGraphPresenter, touchgfx::CoverTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<ClosedLoopGraphView, ClosedLoopGraphPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
 // Information
 
-void FrontendApplicationBase::gotoInformationScreenBlockTransition()
+void FrontendApplicationBase::gotoInformationScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoInformationScreenBlockTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoInformationScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoInformationScreenBlockTransitionImpl()
+void FrontendApplicationBase::gotoInformationScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<InformationView, InformationPresenter, touchgfx::BlockTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<InformationView, InformationPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

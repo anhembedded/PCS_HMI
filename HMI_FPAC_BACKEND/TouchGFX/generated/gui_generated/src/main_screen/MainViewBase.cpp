@@ -64,8 +64,8 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
     {
         //buttonSetting
         //When buttonSetting clicked change screen to Setting
-        //Go to Setting with screen transition towards East
-        application().gotoSettingScreenCoverTransitionEast();
+        //Go to Setting with no screen transition
+        application().gotoSettingScreenNoTransition();
     
         //buttonSettingHandle
         //When buttonSetting completed call virtual function
@@ -76,8 +76,8 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
     {
         //buttonClosedLoop
         //When clickButton_closedloopControlContinuous clicked change screen to ClosedLoopGraph
-        //Go to ClosedLoopGraph with screen transition towards East
-        application().gotoClosedLoopGraphScreenCoverTransitionEast();
+        //Go to ClosedLoopGraph with no screen transition
+        application().gotoClosedLoopGraphScreenNoTransition();
     
         //buttonClosedLoopHandle
         //When buttonClosedLoop completed call virtual function
@@ -88,8 +88,8 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
     {
         //buttonInfor
         //When button_information clicked change screen to Information
-        //Go to Information with block transition
-        application().gotoInformationScreenBlockTransition();
+        //Go to Information with no screen transition
+        application().gotoInformationScreenNoTransition();
     }
     if (&src == &buttonLang)
     {

@@ -26,16 +26,16 @@ public:
     void gotoMainScreenCoverTransitionEast();
 
     // Setting
-    void gotoSettingScreenCoverTransitionEast();
+    void gotoSettingScreenNoTransition();
 
     // ClosedLoopSetting
-    void gotoClosedLoopSettingScreenCoverTransitionEast();
+    void gotoClosedLoopSettingScreenNoTransition();
 
     // ClosedLoopGraph
-    void gotoClosedLoopGraphScreenCoverTransitionEast();
+    void gotoClosedLoopGraphScreenNoTransition();
 
     // Information
-    void gotoInformationScreenBlockTransition();
+    void gotoInformationScreenNoTransition();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
@@ -48,16 +48,16 @@ protected:
     void gotoMainScreenCoverTransitionEastImpl();
 
     // Setting
-    void gotoSettingScreenCoverTransitionEastImpl();
+    void gotoSettingScreenNoTransitionImpl();
 
     // ClosedLoopSetting
-    void gotoClosedLoopSettingScreenCoverTransitionEastImpl();
+    void gotoClosedLoopSettingScreenNoTransitionImpl();
 
     // ClosedLoopGraph
-    void gotoClosedLoopGraphScreenCoverTransitionEastImpl();
+    void gotoClosedLoopGraphScreenNoTransitionImpl();
 
     // Information
-    void gotoInformationScreenBlockTransitionImpl();
+    void gotoInformationScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

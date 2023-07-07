@@ -108,8 +108,7 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "East",
+              "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Setting"
             }
           },
@@ -122,8 +121,7 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "East",
+              "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "ClosedLoopGraph"
             }
           },
@@ -135,7 +133,7 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionBlock",
+              "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Information"
             }
           },
@@ -2230,8 +2228,7 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "East",
+              "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "ClosedLoopGraph"
             }
           },
@@ -2457,8 +2454,9 @@
             "Y": 6,
             "Width": 790,
             "Height": 380,
+            "LockPosition": true,
             "DataSeed": -1305830385,
-            "NumberOfValues": 700,
+            "NumberOfValues": 1700,
             "MaxY": 11.3,
             "MinY": -1.0,
             "Precision": "0.01",
@@ -2527,13 +2525,14 @@
             "Width": 780,
             "Height": 380,
             "Visible": false,
+            "LockPosition": true,
             "DataSeed": -1305830385,
-            "NumberOfValues": 700,
+            "NumberOfValues": 1700,
             "MaxY": 11.3,
             "MinY": -1.0,
             "Precision": "0.01",
             "UseCustomVisibleDataPointRange": true,
-            "LastIndex": 600,
+            "LastIndex": 1200,
             "XAxisScale": 1.0,
             "LabelSizeTop": 17,
             "LabelSizeBottom": 29,
@@ -2543,7 +2542,7 @@
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
-                "LineWidth": 2,
+                "LineWidth": 1,
                 "FileNameImage": "",
                 "Color": {
                   "Red": 188,
@@ -2559,13 +2558,14 @@
             "Width": 780,
             "Height": 380,
             "Visible": false,
+            "LockPosition": true,
             "DataSeed": 659641351,
-            "NumberOfValues": 700,
+            "NumberOfValues": 1700,
             "MaxY": 11.3,
             "MinY": -1.0,
             "Precision": "0.01",
             "UseCustomVisibleDataPointRange": true,
-            "LastIndex": 600,
+            "LastIndex": 1200,
             "XAxisScale": 1.0,
             "LabelSizeTop": 17,
             "LabelSizeBottom": 29,
@@ -2586,13 +2586,14 @@
             "Y": -6,
             "Width": 780,
             "Height": 101,
+            "LockPosition": true,
             "DataSeed": 659641351,
-            "NumberOfValues": 700,
+            "NumberOfValues": 1700,
             "MaxY": 11.3,
             "MinY": -1.0,
             "Precision": "0.1",
             "UseCustomVisibleDataPointRange": true,
-            "LastIndex": 600,
+            "LastIndex": 1200,
             "XAxisScale": 1.0,
             "LabelSizeTop": 17,
             "LabelSizeBottom": 29,
@@ -2603,7 +2604,7 @@
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
-                "LineWidth": 2,
+                "LineWidth": 1,
                 "FileNameImage": "",
                 "Color": {
                   "Red": 140,
@@ -2942,6 +2943,22 @@
             "IconHeight": 50,
             "IconWidth": 50,
             "Preset": "clay_theme\\presets\\button\\icon\\rounded\\tiny_fill_action.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea5",
+            "X": 727,
+            "Y": 340,
+            "Width": 63,
+            "Height": 35,
+            "TextId": "__SingleUse_Q350",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 74,
+              "Green": 74,
+              "Blue": 74
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -2954,8 +2971,7 @@
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionCover",
-              "ScreenTransitionDirection": "East",
+              "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "ClosedLoopSetting"
             }
           },

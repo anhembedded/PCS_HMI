@@ -77,21 +77,21 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
 
     graphFeadback.setPosition(0, 6, 780, 380);
     graphFeadback.setScale(100);
-    graphFeadback.setGraphRangeX(0, 600);
+    graphFeadback.setGraphRangeX(0, 1200);
     graphFeadback.setGraphAreaMargin(17, 40, 0, 29);
     graphFeadback.setGraphAreaPadding(0, 0, 10, 0);
     graphFeadback.setGraphRangeY(-1.0f, 11.3f);
     graphFeadback.setVisible(false);
     graphFeadbackLine1Painter.setColor(touchgfx::Color::getColorFromRGB(188, 0, 201));
     graphFeadbackLine1.setPainter(graphFeadbackLine1Painter);
-    graphFeadbackLine1.setLineWidth(2);
+    graphFeadbackLine1.setLineWidth(1);
     graphFeadback.addGraphElement(graphFeadbackLine1);
 
     add(graphFeadback);
 
     graphSetpoint.setPosition(0, 6, 780, 380);
     graphSetpoint.setScale(100);
-    graphSetpoint.setGraphRangeX(0, 600);
+    graphSetpoint.setGraphRangeX(0, 1200);
     graphSetpoint.setGraphAreaMargin(17, 40, 0, 29);
     graphSetpoint.setGraphAreaPadding(0, 0, 10, 0);
     graphSetpoint.setGraphRangeY(-1.0f, 11.3f);
@@ -105,7 +105,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
 
     graphOutput.setPosition(0, -6, 780, 101);
     graphOutput.setScale(10);
-    graphOutput.setGraphRangeX(0, 600);
+    graphOutput.setGraphRangeX(0, 1200);
     graphOutput.setGraphAreaMargin(17, 40, 0, 29);
     graphOutput.setGraphAreaPadding(2, 0, 10, 0);
     graphOutput.setGraphRangeY(-1.0f, 11.3f);
@@ -123,7 +123,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
 
     graphOutputLine1Painter.setColor(touchgfx::Color::getColorFromRGB(140, 3, 3));
     graphOutputLine1.setPainter(graphOutputLine1Painter);
-    graphOutputLine1.setLineWidth(2);
+    graphOutputLine1.setLineWidth(1);
     graphOutput.addGraphElement(graphOutputLine1);
 
     add(graphOutput);
@@ -261,6 +261,12 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     buttonDone.setIconXY(39, 33);
     buttonDone.setAction(buttonCallback);
     add(buttonDone);
+
+    textArea5.setXY(727, 340);
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(74, 74, 74));
+    textArea5.setLinespacing(0);
+    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q350));
+    add(textArea5);
 }
 
 ClosedLoopGraphViewBase::~ClosedLoopGraphViewBase()
@@ -280,8 +286,8 @@ void ClosedLoopGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
     {
         //setButtonHandle
         //When buttonWithLabel_set clicked change screen to ClosedLoopSetting
-        //Go to ClosedLoopSetting with screen transition towards East
-        application().gotoClosedLoopSettingScreenCoverTransitionEast();
+        //Go to ClosedLoopSetting with no screen transition
+        application().gotoClosedLoopSettingScreenNoTransition();
     
         //a
         //When setButtonHandle completed call virtual function

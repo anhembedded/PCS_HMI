@@ -85,18 +85,18 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ButtonWithLabel buttonWithLabel_start;
     DigitalInputIndicator digitalInputIndicator1;
-    touchgfx::GraphWrapAndClear<700> graphBackgroud;
+    touchgfx::GraphWrapAndClear<1700> graphBackgroud;
     touchgfx::GraphElementGridX graphBackgroudMajorXAxisGrid;
     touchgfx::GraphElementGridY graphBackgroudMajorYAxisGrid;
     touchgfx::GraphLabelsX graphBackgroudMajorXAxisLabel;
     touchgfx::GraphLabelsY graphBackgroudMajorYAxisLabel;
-    touchgfx::GraphWrapAndClear<700> graphFeadback;
+    touchgfx::GraphWrapAndClear<1700> graphFeadback;
     touchgfx::GraphElementLine graphFeadbackLine1;
     touchgfx::PainterRGB565 graphFeadbackLine1Painter;
-    touchgfx::GraphWrapAndClear<700> graphSetpoint;
+    touchgfx::GraphWrapAndClear<1700> graphSetpoint;
     touchgfx::GraphElementLine graphSetpointLine1;
     touchgfx::PainterRGB565 graphSetpointLine1Painter;
-    touchgfx::GraphWrapAndClear<700> graphOutput;
+    touchgfx::GraphWrapAndClear<1700> graphOutput;
     touchgfx::GraphElementGridX graphOutputMajorXAxisGrid;
     touchgfx::GraphElementGridY graphOutputMajorYAxisGrid;
     touchgfx::GraphElementLine graphOutputLine1;
@@ -121,6 +121,7 @@ protected:
     touchgfx::TextArea textArea4_1;
     touchgfx::Image image1_1;
     touchgfx::ButtonWithIcon buttonDone;
+    touchgfx::TextArea textArea5;
 
     /*
      * Wildcard Buffers

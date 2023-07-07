@@ -47,11 +47,13 @@ void u_appPid_pdiCompute(void *param);
 void u_appPid_updateOutput();
 void u_appPid_setSetPoint(double setpoint_parm);
 void u_appid_updateOutput(void *param);
+void u_appPid_updatePid(void *param);
 
 static void pidInit();
 static void u_appPid_updateFeedback(uint32_t actIndex);
 
 TaskHandle_t u_task_PidHandle;
+TaskHandle_t u_task_PidUpdateHandle;
 TaskHandle_t u_task_UpdateOutputHandle;
 
 QueueHandle_t u_pid_queue_feedbackHandle;
@@ -74,6 +76,9 @@ void u_appPidCreate()
 
     status = xTaskCreate(u_appPid_pdiCompute, "pidComputing", 200, NULL, 2, &u_task_PidHandle);
     configASSERT(status == pdPASS);
+    status = xTaskCreate(u_appPid_updatePid, "pidUpdate", 200, NULL, 2, &u_task_PidUpdateHandle);
+    configASSERT(status == pdPASS);
+    
 }
 
 void u_appPidComputing_resume()
@@ -133,6 +138,22 @@ void u_appPid_pdiCompute(void *param)
     }
 }
 
+void u_appPid_updatePid(void *param)
+{
+    portBASE_TYPE isRec = 0;
+    while(1)
+    {
+    isRec = xQueueReceive(u_pid_queue_pidParam, (void*)&pidFormForntEnd, portMAX_DELAY);
+      
+        if(isRec == pdTRUE)
+        {
+           pidParam.setPoint =  pidFormForntEnd.setPoint;
+           PID_Oject.Kp = pidFormForntEnd.Kp;
+           PID_Oject.Ki = pidFormForntEnd.Ki;
+           PID_Oject.Kd = pidFormForntEnd.Kd;
+        }
+    }
+}
 static void u_appPid_updateFeedback(uint32_t actIndex)
 {
     BaseType_t isRecieved = xQueueReceive(u_pid_queue_feedbackHandle, &u32_feedback_ptr, 0);

@@ -92,7 +92,7 @@ static void u_appAdc_TurnOff()
     u32_applicationAdc[1] = 0;
     u32_applicationAdc[2] = 0;
     u32_applicationAdc[3] = 0;
-    xQueueSend(adcSendToFrontEndHandle, &u32_applicationAdc_ptr, 0);
+   // xQueueSend(adcSendToFrontEndHandle, &u32_applicationAdc_ptr, 0);
 }
 
 void u_appAdc_Statup()

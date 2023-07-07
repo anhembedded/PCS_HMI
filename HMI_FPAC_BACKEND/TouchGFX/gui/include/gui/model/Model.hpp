@@ -35,13 +35,15 @@ namespace pidRange
 
 namespace graphRange
 {
-    constexpr auto LEVEL_MAX = 300.F;
-    constexpr auto FLOW_RATE_MAX = 500.0F;
-    constexpr auto PRESSURE_MAX = 300.0F;
+    constexpr auto LEVEL_MAX = 200.F; // mm
+    constexpr auto FLOW_RATE_MAX = 500.0F; // ml/m
+    constexpr auto PRESSURE_MAX = 400.0F; // mbar
 
     constexpr auto LEVEL_MIN = -1.0F;
     constexpr auto FLOW_RATE_MIN = -1.0F;
     constexpr auto PRESSURE_MIN = -1.0F;
+
+    constexpr auto GRAPH_DATA_POINT = 1600;
 }
 
 struct pidParam_type

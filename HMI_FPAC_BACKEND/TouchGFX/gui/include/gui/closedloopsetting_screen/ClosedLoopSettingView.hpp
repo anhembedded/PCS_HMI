@@ -45,6 +45,7 @@ public:
         presenter->setPidParam(pidParam);
         presenter->setActualValue(this->actualValue);
         presenter->notifyActualValueChanged(this->actualValue);
+        //presenter->statePidGraph_entry();
        
     }
     virtual void button_level_select_Handle()

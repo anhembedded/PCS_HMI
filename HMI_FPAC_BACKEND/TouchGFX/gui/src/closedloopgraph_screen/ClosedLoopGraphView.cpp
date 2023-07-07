@@ -18,7 +18,6 @@ void ClosedLoopGraphView::setupScreen() {
   spOpFb1.drawtextAreaSetpoint(pidParam.f_setPoint);
   digitalOutput = presenter->getDigitalOutFormModel();
   updateGraphYRange();
-  
   notifyActiveScreen();
 }
 
@@ -29,13 +28,8 @@ void ClosedLoopGraphView::tearDownScreen() {
 void ClosedLoopGraphView::handleTickEvent() {
 #ifdef SIMULATOR
     auto pidVar = presenter->getPidParam();
- 
- 
- 
   graphFeadback.addDataPoint(pidVar.f_setPoint +100);
   graphSetpoint.addDataPoint(pidVar.f_setPoint);
-  
-  
 #endif // SIMULATOR
 }
 
@@ -153,7 +147,6 @@ void ClosedLoopGraphView::getFeedbackDataPoint() {
   auto dataPoint = presenter->getFeedbackDataPointFormModel();
   auto setPointFromModel = presenter->getPidParam().f_setPoint;
   graphSetpoint.addDataPoint(setPointFromModel);
-  // graphFeadback.addDataPoint(dataPoint);
 }
 
 void ClosedLoopGraphView::updatePidOutput(uint32_t pidOutput) {
@@ -192,29 +185,65 @@ void ClosedLoopGraphView::setDigitalOut(digitaOut_type digiOut) {
     auto actualValue = presenter->getActualValue();
     if (actualValue == actualValue_type::level)
     {
+      constexpr auto visibleData = 1600.F;
         graphBackgroud.setGraphRangeY(graphRange::LEVEL_MIN, graphRange::LEVEL_MAX);
         graphFeadback.setGraphRangeY(graphRange::LEVEL_MIN, graphRange::LEVEL_MAX);
-        graphSetpoint.setGraphRangeY(graphRange::LEVEL_MIN, graphRange::LEVEL_MAX);
+        graphSetpoint.setGraphRangeY(graphRange::LEVEL_MIN, graphRange::LEVEL_MAX);       
+       
+        graphBackgroud.setGraphRangeX(-1.F, visibleData);
+        graphFeadback.setGraphRangeX(-1.F, visibleData);
+        graphSetpoint.setGraphRangeX(-1.F, visibleData);
+
+        graphBackgroudMajorXAxisGrid.setInterval(20);
+        graphBackgroudMajorXAxisGrid.invalidate();
+        graphBackgroudMajorXAxisLabel.setInterval(100);
+        graphBackgroudMajorXAxisLabel.invalidate();
+
         graphBackgroudMajorYAxisGrid.setInterval(graphRange::LEVEL_MAX/(10.f));
         graphBackgroudMajorYAxisLabel.setInterval(graphRange::LEVEL_MAX / (10.f));
+        
     }
     else if(actualValue == actualValue_type::flowRate)
     {
+        constexpr auto visibleData = 150.F;
         auto thisActualMax = graphRange::FLOW_RATE_MAX;
         auto thisActualMin = graphRange::FLOW_RATE_MIN;
         graphBackgroud.setGraphRangeY(thisActualMax, thisActualMin);
         graphFeadback.setGraphRangeY(thisActualMax, thisActualMin);
         graphSetpoint.setGraphRangeY(thisActualMax, thisActualMin);
+
+        graphBackgroud.setGraphRangeX(-1.F, visibleData);
+        graphFeadback.setGraphRangeX(-1.F, visibleData);
+        graphSetpoint.setGraphRangeX(-1.F, visibleData);
+
+        graphBackgroudMajorXAxisGrid.setInterval(2);
+        graphBackgroudMajorXAxisGrid.invalidate();
+        graphBackgroudMajorXAxisLabel.setInterval(30);
+        graphBackgroudMajorXAxisLabel.invalidate();
+
+
         graphBackgroudMajorYAxisGrid.setInterval(thisActualMax / (10.f));
         graphBackgroudMajorYAxisLabel.setInterval(thisActualMax / (10.f));
     }
     else if (actualValue == actualValue_type::pressure)
     {
+        constexpr auto visibleData = 150.F;
+
         auto thisActualMax = graphRange::PRESSURE_MAX;
         auto thisActualMin = graphRange::PRESSURE_MIN;
         graphBackgroud.setGraphRangeY(thisActualMax, thisActualMin);
         graphFeadback.setGraphRangeY(thisActualMax, thisActualMin);
         graphSetpoint.setGraphRangeY(thisActualMax, thisActualMin);
+
+        graphBackgroud.setGraphRangeX(-1.F, visibleData);
+        graphFeadback.setGraphRangeX(-1.F, visibleData);
+        graphSetpoint.setGraphRangeX(-1.F, visibleData);
+
+        graphBackgroudMajorXAxisGrid.setInterval(2);
+        graphBackgroudMajorXAxisGrid.invalidate();
+        graphBackgroudMajorXAxisLabel.setInterval(30);
+        graphBackgroudMajorXAxisLabel.invalidate();
+
         graphBackgroudMajorYAxisGrid.setInterval(thisActualMax / (10.f));
         graphBackgroudMajorYAxisLabel.setInterval(thisActualMax / (10.f));
     }
