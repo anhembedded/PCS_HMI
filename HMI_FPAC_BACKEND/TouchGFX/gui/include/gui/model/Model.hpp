@@ -35,7 +35,7 @@ namespace pidRange
 
 namespace graphRange
 {
-    constexpr auto LEVEL_MAX = 1000.F;
+    constexpr auto LEVEL_MAX = 300.F;
     constexpr auto FLOW_RATE_MAX = 500.0F;
     constexpr auto PRESSURE_MAX = 300.0F;
 

@@ -3170,21 +3170,67 @@
             "Width": 72,
             "Height": 417,
             "Color": {
-              "Red": 191,
-              "Green": 202,
-              "Blue": 224
+              "Red": 200,
+              "Green": 210,
+              "Blue": 230
             }
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "button1",
-            "X": -17,
+            "Name": "buttonEnter",
+            "X": 7,
+            "Y": 342,
+            "Width": 264,
+            "Height": 80,
+            "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_36_medium_rounded_pressed.png",
+            "Released": "__generated\\clay_theme_images_widgets_button_regular_height_36_medium_rounded_normal.png",
+            "TextId": "__SingleUse_6R6O",
+            "ReleasedColor": {
+              "Red": 112,
+              "Green": 112,
+              "Blue": 112
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "clay_theme\\presets\\button\\regular\\height_36\\medium_rounded_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonDel",
+            "X": 238,
             "Y": -18,
             "Width": 128,
             "Height": 116,
             "Pressed": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
             "Released": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
-            "TextId": "__SingleUse_OJY6",
+            "TextId": "__SingleUse_16QU",
+            "ReleasedColor": {
+              "Red": 112,
+              "Green": 112,
+              "Blue": 112
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "clay_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonSub",
+            "X": 163,
+            "Y": 250,
+            "Width": 128,
+            "Height": 116,
+            "Pressed": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
+            "Released": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
+            "TextId": "__SingleUse_3F9Q",
             "ReleasedColor": {
               "Red": 112,
               "Green": 112,
@@ -3384,14 +3430,14 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonDel",
+            "Name": "button3",
             "X": 163,
-            "Y": 250,
+            "Y": -18,
             "Width": 128,
             "Height": 116,
             "Pressed": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
             "Released": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
-            "TextId": "__SingleUse_16QU",
+            "TextId": "__SingleUse_GTV2",
             "ReleasedColor": {
               "Red": 112,
               "Green": 112,
@@ -3404,29 +3450,6 @@
             },
             "TextRotation": "0",
             "Preset": "clay_theme\\presets\\button\\icon\\rounded\\tiny_fill_normal.json"
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "buttonEnter",
-            "X": 6,
-            "Y": 341,
-            "Width": 264,
-            "Height": 80,
-            "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_36_medium_rounded_pressed.png",
-            "Released": "__generated\\clay_theme_images_widgets_button_regular_height_36_medium_rounded_normal.png",
-            "TextId": "__SingleUse_6R6O",
-            "ReleasedColor": {
-              "Red": 112,
-              "Green": 112,
-              "Blue": 112
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "clay_theme\\presets\\button\\regular\\height_36\\medium_rounded_normal.json"
           },
           {
             "Type": "ButtonWithLabel",
@@ -3453,14 +3476,14 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "button3",
-            "X": 163,
+            "Name": "button1",
+            "X": -17,
             "Y": -18,
             "Width": 128,
             "Height": 116,
             "Pressed": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
             "Released": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
-            "TextId": "__SingleUse_GTV2",
+            "TextId": "__SingleUse_OJY6",
             "ReleasedColor": {
               "Red": 112,
               "Green": 112,
@@ -3666,6 +3689,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "buttonEnterClickHandler"
+            }
+          },
+          {
+            "InteractionName": "Interaction14",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonSub"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonSubClickHandler"
             }
           }
         ]

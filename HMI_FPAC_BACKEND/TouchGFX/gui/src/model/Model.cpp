@@ -96,13 +96,6 @@ void Model::sendDigitalOutputToBackEnd()
                     digitalOutput.u8_digiOut.at(2),
                     digitalOutput.u8_digiOut.at(1),
                     digitalOutput.u8_digiOut.at(0));
-#else
-    u_appDigitalVar.digitalState[0] = digitalOutput.u8_digiOut.at(0);
-    u_appDigitalVar.digitalState[1] = digitalOutput.u8_digiOut.at(1);
-    u_appDigitalVar.digitalState[2] = digitalOutput.u8_digiOut.at(2);
-    u_appDigitalVar.digitalState[3] = digitalOutput.u8_digiOut.at(3);
-    u_appDigitalVar.digitalState[4] = digitalOutput.u8_digiOut.at(4);
-    u_appDigitalVar.isUpdate = 1;
 #endif
   
 #ifdef BACKEND
@@ -110,7 +103,6 @@ void Model::sendDigitalOutputToBackEnd()
     u_appDigitalOut_array[1] = digitalOutput.u8_digiOut.at(1);
     u_appDigitalOut_array[2] = digitalOutput.u8_digiOut.at(2);
     u_appDigitalOut_array[3] = digitalOutput.u8_digiOut.at(3);
-    
     xQueueSend(u_app_queue_digitalOutput, u_appDigitalOut_array, 0);
 #endif // BACKEND
 
@@ -126,11 +118,14 @@ void Model::setPidParam(pidParam_type pidSet)
 {
     float const1023Div10 = 1023.0F / 10.0F;
     u_appPid_updateParam_type backendPid;
+    auto thisOffset = settingVar.f_offset.at(static_cast<uint32_t>(getActualValue()));
+    auto thisFactor = settingVar.f_factor.at(static_cast<uint32_t>(getActualValue()));
     this->pidParam = pidSet;
     backendPid.Kp = pidSet.f_kp;
     backendPid.Ki = pidSet.f_ki;
     backendPid.Kd = pidSet.f_kd;
-    backendPid.setPoint = pidSet.f_setPoint * const1023Div10;
+    backendPid.setPoint = (pidSet.f_setPoint - thisOffset)/thisFactor;
+    backendPid.setPoint = backendPid.setPoint * const1023Div10;
     debugPrint<decltype(pidSet.f_kp)>("debugPrint::pidSet.f_kp", pidSet.f_kp);
     debugPrint<decltype(pidSet.f_ki)>("debugPrint::pidSet.f_ki", pidSet.f_ki);
     debugPrint<decltype(pidSet.f_kd)>("debugPrint::pidSet.f_kd", pidSet.f_kd);

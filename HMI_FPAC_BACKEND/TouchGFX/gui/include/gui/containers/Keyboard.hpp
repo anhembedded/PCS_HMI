@@ -28,6 +28,10 @@ public:
     void button0ClickHandler() final;
     void buttonDelClickHandler() final;
     void buttonDotClickHandler() final;
+    virtual void buttonSubClickHandler()
+    {
+         numericButtonLogic('-');
+    }
     void buttonEnterClickHandler() final;
    
 
@@ -53,10 +57,19 @@ private:
     }
     void numericButtonLogic(char ch)
     {
-        if (indexBuffer == 0 && ch == '.')
+        if (indexBuffer == 0 && (ch == '.'))
         {
             numericButtonLogic('0');
             numericButtonLogic(ch);
+        }
+        else if (indexBuffer == 0 && ch == '-')
+        {
+            keyBoardBuffer = keyBoardBuffer + '-';
+            indexBuffer++;
+            keyBoardBuffer = keyBoardBuffer + '0';
+            indexBuffer++;
+            buffer = std::stof(keyBoardBuffer);
+            drawTextAreaBuffer();
         }else if (indexBuffer <= maxOfDesBuffer)
         {
             keyBoardBuffer = keyBoardBuffer + ch;

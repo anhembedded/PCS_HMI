@@ -31,12 +31,14 @@ void u_app_pidGraph_entry()
   u_appAdc_resume();
   u_appDigitalOut_resume();
   u_appDdigitalIn_resume();
+  u_appAdc_resume();
 }
 void u_app_pidGraph_exit()
 {
   u_appAdc_suspend();
   u_appDigitalOut_suspend();
   u_appDdigitalIn_suspend();
+  u_appAdc_suspend();
 }
 void u_app_pidGraphRun_entry()
 {

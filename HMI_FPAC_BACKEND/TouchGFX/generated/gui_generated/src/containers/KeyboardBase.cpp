@@ -23,16 +23,32 @@ KeyboardBase::KeyboardBase() :
     add(scalableImage1);
 
     box1.setPosition(266, 5, 72, 417);
-    box1.setColor(touchgfx::Color::getColorFromRGB(191, 202, 224));
+    box1.setColor(touchgfx::Color::getColorFromRGB(200, 210, 230));
     add(box1);
 
-    button1.setXY(-17, -18);
-    button1.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID));
-    button1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_OJY6));
-    button1.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
-    button1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    button1.setAction(buttonCallback);
-    add(button1);
+    buttonEnter.setXY(7, 342);
+    buttonEnter.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_PRESSED_ID));
+    buttonEnter.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6R6O));
+    buttonEnter.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
+    buttonEnter.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonEnter.setAction(buttonCallback);
+    add(buttonEnter);
+
+    buttonDel.setXY(238, -18);
+    buttonDel.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID));
+    buttonDel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_16QU));
+    buttonDel.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
+    buttonDel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonDel.setAction(buttonCallback);
+    add(buttonDel);
+
+    buttonSub.setXY(163, 250);
+    buttonSub.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID));
+    buttonSub.setLabelText(touchgfx::TypedText(T___SINGLEUSE_3F9Q));
+    buttonSub.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
+    buttonSub.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonSub.setAction(buttonCallback);
+    add(buttonSub);
 
     button4.setXY(-17, 73);
     button4.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID));
@@ -98,21 +114,13 @@ KeyboardBase::KeyboardBase() :
     button0.setAction(buttonCallback);
     add(button0);
 
-    buttonDel.setXY(163, 250);
-    buttonDel.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID));
-    buttonDel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_16QU));
-    buttonDel.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
-    buttonDel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonDel.setAction(buttonCallback);
-    add(buttonDel);
-
-    buttonEnter.setXY(6, 341);
-    buttonEnter.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_MEDIUM_ROUNDED_PRESSED_ID));
-    buttonEnter.setLabelText(touchgfx::TypedText(T___SINGLEUSE_6R6O));
-    buttonEnter.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
-    buttonEnter.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonEnter.setAction(buttonCallback);
-    add(buttonEnter);
+    button3.setXY(163, -18);
+    button3.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID));
+    button3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_GTV2));
+    button3.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
+    button3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    button3.setAction(buttonCallback);
+    add(button3);
 
     button2.setXY(74, -18);
     button2.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID));
@@ -122,13 +130,13 @@ KeyboardBase::KeyboardBase() :
     button2.setAction(buttonCallback);
     add(button2);
 
-    button3.setXY(163, -18);
-    button3.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID));
-    button3.setLabelText(touchgfx::TypedText(T___SINGLEUSE_GTV2));
-    button3.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
-    button3.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    button3.setAction(buttonCallback);
-    add(button3);
+    button1.setXY(-17, -18);
+    button1.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID));
+    button1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_OJY6));
+    button1.setLabelColor(touchgfx::Color::getColorFromRGB(112, 112, 112));
+    button1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    button1.setAction(buttonCallback);
+    add(button1);
 
     image1.setXY(282, 182);
     image1.setBitmap(touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_EDITOR_FORMAT_ALIGN_JUSTIFY_50_50_86898C_SVG_ID));
@@ -258,5 +266,12 @@ void KeyboardBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //When buttonEnter clicked call virtual function
         //Call buttonEnterClickHandler
         buttonEnterClickHandler();
+    }
+    if (&src == &buttonSub)
+    {
+        //Interaction14
+        //When buttonSub clicked call virtual function
+        //Call buttonSubClickHandler
+        buttonSubClickHandler();
     }
 }

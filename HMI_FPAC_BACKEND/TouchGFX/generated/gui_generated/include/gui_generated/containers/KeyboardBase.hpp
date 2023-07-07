@@ -76,6 +76,10 @@ public:
     {
         // Override and implement this function in Keyboard
     }
+    virtual void buttonSubClickHandler()
+    {
+        // Override and implement this function in Keyboard
+    }
 
 protected:
     FrontendApplication& application() {
@@ -88,7 +92,9 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ScalableImage scalableImage1;
     touchgfx::Box box1;
-    touchgfx::ButtonWithLabel button1;
+    touchgfx::ButtonWithLabel buttonEnter;
+    touchgfx::ButtonWithLabel buttonDel;
+    touchgfx::ButtonWithLabel buttonSub;
     touchgfx::ButtonWithLabel button4;
     touchgfx::ButtonWithLabel button5;
     touchgfx::ButtonWithLabel button6;
@@ -97,10 +103,9 @@ protected:
     touchgfx::ButtonWithLabel button9;
     touchgfx::ButtonWithLabel buttonDot;
     touchgfx::ButtonWithLabel button0;
-    touchgfx::ButtonWithLabel buttonDel;
-    touchgfx::ButtonWithLabel buttonEnter;
-    touchgfx::ButtonWithLabel button2;
     touchgfx::ButtonWithLabel button3;
+    touchgfx::ButtonWithLabel button2;
+    touchgfx::ButtonWithLabel button1;
     touchgfx::Image image1;
     touchgfx::BoxWithBorder boxWithBorder2;
     touchgfx::TextAreaWithOneWildcard textArea_buffer;
