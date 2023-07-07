@@ -22,11 +22,11 @@ extern "C"
 
 namespace pidRange
 {
-   constexpr auto KP_MAX = 100.0F; 
-   constexpr auto KI_MAX = 100.0F; 
-   constexpr auto KD_MAX = 100.0F; 
-   constexpr auto SET_POINT_MAX = 10.0F;
-   constexpr auto SET_POINT_MIN = 10.0F;
+   constexpr auto KP_MAX = 1000.0F; 
+   constexpr auto KI_MAX = 1000.0F; 
+   constexpr auto KD_MAX = 1000.0F; 
+   constexpr auto SET_POINT_MAX = 1000.0F;
+   constexpr auto SET_POINT_MIN = 0.0F;
    constexpr auto KP_MIN = 0.0F; 
    constexpr auto KI_MIN = 0.0F; 
    constexpr auto KD_MIN = 0.0F;
@@ -189,6 +189,7 @@ public:
     void setState(systemState_type sysState);
     void updateActualValue(actualValue_type actualValueParam);
     float getFeedBackToPresentor();
+    
 
     void statePidGraphRun_entry();
     void stateSettingVar_entry();
@@ -197,7 +198,8 @@ public:
     void statePidGraph_entry();
     void statePidGraph_exit();
     
-    
+    float computingKi(float kP, float tI);
+        float computingKd(float kP, float kD);
 protected:
     /**
      * Pointer to the currently active presenter.
@@ -208,6 +210,7 @@ protected:
     uint32_t frameTickVal;
 
 private:
+
     uint32_t *u32_adcPtr;
     std::array<uint32_t, 4> adcValue;
 };

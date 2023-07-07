@@ -41,7 +41,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     add(digitalInputIndicator1);
 
     graphBackgroud.setPosition(0, 6, 790, 380);
-    graphBackgroud.setScale(100);
+    graphBackgroud.setScale(1000);
     graphBackgroud.setGraphRangeX(0, 600);
     graphBackgroud.setGraphAreaMargin(17, 40, 0, 29);
     graphBackgroud.setGraphAreaPadding(0, 0, 10, 0);
@@ -50,33 +50,33 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     graphBackgroudMajorXAxisGrid.setInterval(250);
     graphBackgroudMajorXAxisGrid.setLineWidth(1);
     graphBackgroudMajorXAxisGrid.setAlpha(64);
-    graphBackgroudMajorXAxisGrid.setScale(100);
+    graphBackgroudMajorXAxisGrid.setScale(1000);
     graphBackgroud.addGraphElement(graphBackgroudMajorXAxisGrid);
 
     graphBackgroudMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(20, 151, 197));
     graphBackgroudMajorYAxisGrid.setInterval(1);
     graphBackgroudMajorYAxisGrid.setLineWidth(1);
     graphBackgroudMajorYAxisGrid.setAlpha(104);
-    graphBackgroudMajorYAxisGrid.setScale(100);
+    graphBackgroudMajorYAxisGrid.setScale(1000);
     graphBackgroud.addGraphElement(graphBackgroudMajorYAxisGrid);
 
     graphBackgroudMajorXAxisLabel.setInterval(50);
     graphBackgroudMajorXAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_8LM6));
     graphBackgroudMajorXAxisLabel.setColor(touchgfx::Color::getColorFromRGB(74, 74, 74));
-    graphBackgroudMajorXAxisLabel.setScale(100);
+    graphBackgroudMajorXAxisLabel.setScale(1000);
     graphBackgroud.addBottomElement(graphBackgroudMajorXAxisLabel);
 
     graphBackgroudMajorYAxisLabel.setInterval(1);
     graphBackgroudMajorYAxisLabel.setLabelTypedText(touchgfx::TypedText(T___SINGLEUSE_WL29));
     graphBackgroudMajorYAxisLabel.setColor(touchgfx::Color::getColorFromRGB(74, 74, 74));
-    graphBackgroudMajorYAxisLabel.setScale(100);
+    graphBackgroudMajorYAxisLabel.setScale(1000);
     graphBackgroud.addLeftElement(graphBackgroudMajorYAxisLabel);
 
 
     add(graphBackgroud);
 
     graphFeadback.setPosition(0, 6, 780, 380);
-    graphFeadback.setScale(100);
+    graphFeadback.setScale(1000);
     graphFeadback.setGraphRangeX(0, 1200);
     graphFeadback.setGraphAreaMargin(17, 40, 0, 29);
     graphFeadback.setGraphAreaPadding(0, 0, 10, 0);
@@ -90,7 +90,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     add(graphFeadback);
 
     graphSetpoint.setPosition(0, 6, 780, 380);
-    graphSetpoint.setScale(100);
+    graphSetpoint.setScale(1000);
     graphSetpoint.setGraphRangeX(0, 1200);
     graphSetpoint.setGraphAreaMargin(17, 40, 0, 29);
     graphSetpoint.setGraphAreaPadding(0, 0, 10, 0);
@@ -98,32 +98,32 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     graphSetpoint.setVisible(false);
     graphSetpointLine1Painter.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     graphSetpointLine1.setPainter(graphSetpointLine1Painter);
-    graphSetpointLine1.setLineWidth(2);
+    graphSetpointLine1.setLineWidth(1);
     graphSetpoint.addGraphElement(graphSetpointLine1);
 
     add(graphSetpoint);
 
     graphOutput.setPosition(0, -6, 780, 101);
-    graphOutput.setScale(10);
+    graphOutput.setScale(1000);
     graphOutput.setGraphRangeX(0, 1200);
     graphOutput.setGraphAreaMargin(17, 40, 0, 29);
-    graphOutput.setGraphAreaPadding(2, 0, 10, 0);
+    graphOutput.setGraphAreaPadding(0, 0, 10, 0);
     graphOutput.setGraphRangeY(-1.0f, 11.3f);
     graphOutputMajorXAxisGrid.setColor(touchgfx::Color::getColorFromRGB(51, 22, 196));
     graphOutputMajorXAxisGrid.setInterval(60);
     graphOutputMajorXAxisGrid.setLineWidth(2);
-    graphOutputMajorXAxisGrid.setScale(10);
+    graphOutputMajorXAxisGrid.setScale(1000);
     graphOutput.addGraphElement(graphOutputMajorXAxisGrid);
 
-    graphOutputMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(40, 155, 209));
+    graphOutputMajorYAxisGrid.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     graphOutputMajorYAxisGrid.setInterval(5);
-    graphOutputMajorYAxisGrid.setLineWidth(3);
-    graphOutputMajorYAxisGrid.setScale(10);
+    graphOutputMajorYAxisGrid.setLineWidth(1);
+    graphOutputMajorYAxisGrid.setScale(1000);
     graphOutput.addGraphElement(graphOutputMajorYAxisGrid);
 
     graphOutputLine1Painter.setColor(touchgfx::Color::getColorFromRGB(140, 3, 3));
     graphOutputLine1.setPainter(graphOutputLine1Painter);
-    graphOutputLine1.setLineWidth(1);
+    graphOutputLine1.setLineWidth(2);
     graphOutput.addGraphElement(graphOutputLine1);
 
     add(graphOutput);
@@ -152,7 +152,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     buttonWithLabel_set.setAction(buttonCallback);
     add(buttonWithLabel_set);
 
-    boxWithBorder2.setPosition(455, 381, 95, 76);
+    boxWithBorder2.setPosition(455, 381, 116, 76);
     boxWithBorder2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder2.setBorderColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     boxWithBorder2.setBorderSize(5);
@@ -176,7 +176,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     text_analogVal_Ki.setTypedText(touchgfx::TypedText(T___SINGLEUSE_66OT));
     add(text_analogVal_Ki);
 
-    text_analogVal_Kd.setXY(465, 426);
+    text_analogVal_Kd.setXY(466, 425);
     text_analogVal_Kd.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     text_analogVal_Kd.setLinespacing(0);
     Unicode::snprintf(text_analogVal_KdBuffer, TEXT_ANALOGVAL_KD_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_ABRK).getText());

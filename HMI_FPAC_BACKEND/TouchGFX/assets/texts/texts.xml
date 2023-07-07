@@ -12,6 +12,14 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_89SU" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Pump</Translation>
+        <Translation Language="Vietnamese">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZWWW" Alignment="Left" TypographyId="MainMenu">
+        <Translation Language="GB">Actuator valve</Translation>
+        <Translation Language="Vietnamese">New Text</Translation>
+      </Text>
       <Text Id="__SingleUse_Q350" Alignment="Left" TypographyId="GraphText">
         <Translation Language="GB">1/10 (s)</Translation>
         <Translation Language="Vietnamese">New Text</Translation>
@@ -121,11 +129,11 @@
         <Translation Language="Vietnamese">Sampler Time: 0.1</Translation>
       </Text>
       <Text Id="__SingleUse_WWI1" Alignment="Left" TypographyId="KeyBoard">
-        <Translation Language="GB">Ki</Translation>
+        <Translation Language="GB">Ti</Translation>
         <Translation Language="Vietnamese">Ki</Translation>
       </Text>
       <Text Id="__SingleUse_NU1K" Alignment="Left" TypographyId="KeyBoard">
-        <Translation Language="GB">Kd</Translation>
+        <Translation Language="GB">Td</Translation>
         <Translation Language="Vietnamese">Kd</Translation>
       </Text>
       <Text Id="__SingleUse_DZ4N" Alignment="Left" TypographyId="KeyBoard">
@@ -189,7 +197,7 @@
         <Translation Language="Vietnamese">00.0</Translation>
       </Text>
       <Text Id="__SingleUse_5HQL" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">kD: &lt;value&gt;</Translation>
+        <Translation Language="GB">Td: &lt;value&gt;</Translation>
         <Translation Language="Vietnamese">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_NIL7" Alignment="Left" TypographyId="MainMenu">
@@ -197,7 +205,7 @@
         <Translation Language="Vietnamese">00.0</Translation>
       </Text>
       <Text Id="__SingleUse_66OT" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">kI: &lt;value&gt;</Translation>
+        <Translation Language="GB">Ti: &lt;value&gt;</Translation>
         <Translation Language="Vietnamese">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_Z6EL" Alignment="Left" TypographyId="MainMenu">
@@ -205,7 +213,7 @@
         <Translation Language="Vietnamese">00.0</Translation>
       </Text>
       <Text Id="__SingleUse_21S9" Alignment="Left" TypographyId="WildcardB">
-        <Translation Language="GB">kP: &lt;value&gt;</Translation>
+        <Translation Language="GB">Kp: &lt;value&gt;</Translation>
         <Translation Language="Vietnamese">&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_2OQ6" Alignment="Center" TypographyId="KeyBoard">

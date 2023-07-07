@@ -22,79 +22,20 @@ public:
 
     void  handleTickEvent();
 
-    virtual void buttonText_Kp_clickHandle()
-    {
-        keyboard1.callKeyboard(&pidParam.f_kp, TEXT_ANALOGVAL_KP_SIZE);
-    }
-    virtual void buttonText_Ki_clickHandle()
-    {
-        keyboard1.callKeyboard(&pidParam.f_ki, TEXT_ANALOGVAL_KI_SIZE);
-    }
-    virtual void buttonText_Kd_clickHandle()
-    {
-        keyboard1.callKeyboard(&pidParam.f_kd, TEXT_ANALOGVAL_KD_SIZE);
-    }
-    virtual void buttonText_setPoint_clickHandle()
-    {
-        keyboard1.callKeyboard(&pidParam.f_setPoint, TEXT_SETPOINT_SIZE);
-    }
+    virtual void buttonText_Kp_clickHandle();
+    virtual void buttonText_Ki_clickHandle();
+    virtual void buttonText_Kd_clickHandle();
+    virtual void buttonText_setPoint_clickHandle();
 
-    virtual void confirmUpdateParamter()
-    {
-        pidParamCheckRange();
-        presenter->setPidParam(pidParam);
-        presenter->setActualValue(this->actualValue);
-        presenter->notifyActualValueChanged(this->actualValue);
-        //presenter->statePidGraph_entry();
-       
-    }
-    virtual void button_level_select_Handle()
-    {
-     
-        this->actualValue = actualValue_type::level;
-      
-    }
-    virtual void button_flowRate_select_Handle()
-    {
-        this->actualValue = actualValue_type::flowRate;
-      
-    }
-    virtual void button_pressure_select_Handle()
-    {
-        this->actualValue = actualValue_type::pressure;
-        
-    }
-    virtual void button_temperature_select_Handle()
-    {
-        this->actualValue = actualValue_type::temperature;
-        
-    }
-    virtual void openModelButton()
-    {
-        this->updateActualValue();
-        if (actualValue == actualValue_type::level)
-        {
-            radioButtonGroup1.setSelected(button_level);
-        }
-        else if (actualValue == actualValue_type::flowRate)
-        {
-            radioButtonGroup1.setSelected(button_flowRate);
-        }
-        else if (actualValue == actualValue_type::pressure)
-        {
-            radioButtonGroup1.setSelected(button_pressure);
-        }
-        else if (actualValue == actualValue_type::temperature)
-        {
-            radioButtonGroup1.setSelected(button_temperature);
-        }
-    }
+    virtual void confirmUpdateParamter();
+    virtual void button_level_select_Handle();
+    virtual void button_flowRate_select_Handle();
+    virtual void button_pressure_select_Handle();
+    virtual void button_temperature_select_Handle();
+    virtual void openModelButton();
    
         
-    void updateActualValue()
-    {
-        this->actualValue = presenter->getActualValueFromModel();
-    }
+    void updateActualValue();
     
     void drawTextAreaKp();
     void drawTextAreaKi();
@@ -102,44 +43,15 @@ public:
     void drawTextAreaSetPoint();
    
    
-    void notifyActiveScreen()
-    {
-        presenter->notifyActiveScreen();
-    }
-    activeScreen_type getActiveScreen() const
-    {
-        return activeScreen_type::closedLoopSettingScreen;
-    }
-    void notifyActualValueChanged()
-    {
-        presenter->notifyActualValueChanged(actualValue);
-    }
-    void pidParamCheckRange()
-    {
-        
-        pidParam.f_kp = constraint(pidParam.f_kp, pidRange::KP_MIN, pidRange::KP_MAX);
-        pidParam.f_ki = constraint(pidParam.f_ki, pidRange::KI_MIN, pidRange::KI_MAX);
-        pidParam.f_kd = constraint(pidParam.f_kd, pidRange::KD_MIN, pidRange::KD_MAX);
-
-    }
+    void notifyActiveScreen();
+    activeScreen_type getActiveScreen() const;
+    void notifyActualValueChanged();
+    void pidParamCheckRange();
     void updatePidOutput(float pidOutput);
 protected:
 private:
     void textFrequencyUpdate();
-    float constraint(float number ,float min, float max)
-    {
-       if (number < min) 
-       {
-        number = min;
-       }else if (number > max)
-       {
-         number = max;
-       }else
-       {
-         // do not thing
-       }
-        return (number);
-    }
+    float constraint(float number ,float min, float max);
     uint32_t u32_tick;
     
 };

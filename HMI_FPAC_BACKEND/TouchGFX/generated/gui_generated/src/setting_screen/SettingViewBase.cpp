@@ -3,8 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/setting_screen/SettingViewBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <images/BitmapDatabase.hpp>
 
 SettingViewBase::SettingViewBase() :
     flexButtonCallback(this, &SettingViewBase::flexButtonCallbackHandler),
@@ -24,6 +24,18 @@ SettingViewBase::SettingViewBase() :
     boxWithBorder5.setBorderColor(touchgfx::Color::getColorFromRGB(81, 90, 166));
     boxWithBorder5.setBorderSize(5);
     add(boxWithBorder5);
+
+    textArea6.setXY(44, 371);
+    textArea6.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea6.setLinespacing(0);
+    textArea6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZWWW));
+    add(textArea6);
+
+    textArea6_1.setXY(107, 325);
+    textArea6_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    textArea6_1.setLinespacing(0);
+    textArea6_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_89SU));
+    add(textArea6_1);
 
     buttonQuestion.setXY(17, 400);
     buttonQuestion.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_DISABLED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_HELP_OUTLINE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ARTICLE_50_50_E8F6FB_SVG_ID));
@@ -281,11 +293,10 @@ SettingViewBase::SettingViewBase() :
     sliderAnalogOut0.setupHorizontalSlider(16, 11, 0, 0, 400);
     sliderAnalogOut0.setValueRange(0, 1023);
     sliderAnalogOut0.setValue(0);
-    sliderAnalogOut0.setVisible(false);
     sliderAnalogOut0.setNewValueCallback(sliderValueChangedCallback);
     analogContainer.add(sliderAnalogOut0);
 
-    sliderAnalogOut1.setXY(5, 44);
+    sliderAnalogOut1.setXY(8, 52);
     sliderAnalogOut1.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_TRACK_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_FILLER_LARGE_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_SLIDER_HORIZONTAL_THICK_ROUNDED_LIGHT_ID));
     sliderAnalogOut1.setupHorizontalSlider(16, 11, 0, 0, 400);
     sliderAnalogOut1.setValueRange(0, 1023);
@@ -293,7 +304,7 @@ SettingViewBase::SettingViewBase() :
     sliderAnalogOut1.setNewValueCallback(sliderValueChangedCallback);
     analogContainer.add(sliderAnalogOut1);
 
-    textAreaAnalogOut1.setPosition(459, 46, 67, 28);
+    textAreaAnalogOut1.setPosition(459, 4, 67, 28);
     textAreaAnalogOut1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textAreaAnalogOut1.setLinespacing(0);
     Unicode::snprintf(textAreaAnalogOut1Buffer, TEXTAREAANALOGOUT1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SLIN).getText());
@@ -301,13 +312,12 @@ SettingViewBase::SettingViewBase() :
     textAreaAnalogOut1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QCVD));
     analogContainer.add(textAreaAnalogOut1);
 
-    textAreaAnalogOut0.setPosition(458, 7, 67, 27);
+    textAreaAnalogOut0.setPosition(459, 55, 67, 27);
     textAreaAnalogOut0.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textAreaAnalogOut0.setLinespacing(0);
     Unicode::snprintf(textAreaAnalogOut0Buffer, TEXTAREAANALOGOUT0_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_5LPZ).getText());
     textAreaAnalogOut0.setWildcard(textAreaAnalogOut0Buffer);
     textAreaAnalogOut0.setTypedText(touchgfx::TypedText(T___SINGLEUSE_K41B));
-    textAreaAnalogOut0.setVisible(false);
     analogContainer.add(textAreaAnalogOut0);
 
     add(analogContainer);
@@ -406,10 +416,6 @@ SettingViewBase::SettingViewBase() :
     buttonDone.setAction(buttonCallback);
     add(buttonDone);
 
-    keyboard1.setXY(93, 0);
-    keyboard1.setVisible(false);
-    add(keyboard1);
-
     modalQuestion.setBackground(touchgfx::BitmapId(BITMAP_ALTERNATE_THEME_IMAGES_BACKGROUNDS_480X272_GRADIENT_DARK_ID), 160, 104);
     modalQuestion.setShadeColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     modalQuestion.setShadeAlpha(160);
@@ -468,6 +474,10 @@ SettingViewBase::SettingViewBase() :
     modalQuestion.add(buttonModalDone);
 
     add(modalQuestion);
+
+    keyboard1.setXY(93, 0);
+    keyboard1.setVisible(false);
+    add(keyboard1);
 }
 
 SettingViewBase::~SettingViewBase()

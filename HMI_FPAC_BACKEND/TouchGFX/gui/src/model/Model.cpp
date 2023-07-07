@@ -122,8 +122,8 @@ void Model::setPidParam(pidParam_type pidSet)
     auto thisFactor = settingVar.f_factor.at(static_cast<uint32_t>(getActualValue()));
     this->pidParam = pidSet;
     backendPid.Kp = pidSet.f_kp;
-    backendPid.Ki = pidSet.f_ki;
-    backendPid.Kd = pidSet.f_kd;
+    backendPid.Ki = computingKi(pidSet.f_kp, pidSet.f_ki);
+    backendPid.Kd = computingKd(pidSet.f_kp, pidSet.f_kd);
     backendPid.setPoint = (pidSet.f_setPoint - thisOffset)/thisFactor;
     backendPid.setPoint = backendPid.setPoint * const1023Div10;
     debugPrint<decltype(pidSet.f_kp)>("debugPrint::pidSet.f_kp", pidSet.f_kp);
@@ -268,6 +268,7 @@ uint32_t Model::modelGetTick()
 {
     return this->frameTickVal;
 }
+
 #endif // SIMULATOR
 
 float analogIn_type::getAnalogValueFloat(uint32_t indexChannel)
@@ -283,3 +284,13 @@ float settingVar_type::getProcessValue(uint32_t indexChannel, float analogInFloa
     auto res = multiFactor + f_offset.at(indexChannel);
     return res;
 }
+ float Model::computingKi(float kP, float tI)
+{
+    auto res = (kP / tI);
+    return res;
+}
+  float Model::computingKd(float kP, float tD)
+ {
+     auto res = kP * tD;
+     return res;
+ }

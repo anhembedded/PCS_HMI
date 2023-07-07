@@ -9,20 +9,20 @@
 #include <gui/setting_screen/SettingPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
 #include <gui/containers/DigitalInputIndicator.hpp>
 #include <touchgfx/containers/Slider.hpp>
 #include <touchgfx/containers/ModalWindow.hpp>
 #include <touchgfx/containers/SlideMenu.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/widgets/Image.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <gui/containers/Keyboard.hpp>
 #include <touchgfx/mixins/Draggable.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class SettingViewBase : public touchgfx::View<SettingPresenter>
 {
@@ -119,6 +119,8 @@ protected:
     touchgfx::Box __background;
     touchgfx::Box Background;
     touchgfx::BoxWithBorder boxWithBorder5;
+    touchgfx::TextArea textArea6;
+    touchgfx::TextArea textArea6_1;
     touchgfx::ButtonWithIcon buttonQuestion;
     touchgfx::Container containerParameter;
     touchgfx::BoxWithBorder boxWithBorder3;
@@ -176,7 +178,6 @@ protected:
     touchgfx::TextArea textArea4_1;
     touchgfx::Image image1_1;
     touchgfx::ButtonWithIcon buttonDone;
-    touchgfx::Draggable< Keyboard > keyboard1;
     touchgfx::ModalWindow modalQuestion;
     touchgfx::Box box1_1;
     touchgfx::Box box1;
@@ -187,6 +188,7 @@ protected:
     touchgfx::TextArea textArea5;
     touchgfx::TextArea textArea5_1;
     touchgfx::ButtonWithLabel buttonModalDone;
+    touchgfx::Draggable< Keyboard > keyboard1;
 
     /*
      * Wildcard Buffers

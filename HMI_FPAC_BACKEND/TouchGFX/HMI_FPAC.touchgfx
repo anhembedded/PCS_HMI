@@ -206,6 +206,28 @@
             "BorderSize": 5
           },
           {
+            "Type": "TextArea",
+            "Name": "textArea6",
+            "X": 44,
+            "Y": 371,
+            "Width": 130,
+            "Height": 20,
+            "TextId": "__SingleUse_ZWWW",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea6_1",
+            "X": 107,
+            "Y": 325,
+            "Width": 51,
+            "Height": 20,
+            "TextId": "__SingleUse_89SU",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
             "Type": "ButtonWithIcon",
             "Name": "buttonQuestion",
             "X": 17,
@@ -990,7 +1012,6 @@
                 "Y": 2,
                 "Width": 432,
                 "Height": 32,
-                "Visible": false,
                 "IsHorizontalSlider": true,
                 "BackgroundUnselected": "__generated\\clay_theme_images_widgets_slider_horizontal_thick_track_large.png",
                 "BackgroundSelected": "__generated\\clay_theme_images_widgets_slider_horizontal_thick_filler_large.png",
@@ -1004,8 +1025,8 @@
               {
                 "Type": "Slider",
                 "Name": "sliderAnalogOut1",
-                "X": 5,
-                "Y": 44,
+                "X": 8,
+                "Y": 52,
                 "Width": 432,
                 "Height": 32,
                 "IsHorizontalSlider": true,
@@ -1022,7 +1043,7 @@
                 "Type": "TextArea",
                 "Name": "textAreaAnalogOut1",
                 "X": 459,
-                "Y": 46,
+                "Y": 4,
                 "Width": 67,
                 "Height": 28,
                 "TextId": "__SingleUse_QCVD",
@@ -1036,11 +1057,10 @@
               {
                 "Type": "TextArea",
                 "Name": "textAreaAnalogOut0",
-                "X": 458,
-                "Y": 7,
+                "X": 459,
+                "Y": 55,
                 "Width": 67,
                 "Height": 27,
-                "Visible": false,
                 "TextId": "__SingleUse_K41B",
                 "TextRotation": "0",
                 "Wildcard1": {
@@ -1280,16 +1300,6 @@
             "Preset": "clay_theme\\presets\\button\\icon\\rounded\\tiny_fill_action.json"
           },
           {
-            "Type": "CustomContainerInstance",
-            "Name": "keyboard1",
-            "X": 93,
-            "Width": 343,
-            "Height": 480,
-            "Visible": false,
-            "CustomContainerDefinitionName": "Keyboard",
-            "Draggable": true
-          },
-          {
             "Type": "ModalWindow",
             "Name": "modalQuestion",
             "Width": 800,
@@ -1440,6 +1450,16 @@
                 "Preset": "glass_theme\\presets\\button\\regular\\height_36\\small_round_normal.json"
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "keyboard1",
+            "X": 93,
+            "Width": 343,
+            "Height": 480,
+            "Visible": false,
+            "CustomContainerDefinitionName": "Keyboard",
+            "Draggable": true
           }
         ],
         "Interactions": [
@@ -1736,7 +1756,7 @@
                 "Name": "textArea1_1_1",
                 "X": 35,
                 "Y": 93,
-                "Width": 31,
+                "Width": 29,
                 "Height": 35,
                 "TextId": "__SingleUse_WWI1",
                 "TextRotation": "0",
@@ -1985,7 +2005,7 @@
                 "Name": "textArea1_1",
                 "X": 35,
                 "Y": 163,
-                "Width": 41,
+                "Width": 39,
                 "Height": 35,
                 "TextId": "__SingleUse_NU1K",
                 "TextRotation": "0",
@@ -2459,7 +2479,7 @@
             "NumberOfValues": 1700,
             "MaxY": 11.3,
             "MinY": -1.0,
-            "Precision": "0.01",
+            "Precision": "0.001",
             "UseCustomVisibleDataPointRange": true,
             "LastIndex": 600,
             "XAxisScale": 1.0,
@@ -2530,7 +2550,7 @@
             "NumberOfValues": 1700,
             "MaxY": 11.3,
             "MinY": -1.0,
-            "Precision": "0.01",
+            "Precision": "0.001",
             "UseCustomVisibleDataPointRange": true,
             "LastIndex": 1200,
             "XAxisScale": 1.0,
@@ -2563,7 +2583,7 @@
             "NumberOfValues": 1700,
             "MaxY": 11.3,
             "MinY": -1.0,
-            "Precision": "0.01",
+            "Precision": "0.001",
             "UseCustomVisibleDataPointRange": true,
             "LastIndex": 1200,
             "XAxisScale": 1.0,
@@ -2575,7 +2595,7 @@
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
-                "LineWidth": 2,
+                "LineWidth": 1,
                 "FileNameImage": ""
               }
             ]
@@ -2591,20 +2611,19 @@
             "NumberOfValues": 1700,
             "MaxY": 11.3,
             "MinY": -1.0,
-            "Precision": "0.1",
+            "Precision": "0.001",
             "UseCustomVisibleDataPointRange": true,
             "LastIndex": 1200,
             "XAxisScale": 1.0,
             "LabelSizeTop": 17,
             "LabelSizeBottom": 29,
             "LabelSizeLeft": 40,
-            "PaddingTop": 2,
             "PaddingRight": 10,
             "GraphType": "GraphWrapClear",
             "GraphDrawers": [
               {
                 "Type": "LineDrawer",
-                "LineWidth": 1,
+                "LineWidth": 2,
                 "FileNameImage": "",
                 "Color": {
                   "Red": 140,
@@ -2625,13 +2644,8 @@
             },
             "YAxisGrid": {
               "Type": "GraphGrid",
-              "Color": {
-                "Red": 40,
-                "Green": 155,
-                "Blue": 209
-              },
               "Interval": 5.0,
-              "LineWidth": 3
+              "LineWidth": 1
             }
           },
           {
@@ -2708,7 +2722,7 @@
             "Name": "boxWithBorder2",
             "X": 455,
             "Y": 381,
-            "Width": 95,
+            "Width": 116,
             "Height": 76,
             "Color": {
               "Red": 255,
@@ -2722,7 +2736,7 @@
             "Name": "text_analogVal_Kp",
             "X": 464,
             "Y": 384,
-            "Width": 74,
+            "Width": 76,
             "Height": 27,
             "TextId": "__SingleUse_21S9",
             "TextRotation": "0",
@@ -2752,9 +2766,9 @@
           {
             "Type": "TextArea",
             "Name": "text_analogVal_Kd",
-            "X": 465,
-            "Y": 426,
-            "Width": 77,
+            "X": 466,
+            "Y": 425,
+            "Width": 73,
             "Height": 27,
             "TextId": "__SingleUse_5HQL",
             "TextRotation": "0",
@@ -2950,7 +2964,7 @@
             "X": 727,
             "Y": 340,
             "Width": 63,
-            "Height": 35,
+            "Height": 19,
             "TextId": "__SingleUse_Q350",
             "TextRotation": "0",
             "Color": {

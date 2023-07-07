@@ -194,12 +194,13 @@ void ClosedLoopGraphView::setDigitalOut(digitaOut_type digiOut) {
         graphFeadback.setGraphRangeX(-1.F, visibleData);
         graphSetpoint.setGraphRangeX(-1.F, visibleData);
 
+
         graphBackgroudMajorXAxisGrid.setInterval(20);
         graphBackgroudMajorXAxisGrid.invalidate();
         graphBackgroudMajorXAxisLabel.setInterval(100);
         graphBackgroudMajorXAxisLabel.invalidate();
 
-        graphBackgroudMajorYAxisGrid.setInterval(graphRange::LEVEL_MAX/(10.f));
+        graphBackgroudMajorYAxisGrid.setInterval(graphRange::LEVEL_MAX/(30.f));
         graphBackgroudMajorYAxisLabel.setInterval(graphRange::LEVEL_MAX / (10.f));
         
     }
@@ -216,13 +217,14 @@ void ClosedLoopGraphView::setDigitalOut(digitaOut_type digiOut) {
         graphFeadback.setGraphRangeX(-1.F, visibleData);
         graphSetpoint.setGraphRangeX(-1.F, visibleData);
 
+       
         graphBackgroudMajorXAxisGrid.setInterval(2);
         graphBackgroudMajorXAxisGrid.invalidate();
         graphBackgroudMajorXAxisLabel.setInterval(30);
         graphBackgroudMajorXAxisLabel.invalidate();
 
 
-        graphBackgroudMajorYAxisGrid.setInterval(thisActualMax / (10.f));
+        graphBackgroudMajorYAxisGrid.setInterval(thisActualMax / (30.f));
         graphBackgroudMajorYAxisLabel.setInterval(thisActualMax / (10.f));
     }
     else if (actualValue == actualValue_type::pressure)
@@ -239,12 +241,14 @@ void ClosedLoopGraphView::setDigitalOut(digitaOut_type digiOut) {
         graphFeadback.setGraphRangeX(-1.F, visibleData);
         graphSetpoint.setGraphRangeX(-1.F, visibleData);
 
+    
+
         graphBackgroudMajorXAxisGrid.setInterval(2);
         graphBackgroudMajorXAxisGrid.invalidate();
         graphBackgroudMajorXAxisLabel.setInterval(30);
         graphBackgroudMajorXAxisLabel.invalidate();
 
-        graphBackgroudMajorYAxisGrid.setInterval(thisActualMax / (10.f));
+        graphBackgroudMajorYAxisGrid.setInterval(thisActualMax / (30.f));
         graphBackgroudMajorYAxisLabel.setInterval(thisActualMax / (10.f));
     }
 }
