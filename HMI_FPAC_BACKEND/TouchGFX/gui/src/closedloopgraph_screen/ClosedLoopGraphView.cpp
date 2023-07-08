@@ -129,6 +129,7 @@ activeScreen_type ClosedLoopGraphView::getActiveScreen() const {
 void ClosedLoopGraphView::addFeedbackDataPoint(float dataPoint) {
   if (graphState == graphState_type::run) {
     graphFeadback.addDataPoint(dataPoint);
+    feedbackPutCount ++;
     spOpFb1.drawtextAreaFeedback(dataPoint);
   } else {
     /*Do not add graph*/
@@ -152,6 +153,7 @@ void ClosedLoopGraphView::getFeedbackDataPoint() {
 void ClosedLoopGraphView::updatePidOutput(uint32_t pidOutput) {
   auto pidOut10Float = cov1024to10Float(pidOutput);
   graphOutput.addDataPoint(pidOut10Float);
+  outPutCount++;
   spOpFb1.drawLineProgressOutput((int)pidOutput);
 }
 
@@ -185,7 +187,7 @@ void ClosedLoopGraphView::setDigitalOut(digitaOut_type digiOut) {
     auto actualValue = presenter->getActualValue();
     if (actualValue == actualValue_type::level)
     {
-      constexpr auto visibleData = 1600.F;
+      constexpr auto visibleData = 800.F;
         graphBackgroud.setGraphRangeY(graphRange::LEVEL_MIN, graphRange::LEVEL_MAX);
         graphFeadback.setGraphRangeY(graphRange::LEVEL_MIN, graphRange::LEVEL_MAX);
         graphSetpoint.setGraphRangeY(graphRange::LEVEL_MIN, graphRange::LEVEL_MAX);       
@@ -193,6 +195,7 @@ void ClosedLoopGraphView::setDigitalOut(digitaOut_type digiOut) {
         graphBackgroud.setGraphRangeX(-1.F, visibleData);
         graphFeadback.setGraphRangeX(-1.F, visibleData);
         graphSetpoint.setGraphRangeX(-1.F, visibleData);
+        graphOutput.setGraphRangeX(-1.F, visibleData);
 
 
         graphBackgroudMajorXAxisGrid.setInterval(20);
@@ -212,10 +215,12 @@ void ClosedLoopGraphView::setDigitalOut(digitaOut_type digiOut) {
         graphBackgroud.setGraphRangeY(thisActualMax, thisActualMin);
         graphFeadback.setGraphRangeY(thisActualMax, thisActualMin);
         graphSetpoint.setGraphRangeY(thisActualMax, thisActualMin);
+        
 
         graphBackgroud.setGraphRangeX(-1.F, visibleData);
         graphFeadback.setGraphRangeX(-1.F, visibleData);
         graphSetpoint.setGraphRangeX(-1.F, visibleData);
+        graphOutput.setGraphRangeX(-1.F, visibleData);
 
        
         graphBackgroudMajorXAxisGrid.setInterval(2);
@@ -240,6 +245,7 @@ void ClosedLoopGraphView::setDigitalOut(digitaOut_type digiOut) {
         graphBackgroud.setGraphRangeX(-1.F, visibleData);
         graphFeadback.setGraphRangeX(-1.F, visibleData);
         graphSetpoint.setGraphRangeX(-1.F, visibleData);
+        graphOutput.setGraphRangeX(-1.F, visibleData);
 
     
 

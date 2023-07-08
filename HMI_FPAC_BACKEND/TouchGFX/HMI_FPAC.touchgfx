@@ -1927,7 +1927,7 @@
                 "Wildcard1": {
                   "TextId": "__SingleUse_3N9N",
                   "UseBuffer": true,
-                  "BufferSize": 6
+                  "BufferSize": 12
                 }
               },
               {
@@ -1959,7 +1959,7 @@
                 "Wildcard1": {
                   "TextId": "__SingleUse_OE6Z",
                   "UseBuffer": true,
-                  "BufferSize": 6
+                  "BufferSize": 12
                 }
               },
               {
@@ -1975,7 +1975,7 @@
                 "Wildcard1": {
                   "TextId": "__SingleUse_VXIL",
                   "UseBuffer": true,
-                  "BufferSize": 6
+                  "BufferSize": 12
                 }
               },
               {

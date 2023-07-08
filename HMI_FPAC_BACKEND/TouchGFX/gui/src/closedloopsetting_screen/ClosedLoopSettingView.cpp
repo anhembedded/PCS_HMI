@@ -112,17 +112,17 @@ void ClosedLoopSettingView::handleTickEvent()
 
  void ClosedLoopSettingView::drawTextAreaKp()
 {
-    Unicode::snprintfFloat(text_analogVal_KpBuffer, TEXT_ANALOGVAL_KP_SIZE, "%2.2f", static_cast<float>(this->pidParam.f_kp));
+    Unicode::snprintfFloat(text_analogVal_KpBuffer, TEXT_ANALOGVAL_KP_SIZE, "%5.6f", static_cast<float>(this->pidParam.f_kp));
     text_analogVal_Kp.invalidate();
 }
 void ClosedLoopSettingView::drawTextAreaKi()
 {
-    Unicode::snprintfFloat(text_analogVal_KiBuffer, TEXT_ANALOGVAL_KI_SIZE, "%2.2f", static_cast<float>(this->pidParam.f_ki));
+    Unicode::snprintfFloat(text_analogVal_KiBuffer, TEXT_ANALOGVAL_KI_SIZE, "%5.6f", static_cast<float>(this->pidParam.f_ki));
     text_analogVal_Ki.invalidate();
 }
 void ClosedLoopSettingView::drawTextAreaKd()
 {
-    Unicode::snprintfFloat(text_analogVal_KdBuffer, TEXT_ANALOGVAL_KD_SIZE, "%2.2f", static_cast<float>(this-> pidParam.f_kd));
+    Unicode::snprintfFloat(text_analogVal_KdBuffer, TEXT_ANALOGVAL_KD_SIZE, "%5.6f", static_cast<float>(this-> pidParam.f_kd));
     text_analogVal_Kd.invalidate();
 }
 

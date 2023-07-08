@@ -55,6 +55,8 @@ private:
   void drawTextAreaKi();
   void drawTextAreaKd();
   struct diff_type diffVar;
+  uint32_t outPutCount;
+  uint32_t feedbackPutCount;
 };
 
 #endif // CLOSEDLOOPGRAPHVIEW_HPP
