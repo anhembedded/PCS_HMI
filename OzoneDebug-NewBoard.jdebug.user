@@ -1,35 +1,39 @@
 
 
-Breakpoint=C:/Project/PCS_HMI/Test/Core/u_task/Src/u_appPid.c:103, State=BP_STATE_DISABLED
-OpenDocument="main.c", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/Core/Src/main.c", Line=113
+Breakpoint=C:/Project/PCS_HMI/Test/Core/u_task/Src/u_appPid.c:106:1, State=BP_STATE_DISABLED
+OpenDocument="startup_stm32f469nihx.s", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/STM32CubeIDE/Application/Startup/startup_stm32f469nihx.s", Line=66
+OpenDocument="main.c", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/Core/Src/main.c", Line=123
 OpenDocument="SEGGER_SYSVIEW.c", FilePath="C:/Project/PCS_HMI/HMI_FPAC_BACKEND/Middlewares/SEGGER/SEGGER/SEGGER_SYSVIEW.c", Line=740
 OpenDocument="u_appPid.c", FilePath="C:/Project/PCS_HMI/Test/Core/u_task/Src/u_appPid.c", Line=68
 OpenToolbar="Debug", Floating=0, x=0, y=0
 OpenToolbar="Breakpoints", Floating=0, x=1, y=0
-OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=2, w=524, h=142, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=3, w=524, h=159, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
-OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=1, w=524, h=150, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=1, w=523, h=216, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=254
-OpenWindow="Global Data", DockArea=RIGHT, x=0, y=0, w=524, h=256, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Watched Data 1", DockArea=LEFT, x=0, y=0, w=523, h=118, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Functions", DockArea=LEFT, x=0, y=2, w=523, h=111, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Call Graph", DockArea=LEFT, x=0, y=3, w=523, h=112, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=2, w=511, h=146, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=3, w=511, h=160, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Disassembly", DockArea=RIGHT, x=0, y=1, w=511, h=153, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Break & Tracepoints", DockArea=LEFT, x=0, y=1, w=523, h=180, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VectorCatchIndexMask=254
+OpenWindow="Global Data", DockArea=RIGHT, x=0, y=0, w=511, h=248, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Watched Data 1", DockArea=LEFT, x=0, y=0, w=523, h=148, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Functions", DockArea=LEFT, x=0, y=2, w=523, h=114, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Call Graph", DockArea=LEFT, x=0, y=3, w=523, h=117, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Memory Usage", DockArea=BOTTOM, x=0, y=0, w=623, h=232, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Code Profile", DockArea=LEFT, x=0, y=4, w=523, h=149, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, GroupByFiles=0, SortRespectsFilters=0, ParentRelativeLoad=0
-OpenWindow="Data Sampling", DockArea=BOTTOM, x=1, y=0, w=582, h=232, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=1, UniformSampleSpacing=0
-OpenWindow="Console", DockArea=BOTTOM, x=2, y=0, w=713, h=232, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Code Profile", DockArea=LEFT, x=0, y=4, w=523, h=147, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, GroupByFiles=0, SortRespectsFilters=0, ParentRelativeLoad=0
+OpenWindow="Data Sampling", DockArea=BOTTOM, x=1, y=0, w=583, h=232, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, VisibleTab=1, UniformSampleSpacing=0
+OpenWindow="Console", DockArea=BOTTOM, x=2, y=0, w=712, h=232, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
 TableHeader="Global Data", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Access";"Scope"], ColWidths=[100;100;100;100;100;100;560]
 TableHeader="Vector Catches", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Vector Catch";"Description"], ColWidths=[50;300;500]
-TableHeader="Break & Tracepoints", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Type";"Location";"Extras"], ColWidths=[100;100;100;884]
+TableHeader="Break & Tracepoints", SortCol="", SortOrder="ASCENDING", VisibleCols=["";"Type";"Location";"Extras"], ColWidths=[100;100;100;223]
 TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Class";"Source"], ColWidths=[1236;100;100;100;242;242]
 TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source";"PC";"Return Address";"Stack Used"], ColWidths=[209;112;100;100;168;100]
 TableHeader="Call Graph", SortCol="Stack Total", SortOrder="ASCENDING", VisibleCols=["Name";"Stack Total";"Stack Local";"Code Total";"Code Local";"Depth";"Called From"], ColWidths=[240;100;100;100;100;100;100]
 TableHeader="Code Profile", SortCol="Inst. Coverage", SortOrder="DESCENDING", VisibleCols=["File / Function";"Source Coverage";"Inst. Coverage";"Run Count";"Fetch Count";"Load"], ColWidths=[407;112;125;100;100;100]
 TableHeader="Data Sampling Setup", SortCol="Expression", SortOrder="DESCENDING", VisibleCols=["Expression";"Type";"Value";"Min";"Max";"Average";"# Changes";"Min. Change";"Max. Change"], ColWidths=[100;100;100;100;100;100;100;100;100]
-TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time"], ColWidths=[100;482]
+TableHeader="Data Sampling Table", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time"], ColWidths=[100;483]
 TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
-TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[169;105;233]
-TableHeader="Watched Data 1", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Refresh";"Access"], ColWidths=[100;100;100;100;123]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[169;105;224]
+TableHeader="Watched Data 1", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Refresh";"Access"], ColWidths=[100;100;100;100;106]
 TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[26;26;26;31]
 WatchedExpression="pidParam", Window=Watched Data 1
+WatchedExpression="u32_pidOut", Window=Watched Data 1
+WatchedExpression="PID_Oject", Window=Watched Data 1
