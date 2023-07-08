@@ -130,7 +130,13 @@ void Model::setPidParam(pidParam_type pidSet)
         backendPid.Ki = computingKi(pidSet.f_kp, pidSet.f_ki);
     }
     backendPid.Kd = computingKd(pidSet.f_kp, pidSet.f_kd);
-    backendPid.setPoint = (pidSet.f_setPoint - thisOffset)/thisFactor;
+    if(thisFactor == 0.F )
+    {
+    	 backendPid.setPoint = (pidSet.f_setPoint - thisOffset);
+    }else
+    {
+    	backendPid.setPoint = (pidSet.f_setPoint - thisOffset)/thisFactor;
+    }
     backendPid.setPoint = backendPid.setPoint * const1023Div10;
     debugPrint<decltype(pidSet.f_kp)>("debugPrint::pidSet.f_kp", pidSet.f_kp);
     debugPrint<decltype(pidSet.f_ki)>("debugPrint::pidSet.f_ki", pidSet.f_ki);

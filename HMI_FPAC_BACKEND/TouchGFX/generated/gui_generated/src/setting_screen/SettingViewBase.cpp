@@ -25,13 +25,13 @@ SettingViewBase::SettingViewBase() :
     boxWithBorder5.setBorderSize(5);
     add(boxWithBorder5);
 
-    textArea6.setXY(44, 371);
+    textArea6.setXY(44, 322);
     textArea6.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea6.setLinespacing(0);
     textArea6.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ZWWW));
     add(textArea6);
 
-    textArea6_1.setXY(107, 325);
+    textArea6_1.setXY(104, 374);
     textArea6_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea6_1.setLinespacing(0);
     textArea6_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_89SU));
@@ -304,7 +304,7 @@ SettingViewBase::SettingViewBase() :
     sliderAnalogOut1.setNewValueCallback(sliderValueChangedCallback);
     analogContainer.add(sliderAnalogOut1);
 
-    textAreaAnalogOut1.setPosition(459, 4, 67, 28);
+    textAreaAnalogOut1.setPosition(442, 52, 67, 28);
     textAreaAnalogOut1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textAreaAnalogOut1.setLinespacing(0);
     Unicode::snprintf(textAreaAnalogOut1Buffer, TEXTAREAANALOGOUT1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SLIN).getText());
@@ -312,7 +312,7 @@ SettingViewBase::SettingViewBase() :
     textAreaAnalogOut1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QCVD));
     analogContainer.add(textAreaAnalogOut1);
 
-    textAreaAnalogOut0.setPosition(459, 55, 67, 27);
+    textAreaAnalogOut0.setPosition(441, 6, 67, 27);
     textAreaAnalogOut0.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textAreaAnalogOut0.setLinespacing(0);
     Unicode::snprintf(textAreaAnalogOut0Buffer, TEXTAREAANALOGOUT0_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_5LPZ).getText());
@@ -333,7 +333,7 @@ SettingViewBase::SettingViewBase() :
 
     add(modalWindow_inf);
 
-    button_Confirm.setXY(59, 372);
+    button_Confirm.setXY(54, 371);
     button_Confirm.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
     button_Confirm.setIconXY(39, 33);
     button_Confirm.setAction(buttonCallback);

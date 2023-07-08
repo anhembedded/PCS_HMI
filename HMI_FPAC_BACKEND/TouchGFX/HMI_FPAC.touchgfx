@@ -209,7 +209,7 @@
             "Type": "TextArea",
             "Name": "textArea6",
             "X": 44,
-            "Y": 371,
+            "Y": 322,
             "Width": 130,
             "Height": 20,
             "TextId": "__SingleUse_ZWWW",
@@ -219,8 +219,8 @@
           {
             "Type": "TextArea",
             "Name": "textArea6_1",
-            "X": 107,
-            "Y": 325,
+            "X": 104,
+            "Y": 374,
             "Width": 51,
             "Height": 20,
             "TextId": "__SingleUse_89SU",
@@ -1042,8 +1042,8 @@
               {
                 "Type": "TextArea",
                 "Name": "textAreaAnalogOut1",
-                "X": 459,
-                "Y": 4,
+                "X": 442,
+                "Y": 52,
                 "Width": 67,
                 "Height": 28,
                 "TextId": "__SingleUse_QCVD",
@@ -1057,8 +1057,8 @@
               {
                 "Type": "TextArea",
                 "Name": "textAreaAnalogOut0",
-                "X": 459,
-                "Y": 55,
+                "X": 441,
+                "Y": 6,
                 "Width": 67,
                 "Height": 27,
                 "TextId": "__SingleUse_K41B",
@@ -1106,8 +1106,8 @@
           {
             "Type": "ButtonWithIcon",
             "Name": "button_Confirm",
-            "X": 59,
-            "Y": 372,
+            "X": 54,
+            "Y": 371,
             "Width": 128,
             "Height": 116,
             "Pressed": "__generated\\clay_theme_images_widgets_button_icon_rounded_tiny_fill_pressed.png",
@@ -1755,7 +1755,7 @@
                 "Type": "TextArea",
                 "Name": "textArea1_1_1",
                 "X": 35,
-                "Y": 93,
+                "Y": 97,
                 "Width": 29,
                 "Height": 35,
                 "TextId": "__SingleUse_WWI1",
@@ -1943,7 +1943,7 @@
                 "Wildcard1": {
                   "TextId": "__SingleUse_RKRI",
                   "UseBuffer": true,
-                  "BufferSize": 6
+                  "BufferSize": 12
                 }
               },
               {
@@ -2029,6 +2029,7 @@
                 "Y": 64,
                 "Width": 281,
                 "Height": 35,
+                "Visible": false,
                 "TextId": "__SingleUse_LHG6",
                 "TextRotation": "0",
                 "AutoSize": true

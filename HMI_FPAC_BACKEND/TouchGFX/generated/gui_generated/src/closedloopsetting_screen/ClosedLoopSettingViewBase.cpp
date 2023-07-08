@@ -40,7 +40,7 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     boxWithBorder1.setBorderSize(5);
     PidCon.add(boxWithBorder1);
 
-    textArea1_1_1.setXY(35, 93);
+    textArea1_1_1.setXY(35, 97);
     textArea1_1_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea1_1_1.setLinespacing(0);
     textArea1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_WWI1));
@@ -138,6 +138,7 @@ ClosedLoopSettingViewBase::ClosedLoopSettingViewBase() :
     textArea2_2.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     textArea2_2.setLinespacing(0);
     textArea2_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_LHG6));
+    textArea2_2.setVisible(false);
     PidCon.add(textArea2_2);
 
     add(PidCon);

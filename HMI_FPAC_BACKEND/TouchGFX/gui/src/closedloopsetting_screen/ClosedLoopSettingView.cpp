@@ -128,7 +128,7 @@ void ClosedLoopSettingView::drawTextAreaKd()
 
 void ClosedLoopSettingView::drawTextAreaSetPoint()
 {
-    Unicode::snprintfFloat(text_setPointBuffer, TEXT_SETPOINT_SIZE, "%3.2f", static_cast<float>(this->pidParam.f_setPoint));
+    Unicode::snprintfFloat(text_setPointBuffer, TEXT_SETPOINT_SIZE, "%5.6f", static_cast<float>(this->pidParam.f_setPoint));
     text_setPoint.invalidate();
 
 }

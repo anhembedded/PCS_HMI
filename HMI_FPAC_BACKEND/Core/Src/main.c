@@ -149,9 +149,9 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-  NVIC_SetPriorityGrouping( 0 );
-  SEGGER_SYSVIEW_Conf();
-  SEGGER_SYSVIEW_Start();
+ // NVIC_SetPriorityGrouping( 0 );
+//  SEGGER_SYSVIEW_Conf();
+  //SEGGER_SYSVIEW_Start();
 
   /* USER CODE END SysInit */
 

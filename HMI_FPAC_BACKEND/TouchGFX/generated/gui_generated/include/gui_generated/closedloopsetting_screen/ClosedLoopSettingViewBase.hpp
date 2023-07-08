@@ -122,7 +122,7 @@ protected:
      */
     static const uint16_t TEXT_ANALOGVAL_KD_SIZE = 12;
     touchgfx::Unicode::UnicodeChar text_analogVal_KdBuffer[TEXT_ANALOGVAL_KD_SIZE];
-    static const uint16_t TEXT_SETPOINT_SIZE = 6;
+    static const uint16_t TEXT_SETPOINT_SIZE = 12;
     touchgfx::Unicode::UnicodeChar text_setPointBuffer[TEXT_SETPOINT_SIZE];
     static const uint16_t TEXT_ANALOGVAL_KI_SIZE = 12;
     touchgfx::Unicode::UnicodeChar text_analogVal_KiBuffer[TEXT_ANALOGVAL_KI_SIZE];

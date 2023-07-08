@@ -28,9 +28,10 @@ static void blinkLed_Orange(void *param);
 
 void u_app_pidGraph_entry()
 {
- // u_appAdc_resume();
-  //u_appDdigitalIn_resume();
-  //u_appAdc_resume();
+  u_appAdc_resume();
+  u_appDdigitalIn_resume();
+  u_appAdc_resume();
+  u_appPwm_updatePwmFromPid_resume();
 }
 void u_app_pidGraph_exit()
 {
