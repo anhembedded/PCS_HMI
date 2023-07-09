@@ -345,7 +345,7 @@ SettingViewBase::SettingViewBase() :
         touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_NORMAL_ID),
         touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID),
         601, 43, 730, 0);
-    binaryMenu.setState(touchgfx::SlideMenu::COLLAPSED);
+    binaryMenu.setState(touchgfx::SlideMenu::EXPANDED);
     binaryMenu.setVisiblePixelsWhenCollapsed(39);
     binaryMenu.setHiddenPixelsWhenExpanded(0);
     binaryMenu.setAnimationEasingEquation(touchgfx::EasingEquations::cubicEaseInOut);
@@ -358,27 +358,28 @@ SettingViewBase::SettingViewBase() :
     binaryMenu.add(boxWithBorder6);
 
     binaryButton.setPosition(391, 38, 495, 126);
-    buttonDigital3.setXY(226, 15);
+    buttonDigital3.setXY(226, 19);
     buttonDigital3.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
     buttonDigital3.setAction(buttonCallback);
     binaryButton.add(buttonDigital3);
 
     buttonDigital2.setXY(295, 15);
     buttonDigital2.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital2.setVisible(false);
     buttonDigital2.setAction(buttonCallback);
     binaryButton.add(buttonDigital2);
 
-    buttonDigital1.setXY(369, 15);
+    buttonDigital1.setXY(337, 20);
     buttonDigital1.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
     buttonDigital1.setAction(buttonCallback);
     binaryButton.add(buttonDigital1);
 
-    buttonDigital0.setXY(443, 15);
+    buttonDigital0.setXY(443, 19);
     buttonDigital0.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
     buttonDigital0.setAction(buttonCallback);
     binaryButton.add(buttonDigital0);
 
-    textArea4.setXY(454, 45);
+    textArea4.setXY(454, 49);
     textArea4.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
     textArea4.setLinespacing(0);
     textArea4.setTypedText(touchgfx::TypedText(T___SINGLEUSE_ASIA));
@@ -388,15 +389,16 @@ SettingViewBase::SettingViewBase() :
     textArea4_2.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
     textArea4_2.setLinespacing(0);
     textArea4_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_40OR));
+    textArea4_2.setVisible(false);
     binaryButton.add(textArea4_2);
 
-    textArea4_2_1.setXY(237, 46);
+    textArea4_2_1.setXY(237, 50);
     textArea4_2_1.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
     textArea4_2_1.setLinespacing(0);
     textArea4_2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QZC5));
     binaryButton.add(textArea4_2_1);
 
-    textArea4_1.setXY(379, 46);
+    textArea4_1.setXY(348, 50);
     textArea4_1.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
     textArea4_1.setLinespacing(0);
     textArea4_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5Q9V));

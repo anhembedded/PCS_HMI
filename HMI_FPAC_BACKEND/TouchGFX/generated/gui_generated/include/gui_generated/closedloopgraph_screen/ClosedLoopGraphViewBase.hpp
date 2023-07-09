@@ -70,6 +70,22 @@ public:
     {
         // Override and implement this function in ClosedLoopGraph
     }
+    virtual void zoomInXHandle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+    virtual void zoomOutXHandle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+    virtual void buttonForwardHandle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
+    virtual void buttonBackwardHandle()
+    {
+        // Override and implement this function in ClosedLoopGraph
+    }
 
 protected:
     FrontendApplication& application() {
@@ -122,6 +138,10 @@ protected:
     touchgfx::Image image1_1;
     touchgfx::ButtonWithIcon buttonDone;
     touchgfx::TextArea textArea5;
+    touchgfx::ButtonWithIcon buttonXZoomIn;
+    touchgfx::ButtonWithIcon buttonBackward;
+    touchgfx::ButtonWithIcon buttonXZoomOut;
+    touchgfx::ButtonWithIcon buttonForward;
 
     /*
      * Wildcard Buffers

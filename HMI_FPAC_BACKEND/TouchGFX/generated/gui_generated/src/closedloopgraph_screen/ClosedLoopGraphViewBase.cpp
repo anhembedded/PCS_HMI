@@ -267,6 +267,30 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     textArea5.setLinespacing(0);
     textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q350));
     add(textArea5);
+
+    buttonXZoomIn.setXY(678, 292);
+    buttonXZoomIn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ZOOM_IN_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonXZoomIn.setIconXY(-7, -7);
+    buttonXZoomIn.setAction(buttonCallback);
+    add(buttonXZoomIn);
+
+    buttonBackward.setXY(81, 292);
+    buttonBackward.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_LEFT_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonBackward.setIconXY(-7, -7);
+    buttonBackward.setAction(buttonCallback);
+    add(buttonBackward);
+
+    buttonXZoomOut.setXY(736, 292);
+    buttonXZoomOut.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ZOOM_OUT_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonXZoomOut.setIconXY(-7, -7);
+    buttonXZoomOut.setAction(buttonCallback);
+    add(buttonXZoomOut);
+
+    buttonForward.setXY(141, 292);
+    buttonForward.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_RIGHT_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonForward.setIconXY(-7, -7);
+    buttonForward.setAction(buttonCallback);
+    add(buttonForward);
 }
 
 ClosedLoopGraphViewBase::~ClosedLoopGraphViewBase()
@@ -354,5 +378,33 @@ void ClosedLoopGraphViewBase::buttonCallbackHandler(const touchgfx::AbstractButt
         //When buttonDoneHandle completed call virtual function
         //Call buttonDoneHandle
         buttonDoneHandle();
+    }
+    if (&src == &buttonXZoomIn)
+    {
+        //zoomInHandle
+        //When buttonXZoomIn clicked call virtual function
+        //Call zoomInXHandle
+        zoomInXHandle();
+    }
+    if (&src == &buttonXZoomOut)
+    {
+        //zoomOutHandle
+        //When buttonXZoomOut clicked call virtual function
+        //Call zoomOutXHandle
+        zoomOutXHandle();
+    }
+    if (&src == &buttonForward)
+    {
+        //buttonForwardHandle
+        //When buttonForward clicked call virtual function
+        //Call buttonForwardHandle
+        buttonForwardHandle();
+    }
+    if (&src == &buttonBackward)
+    {
+        //buttonBackwardHandle
+        //When buttonBackward clicked call virtual function
+        //Call buttonBackwardHandle
+        buttonBackwardHandle();
     }
 }

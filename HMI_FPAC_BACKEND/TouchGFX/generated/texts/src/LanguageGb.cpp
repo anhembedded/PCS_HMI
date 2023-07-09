@@ -26,7 +26,7 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     0,   // T___SINGLEUSE_CHPN: "Ch.0 : Level\nCh.1: Flow rate\nCh.2: Pressure\nCh.3: Temperature"
     676, // T___SINGLEUSE_V6NC: "Start"
     364, // T___SINGLEUSE_5Q9V: "1"
-    750, // T___SINGLEUSE_QZC5: "3"
+    748, // T___SINGLEUSE_QZC5: "2"
     748, // T___SINGLEUSE_40OR: "2"
     480, // T___SINGLEUSE_ASIA: "0"
     457, // T___SINGLEUSE_ASQG: "Anh.Embedded"

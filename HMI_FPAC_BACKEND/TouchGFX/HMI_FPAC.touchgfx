@@ -1135,7 +1135,7 @@
             "FileNameButtonPressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_action.png",
             "FileNameButtonReleased": "__generated\\alternate_theme_images_widgets_button_icon_rounded_tiny_fill_normal.png",
             "ButtonX": 730,
-            "State": "Collapsed",
+            "State": "Expanded",
             "ExpandDirection": "North",
             "Easing": "Cubic",
             "EasingOption": "InOut",
@@ -1168,7 +1168,7 @@
                     "Type": "ToggleButton",
                     "Name": "buttonDigital3",
                     "X": 226,
-                    "Y": 15,
+                    "Y": 19,
                     "Width": 34,
                     "Height": 62,
                     "Pressed": "on.png",
@@ -1181,14 +1181,15 @@
                     "Y": 15,
                     "Width": 34,
                     "Height": 62,
+                    "Visible": false,
                     "Pressed": "on.png",
                     "Released": "off.png"
                   },
                   {
                     "Type": "ToggleButton",
                     "Name": "buttonDigital1",
-                    "X": 369,
-                    "Y": 15,
+                    "X": 337,
+                    "Y": 20,
                     "Width": 34,
                     "Height": 62,
                     "Pressed": "on.png",
@@ -1198,7 +1199,7 @@
                     "Type": "ToggleButton",
                     "Name": "buttonDigital0",
                     "X": 443,
-                    "Y": 15,
+                    "Y": 19,
                     "Width": 34,
                     "Height": 62,
                     "Pressed": "on.png",
@@ -1208,7 +1209,7 @@
                     "Type": "TextArea",
                     "Name": "textArea4",
                     "X": 454,
-                    "Y": 45,
+                    "Y": 49,
                     "Width": 12,
                     "Height": 27,
                     "TextId": "__SingleUse_ASIA",
@@ -1227,6 +1228,7 @@
                     "Y": 46,
                     "Width": 12,
                     "Height": 27,
+                    "Visible": false,
                     "TextId": "__SingleUse_40OR",
                     "TextRotation": "0",
                     "Color": {
@@ -1240,7 +1242,7 @@
                     "Type": "TextArea",
                     "Name": "textArea4_2_1",
                     "X": 237,
-                    "Y": 46,
+                    "Y": 50,
                     "Width": 12,
                     "Height": 27,
                     "TextId": "__SingleUse_QZC5",
@@ -1255,8 +1257,8 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea4_1",
-                    "X": 379,
-                    "Y": 46,
+                    "X": 348,
+                    "Y": 50,
                     "Width": 12,
                     "Height": 27,
                     "TextId": "__SingleUse_5Q9V",
@@ -2974,6 +2976,74 @@
               "Blue": 74
             },
             "AutoSize": true
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonXZoomIn",
+            "X": 678,
+            "Y": 292,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_action.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_zoom_in_50_50_E8F6FB.svg.png",
+            "IconX": -7,
+            "IconY": -7,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_fill_action.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonBackward",
+            "X": 81,
+            "Y": 292,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_action.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_left_50_50_E8F6FB.svg.png",
+            "IconX": -7,
+            "IconY": -7,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_fill_action.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonXZoomOut",
+            "X": 736,
+            "Y": 292,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_action.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_zoom_out_50_50_E8F6FB.svg.png",
+            "IconX": -7,
+            "IconY": -7,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_fill_action.json"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonForward",
+            "X": 141,
+            "Y": 292,
+            "Width": 36,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_icon_rounded_micro_fill_action.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_hardware_keyboard_arrow_right_50_50_E8F6FB.svg.png",
+            "IconX": -7,
+            "IconY": -7,
+            "IconHeight": 50,
+            "IconWidth": 50,
+            "Preset": "alternate_theme\\presets\\button\\icon\\rounded\\micro_fill_action.json"
           }
         ],
         "Interactions": [
@@ -3100,6 +3170,50 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "buttonDoneHandle"
+            }
+          },
+          {
+            "InteractionName": "zoomInHandle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonXZoomIn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "zoomInXHandle"
+            }
+          },
+          {
+            "InteractionName": "zoomOutHandle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonXZoomOut"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "zoomOutXHandle"
+            }
+          },
+          {
+            "InteractionName": "buttonForwardHandle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonForward"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonForwardHandle"
+            }
+          },
+          {
+            "InteractionName": "buttonBackwardHandle",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonBackward"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "buttonBackwardHandle"
             }
           }
         ]
