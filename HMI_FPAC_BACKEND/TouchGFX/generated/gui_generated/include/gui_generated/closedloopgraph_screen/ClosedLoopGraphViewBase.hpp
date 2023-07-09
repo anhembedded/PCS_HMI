@@ -17,12 +17,12 @@
 #include <touchgfx/widgets/graph/GraphLabels.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/SlideMenu.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/widgets/ButtonWithIcon.hpp>
 
 class ClosedLoopGraphViewBase : public touchgfx::View<ClosedLoopGraphPresenter>
 {
@@ -124,6 +124,12 @@ protected:
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kp;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Ki;
     touchgfx::TextAreaWithOneWildcard text_analogVal_Kd;
+    touchgfx::ButtonWithIcon buttonDone;
+    touchgfx::TextArea textArea5;
+    touchgfx::ButtonWithIcon buttonXZoomIn;
+    touchgfx::ButtonWithIcon buttonBackward;
+    touchgfx::ButtonWithIcon buttonXZoomOut;
+    touchgfx::ButtonWithIcon buttonForward;
     touchgfx::SlideMenu binaryMenu;
     touchgfx::BoxWithBorder boxWithBorder6;
     touchgfx::Container binaryButton;
@@ -136,12 +142,6 @@ protected:
     touchgfx::TextArea textArea4_2_1;
     touchgfx::TextArea textArea4_1;
     touchgfx::Image image1_1;
-    touchgfx::ButtonWithIcon buttonDone;
-    touchgfx::TextArea textArea5;
-    touchgfx::ButtonWithIcon buttonXZoomIn;
-    touchgfx::ButtonWithIcon buttonBackward;
-    touchgfx::ButtonWithIcon buttonXZoomOut;
-    touchgfx::ButtonWithIcon buttonForward;
 
     /*
      * Wildcard Buffers

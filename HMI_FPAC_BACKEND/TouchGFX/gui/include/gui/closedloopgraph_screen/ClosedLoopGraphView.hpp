@@ -84,12 +84,18 @@ public:
   }
     virtual void buttonForwardHandle()
     {
-     graphTimeOffset += 100;
-     setGarphLevel(zoomX, 1, graphTimeOffset);
+        auto actualValue = presenter->getActualValue();
+      if (actualValue == actualValue_type::level)
+      {
+       graphTimeOffset += 100;
+      setGarphLevel(zoomX, 1, graphTimeOffset);
+      }
+     
     }
     virtual void buttonBackwardHandle()
     {
-        if (graphTimeOffset <= 1)
+        auto actualValue = presenter->getActualValue();
+      if (graphTimeOffset <= 1)
         {
 
         }
@@ -97,8 +103,13 @@ public:
         {
             graphTimeOffset -= 100;
         }
-       
+      if (actualValue == actualValue_type::level)
+      {
         setGarphLevel(zoomX, 1, graphTimeOffset);
+
+      }
+        
+       
     }
 
   void notifyActiveScreen();

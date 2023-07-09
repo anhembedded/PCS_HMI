@@ -185,6 +185,42 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     text_analogVal_Kd.setTypedText(touchgfx::TypedText(T___SINGLEUSE_5HQL));
     add(text_analogVal_Kd);
 
+    buttonDone.setXY(690, -23);
+    buttonDone.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_BACKSPACE_50_50_000000_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_FILE_DOWNLOAD_DONE_50_50_5777F3_SVG_ID));
+    buttonDone.setIconXY(39, 33);
+    buttonDone.setAction(buttonCallback);
+    add(buttonDone);
+
+    textArea5.setXY(727, 340);
+    textArea5.setColor(touchgfx::Color::getColorFromRGB(74, 74, 74));
+    textArea5.setLinespacing(0);
+    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q350));
+    add(textArea5);
+
+    buttonXZoomIn.setXY(622, 323);
+    buttonXZoomIn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ZOOM_IN_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonXZoomIn.setIconXY(-7, -7);
+    buttonXZoomIn.setAction(buttonCallback);
+    add(buttonXZoomIn);
+
+    buttonBackward.setXY(84, 322);
+    buttonBackward.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_LEFT_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonBackward.setIconXY(-7, -7);
+    buttonBackward.setAction(buttonCallback);
+    add(buttonBackward);
+
+    buttonXZoomOut.setXY(683, 323);
+    buttonXZoomOut.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ZOOM_OUT_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonXZoomOut.setIconXY(-7, -7);
+    buttonXZoomOut.setAction(buttonCallback);
+    add(buttonXZoomOut);
+
+    buttonForward.setXY(145, 322);
+    buttonForward.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_RIGHT_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    buttonForward.setIconXY(-7, -7);
+    buttonForward.setAction(buttonCallback);
+    add(buttonForward);
+
     binaryMenu.setXY(-87, 340);
     binaryMenu.setup(touchgfx::SlideMenu::NORTH,
         touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_BARS_1024X600_BOTTOM_DIM_DARK_ID),
@@ -211,10 +247,11 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
 
     buttonDigital2.setXY(295, 15);
     buttonDigital2.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
+    buttonDigital2.setVisible(false);
     buttonDigital2.setAction(buttonCallback);
     binaryButton.add(buttonDigital2);
 
-    buttonDigital1.setXY(369, 15);
+    buttonDigital1.setXY(333, 17);
     buttonDigital1.setBitmaps(touchgfx::Bitmap(BITMAP_OFF_ID), touchgfx::Bitmap(BITMAP_ON_ID));
     buttonDigital1.setAction(buttonCallback);
     binaryButton.add(buttonDigital1);
@@ -234,6 +271,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     textArea4_2.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
     textArea4_2.setLinespacing(0);
     textArea4_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GD5M));
+    textArea4_2.setVisible(false);
     binaryButton.add(textArea4_2);
 
     textArea4_2_1.setXY(237, 46);
@@ -242,7 +280,7 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     textArea4_2_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FOWU));
     binaryButton.add(textArea4_2_1);
 
-    textArea4_1.setXY(379, 46);
+    textArea4_1.setXY(343, 48);
     textArea4_1.setColor(touchgfx::Color::getColorFromRGB(34, 42, 56));
     textArea4_1.setLinespacing(0);
     textArea4_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_RSAD));
@@ -255,42 +293,6 @@ ClosedLoopGraphViewBase::ClosedLoopGraphViewBase() :
     binaryMenu.add(image1_1);
 
     add(binaryMenu);
-
-    buttonDone.setXY(690, -23);
-    buttonDone.setBitmaps(touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_CLAY_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_TINY_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_BACKSPACE_50_50_000000_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_FILE_DOWNLOAD_DONE_50_50_5777F3_SVG_ID));
-    buttonDone.setIconXY(39, 33);
-    buttonDone.setAction(buttonCallback);
-    add(buttonDone);
-
-    textArea5.setXY(727, 340);
-    textArea5.setColor(touchgfx::Color::getColorFromRGB(74, 74, 74));
-    textArea5.setLinespacing(0);
-    textArea5.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Q350));
-    add(textArea5);
-
-    buttonXZoomIn.setXY(678, 292);
-    buttonXZoomIn.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ZOOM_IN_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
-    buttonXZoomIn.setIconXY(-7, -7);
-    buttonXZoomIn.setAction(buttonCallback);
-    add(buttonXZoomIn);
-
-    buttonBackward.setXY(81, 292);
-    buttonBackward.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_LEFT_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
-    buttonBackward.setIconXY(-7, -7);
-    buttonBackward.setAction(buttonCallback);
-    add(buttonBackward);
-
-    buttonXZoomOut.setXY(736, 292);
-    buttonXZoomOut.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_ZOOM_OUT_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
-    buttonXZoomOut.setIconXY(-7, -7);
-    buttonXZoomOut.setAction(buttonCallback);
-    add(buttonXZoomOut);
-
-    buttonForward.setXY(141, 292);
-    buttonForward.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_ICON_ROUNDED_MICRO_FILL_PRESSED_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_HARDWARE_KEYBOARD_ARROW_RIGHT_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
-    buttonForward.setIconXY(-7, -7);
-    buttonForward.setAction(buttonCallback);
-    add(buttonForward);
 }
 
 ClosedLoopGraphViewBase::~ClosedLoopGraphViewBase()
