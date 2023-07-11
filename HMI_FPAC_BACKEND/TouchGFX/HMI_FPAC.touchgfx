@@ -1370,26 +1370,11 @@
               },
               {
                 "Type": "TextArea",
-                "Name": "textArea5_1_2",
-                "X": 20,
-                "Y": 22,
-                "Width": 63,
-                "Height": 189,
-                "TextId": "__SingleUse_PC1L",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 10,
-                  "Blue": 117
-                },
-                "AutoSize": true
-              },
-              {
-                "Type": "TextArea",
                 "Name": "textArea5_1_1",
                 "X": 262,
                 "Y": 198,
                 "Width": 201,
-                "Height": 54,
+                "Height": 40,
                 "TextId": "__SingleUse_98JF",
                 "TextRotation": "0",
                 "Color": {
@@ -1404,7 +1389,7 @@
                 "X": 283,
                 "Y": 25,
                 "Width": 168,
-                "Height": 140,
+                "Height": 80,
                 "TextId": "__SingleUse_CHPN",
                 "TextRotation": "0",
                 "Color": {
@@ -1416,10 +1401,10 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea5_1",
-                "X": 147,
-                "Y": 24,
-                "Width": 63,
-                "Height": 135,
+                "X": 24,
+                "Y": 28,
+                "Width": 187,
+                "Height": 60,
                 "TextId": "__SingleUse_CQMT",
                 "TextRotation": "0",
                 "Color": {
