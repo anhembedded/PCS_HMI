@@ -107,13 +107,7 @@ static void mainApplication(void *param)
     isRec = xQueueReceive(u_appMain_queue_systemState, (void *)&u_appMain_systemState,
                           portMAX_DELAY);
 
-    // if(u_appMain_systemState == eSETTING_VAR)
-    // {
-    //   settingVarState_entry();
-    // }else if ()
-    // {
-
-    // }
+  
   }
 }
 
