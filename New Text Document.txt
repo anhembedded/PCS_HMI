@@ -1,0 +1,10 @@
+- Cơ khí. không thay đổi. Kết nối. mạch điều khiển.
+- Phương án stm32.
+- Tổng quát hơn.
+- lý do module, 1 slidle.
+- Điện.
+- Nguồn.
+- Giao diện. so sanh
+- Thuật toán.
+- Lập trình. Chỉ kể tên. phổ quát.
+
