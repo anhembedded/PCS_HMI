@@ -1,0 +1,16 @@
+Tổng quan.
+
+Trong thời đại 4.0, công nghiệp hóa và số hóa là xu hướng không thể đảo ngược.
+PLC HMI là thiết bị điều khiển và hiển thị thông tin quan trọng trong các hệ thống tự động hóa. 
+Tuy nhiên, PLC HMI có những hạn chế như giá thành cao, khả năng mở rộng thấp và giao diện người dùng không thân thiện. 
+Để khắc phục những hạn chế đó, đề tài này dùng vi điều khiển và làm hình cảm ứng thay thế PLC HMI trên hệ PCS là một giải pháp tiềm năng. 
+Có những ưu điểm như giá thành rẻ, khả năng tùy biến cao. 
+Đề tài này có tính cấp thiết cao vì nó góp phần nâng cao hiệu quả và tiết kiệm chi phí cho nhà trường và doanh nghiệp trong thời đại 4.0.
+
+
+Cơ khí: không thay đổi kết cấu của hệ, đễ dàng chuyển đổi giữa điều khiển PLC và MCU
+
+
+Các tiêu chí đánh giá lựa chọn màng hình.
+
+
