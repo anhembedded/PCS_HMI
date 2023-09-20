@@ -8,20 +8,16 @@ The Festo PCS system, currently available at Cao Thang Technical College, is use
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
-Provide step-by-step instructions on how to install and set up your project.
+
 
 ## Usage
 
-Explain how to use your project, including any examples or code snippets.
+
 
 ## Contributing
 
-If you'd like to contribute to the project, please follow these guidelines.
 
-## License
 
-This project is licensed under the [License Name](LICENSE).
