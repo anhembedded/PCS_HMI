@@ -1,3 +1,4 @@
 {
-    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "cmake.sourceDirectory": "C:/Project/PCS_HMI/HMI_FPAC_BACKEND/STM32CubeIDE"
 }
